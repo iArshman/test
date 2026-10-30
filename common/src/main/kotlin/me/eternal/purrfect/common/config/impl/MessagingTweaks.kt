@@ -338,4 +338,17 @@ class MessagingTweaks : ConfigContainer() {
     val autoOpenSnaps = container("auto_open_snaps", AutoOpenSnapsConfig()) { requireRestart(); addNotices(FeatureNotice.BAN_RISK, FeatureNotice.UNSTABLE) }
     val preFetchSnaps = boolean("pre_fetch_snaps", false)
     val instantTranslation = container("instant_translation", InstantTranslationConfig()) { requireRestart() }
+
+    // --- New features ---
+    /** When enabled, newly mutual friends (add or accept) get chat retention set to After Viewing. */
+    val autoAfterViewingOnFriend = boolean("auto_after_viewing_on_friend", false) {
+        requireRestart()
+        addNotices(FeatureNotice.UNSTABLE)
+    }
+
+    /** When enabled, native Snapchat custom lists with emoji appear as shortcuts on Send To and select-all their members. */
+    val sendToNativeListEmojiShortcuts = boolean("send_to_native_list_emoji_shortcuts", false) {
+        requireRestart()
+        addNotices(FeatureNotice.UNSTABLE)
+    }
 }

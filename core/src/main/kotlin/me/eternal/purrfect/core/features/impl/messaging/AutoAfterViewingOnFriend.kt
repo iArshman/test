@@ -4,8 +4,8 @@ import com.google.gson.JsonObject
 import me.eternal.purrfect.common.data.FriendLinkType
 import me.eternal.purrfect.core.event.events.impl.NetworkApiRequestEvent
 import me.eternal.purrfect.core.features.Feature
-import me.eternal.purrfect.core.features.impl.messaging.Messaging
 import me.eternal.purrfect.core.util.EvictingMap
+import me.eternal.purrfect.core.wrapper.impl.ConversationManager
 import java.io.InputStreamReader
 import java.util.concurrent.ConcurrentHashMap
 
@@ -109,12 +109,13 @@ class AutoAfterViewingOnFriend : Feature("AutoAfterViewingOnFriend") {
      * Snapchat internal method names vary; this uses reflection against ConversationManager
      * and common retention-related method name patterns. Update when mappings change.
      */
-    private fun setAfterViewingRetention(conversationManager: Any, conversationId: String, userId: String) {
-        val instance = conversationManager.javaClass
-            .getDeclaredField("instance")
-            .also { it.isAccessible = true }
-            .get(conversationManager)
-            ?: conversationManager
+    private fun setAfterViewingRetention(conversationManager: ConversationManager, conversationId: String, userId: String) {
+        val instance = runCatching {
+            conversationManager.javaClass
+                .getDeclaredField("instance")
+                .also { it.isAccessible = true }
+                .get(conversationManager)
+        }.getOrNull() ?: conversationManager
 
         // Common patterns seen across Snap versions for retention / chat settings
         val candidateNames = listOf(
@@ -153,10 +154,8 @@ class AutoAfterViewingOnFriend : Feature("AutoAfterViewingOnFriend") {
                 })
             }
             context.log.info("AutoAfterViewingOnFriend: applied After Viewing for $userId ($conversationId)")
-            context.inAppOverlay.showStatusToast(
-                androidx.compose.material.icons.Icons.Default.Visibility,
-                "Chat set to After Viewing: ${context.database.getFriendInfo(userId)?.mutableUsername ?: userId}"
-            )
+            val username = context.database.getFriendInfo(userId)?.mutableUsername ?: userId
+            context.longToast("Chat set to After Viewing: $username")
         }.onFailure {
             context.log.error("AutoAfterViewingOnFriend: invoke failed for $userId", it)
         }

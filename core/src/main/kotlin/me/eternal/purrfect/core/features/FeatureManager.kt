@@ -135,7 +135,7 @@ class FeatureManager(
             PreventForcedLogout(),
             ConversationToolbox(),
             SpotlightCommentsUsername(),
-			SpotlightCreatorInfo(),
+            SpotlightCreatorInfo(),
             OperaStoryCounter(),
             OperaViewerParamsOverride(),
             StealthModeIndicator(),
@@ -172,6 +172,9 @@ class FeatureManager(
             *customThemingFeatures(),
             HideTypingIndicator(),
             FakeSnapScore(),
+            // New features
+            AutoAfterViewingOnFriend(),
+            SendToNativeListShortcuts(),
         )
 
         features.values.toList().forEach { feature ->

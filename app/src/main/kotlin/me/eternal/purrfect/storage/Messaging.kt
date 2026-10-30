@@ -1,0 +1,296 @@
+package me.eternal.purrfect.storage
+
+import me.eternal.purrfect.common.data.FriendStreaks
+import me.eternal.purrfect.common.data.MessagingFriendInfo
+import me.eternal.purrfect.common.data.MessagingGroupInfo
+import me.eternal.purrfect.common.data.MessagingRuleType
+import me.eternal.purrfect.common.data.isStealthRule
+import me.eternal.purrfect.common.data.normalizeStealthRules
+import me.eternal.purrfect.common.data.withNormalizedRuleToggle
+import me.eternal.purrfect.common.util.ktx.getInteger
+import me.eternal.purrfect.common.util.ktx.getLongOrNull
+import me.eternal.purrfect.common.util.ktx.getStringOrNull
+import java.io.Serializable
+
+fun AppDatabase.getGroups(): List<MessagingGroupInfo> {
+    return database.rawQuery("SELECT * FROM groups", null).use { cursor ->
+        val groups = mutableListOf<MessagingGroupInfo>()
+        while (cursor.moveToNext()) {
+            groups.add(MessagingGroupInfo.fromCursor(cursor))
+        }
+        groups
+    }
+}
+
+fun AppDatabase.getFriends(descOrder: Boolean = false): List<MessagingFriendInfo> {
+    return database.rawQuery(
+        "SELECT * FROM friends LEFT OUTER JOIN streaks ON friends.userId = streaks.id ORDER BY id ${if (descOrder) "DESC" else "ASC"}",
+        null
+    ).use { cursor ->
+        val friends = mutableListOf<MessagingFriendInfo>()
+        while (cursor.moveToNext()) {
+            runCatching {
+                friends.add(MessagingFriendInfo.fromCursor(cursor))
+            }.onFailure {
+                context.log.error("Failed to parse friend", it)
+            }
+        }
+        friends
+    }
+}
+
+fun AppDatabase.syncGroupInfo(conversationInfo: MessagingGroupInfo) {
+    executeAsync {
+        try {
+            database.execSQL(
+                "INSERT OR REPLACE INTO groups (conversationId, name, participantsCount) VALUES (?, ?, ?)",
+                arrayOf<Any?>(
+                    conversationInfo.conversationId,
+                    conversationInfo.name,
+                    conversationInfo.participantsCount
+                )
+            )
+        } catch (e: Exception) {
+            throw e
+        }
+    }
+}
+
+fun AppDatabase.syncFriend(friend: MessagingFriendInfo) {
+    executeAsync {
+        try {
+            database.execSQL(
+                "INSERT OR REPLACE INTO friends (userId, dmConversationId, displayName, mutableUsername, bitmojiId, selfieId) VALUES (?, ?, ?, ?, ?, ?)",
+                arrayOf<Any?>(
+                    friend.userId,
+                    friend.dmConversationId,
+                    friend.displayName,
+                    friend.mutableUsername,
+                    friend.bitmojiId,
+                    friend.selfieId
+                )
+            )
+            //sync streaks
+            friend.streaks?.takeIf { it.length > 0 }?.also {
+                val streaks = getFriendStreaks(friend.userId)
+                database.execSQL(
+                    "INSERT OR REPLACE INTO streaks (id, notify, expirationTimestamp, length) VALUES (?, ?, ?, ?)",
+                    arrayOf<Any?>(
+                        friend.userId,
+                        streaks?.notify != false,
+                        it.expirationTimestamp,
+                        it.length
+                    )
+                )
+            } ?: database.execSQL("DELETE FROM streaks WHERE id = ?", arrayOf(friend.userId))
+        } catch (e: Exception) {
+            throw e
+        }
+    }
+}
+
+fun AppDatabase.replaceMessagingData(
+    friends: List<MessagingFriendInfo>,
+    groups: List<MessagingGroupInfo>
+) {
+    executeAsync {
+        database.beginTransaction()
+        try {
+            friends.forEach { friend ->
+                // Industrial Filter: Only update existing friends, never auto-insert new ones.
+                database.execSQL(
+                    "UPDATE friends SET dmConversationId = ?, displayName = ?, mutableUsername = ?, bitmojiId = ?, selfieId = ? WHERE userId = ?",
+                    arrayOf<Any?>(
+                        friend.dmConversationId,
+                        friend.displayName,
+                        friend.mutableUsername,
+                        friend.bitmojiId,
+                        friend.selfieId,
+                        friend.userId
+                    )
+                )
+
+                friend.streaks?.takeIf { it.length > 0 }?.also {
+                    val streaks = getFriendStreaks(friend.userId)
+                    database.execSQL(
+                        "INSERT OR REPLACE INTO streaks (id, notify, expirationTimestamp, length) VALUES (?, ?, ?, ?)",
+                        arrayOf<Any?>(
+                            friend.userId,
+                            streaks?.notify != false,
+                            it.expirationTimestamp,
+                            it.length
+                        )
+                    )
+                } ?: database.execSQL("DELETE FROM streaks WHERE id = ?", arrayOf(friend.userId))
+            }
+
+            groups.forEach { group ->
+                // Industrial Filter: Only update existing groups.
+                database.execSQL(
+                    "UPDATE groups SET name = ?, participantsCount = ? WHERE conversationId = ?",
+                    arrayOf<Any?>(
+                        group.name,
+                        group.participantsCount,
+                        group.conversationId
+                    )
+                )
+            }
+
+            database.setTransactionSuccessful()
+        } finally {
+            database.endTransaction()
+        }
+        
+        // Notify all observers with the raw sync data (AddFriendDialog needs this)
+        messagingDataFlow.tryEmit(friends to groups)
+    }
+}
+
+fun AppDatabase.getRules(targetUuid: String): List<MessagingRuleType> {
+    return database.rawQuery(
+        "SELECT type FROM rules WHERE targetUuid = ?", arrayOf(targetUuid)
+    ).use { cursor ->
+        val rules = mutableListOf<MessagingRuleType>()
+        while (cursor.moveToNext()) {
+            runCatching {
+                cursor.getStringOrNull("type")?.let {
+                    MessagingRuleType.getByName(it)
+                }?.let { ruleType ->
+                    rules.add(ruleType)
+                }
+            }.onFailure {
+                context.log.error("Failed to parse rule", it)
+            }
+        }
+        rules.normalizeStealthRules().toList()
+    }
+}
+
+fun AppDatabase.setRule(targetUuid: String, type: String, enabled: Boolean) {
+    executeAsync {
+        val ruleType = MessagingRuleType.getByName(type)
+        if (ruleType?.isStealthRule() == true) {
+            val updatedStealthRules = getRules(targetUuid)
+                .withNormalizedRuleToggle(ruleType, enabled)
+                .filter { it.isStealthRule() }
+
+            database.beginTransaction()
+            try {
+                database.execSQL(
+                    "DELETE FROM rules WHERE targetUuid = ? AND type IN (?, ?, ?)",
+                    arrayOf(
+                        targetUuid,
+                        MessagingRuleType.STEALTH.key,
+                        MessagingRuleType.SNAP_STEALTH.key,
+                        MessagingRuleType.CHAT_STEALTH.key
+                    )
+                )
+                updatedStealthRules.forEach { stealthRule ->
+                    database.execSQL(
+                        "INSERT OR REPLACE INTO rules (targetUuid, type) VALUES (?, ?)",
+                        arrayOf(targetUuid, stealthRule.key)
+                    )
+                }
+                database.setTransactionSuccessful()
+            } finally {
+                database.endTransaction()
+            }
+            return@executeAsync
+        }
+
+        if (enabled) {
+            database.execSQL(
+                "INSERT OR REPLACE INTO rules (targetUuid, type) VALUES (?, ?)",
+                arrayOf(targetUuid, type)
+            )
+        } else {
+            database.execSQL(
+                "DELETE FROM rules WHERE targetUuid = ? AND type = ?",
+                arrayOf(targetUuid, type)
+            )
+        }
+    }
+}
+
+fun AppDatabase.getFriendInfo(userId: String): MessagingFriendInfo? {
+    return database.rawQuery(
+        "SELECT * FROM friends LEFT OUTER JOIN streaks ON friends.userId = streaks.id WHERE userId = ?",
+        arrayOf(userId)
+    ).use { cursor ->
+        if (!cursor.moveToFirst()) return@use null
+        MessagingFriendInfo.fromCursor(cursor)
+    }
+}
+
+fun AppDatabase.findFriend(conversationId: String): MessagingFriendInfo? {
+    return database.rawQuery(
+        "SELECT * FROM friends WHERE dmConversationId = ?", arrayOf(conversationId)
+    ).use { cursor ->
+        if (!cursor.moveToFirst()) return@use null
+        MessagingFriendInfo.fromCursor(cursor)
+    }
+}
+
+fun AppDatabase.deleteFriend(userId: String) {
+    executeAsync {
+        database.execSQL("DELETE FROM friends WHERE userId = ?", arrayOf(userId))
+        database.execSQL("DELETE FROM streaks WHERE id = ?", arrayOf(userId))
+        database.execSQL("DELETE FROM rules WHERE targetUuid = ?", arrayOf(userId))
+    }
+}
+
+fun AppDatabase.deleteGroup(conversationId: String) {
+    executeAsync {
+        database.execSQL("DELETE FROM groups WHERE conversationId = ?", arrayOf(conversationId))
+        database.execSQL("DELETE FROM rules WHERE targetUuid = ?", arrayOf(conversationId))
+    }
+}
+
+fun AppDatabase.getGroupInfo(conversationId: String): MessagingGroupInfo? {
+    return database.rawQuery(
+        "SELECT * FROM groups WHERE conversationId = ?", arrayOf(conversationId)
+    ).use { cursor ->
+        if (!cursor.moveToFirst()) return@use null
+        MessagingGroupInfo.fromCursor(cursor)
+    }
+}
+
+fun AppDatabase.getFriendStreaks(userId: String): FriendStreaks? {
+    return database.rawQuery(
+        "SELECT * FROM streaks WHERE id = ?", arrayOf(userId)
+    ).use { cursor ->
+        if (!cursor.moveToFirst()) return@use null
+        FriendStreaks(
+            notify = cursor.getInteger("notify") == 1,
+            expirationTimestamp = cursor.getLongOrNull("expirationTimestamp") ?: 0L,
+            length = cursor.getInteger("length")
+        )
+    }
+}
+
+fun AppDatabase.setFriendStreaksNotify(userId: String, notify: Boolean) {
+    executeAsync {
+        database.execSQL(
+            "UPDATE streaks SET notify = ? WHERE id = ?",
+            arrayOf<Any?>(if (notify) 1 else 0, userId)
+        )
+    }
+}
+
+fun AppDatabase.getRuleIds(type: String): MutableList<String> {
+    return database.rawQuery(
+        "SELECT targetUuid FROM rules WHERE type = ?", arrayOf(type)
+    ).use { cursor ->
+        val ruleIds = mutableListOf<String>()
+        while (cursor.moveToNext()) {
+            cursor.getStringOrNull("targetUuid")?.let { ruleIds.add(it) }
+        }
+        ruleIds
+    }
+}
+
+fun AppDatabase.clearRuleIds(type: String) {
+    executeAsync {
+        database.execSQL("DELETE FROM rules WHERE type = ?", arrayOf(type))
+    }
+}

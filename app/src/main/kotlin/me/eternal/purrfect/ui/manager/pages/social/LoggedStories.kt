@@ -1,0 +1,274 @@
+package me.eternal.purrfect.ui.manager.pages.social
+
+import android.content.Intent
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import me.eternal.purrfect.common.ui.theme.LocalPurrfectSkin
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.core.content.FileProvider
+import androidx.navigation.NavBackStackEntry
+import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.font.FontWeight
+import coil.annotation.ExperimentalCoilApi
+import coil.compose.rememberAsyncImagePainter
+import me.eternal.purrfect.bridge.DownloadCallback
+import me.eternal.purrfect.common.data.FileType
+import me.eternal.purrfect.common.data.StoryData
+import me.eternal.purrfect.common.data.download.*
+import me.eternal.purrfect.common.util.ktx.longHashCode
+import me.eternal.purrfect.download.DownloadProcessor
+import me.eternal.purrfect.storage.getFriendInfo
+import me.eternal.purrfect.ui.manager.Routes
+import me.eternal.purrfect.ui.util.Dialog
+import me.eternal.purrfect.ui.util.coil.ImageRequestHelper
+import java.io.File
+import java.text.DateFormat
+import java.util.Date
+import java.util.UUID
+import kotlin.math.absoluteValue
+
+class LoggedStories : Routes.Route() {
+    override val title: @Composable () -> Unit = {
+        val navBackStackEntry by routes.navController.currentBackStackEntryAsState()
+        val text = remember(navBackStackEntry) {
+            navBackStackEntry?.arguments?.getString("id")?.let {
+                context.database.getFriendInfo(it)?.displayName
+            }
+        }
+        text?.let { Text(it, maxLines = 1, overflow = TextOverflow.Ellipsis) }
+    }
+
+    @OptIn(ExperimentalCoilApi::class, ExperimentalLayoutApi::class)
+    override val content: @Composable (NavBackStackEntry) -> Unit = content@{ navBackStackEntry ->
+        val userId = navBackStackEntry.arguments?.getString("id") ?: return@content
+
+        val stories = remember { mutableStateListOf<StoryData>() }
+        val friendInfo = remember { context.database.getFriendInfo(userId) }
+        var lastStoryTimestamp by remember { mutableLongStateOf(Long.MAX_VALUE) }
+
+        var selectedStory by remember { mutableStateOf<StoryData?>(null) }
+
+        selectedStory?.let { story ->
+            fun downloadSelectedStory(
+                inputMedia: InputMedia,
+            ) {
+                val mediaAuthor = friendInfo?.mutableUsername ?: userId
+                val uniqueHash = UUID.randomUUID().toString().longHashCode().absoluteValue.toString(16)
+
+                DownloadProcessor(
+                    remoteSideContext = context,
+                    callback = object: DownloadCallback.Default() {
+                        override fun onSuccess(outputPath: String?) {
+                            context.shortToast(translation.format("downloaded_to_path", "path" to (outputPath ?: "")))
+                        }
+
+                        override fun onFailure(message: String?, throwable: String?) {
+                            context.shortToast(translation.format("download_failed", "message" to (message ?: "")))
+                        }
+                    }
+                ).enqueue(DownloadRequest(
+                    inputMedias = arrayOf(inputMedia)
+                ), DownloadMetadata(
+                    mediaIdentifier = uniqueHash,
+                    outputPath = createNewFilePath(
+                        context.config.root,
+                        uniqueHash,
+                        MediaDownloadSource.STORY_LOGGER,
+                        mediaAuthor,
+                        story.createdAt
+                    ),
+                    iconUrl = null,
+                    mediaAuthor = friendInfo?.mutableUsername ?: userId,
+                    downloadSource = MediaDownloadSource.STORY_LOGGER.translate(context.translation),
+                ))
+            }
+
+            Dialog(onDismissRequest = {
+                selectedStory = null
+            }) {
+                Card(
+                    modifier = Modifier
+                        .padding(4.dp)
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .padding(16.dp)
+                            .fillMaxWidth(),
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                    ) {
+                        remember {
+                            story.postedAt.takeIf { it >= 0L }?.let {
+                                DateFormat.getDateTimeInstance().format(Date(it))
+                            }
+                        }?.let {
+                            Text(text = translation.format("posted_at", "date" to it))
+                        }
+                        remember {
+                            story.createdAt.takeIf { it >= 0L }?.let {
+                                DateFormat.getDateTimeInstance().format(Date(it))
+                            }
+                        }?.let {
+                            Text(text = translation.format("created_at", "date" to it))
+                        }
+
+                        FlowRow(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceEvenly,
+                        ) {
+                            Button(onClick = {
+                                context.androidContext.externalCacheDir?.let { cacheDir ->
+                                    context.imageLoader.diskCache?.openSnapshot(story.url)?.use { diskCacheSnapshot ->
+                                        val cacheFile = diskCacheSnapshot.data.toFile()
+                                        val targetFile = File(cacheDir, cacheFile.name).also {
+                                            it.deleteOnExit()
+                                        }
+
+                                        runCatching {
+                                            cacheFile.inputStream().let {
+                                                story.getEncryptionKeyPair()?.decryptInputStream(it) ?: it
+                                            }.use { inputStream ->
+                                                targetFile.outputStream().use { outputStream ->
+                                                    inputStream.copyTo(outputStream)
+                                                }
+                                            }
+
+                                            context.androidContext.startActivity(Intent().apply {
+                                                action = Intent.ACTION_VIEW
+                                                setDataAndType(
+                                                    FileProvider.getUriForFile(
+                                                        context.androidContext,
+                                                        "me.eternal.purrfect.fileprovider",
+                                                        targetFile
+                                                    ),
+                                                    FileType.fromFile(targetFile).mimeType
+                                                )
+                                                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_ACTIVITY_NEW_TASK)
+                                            })
+                                        }.onFailure {
+                                            context.shortToast(translation["failed_to_open_file"])
+                                            context.log.error("Failed to open file", it)
+                                        }
+                                    } ?: run {
+                                        context.shortToast(translation["failed_to_get_file"])
+                                        return@Button
+                                    }
+                                }
+                            }) {
+                                Text(text = context.translation["button.open"])
+                            }
+
+                            Button(onClick = {
+                                downloadSelectedStory(
+                                    InputMedia(
+                                        content = story.url,
+                                        type = DownloadMediaType.REMOTE_MEDIA,
+                                        encryption = story.getEncryptionKeyPair()
+                                    )
+                                )
+                            }) {
+                                Text(text = context.translation["button.download"])
+                            }
+
+                            if (remember {
+                                context.imageLoader.diskCache?.openSnapshot(story.url)?.also { it.close() } != null
+                            }) {
+                                Button(onClick = {
+                                    downloadSelectedStory(
+                                        InputMedia(
+                                            content = context.imageLoader.diskCache?.openSnapshot(story.url)?.use {
+                                                it.data.toFile().absolutePath
+                                            } ?: run {
+                                                context.shortToast(translation["failed_to_get_file"])
+                                                return@Button
+                                            },
+                                            type = DownloadMediaType.LOCAL_MEDIA,
+                                            encryption = story.getEncryptionKeyPair()
+                                        )
+                                    )
+                                }) {
+                                    Text(text = translation["save_from_cache_button"])
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if (stories.isEmpty()) {
+            Text(text = translation["no_stories"], Modifier.fillMaxWidth(), textAlign = TextAlign.Center, color = LocalPurrfectSkin.current.textPrimary)
+        }
+
+        LazyVerticalGrid(
+            columns = GridCells.Adaptive(100.dp),
+            contentPadding = PaddingValues(8.dp),
+        ) {
+            items(stories, key = { it.url }) { story ->
+                var hasFailed by remember(story.url) { mutableStateOf(false) }
+
+                Column(
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .clickable {
+                            selectedStory = story
+                        }
+                        .clip(MaterialTheme.shapes.medium)
+                        .heightIn(min = 128.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
+                ) {
+                    if (hasFailed) {
+                        Text(text = translation["story_failed_to_load"], Modifier.padding(8.dp), fontSize = 10.sp, color = LocalPurrfectSkin.current.textPrimary)
+                    } else {
+                        Image(
+                            painter = rememberAsyncImagePainter(
+                                model = ImageRequestHelper.newPreviewImageRequest(
+                                    context.androidContext,
+                                    story.url,
+                                    story.getEncryptionKeyPair(),
+                                ),
+                                imageLoader = context.imageLoader,
+                                onError = {
+                                    hasFailed = true
+                                }
+                            ),
+                            contentDescription = null,
+                            contentScale = ContentScale.FillWidth,
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .height(128.dp)
+                        )
+                    }
+                }
+            }
+            item {
+                LaunchedEffect(Unit) {
+                    context.messageLogger.getStories(userId, lastStoryTimestamp, 20).also { result ->
+                        stories.addAll(result.values.reversed())
+                        result.keys.minOrNull()?.let {
+                            lastStoryTimestamp = it
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

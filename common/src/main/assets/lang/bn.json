@@ -1,0 +1,3643 @@
+{
+    "setup": {
+        "activity": {
+            "wrong_apk_title": "ভুল APK ইনস্টল করা হয়েছে",
+            "wrong_apk_message": "আপনার ডিভাইসটি armv8, দয়া করে armv7 নয়, armv8 apk ডাউনলোড করুন।",
+            "close_button": "বন্ধ করুন",
+            "important_confirm_timeout": "আমি বুঝতে পেরেছি ({seconds}s)",
+            "important_confirm": "আমি বুঝতে পেরেছি",
+            "important_title": "গুরুত্বপূর্ণ!",
+            "important_message": "আপনি যদি SnapEnhance বা Purrfect ছাড়া অন্য কোনো মড ব্যবহার করে থাকেন, তবে আমরা সব আনইনস্টল করে এক সপ্তাহের জন্য স্টক স্ন্যাপচ্যাটে থাকার পরামর্শ দিই। এরপর আগামী শুক্রবারের পর Purrfect-এ স্যুইচ করুন।",
+            "language_subtitle": "অন্য কিছুর আগে Purrfect-কে আপনার ভাষায় কথা বলান।",
+            "install_mode_title": "আপনার ডিভাইস নির্বাচন করুন",
+            "install_mode_subtitle": "Purrfect ইনস্টল করার জন্য আপনার উপযুক্ত পদ্ধতিটি বেছে নিন।",
+            "permissions_subtitle": "ওভারলে, ডাউনলোড এবং অ্যালার্টগুলো নির্ভরযোগ্য রাখতে প্রয়োজনীয় অনুমতি দিন।",
+            "patch_title": "অটো প্যাচার",
+            "patch_subtitle": "একই ফ্লো-তে সহজ ডাউনলোড, প্যাচ এবং ইনস্টল।",
+            "root_install_title": "স্ন্যাপচ্যাট ইনস্টলার",
+            "root_install_subtitle": "স্ন্যাপচ্যাটের প্রস্তাবিত ভার্সনটি ডাউনলোড এবং ইনস্টল করুন।",
+            "save_folder_subtitle": "আপনার ব্যক্তিগত ভল্ট বাছুন যাতে স্ন্যাপগুলো ঠিক যেখানে চান সেখানে জমা হয়।",
+            "mappings_subtitle": "আমরা আপনার ইনস্টল অনুযায়ী সবকিছু ক্যালিব্রেট করি যাতে ম্যাজিকটি নিখুঁতভাবে কাজ করে।",
+            "step_counter": "ধাপ {current}, {total}-এর মধ্যে",
+            "step_complete": "সম্পন্ন হয়েছে",
+            "step_active": "চলছে",
+            "step_upcoming": "পরবর্তীতে প্রস্তুত",
+            "finish_button": "সেটআপ শেষ করুন",
+            "continue_button": "চালিয়ে যান"
+        },
+        "dialogs": {
+            "select_language": "ভাষা নির্বাচন করুন",
+            "save_folder": "ডাউনলোড সেভ করার জায়গা নির্বাচন করুন",
+            "select_save_folder_button": "ফোল্ডার নির্বাচন করুন",
+            "hex_color_label": "হেক্স কালার"
+        },
+        "install_mode": {
+            "confirm_timeout": "আমি বুঝতে পেরেছি ({seconds}s)",
+            "confirm": "আমি বুঝতে পেরেছি",
+            "notice_title": "দয়া করে লক্ষ্য করুন!",
+            "notice_intro": "আপনার ডিভাইসের ধরন নির্বাচন করুন: রুটেড (rooted) বা নন-রুটেড (non-rooted)। নিশ্চিত না হলে, নন-রুটেড নির্বাচন করে এগিয়ে যান।",
+            "notice_non_root_title": "নন-রুটেড ডিভাইস",
+            "notice_non_root_body": "নন-রুটেড নির্বাচন করুন এবং অ্যাপটি সব সামলে নেবে। 'প্যাচড স্ন্যাপচ্যাট ইনস্টল করুন' অপশনটি আসলে ট্যাপ করুন। ইনস্টল হওয়ার পর এখনই স্ন্যাপচ্যাট খুলবেন না। Purrfect সেটআপ চালিয়ে যান; শেষ হলে স্ন্যাপচ্যাট খুলে উপভোগ করতে পারেন।",
+            "notice_root_title": "রুটেড ডিভাইস",
+            "notice_root_body": "নিশ্চিত করুন যে আপনি প্রথমে LSPosed ফ্ল্যাশ করেছেন। আমরা JingMatrix LSPosed বা LSPosed Irena ব্যবহারের পরামর্শ দিই। রুট নির্বাচন করার পর অ্যাপটি প্রস্তাবিত স্ন্যাপচ্যাট ভার্সন ইনস্টল করবে। এটি এখনই খুলবেন না; Purrfect সেটআপ চালিয়ে যান। সেটআপ শেষ হলে LSPosed-এ Purrfect চালু করুন এবং ফোন রিবুট করুন। তারপর স্ন্যাপচ্যাট ব্যবহার শুরু করুন। অটো-আপডেট রোধ করতে আমরা Zygisk Detach মডিউল দিয়ে প্লে স্টোর থেকে স্ন্যাপচ্যাট ডিটাচ করার পরামর্শ দিই।",
+            "notice_issues_hint": "ইনস্টলেশনে কোনো সমস্যা হলে সমাধান এখানে দেখানো হবে। দয়া করে এটি মনোযোগ দিয়ে পড়ুন।",
+            "notice_note_prefix": "নোট: ",
+            "notice_note_body": "নতুন অ্যাকাউন্ট সহজেই লক হয়ে যায়! Purrfect-এর সাথে কোনো পুরনো অ্যাকাউন্ট ব্যবহার করার পরামর্শ দেওয়া হচ্ছে।",
+            "step_title": "আপনার ডিভাইস নির্বাচন করুন",
+            "step_subtitle": "না জানলে, নন-রুটেড ডিভাইস নির্বাচন করে এগিয়ে যান।",
+            "root_option_title": "রুটেড ডিভাইস",
+            "root_option_subtitle": "Lsposed ব্যবহার করুন এবং অটো প্যাচিং এড়িয়ে যান।",
+            "non_root_option_title": "নন-রুটেড ডিভাইস",
+            "non_root_option_subtitle": "প্যাচ করা স্ন্যাপচ্যাট ইনস্টল করতে অন্তর্ভুক্ত অটো প্যাচার ব্যবহার করুন।",
+            "skip_auto_setup": "অটো সেটআপ এড়িয়ে যান"
+        },
+        "mappings": {
+            "dialog": "ম্যাপিং তৈরি হচ্ছে...",
+            "generate_failure_no_snapchat": "Purrfect স্ন্যাপচ্যাট শনাক্ত করতে পারেনি, দয়া করে স্ন্যাপচ্যাট পুনরায় ইনস্টল করার চেষ্টা করুন।",
+            "generate_failure": "ম্যাপিং তৈরির সময় একটি ত্রুটি ঘটেছে, দয়া করে আবার চেষ্টা করুন।",
+            "confirm_understand_timeout": "আমি বুঝতে পেরেছি ({seconds}s)",
+            "confirm_understand": "আমি বুঝতে পেরেছি",
+            "notice_title": "দয়া করে লক্ষ্য করুন!",
+            "notice_intro": "লগইন করার সময় \"Account temporarily disabled\" ত্রুটি দেখলে চিন্তিত হবেন না। ক্রমানুসারে এই ধাপগুলো অনুসরণ করুন:",
+            "notice_step_1": "১. স্ন্যাপচ্যাট পুনরায় খুলুন এবং লগইন করুন। এটি বেশিরভাগ সময় সমস্যাটি ঠিক করে দেয়।",
+            "notice_step_2": "২. তবুও ব্যর্থ হলে, লগইন বাটনে বারবার ট্যাপ করতে থাকুন। এটি সাধারণত পরবর্তী ধাপে কাজ করে।",
+            "notice_step_3": "৩. তবুও ব্যর্থ হলে, স্ন্যাপচ্যাটের ডেটা ক্লিয়ার করুন, ভিপিএন বন্ধ করুন এবং আবার লগইন করুন।",
+            "notice_rooted_title": "রুটেড ব্যবহারকারীদের জন্য:",
+            "notice_rooted_body": "স্ন্যাপচ্যাট পুনরায় খুলুন এবং লগইন করুন। তবুও ব্যর্থ হলে, LSPosed-এ Purrfect নিষ্ক্রিয় করুন, লগইন করুন, তারপর Purrfect পুনরায় সক্রিয় করুন।",
+            "warnings_info": "ম্যাপিং তৈরির সময় {count}টি সতর্কবার্তা দেখা দিয়েছে:\n\n{warnings}",
+            "progress_hint": "এটি মাত্র এক মুহূর্ত সময় নেবে। ম্যাজিক চলাকালীন অ্যাপটি খোলা রাখুন!"
+        },
+        "patch": {
+            "title": "অটো প্যাচার",
+            "ready_log": "অটো প্যাচার প্রস্তুত।",
+            "install_confirmed_log": "স্ন্যাপচ্যাট ইনস্টল নিশ্চিত হয়েছে। আপনি এগিয়ে যেতে পারেন।",
+            "download_recommended_status": "প্রস্তাবিত স্ন্যাপচ্যাট ভার্সন ({version}) ডাউনলোড হচ্ছে...",
+            "starting_log": "প্রস্তাবিত স্ন্যাপচ্যাট ভার্সনের জন্য অটো প্যাচার শুরু হচ্ছে।",
+            "uninstall_prompt_status": "স্ন্যাপচ্যাট ইনস্টল করা আছে। দয়া করে প্রথমে এটি আনইনস্টল করুন (ডেটা রাখবেন না), তারপর আবার অটো প্যাচার শুরু করুন।",
+            "uninstall_prompt_error": "স্ন্যাপচ্যাট এখনও ইনস্টল করা আছে। এগিয়ে যেতে প্রথমে এটি আনইনস্টল করুন।",
+            "module_apk_not_found_error": "মডিউল apk পাওয়া যায়নি",
+            "fetching_apk_status": "প্রস্তাবিত স্ন্যাপচ্যাট APK আনা হচ্ছে...",
+            "download_failed_error": "ডাউনলোড ব্যর্থ হয়েছে",
+            "download_completed_status": "ডাউনলোড সম্পন্ন: {fileName}",
+            "starting_patch_status": "Jingmatrix Lspatch দ্বারা চালিত প্যাচিং শুরু হচ্ছে",
+            "patched_not_produced_error": "প্যাচ করা apk তৈরি হয়নি",
+            "patched_ready_status": "প্যাচ করা বিল্ড প্রস্তুত। শেষ করতে ইনস্টল করুন।",
+            "failed_status": "ব্যর্থ হয়েছে: {message}",
+            "mark_installed_log": "ম্যানুয়ালি ইনস্টল হিসেবে চিহ্নিত করা হয়েছে। আপনি এগিয়ে যেতে পারেন।",
+            "issues_title": "সমস্যার সম্মুখীন হচ্ছেন?",
+            "issues_confirm": "বুঝেছি",
+            "issues_heading": "ইনস্টলেশন ত্রুটি কীভাবে ঠিক করবেন",
+            "issues_conflict_issue": "সমস্যা: অ্যাপটি ইনস্টল করা যাচ্ছে না কারণ এটি বিদ্যমান কোনো প্যাকেজের সাথে কনফ্লিক্ট করছে।",
+            "issues_conflict_fix": "সমাধান: প্লে স্টোর থেকে স্ন্যাপচ্যাট ডাউনলোড করুন এবং ডেটা না রেখে আনইনস্টল করুন। অটো প্যাচার আবার চালান। যদি এখনও কাজ না করে, তবে রান করুন:",
+            "issues_adb_command": "adb uninstall com.snapchat.android",
+            "issues_invalid_issue": "সমস্যা: প্যাকেজটি অবৈধ মনে হওয়ায় অ্যাপ ইনস্টল হয়নি।",
+            "issues_invalid_fix": "সমাধান: JingMatrix LSPatch ডাউনলোড ও ইনস্টল করুন, তারপর 13.65.1.0 এবং 13.71.0.51 এর মধ্যবর্তী যেকোনো স্ন্যাপচ্যাট ভার্সন ইন্টিগ্রেটেড মোডে প্যাচ করুন। Embed Modules নির্বাচন করুন এবং Purrfect APK এম্বেড করুন। তারপর Purrfect সেটআপের সময় 'অটো সেটআপ এড়িয়ে যান' নির্বাচন করে অটো প্যাচার বাদ দিন।",
+            "status_downloading": "স্ন্যাপচ্যাট ডাউনলোড হচ্ছে {percent}%",
+            "status_patching": "প্যাচ করা হচ্ছে...",
+            "status_initializing": "শুরু হচ্ছে...",
+            "logs_copied": "লগ ক্লিপবোর্ডে কপি করা হয়েছে।",
+            "install_success": "প্যাচ করা APK ইনস্টল হয়েছে",
+            "start_button": "অটো প্যাচ শুরু করুন",
+            "install_button": "প্যাচ করা স্ন্যাপচ্যাট ইনস্টল করুন",
+            "already_installed_button": "ইতিমধ্যে ইনস্টল করা?",
+            "powered_by_label": "Jingmatrix Lspatch দ্বারা চালিত",
+            "logs_title": "লগস",
+            "copy_button": "কপি",
+            "log_line_prefix": "- {line}"
+        },
+        "permissions": {
+            "dialog": "চালিয়ে যেতে এই প্রয়োজনীয় বিষয়গুলো সম্পন্ন করুন:",
+            "notification_access": "নোটিফিকেশন অ্যাক্সেস",
+            "battery_optimization": "ব্যাটারি অপ্টিমাইজেশন",
+            "display_over_other_apps": "অন্যান্য অ্যাপের উপর প্রদর্শন",
+            "request_button": "অনুরোধ করুন",
+            "notification_access_description": "ডাউনলোড শেষ হওয়া মাত্রই আপনাকে জানায়।",
+            "battery_optimization_description": "ব্যাকগ্রাউন্ড টাস্কগুলো বন্ধ না করে চালু রাখে।",
+            "display_over_other_apps_description": "আপনি স্ন্যাপচ্যাটে থাকার সময় ফ্লোটিং ওভারলে চালু রাখে।",
+            "granted_label": "অনুমোদিত"
+        },
+        "pick_language": {
+            "current_selection": "বর্তমান নির্বাচন",
+            "browse_languages": "ভাষা ব্রাউজ করুন",
+            "change_anytime_hint": "আপনি Purrfect সেটিংস থেকে যেকোনো সময় এটি পরিবর্তন করতে পারেন।",
+            "available_languages": "উপলব্ধ ভাষা"
+        },
+        "root_install": {
+            "title": "স্ন্যাপচ্যাট ইনস্টলার",
+            "ready_log": "স্ন্যাপচ্যাট ইনস্টলার প্রস্তুত।",
+            "install_confirmed_log": "স্ন্যাপচ্যাট ইনস্টল নিশ্চিত হয়েছে। আপনি এগিয়ে যেতে পারেন।",
+            "download_recommended_status": "প্রস্তাবিত স্ন্যাপচ্যাট ভার্সন ({version}) ডাউনলোড হচ্ছে...",
+            "mark_installed_log": "ম্যানুয়ালি ইনস্টল হিসেবে চিহ্নিত করা হয়েছে। আপনি এগিয়ে যেতে পারেন।",
+            "start_download_log": "রুটেড ইনস্টলের জন্য স্ন্যাপচ্যাট ডাউনলোড শুরু হচ্ছে।",
+            "uninstall_prompt_status": "স্ন্যাপচ্যাট ইনস্টল করা আছে। দয়া করে প্রথমে এটি আনইনস্টল করুন (ডেটা রাখবেন না), তারপর আবার চেষ্টা করুন।",
+            "uninstall_prompt_error": "স্ন্যাপচ্যাট এখনও ইনস্টল করা আছে। এগিয়ে যেতে প্রথমে এটি আনইনস্টল করুন।",
+            "fetching_apk_status": "প্রস্তাবিত স্ন্যাপচ্যাট APK আনা হচ্ছে...",
+            "download_failed_error": "ডাউনলোড ব্যর্থ হয়েছে",
+            "download_completed_status": "ডাউনলোড সম্পন্ন: {fileName}",
+            "launching_installer_status": "ইনস্টলার চালু হচ্ছে...",
+            "failed_status": "ব্যর্থ হয়েছে: {message}",
+            "status_downloading": "স্ন্যাপচ্যাট ডাউনলোড হচ্ছে {percent}%",
+            "status_preparing": "ইনস্টলার প্রস্তুত হচ্ছে...",
+            "logs_copied": "লগ ক্লিপবোর্ডে কপি করা হয়েছে।",
+            "install_success": "স্ন্যাপচ্যাট ইনস্টল হয়েছে",
+            "download_button": "স্ন্যাপচ্যাট ডাউনলোড করুন",
+            "install_button": "স্ন্যাপচ্যাট ইনস্টল করুন",
+            "already_installed_button": "ইতিমধ্যে ইনস্টল করা?",
+            "logs_title": "লগস",
+            "copy_button": "কপি",
+            "log_line_prefix": "- {line}"
+        },
+        "save_folder": {
+            "description": "মিডিয়া যেখানে ডাউনলোড হবে সেই লোকেশনটি বেছে নিন।",
+            "destination_label": "গন্তব্য",
+            "system_default_label": "সিস্টেম ডিফল্ট",
+            "use_default_location_button": "ডিফল্ট লোকেশন ব্যবহার করুন",
+            "no_picker_title": "ফোল্ডার পিকার অনুপলব্ধ",
+            "no_picker_message": "কিছু ক্লোন/ডুয়াল-অ্যাপ এনভায়রনমেন্ট সিস্টেম ফোল্ডার পিকার ব্লক করে। আপনি সিস্টেম ডিফল্ট সেভ লোকেশন ব্যবহার চালিয়ে যেতে পারেন, অথবা কাস্টম ফোল্ডার নির্বাচন করতে ক্লোন মোডের বাইরে অ্যাপটি খুলুন।",
+            "use_default_button": "ডিফল্ট ব্যবহার করুন",
+            "permission_hint": "স্ন্যাপচ্যাট থেকে মিডিয়া ডাউনলোড ও সেভ করার জন্য Purrfect-এর স্টোরেজ পারমিশন প্রয়োজন।"
+        }
+    },
+    "scopes": {
+        "friend": "বন্ধু",
+        "group": "গ্রুপ"
+    },
+    "manager": {
+        "routes": {
+            "tasks": "টাস্কস",
+            "features": "ফিচারস",
+            "manage_rule_feature": "রুল ফিচার ম্যানেজ করুন",
+            "home": "হোম",
+            "home_about": "সম্পর্কে",
+            "home_settings": "সেটিংস",
+            "home_logs": "লগস",
+            "logger_history": "লগার হিস্ট্রি",
+            "logged_stories": "লগ করা স্টোরি",
+            "friend_tracker": "ফ্রেন্ড ট্র্যাকার",
+            "friend_tracker_catalog": "ফ্রেন্ড ট্র্যাকার ক্যাটালগ",
+            "manage_friend_tracker_repos": "ফ্রেন্ড ট্র্যাকার রিপোজিটরি ম্যানেজ করুন",
+            "edit_rule": "রুল এডিট করুন",
+            "file_imports": "ফাইল ইম্পোর্ট",
+            "manage_repos": "রিপোজিটরি ম্যানেজ করুন",
+            "social": "সোশ্যাল",
+            "manage_scope": "স্কোপ ম্যানেজ করুন",
+            "messaging_preview": "প্রিভিউ",
+            "scripts": "স্ক্রিপ্টস",
+            "manage_script_repos": "স্ক্রিপ্ট রিপোজিটরি ম্যানেজ করুন",
+            "view_logger_history": "লগার হিস্ট্রি",
+            "better_location": "বেটার লোকেশন"
+        },
+        "navigation": {
+            "customize_bottom_bar_title": "বটম বার কাস্টমাইজ করুন",
+            "customize_bottom_bar_subtitle": "আপনার হোম স্ক্রিনে কোন ট্যাবগুলো দেখাবে তা বেছে নিন",
+            "available_tabs_title": "উপলব্ধ ট্যাব",
+            "shown_tabs_title": "প্রদর্শিত ট্যাব",
+            "reset_button": "রিসেট",
+            "done_button": "সম্পন্ন"
+        },
+        "sections": {
+            "home": {
+                "version_title": "v{versionName}",
+                "update_title": "Purrfect আপডেট",
+                "update_content": "ভার্সন {version} এখন উপলব্ধ!",
+                "update_button": "ডাউনলোড",
+                "hero_tagline": "একটি Xposed মডিউল যা আপনার স্ন্যাপচ্যাট অভিজ্ঞতা উন্নত করার জন্য তৈরি",
+                "hero_version_label": "ভার্সন: {version} - {channel}",
+                "hero_build_label": "বিল্ড: {build}",
+                "update_ready_label": "ইনস্টল করার জন্য প্রস্তুত",
+                "purr_aura_active_label": "PurrAura সক্রিয়!",
+                "purr_aura_inactive_label": "PurrAura নিষ্ক্রিয়",
+                "open_settings_button": "সেটিংস খুলুন",
+                "wiki_button": "উইকি",
+                "github_button": "গিটহাব",
+                "telegram_button": "টেলিগ্রাম",
+                "channel_label_stable": "স্টেবল",
+                "channel_label_prerelease": "প্রি-রিলিজ",
+                "announcements_button_description": "ঘোষণা",
+                "update_arch_not_supported_toast": "স্বয়ংক্রিয় আপডেটের জন্য আপনার ডিভাইসের আর্কিটেকচার সমর্থিত নয়।",
+                "update_download_started_toast": "ডাউনলোড শুরু হয়েছে",
+                "update_download_completed_toast": "ডাউনলোড সম্পন্ন হয়েছে",
+                "update_install_failed_toast": "আপডেট ইনস্টল করতে ব্যর্থ। বিস্তারিত জানতে লগ দেখুন।",
+                "update_download_failed_toast": "ডাউনলোড ব্যর্থ: {error}",
+                "debug_build_summary_title": "আপনি Purrfect-এর একটি ডিবাগ বিল্ড চালাচ্ছেন",
+                "debug_build_summary_content": "ভার্সন {versionName} ({versionCode})",
+                "debug_build_summary_date": "বিল্ড তারিখ: {date} ({days} দিন আগে)",
+                "quick_actions_title": "কুইক অ্যাকশন",
+                "quick_actions_empty_title": "এখনও কোনো কুইক টাইল নেই",
+                "quick_actions_empty_subtitle": "আপনার সবচেয়ে বেশি ব্যবহৃত অ্যাকশন দিয়ে স্বপ্নের গ্রিড সাজান।",
+                "quick_actions_add_tile_button": "টাইল যোগ করুন",
+                "quick_actions_manage_button": "ম্যানেজ করুন",
+                "quick_actions_count_label": "{count} টি বাছাই করা শর্টকাট",
+                "enabled": "সক্রিয়",
+                "disabled": "নিষ্ক্রিয়",
+                "changelog_dialog_title": "চেঞ্জলগ",
+                "changelog_dialog_update_button": "আপডেট",
+                "changelog_dialog_cancel_button": "বাতিল",
+                "changelog_dialog_loading": "চেঞ্জলগ লোড হচ্ছে...",
+                "changelog_dialog_error": "চেঞ্জলগ লোড করতে ব্যর্থ",
+                "changelog_dialog_empty": "চেঞ্জলগ উপলব্ধ নেই",
+                "announcements_dialog_title": "ঘোষণা",
+                "announcements_dialog_close_button": "বন্ধ করুন",
+                "announcements_dialog_loading": "ঘোষণা লোড হচ্ছে...",
+                "announcements_dialog_error": "ঘোষণা লোড করতে ব্যর্থ",
+                "announcements_dialog_empty": "ঘোষণা উপলব্ধ নেই"
+            },
+            "home_about": {
+                "about_title": "Purrfect",
+                "about_tagline": "একটি Xposed মডিউল যা আপনার স্ন্যাপচ্যাট অভিজ্ঞতা উন্নত করার জন্য তৈরি!",
+                "about_lead_developers_title": "প্রধান ডেভেলপারগণ",
+                "about_story_title": "আমাদের গল্প",
+                "about_story": "Purrfect ২রা অক্টোবর, ২০২৫-এ SnapEnhance-এর একটি ফর্ক হিসেবে প্রতিষ্ঠিত হয়, যার উদ্দেশ্য ছিল ব্যবহারকারীদের তাদের প্রাপ্য মানসম্মত স্ন্যাপচ্যাট অভিজ্ঞতা প্রদান করা। এই অ্যাপটি SnapEnhance রিপোজিটরিতে একটি ছোট আপডেট হিসেবে আসার কথা ছিল, কিন্তু শীঘ্রই এটি একটি আলাদা অ্যাপে পরিণত হয় যেখানে কন্ট্রিবিউটররা ফিচার যোগ করতে থাকে। এরপর ডেভেলপার <RSR/> দলে যোগ দেন এবং অ্যাপটি দ্রুত একটি বড় সাফল্যে পরিণত হয়। আমরা অনেক ভালোবাসা ও সমর্থন পেয়েছি এবং মাত্র দুই দিনে ১ হাজারেরও বেশি ডাউনলোড অর্জন করেছি! আমরা সকল ব্যবহারকারী ও কন্ট্রিবিউটরদের ধন্যবাদ জানাই; আপনাদের সমর্থন ছাড়া আমরা এই পর্যায়ে পৌঁছাতে পারতাম না। আমরা SnapEnhance-এর প্রধান ডেভেলপার rhunk-কেও বিশেষ ধন্যবাদ জানাতে চাই, কারণ তিনি না থাকলে এই অ্যাপটির অস্তিত্বই থাকত না। আমরা তার কাছে চিরঋণী। পরিশেষে, আমরা আমাদের সকল অ্যাডমিন, বিশেষ করে: CLASSIC GENIUS, Harry, Sujal, Zain এবং schrodingerspet-কে ধন্যবাদ জানাতে চাই, যারা শুরু থেকেই আমাদের সাথে ছিলেন। আমরা Leo এবং Toxic-সহ সকল টেস্টারকেও ধন্যবাদ জানাই যারা ক্রমাগত টেস্ট করেছেন এবং বাগ রিপোর্ট করেছেন। আপনাদের অবদানের জন্য আমরা অত্যন্ত কৃতজ্ঞ।",
+                "about_thanks_title": "ভালোবাসাসহ, Purrfect টিম",
+                "about_magic_toast": "কিছু ম্যাজিক দেখতে এই স্ক্রিনে ৫ বার ট্যাপ করুন 😉!",
+                "github_button": "গিটহাব",
+                "telegram_button": "টেলিগ্রাম"
+            },
+            "home_logs": {
+                "no_logs_hint": "কোনো লগ উপলব্ধ নেই",
+                "refresh_hint": "নতুন এন্ট্রি দেখতে রিফ্রেশ করতে টানুন বা কোনো অ্যাকশন ট্রিগার করুন।",
+                "clear_logs_button": "লগ পরিষ্কার করুন",
+                "export_logs_button": "লগ এক্সপোর্ট করুন",
+                "saving_logs_toast": "লগ সেভ করা হচ্ছে, এতে কিছুটা সময় লাগতে পারে...",
+                "saved_logs_success_toast": "লগ সফলভাবে সেভ করা হয়েছে",
+                "saved_logs_failure_toast": "লগ সেভ করতে ব্যর্থ",
+                "read_logs_failed_toast": "লগ পড়তে ব্যর্থ!"
+            },
+            "home_settings": {
+                "actions_title": "অ্যাকশন",
+                "message_logger_title": "মেসেজ লগার",
+                "debug_title": "ডিবাগ",
+                "success_toast": "হয়ে গেছে!",
+                "message_logger_summary": "{messageCount}টি মেসেজ\n{storyCount}টি স্টোরি",
+                "export_button": "এক্সপোর্ট",
+                "import_button": "ইম্পোর্ট",
+                "clear_button": "পরিষ্কার",
+                "view_logger_history_button": "লগার হিস্ট্রি দেখুন",
+                "message_logger_import_title": "মেসেজ লগার ইম্পোর্ট",
+                "message_logger_import_text": "ইম্পোর্ট করলে আপনার বর্তমান মেসেজ লগার ডাটাবেস প্রতিস্থাপিত হবে। চালিয়ে যাবেন?",
+                "ui_settings_title": "UI সেটিংস",
+                "haptic_feedback_label": "হ্যাপটিক ফিডব্যাক",
+                "use_system_toasts_label": "সিস্টেম টোস্ট ব্যবহার করুন",
+                "updates_title": "আপডেট",
+                "auto_update_check": "অটো আপডেট চেক",
+                "update_check_frequency_daily": "দৈনিক",
+                "update_check_frequency_weekly": "সাপ্তাহিক",
+                "update_check_frequency_monthly": "মাসিক",
+                "update_channel_stable": "স্টেবল",
+                "update_channel_prerelease": "প্রি-রিলিজ",
+                "update_notification_channel_name": "আপডেট",
+                "update_notification_channel_description": "নতুন রিলিজ এলে নোটিফিকেশন পান",
+                "update_notification_title": "নতুন আপডেট উপলব্ধ",
+                "update_notification_text": "Purrfect খুলতে এবং সর্বশেষ বিল্ড ডাউনলোড করতে ট্যাপ করুন।",
+                "app_theme_title": "অ্যাপ থিম",
+                "theme_icon_description": "থিম চুজার খুলুন",
+                "theme_mode_system": "সিস্টেম",
+                "theme_mode_light": "লাইট",
+                "theme_mode_dark": "ডার্ক",
+                "friend_notes_title": "ফ্রেন্ড নোটস",
+                "friend_notes_description": "আপনার ফ্রেন্ড নোট ম্যানেজ এবং ব্যাকআপ করুন",
+                "friend_notes_no_notes_to_backup": "ব্যাকআপ করার মতো কোনো নোট নেই",
+                "friend_notes_backup_success": "ফ্রেন্ড নোট ব্যাকআপ হয়েছে",
+                "friend_notes_restore_success": "ফ্রেন্ড নোট রিস্টোর হয়েছে",
+                "backup_button": "ব্যাকআপ",
+                "restore_button": "রিস্টোর",
+                "view_button": "দেখুন",
+                "customize_bottom_bar_title": "বটম বার কাস্টমাইজ করুন",
+                "customize_bottom_bar_subtitle": "আপনার হোম স্ক্রিনে কোন ট্যাবগুলো দেখাবে তা বেছে নিন",
+                "available_tabs_title": "উপলব্ধ ট্যাব",
+                "reset_setup_title": "Purrfect রিসেট করুন",
+                "reset_setup_action": "রিসেট করুন এবং সেটআপ পুনরায় শুরু করুন",
+                "reset_setup_dialog_title": "আপনি কি নিশ্চিত?",
+                "reset_setup_dialog_text": "এটি Purrfect রিসেট করবে এবং সেটআপ পুনরায় শুরু করবে।",
+                "reset_button": "রিসেট",
+                "done_button": "সম্পন্ন",
+                "clear_friend_feed": "ফ্রেন্ড ফিড পরিষ্কার করুন",
+                "test_mode_label": "PurrAura সক্রিয় করুন",
+                "purr_aura_disable_title": "আপনি কি নিশ্চিত?",
+                "purr_aura_disable_text": "এটি করলে আপনার অ্যাকাউন্ট ঝুঁকির মুখে পড়বে এবং ব্যান হতে পারে!",
+                "disable_feature_loading_label": "ফিচার লোডিং নিষ্ক্রিয় করুন",
+                "disable_auto_mapper_label": "অটো ম্যাপার নিষ্ক্রিয় করুন",
+                "disable_bypass_indicator_label": "বাইপাস ইন্ডিকেটর নিষ্ক্রিয় করুন",
+                "open_file_failed_toast": "ফাইল খুলতে ব্যর্থ! {message}",
+                "import_failed_toast": "ইম্পোর্ট ব্যর্থ হয়েছে: {message}"
+            },
+            "retro_flight": {
+                "title": "রেট্রো ফ্লাইট",
+                "game_over_label": "গেম ওভার",
+                "restart_button": "রিস্টার্ট",
+                "left_button": "বাম",
+                "right_button": "ডান"
+            },
+            "tasks": {
+                "no_tasks": "কোনো টাস্ক নেই",
+                "merge_button": "একত্রিত করুন",
+                "summary_active": "{active} সক্রিয় \u00b7 {recent} সাম্প্রতিক",
+                "summary_idle": "অলস \u00b7 {recent} সাম্প্রতিক",
+                "running_count": "{count} টি চলছে",
+                "clear_button_description": "টাস্ক পরিষ্কার করুন",
+                "failed_to_open_file": "ফাইল খুলতে ব্যর্থ",
+                "merge_files_toast": "{count} টি ফাইল একত্রিত করা হচ্ছে",
+                "remove_selected_tasks_title": "আপনি কি নির্বাচিত টাস্কগুলো সরাতে চান?",
+                "remove_all_tasks_title": "আপনি কি সব টাস্ক সরাতে চান?",
+                "delete_files_option": "ফাইলগুলোও ডিলিট করুন",
+                "delete_files_option_hint": "স্টোরেজ থেকে মূল ফাইলগুলো স্থায়ীভাবে সরান",
+                "remove_selected_tasks_confirm": "{count} টি টাস্ক সরাবেন?",
+                "remove_all_tasks_confirm": "সব টাস্ক সরাবেন?"
+            },
+            "features": {
+            "disabled": "নিষ্ক্রিয়",
+            "export_option": "এক্সপোর্ট",
+            "import_option": "ইম্পোর্ট",
+            "reset_option": "রিসেট",
+            "config_export_success_toast": "কনফিগারেশন সফলভাবে এক্সপোর্ট হয়েছে",
+            "config_import_success_toast": "কনফিগারেশন সফলভাবে ইম্পোর্ট হয়েছে",
+            "config_import_failure_toast": "কনফিগারেশন ইম্পোর্ট করতে ব্যর্থ {error}",
+            "config_export_failure_toast": "কনফিগারেশন এক্সপোর্ট করতে ব্যর্থ {error}",
+            "saved_config_snackbar": "কনফিগারেশন সেভ হয়েছে",
+            "older_required": "এই ফিচারটি সঠিকভাবে কাজ করার জন্য স্ন্যাপচ্যাট v{version} বা পুরনো ভার্সন প্রয়োজন",
+            "newer_required": "এই ফিচারটি সঠিকভাবে কাজ করার জন্য স্ন্যাপচ্যাট v{version} বা নতুন ভার্সন প্রয়োজন",
+                "search_button": "অনুসন্ধান",
+                "search_results_count": "{count}টি মেসেজ",
+                "clear_history": "সার্চ হিস্ট্রি পরিষ্কার করুন",
+                "subtitle": "ফিচার খুঁজুন এবং ম্যানেজ করুন"
+            },
+            "bypass_status": {
+                "active": "PurrAura সক্রিয়",
+                "inactive": "PurrAura নিষ্ক্রিয়"
+            },
+            "manage_rule_feature": {
+                "disable_state_option": "নিষ্ক্রিয়",
+                "disable_state_subtext": "কোনো বন্ধু/গ্রুপ প্রভাবিত হবে না",
+                "whitelist_state_option": "এরা ছাড়া কেউ না...",
+                "whitelist_state_subtext": "শুধুমাত্র {count} জন বন্ধু/গ্রুপ এই রুলের দ্বারা প্রভাবিত হবে",
+                "whitelist_state_button": "অনুমোদিত বন্ধু/গ্রুপ নির্বাচন করুন",
+                "blacklist_state_option": "সবাই, এরা ছাড়া...",
+                "blacklist_state_subtext": "{count} জন বন্ধু/গ্রুপ ছাড়া সবাই এই রুলের দ্বারা প্রভাবিত হবে",
+                "blacklist_state_button": "বাদ দেওয়া বন্ধু/গ্রুপ নির্বাচন করুন",
+                "clear_list_button": "বন্ধু/গ্রুপের তালিকা পরিষ্কার করুন",
+                "dialog_clear_confirmation_text": "আপনি কি নিশ্চিত যে তালিকাটি পরিষ্কার করতে চান?",
+                "dialog_clear_confirm_button": "পরিষ্কার",
+                "dialog_clear_cancel_button": "বাতিল"
+            },
+            "social": {
+                "friends_tab": "বন্ধু",
+                "groups_tab": "গ্রুপ",
+                "search_button_description": "অনুসন্ধান",
+                "close_search_button_description": "অনুসন্ধান বন্ধ করুন",
+                "clear_search_button_description": "অনুসন্ধান পরিষ্কার করুন",
+                "empty_hint": "আপনার তালিকা এখন খালি",
+                "friends_empty_title": "এখনও কোনো বন্ধু যোগ করা হয়নি",
+                "groups_empty_title": "এখনও কোনো গ্রুপ সিঙ্ক করা হয়নি",
+                "streaks_expiration_short": "{hours} ঘণ্টা",
+                "social_tagline": "স্কোপ, স্ট্রিক এবং প্রিভিউ ম্যানেজ করুন",
+                "social_empty_hint": "বন্ধু বা গ্রুপ সিঙ্ক করতে + বাটনে ট্যাপ করুন।"
+            },
+            "manage_scope": {
+                "manage_scope_title": "ম্যানেজ করুন",
+                "logged_stories_button": "লগ করা স্টোরি দেখান",
+                "e2ee_title": "এন্ড-টু-এন্ড এনক্রিপশন",
+                "e2ee_subtitle": "এই বন্ধুর জন্য শেয়ার্ড কী ম্যানেজ করুন।",
+                "export_base64_button": "Base64 এক্সপোর্ট করুন",
+                "import_base64_button": "Base64 ইম্পোর্ট করুন",
+                "invalid_key_size_32_bytes": "অবৈধ কী সাইজ। ৩২-বাইটের কী প্রদান করুন।",
+                "successfully_imported_key": "কী সফলভাবে ইম্পোর্ট করা হয়েছে।",
+                "failed_to_import_key": "কী ইম্পোর্ট করতে ব্যর্থ: {message}",
+                "rules_title": "রুলস",
+                "participants_text": "{count} জন অংশগ্রহণকারী",
+                "not_found": "পাওয়া যায়নি",
+                "streaks_title": "স্ট্রিকস",
+                "streaks_length_text": "দৈর্ঘ্য: {length}",
+                "streaks_expiration_text": "{eta}-এ মেয়াদ শেষ হবে",
+                "streaks_expiration_text_expired": "মেয়াদ শেষ",
+                "reminder_button": "রিমাইন্ডার সেট করুন",
+                "delete_scope_confirm_dialog_title": "আপনি কি নিশ্চিত যে আপনি একটি {scope} ডিলিট করতে চান?",
+                "notes_placeholder": "নোট যোগ করতে ক্লিক করুন"
+            },
+            "logged_stories": {
+                "story_failed_to_load": "লোড করতে ব্যর্থ",
+                "no_stories": "কোনো স্টোরি পাওয়া যায়নি",
+                "save_from_cache_button": "ক্যাশ থেকে সেভ করুন"
+            },
+            "messaging_preview": {
+                "bridge_connection_failed": "ব্রিজে সংযোগ করতে ব্যর্থ। নিশ্চিত করুন স্ন্যাপচ্যাট ব্যাকগ্রাউন্ডে চলছে।",
+                "bridge_connection_error": "ব্রিজে সংযোগ করতে ব্যর্থ। নিশ্চিত করুন স্ন্যাপচ্যাট ব্যাকগ্রাউন্ডে চলছে।",
+                "bridge_init_failed": "মেসেজিং ব্রিজ শুরু করতে ব্যর্থ। নিশ্চিত করুন স্ন্যাপচ্যাট ব্যাকগ্রাউন্ডে চলছে।",
+                "message_fetch_failed": "মেসেজ আনতে ব্যর্থ",
+                "no_message_hint": "কোনো মেসেজ নেই",
+                "sender_unknown": "অজানা",
+                "sender_you": "আপনি",
+                "sender_friend": "বন্ধু",
+                "subtitle": "নির্বাচন করতে চেপে ধরুন",
+                "actions_title": "কনভারসেশন অ্যাকশন",
+                "choose_message_types_subtitle": "মেসেজের ধরন বেছে নিন",
+                "save_selection_option": "নির্বাচন সেভ করুন",
+                "save_all_option": "সব সেভ করুন",
+                "save_selected_messages_subtitle": "নির্বাচিত মেসেজ সেভ করুন",
+                "save_by_content_type_subtitle": "কন্টেন্টের ধরন অনুযায়ী সেভ করুন",
+                "unsave_selection_option": "নির্বাচন আনসেভ করুন",
+                "unsave_all_option": "সব আনসেভ করুন",
+                "unsave_selected_messages_subtitle": "নির্বাচিত মেসেজ আনসেভ করুন",
+                "unsave_by_content_type_subtitle": "কন্টেন্টের ধরন অনুযায়ী আনসেভ করুন",
+                "mark_selection_as_seen_option": "নির্বাচিত স্ন্যাপ 'সিন' হিসেবে চিহ্নিত করুন",
+                "mark_all_as_seen_option": "সব স্ন্যাপ 'সিন' হিসেবে চিহ্নিত করুন",
+                "mark_as_seen_subtitle": "স্ন্যাপগুলোকে 'সিন' হিসেবে চিহ্নিত করে",
+                "delete_selection_option": "নির্বাচন ডিলিট করুন",
+                "delete_all_option": "সব ডিলিট করুন",
+                "delete_selected_messages_subtitle": "নির্বাচিত মেসেজ ডিলিট করুন",
+                "delete_by_content_type_subtitle": "কন্টেন্টের ধরন অনুযায়ী ডিলিট করুন",
+                "processed_message_toast": "{count} টি মেসেজ প্রসেস করা হয়েছে",
+                "processed_messages_toast": "{count} টি মেসেজ প্রসেস করা হয়েছে",
+                "processed_messages_text": "প্রসেস করা হয়েছে {count}",
+                "close_button_description": "নির্বাচন পরিষ্কার করুন"
+            },
+            "logger_history": {
+                "list_friend_format": "বন্ধু {name}",
+                "list_group_format": "গ্রুপ {name}",
+                "no_more_messages": "আর কোনো মেসেজ নেই",
+                "reverse_order_checkbox": "উল্টো ক্রম",
+                "chat_attachment": "অ্যাটাচমেন্ট {index}",
+                "empty_message": "খালি চ্যাট মেসেজ",
+                "message_parse_failed": "মেসেজ পার্স করতে ব্যর্থ",
+                "unknown_sender": "অজানা প্রেরক",
+                "download_attachment_failed_toast": "অ্যাটাচমেন্ট ডাউনলোড করতে ব্যর্থ"
+            },
+            "file_imports": {
+                "import_file_button": "ফাইল ইম্পোর্ট করুন",
+                "file_not_found": "ফাইল পাওয়া যায়নি",
+                "file_import_failed": "ফাইল ইম্পোর্ট করতে ব্যর্থ: {error}",
+                "file_imported": "ফাইল সফলভাবে ইম্পোর্ট হয়েছে",
+                "file_delete_failed": "ফাইল ডিলিট করতে ব্যর্থ",
+                "no_files_hint": "এখানে আপনি স্ন্যাপচ্যাটে ব্যবহারের জন্য ফাইল ইম্পোর্ট করতে পারেন। ফাইল ইম্পোর্ট করতে নিচের বাটনে চাপ দিন।"
+            },
+            "better_location": {
+                "spoofed_coordinates_title": "Lat {latitude}, Lng {longitude}",
+                "save_coordinates_dialog_title": "স্থানাঙ্ক সেভ করুন",
+                "saved_name_dialog_hint": "সেভ করা নাম",
+                "latitude_dialog_hint": "অক্ষাংশ (Latitude)",
+                "longitude_dialog_hint": "দ্রাঘিমাংশ (Longitude)",
+                "save_dialog_button": "সেভ করুন",
+                "choose_location_button": "একটি লোকেশন বাছুন",
+                "search_or_tap_map_hint": "অনুসন্ধান করুন বা ম্যাপে ট্যাপ করুন",
+                "search_location_placeholder": "লোকেশন অনুসন্ধান করুন...",
+                "search_icon_description": "অনুসন্ধান",
+                "searching_label": "অনুসন্ধান করা হচ্ছে...",
+                "manual_coordinates_hint": "ম্যানুয়ালি স্থানাঙ্ক ঠিক করুন।",
+                "saved_coordinates_subtitle": "আপনার সেভ করা স্পুফ লোকেশন ম্যানেজ করুন",
+                "teleport_to_friend_button": "বন্ধুর কাছে টেলিপোর্ট করুন",
+                "spoof_location_toggle": "লোকেশন স্পুফ করুন",
+                "suspend_location_updates": "লোকেশন আপডেট স্থগিত করুন",
+                "saved_coordinates_title": "সেভ করা স্থানাঙ্ক",
+                "no_saved_coordinates_hint": "কোনো সেভ করা স্থানাঙ্ক নেই",
+                "delete_dialog_title": "সেভ করা স্থানাঙ্ক ডিলিট করবেন?",
+                "delete_dialog_message": "আপনি কি নিশ্চিত যে এই সেভ করা স্থানাঙ্কটি ডিলিট করতে চান?",
+                "teleport_to_friend_title": "বন্ধুর কাছে টেলিপোর্ট করুন",
+                "search_bar": "অনুসন্ধান",
+                "no_friends_map": "ম্যাপে কোনো বন্ধু নেই",
+                "no_friends_found": "কোনো বন্ধু পাওয়া যায়নি",
+                "include_saved_locations": "সেভ করা লোকেশন অন্তর্ভুক্ত করুন",
+                "include_saved_locations_description": "আপনার সেভ করা লোকেশন স্থানাঙ্ক এক্সপোর্ট করুন",
+                "location_search_provider_title": "লোকেশন সার্চ প্রোভাইডার",
+                "google_maps_api_key_title": "Google Maps API কী",
+                "option_osm": "OpenStreetMap (ফ্রি)",
+                "option_google_maps": "Google Maps"
+            }
+        },
+        "dialogs": {
+            "add_friend": {
+                "title": "বন্ধু বা গ্রুপ যোগ করুন",
+                "search_hint": "অনুসন্ধান",
+                "fetch_error": "ডেটা আনতে ব্যর্থ",
+                "category_groups": "গ্রুপ",
+                "category_friends": "বন্ধু",
+                "participants_text": "{count} জন অংশগ্রহণকারী",
+                "unselect_all_button": "সব অনির্বাচন করুন"
+            },
+            "scripting": {
+                "repo_hint": "একটি রিপোজিটরি URL পেস্ট করুন"
+            },
+            "scripting_warning": {
+                "title": "সতর্কতা",
+                "content": "Purrfect-এ একটি স্ক্রিপ্টিং টুল আছে, যা আপনার ডিভাইসে ব্যবহারকারীর নির্দিষ্ট কোড চালানোর অনুমতি দেয়। অত্যন্ত সতর্ক থাকুন এবং শুধুমাত্র পরিচিত, নির্ভরযোগ্য উৎস থেকে মডিউল ইনস্টল করুন। অনুমোদিত নয় বা যাচাই করা হয়নি এমন মডিউল আপনার সিস্টেমের নিরাপত্তার জন্য ঝুঁকিপূর্ণ হতে পারে।"
+            },
+            "reset_config": {
+                "title": "কনফিগারেশন রিসেট করবেন?",
+                "content": "আপনি কি নিশ্চিত যে কনফিগারেশন রিসেট করতে চান?",
+                "success_toast": "কনফিগারেশন সফলভাবে রিসেট হয়েছে"
+            },
+            "quick_actions_dialog": {
+                "title": "কুইক অ্যাকশন",
+                "subtitle": "আপনার প্রিয় টুলগুলো দ্রুত অ্যাক্সেস করুন"
+            },
+            "export_config": {
+                "title": "সংবেদনশীল ডেটা এক্সপোর্ট করবেন?",
+                "content": "আপনি কি সংবেদনশীল ডেটাসহ কনফিগারেশন এক্সপোর্ট করতে চান? (যেমন লোকেশন স্থানাঙ্ক, ইত্যাদি)"
+            },
+            "messaging_action": {
+                "title": "প্রসেস করার জন্য কন্টেন্টের ধরন বেছে নিন",
+                "select_all_button": "সব নির্বাচন করুন"
+            },
+            "file_imports": {
+                "no_files_settings_hint": "কোনো ফাইল পাওয়া যায়নি। নিশ্চিত করুন আপনি ফাইল ইম্পোর্ট সেকশনে প্রয়োজনীয় ফাইল ইম্পোর্ট করেছেন",
+                "settings_select_file_hint": "একটি ইম্পোর্ট করা ফাইল নির্বাচন করুন",
+                "settings_select_file_subtitle": "আপনার ইম্পোর্ট করা ফাইলের তালিকা থেকে একটি ফাইল বাছুন"
+            }
+        },
+        "scripting": {
+            "actions_button": "অ্যাকশন",
+            "actions_title": "অ্যাকশন",
+            "catalog_tab": "ক্যাটালগ",
+            "clear_module_data_button": "ডেটা পরিষ্কার করুন",
+            "clear_module_data_failed": "মডিউল ডেটা পরিষ্কার করতে ব্যর্থ",
+            "delete_module_button": "ডিলিট",
+            "delete_module_failed": "মডিউল ডিলিট করতে ব্যর্থ",
+            "documentation_button": "ডকুমেন্টেশন",
+            "download_script_failed": "স্ক্রিপ্ট ডাউনলোড করতে ব্যর্থ",
+            "downloading_script": "স্ক্রিপ্ট ডাউনলোড হচ্ছে...",
+            "edit_module_button": "এডিট",
+            "enter_url_label": "URL প্রবেশ করান",
+            "import_button": "ইম্পোর্ট",
+            "import_from_url_button": "URL থেকে ইম্পোর্ট",
+            "import_script_from_url_title": "URL থেকে স্ক্রিপ্ট ইম্পোর্ট",
+            "import_failed": "ইম্পোর্ট ব্যর্থ হয়েছে: {message}",
+            "import_script_warning": "শুধুমাত্র বিশ্বস্ত উৎস থেকে স্ক্রিপ্ট ইনস্টল করুন।",
+            "installed_scripts_tab": "ইনস্টল করা হয়েছে",
+            "manage_repos_button": "রিপো ম্যানেজ করুন",
+            "module_data_cleared": "মডিউল ডেটা পরিষ্কার হয়েছে!",
+            "module_not_found": "মডিউল পাওয়া যায়নি",
+            "no_description": "কোনো বিবরণ নেই",
+            "no_scripts_folder_selected_title": "শুরু করতে আপনার স্ক্রিপ্ট ফোল্ডার নির্বাচন করুন",
+            "no_scripts_found_title": "কোনো স্ক্রিপ্ট পাওয়া যায়নি",
+            "no_settings_for_module": "এই মডিউলের কোনো সেটিংস নেই",
+            "open_module_failed": "মডিউল ফাইল খুলতে ব্যর্থ",
+            "open_scripts_folder_button": "স্ক্রিপ্ট ফোল্ডার খুলুন",
+            "loaded_script": "লোড করা স্ক্রিপ্ট {name}",
+            "unloaded_script": "আনলোড করা স্ক্রিপ্ট {name}",
+            "script_already_installed": "স্ক্রিপ্ট ইতিমধ্যে ইনস্টল করা আছে",
+            "select_folder_button": "ফোল্ডার বাছুন",
+            "select_scripts_folder_toast": "দয়া করে প্রথমে একটি স্ক্রিপ্ট ফোল্ডার নির্বাচন করুন",
+            "update_module_button": "মডিউল আপডেট করুন",
+            "update_module_failed": "মডিউল আপডেট করতে ব্যর্থ",
+            "use_catalog_to_add_scripts": "স্ক্রিপ্ট যোগ করতে ক্যাটালগ ব্যবহার করুন",
+            "ok_button_timeout": "ঠিক আছে {timeout}",
+            "catalog": {
+                "no_repos_added": "কোনো রিপোজিটরি যোগ করা হয়নি",
+                "repo_list_info": "রিপোজিটরি এখানে খুঁজুন:",
+                "link_text": "রিপোজিটরি তালিকা",
+                "loading": "ক্যাটালগ লোড হচ্ছে...",
+                "script_already_installed": "স্ক্রিপ্ট ইতিমধ্যে ইনস্টল করা আছে",
+                "script_downloaded": "স্ক্রিপ্ট ডাউনলোড হয়েছে",
+                "could_not_create_file": "ফাইল তৈরি করা যায়নি",
+                "no_scripts_folder_selected": "প্রথমে একটি স্ক্রিপ্ট ফোল্ডার নির্বাচন করুন",
+                "no_scripts_available": "কোনো স্ক্রিপ্ট উপলব্ধ নেই",
+                "installed_button": "ইনস্টল করা হয়েছে",
+                "download_button": "ডাউনলোড"
+            },
+            "repos": {
+                "no_repos_added": "কোনো রিপোজিটরি যোগ করা হয়নি",
+                "add_repo_button": "রিপোজিটরি যোগ করুন",
+                "add_repo_dialog_title": "রিপোজিটরি যোগ করুন",
+                "repo_url_label": "রিপোজিটরি URL",
+                "add_button": "যোগ করুন",
+                "invalid_repo_title": "অবৈধ রিপোজিটরি",
+                "invalid_repo_error": "এই রিপোজিটরিতে প্রয়োজনীয় ডেটা অনুপস্থিত।",
+                "repo_added_toast": "রিপোজিটরি যোগ করা হয়েছে",
+                "add_repo_failed_toast": "রিপোজিটরি যোগ করতে ব্যর্থ: {message}",
+                "remove_button": "সরান",
+                "remove_repo_dialog_title": "রিপোজিটরি সরান",
+                "remove_repo_dialog_text": "আপনি কি নিশ্চিত যে এই রিপোজিটরি সরাতে চান?"
+            }
+        },
+        "friend_tracker": {
+            "rules_tab": "রুলস",
+            "logs_tab": "লগস",
+            "catalog_button": "ক্যাটালগ",
+            "add_rule_button": "রুল যোগ করুন",
+            "import_button": "ইম্পোর্ট",
+            "filters_title": "ফিল্টার",
+            "search_by_label": "অনুসন্ধানের মাধ্যম",
+            "newest_first_label": "নতুনগুলো আগে",
+            "since_label": "শুরু",
+            "until_label": "শেষ",
+            "unit_label": "ইউনিট",
+            "pick_a_date_button": "তারিখ বাছুন",
+            "export_button": "এক্সপোর্ট",
+            "delete_button": "ডিলিট",
+            "search_placeholder": "অনুসন্ধান",
+            "no_logs_found": "কোনো লগ পাওয়া যায়নি",
+            "no_rules_found": "কোনো রুল পাওয়া যায়নি",
+            "export_logs_dialog_title": "লগ এক্সপোর্ট করুন",
+            "export_logs_dialog_confirm_text": "বর্তমান ফিল্টার ব্যবহার করে লগ এক্সপোর্ট করবেন?",
+            "export_as_button": "{type} হিসেবে এক্সপোর্ট করুন",
+            "new_rule_title": "নতুন রুল",
+            "edit_rule_title": "রুল এডিট করুন",
+            "general_section_title": "সাধারণ",
+            "rule_name_label": "রুলের নাম",
+            "default_rule_name": "নতুন রুল",
+            "author_name_label": "লেখক",
+            "scope_section_title": "স্কোপ",
+            "scope_all": "সব বন্ধু/গ্রুপ",
+            "scope_whitelist": "এরা ছাড়া কেউ না",
+            "scope_blacklist": "সবাই, এরা ছাড়া",
+            "events_section_title": "ইভেন্ট",
+            "events_suffix": "ইভেন্ট",
+            "scopes_suffix": "স্কোপ",
+            "no_events_text": "এখনও কোনো ইভেন্ট যোগ করা হয়নি",
+            "add_event_dialog_title": "ইভেন্ট যোগ করুন",
+            "event_type_label": "ইভেন্টের ধরন",
+            "triggers_title": "ট্রিগার",
+            "conditions_title": "শর্তাবলী",
+            "condition_only_inside_conversation": "শুধুমাত্র যখন আমি কনভারসেশনে থাকি",
+            "condition_only_outside_conversation": "শুধুমাত্র যখন আমি কনভারসেশনের বাইরে থাকি",
+            "condition_only_when_app_active": "শুধুমাত্র যখন স্ন্যাপচ্যাট সক্রিয় থাকে",
+            "condition_only_when_app_inactive": "শুধুমাত্র যখন স্ন্যাপচ্যাট নিষ্ক্রিয় থাকে",
+            "condition_no_push_notification_when_app_active": "স্ন্যাপচ্যাট সক্রিয় থাকলে কোনো নোটিফিকেশন নয়",
+            "add_button": "যোগ করুন",
+            "cannot_save_rule_dialog_title": "রুল সেভ করা যাচ্ছে না",
+            "cannot_save_rule_dialog_text": "এই রুলটি সেভ করতে খালি ঘরগুলো পূরণ করুন।",
+            "duplicate_rule_name_dialog_title": "ডুপ্লিকেট রুলের নাম",
+            "duplicate_rule_name_dialog_text": "এই নামের একটি রুল ইতিমধ্যে বিদ্যমান। একটি নতুন নাম বাছুন।",
+            "discard_changes_dialog_title": "পরিবর্তন বাতিল করবেন?",
+            "discard_changes_dialog_text": "আপনার কিছু সেভ না করা পরিবর্তন আছে। সেগুলো বাতিল করবেন?",
+            "rule_subtitle": "এই রুলের জন্য ট্রিগার এবং স্কোপ কনফিগার করুন।",
+            "discard_button": "বাতিল",
+            "enabled_label": "সক্রিয়",
+            "disabled_label": "নিষ্ক্রিয়",
+            "delete_rule_dialog_title": "রুল ডিলিট করবেন?",
+            "delete_rule_dialog_text": "আপনি কি নিশ্চিত যে এই রুলটি ডিলিট করতে চান?",
+            "no_repos_added": "কোনো রিপোজিটরি যোগ করা হয়নি",
+            "import_dialog_title": "রুল ইম্পোর্ট করুন",
+            "read_file_failed_toast": "ফাইল পড়তে ব্যর্থ: {message}",
+            "bulk_import_button": "বাল্ক ইম্পোর্ট",
+            "individual_import_button": "সিঙ্গেল ইম্পোর্ট",
+            "invalid_import_type_dialog_title": "অবৈধ ইম্পোর্ট",
+            "invalid_import_type_dialog_text": "নির্বাচিত ফাইলের ধরন ইম্পোর্ট মোডের সাথে মেলে না।",
+            "export_dialog_title": "রুল এক্সপোর্ট করুন",
+            "bulk_export_button": "বাল্ক এক্সপোর্ট",
+            "individual_export_button": "সিঙ্গেল এক্সপোর্ট",
+            "reverse_order_checkbox": "উল্টো ক্রম",
+            "delete_logs_dialog_title": "লগ ডিলিট করবেন?",
+            "delete_logs_dialog_confirm_text": "বর্তমান ফিল্টারের সাথে মেলা সব লগ ডিলিট করবেন?",
+            "select_friends_groups_button": "বন্ধু / গ্রুপ নির্বাচন করুন"
+        },
+        "friend_tracker_export": {
+            "title": "ফ্রেন্ড ট্র্যাকার এক্সপোর্ট",
+            "save_button": "সেভ করুন",
+            "back_button_description": "ফিরে যান",
+            "expand_button_description": "ক্যাটাগরি প্রসারিত বা সংকুচিত করুন",
+            "tracker_author_label": "লেখক",
+            "tracker_enabled_label": "সক্রিয়",
+            "tracker_enabled_value": "সক্রিয়",
+            "tracker_disabled_value": "নিষ্ক্রিয়",
+            "exported_toast": "ট্র্যাকার কনফিগারেশন এক্সপোর্ট হয়েছে",
+            "export_failed_toast": "ট্র্যাকার এক্সপোর্ট করতে ব্যর্থ: {message}"
+        },
+        "friend_tracker_import": {
+            "title": "ফ্রেন্ড ট্র্যাকার ইম্পোর্ট",
+            "confirm_button": "ইম্পোর্ট",
+            "back_button_description": "ফিরে যান",
+            "expand_button_description": "ক্যাটাগরি প্রসারিত বা সংকুচিত করুন",
+            "tracker_author_label": "লেখক",
+            "tracker_enabled_label": "সক্রিয়",
+            "tracker_enabled_value": "সক্রিয়",
+            "tracker_disabled_value": "নিষ্ক্রিয়",
+            "imported_toast": "ট্র্যাকার ইম্পোর্ট হয়েছে",
+            "import_failed_toast": "ট্র্যাকার ইম্পোর্ট করতে ব্যর্থ: {message}"
+        },
+        "friend_tracker_catalog": {
+            "title": "ফ্রেন্ড ট্র্যাকার ক্যাটালগ",
+            "no_repos_added": "কোনো রিপোজিটরি যোগ করা হয়নি",
+            "manage_repos_description": "রিপোজিটরি ম্যানেজ করুন"
+        },
+        "friend_tracker_repos": {
+            "no_repos_added": "কোনো রিপোজিটরি যোগ করা হয়নি",
+            "add_repo_button": "রিপোজিটরি যোগ করুন",
+            "add_repo_dialog_title": "রিপোজিটরি যোগ করুন",
+            "repo_url_label": "রিপোজিটরি URL",
+            "add_button": "যোগ করুন",
+            "invalid_repo_title": "অবৈধ রিপোজিটরি",
+            "invalid_repo_error": "এই রিপোজিটরিতে প্রয়োজনীয় ডেটা অনুপস্থিত।",
+            "repo_added_toast": "রিপোজিটরি যোগ করা হয়েছে",
+            "add_repo_failed_toast": "রিপোজিটরি যোগ করতে ব্যর্থ: {message}",
+            "remove_button": "সরান",
+            "remove_repo_dialog_title": "রিপোজিটরি সরান",
+            "remove_repo_dialog_text": "আপনি কি নিশ্চিত যে এই রিপোজিটরি সরাতে চান?"
+        },
+        "logger_history": {
+            "select_conversation_placeholder": "একটি কনভারসেশন নির্বাচন করুন"
+        },
+        "features": {
+            "config_export": {
+                "title": "কনফিগ সারাংশ এক্সপোর্ট",
+                "back_button_description": "ফিরে যান",
+                "save_button": "সেভ করুন",
+                "expand_button_description": "ক্যাটাগরি প্রসারিত বা সংকুচিত করুন",
+                "enabled": "সক্রিয়",
+                "disabled": "নিষ্ক্রিয়",
+                "enable_feature": "ফিচার সক্রিয় করুন"
+            },
+            "config_import": {
+                "title": "কনফিগ সারাংশ ইম্পোর্ট",
+                "back_button_description": "ফিরে যান",
+                "confirm_button": "ইম্পোর্ট",
+                "expand_button_description": "ক্যাটাগরি প্রসারিত বা সংকুচিত করুন",
+                "enabled": "সক্রিয়",
+                "disabled": "নিষ্ক্রিয়",
+                "enable_feature": "ফিচার সক্রিয় করুন",
+                "config_imported_toast": "কনফিগারেশন সফলভাবে ইম্পোর্ট হয়েছে",
+                "config_import_failure_toast": "কনফিগারেশন ইম্পোর্ট করতে ব্যর্থ {error}"
+            }
+        }
+    },
+    "rules": {
+        "toasts": {
+            "enabled": "{ruleName} সক্রিয় হয়েছে",
+            "disabled": "{ruleName} নিষ্ক্রিয় হয়েছে"
+        },
+        "modes": {
+            "blacklist": "ব্ল্যাকলিস্ট মোড",
+            "whitelist": "হোয়াইটলিস্ট মোড"
+        },
+        "properties": {
+            "auto_download": {
+                "name": "অটো ডাউনলোড",
+                "description": "স্ন্যাপ দেখার সময় সেগুলো স্বয়ংক্রিয়ভাবে ডাউনলোড করে",
+                "options": {
+                    "blacklist": "অটো ডাউনলোড থেকে বাদ দিন",
+                    "whitelist": "অটো ডাউনলোড"
+                }
+            },
+            "stealth": {
+                "name": "স্টেলথ মোড",
+                "description": "অন্যদের জানতে দেয় না যে আপনি তাদের স্ন্যাপ/চ্যাট এবং কনভারসেশন খুলেছেন",
+                "options": {
+                    "blacklist": "স্টেলথ মোড থেকে বাদ দিন",
+                    "whitelist": "স্টেলথ মোড"
+                }
+            },
+            "auto_save": {
+                "name": "অটো সেভ",
+                "description": "চ্যাট মেসেজ দেখার সময় তা সেভ করে",
+                "options": {
+                    "blacklist": "অটো সেভ থেকে বাদ দিন",
+                    "whitelist": "অটো সেভ"
+                }
+            },
+            "unsaveable_messages": {
+                "name": "আনসেভেবল মেসেজ",
+                "description": "চ্যাটে মেসেজগুলো অন্য কেউ সেভ করতে পারবে না",
+                "options": {
+                    "blacklist": "আনসেভেবল মেসেজ থেকে বাদ দিন",
+                    "whitelist": "আনসেভেবল মেসেজ"
+                }
+            },
+            "auto_open_snaps": {
+                "name": "অটো ওপেন স্ন্যাপস",
+                "description": "স্ন্যাপ পাওয়ার সাথে সাথে তা স্বয়ংক্রিয়ভাবে খুলে দেয়",
+                "options": {
+                    "blacklist": "অটো ওপেন স্ন্যাপস থেকে বাদ দিন",
+                    "whitelist": "অটো ওপেন স্ন্যাপস"
+                }
+            },
+            "hide_friend_feed": {
+                "name": "ফ্রেন্ড ফিড থেকে লুকান"
+            },
+            "e2e_encryption": {
+                "name": "E2E এনক্রিপশন ব্যবহার করুন"
+            },
+            "pin_conversation": {
+                "name": "কনভারসেশন পিন করুন"
+            },
+            "exclude_message_logger": {
+                "name": "মেসেজ লগার থেকে বাদ দিন"
+            },
+            "auto_reply": {
+                "name": "অটো রিপ্লাই",
+                "description": "আপনি যখন দূরে থাকেন তখন আসা মেসেজের স্বয়ংক্রিয় উত্তর পাঠায়",
+                "options": {
+                    "blacklist": "অটো রিপ্লাই থেকে বাদ দিন",
+                    "whitelist": "অটো রিপ্লাই"
+                }
+            },
+            "auto_delete_sent_messages": {
+                "name": "পাঠানো মেসেজ অটো ডিলিট",
+                "description": "একটি নির্দিষ্ট সময়ের পর পাঠানো মেসেজগুলো স্বয়ংক্রিয়ভাবে ডিলিট করে",
+                "options": {
+                    "blacklist": "পাঠানো মেসেজ অটো ডিলিট থেকে বাদ দিন",
+                    "whitelist": "পাঠানো মেসেজ অটো ডিলিট"
+                }
+            },
+            "message_logger": {
+                "name": "মেসেজ লগার",
+                "description": "মেসেজ ডিলিট হয়ে গেলেও তার একটি কপি রাখে",
+                "options": {
+                    "blacklist": "মেসেজ লগার থেকে বাদ দিন",
+                    "whitelist": "মেসেজ লগার"
+                }
+            },
+            "auto_read": {
+                "name": "অটো রিড",
+                "description": "স্বয়ংক্রিয়ভাবে স্ন্যাপ এবং চ্যাট 'পড়া হয়েছে' হিসেবে চিহ্নিত করে",
+                "options": {
+                    "blacklist": "অটো রিড থেকে বাদ দিন",
+                    "whitelist": "অটো রিড"
+                }
+            },
+            "hide_typing_indicator": {
+                "name": "টাইপিং ইন্ডিকেটর লুকান",
+                "description": "আপনি যখন টাইপ করছেন তখন অন্যদের তা দেখতে দেয় না",
+                "options": {
+                    "blacklist": "টাইপিং ইন্ডিকেটর লুকানো থেকে বাদ দিন",
+                    "whitelist": "টাইপিং ইন্ডিকেটর লুকান"
+                }
+            }
+        }
+    },
+    "actions": {
+        "clean_snapchat_cache": {
+            "name": "স্ন্যাপচ্যাট ক্যাশ পরিষ্কার করুন",
+            "description": "স্ন্যাপচ্যাটের ক্যাশ পরিষ্কার করে"
+        },
+        "manage_friend_list": {
+            "name": "ফ্রেন্ড লিস্ট ম্যানেজ করুন",
+            "description": "ব্যাকআপের সময় আপনার বন্ধুদের তালিকা ইম্পোর্ট/এক্সপোর্ট করুন"
+        },
+        "export_chat_messages": {
+            "name": "চ্যাট মেসেজ এক্সপোর্ট করুন",
+            "description": "কনভারসেশনের মেসেজগুলো একটি JSON/HTML/TXT ফাইলে এক্সপোর্ট করে"
+        },
+        "export_memories": {
+            "name": "মেমোরিজ এক্সপোর্ট করুন",
+            "description": "মেমোরিগুলো একটি ZIP ফাইলে এক্সপোর্ট করে"
+        },
+        "bulk_messaging_action": {
+            "name": "বাল্ক মেসেজিং অ্যাকশন",
+            "description": "বন্ধু ডিলিট করা বা কনভারসেশন গণহারে ডিলিট করার মতো কাজগুলো সম্পন্ন করে"
+        },
+        "regen_mappings": {
+            "name": "ম্যাপিং রিজেনারেট করুন",
+            "description": "ম্যানুয়ালি ম্যাপিং রিজেনারেট করুন"
+        },
+        "change_language": {
+            "name": "ভাষা পরিবর্তন করুন",
+            "description": "Purrfect-এর ভাষা পরিবর্তন করুন"
+        },
+        "file_imports": {
+            "name": "ফাইল ইম্পোর্টস",
+            "description": "স্ন্যাপচ্যাটে ব্যবহারের জন্য ফাইল ইম্পোর্ট করুন"
+        },
+        "friend_tracker": {
+            "name": "ফ্রেন্ড ট্র্যাকার",
+            "description": "স্ন্যাপচ্যাটে আপনার বন্ধুদের ট্র্যাক করুন"
+        },
+        "logger_history": {
+            "name": "লগার হিস্ট্রি",
+            "description": "লগ করা মেসেজের ইতিহাস দেখুন"
+        }
+    },
+    "features": {
+        "notices": {
+            "unstable": "\u26a0 অস্থির",
+            "ban_risk": "\u26a0 এই ফিচারটি ব্যানের কারণ হতে পারে",
+            "internal_behavior": "\u26a0 এটি স্ন্যাপচ্যাটের অভ্যন্তরীণ আচরণ নষ্ট করতে পারে"
+        },
+        "properties": {
+            "downloader": {
+                "name": "ডাউনলোডার",
+                "description": "স্ন্যাপচ্যাট মিডিয়া ডাউনলোড করুন",
+                "properties": {
+                    "save_folder": {
+                        "name": "সেভ ফোল্ডার",
+                        "description": "যে ডিরেক্টরিতে সব মিডিয়া ডাউনলোড হবে তা নির্বাচন করুন"
+                    },
+                    "auto_download_sources": {
+                        "name": "অটো ডাউনলোড সোর্স",
+                        "description": "যে উৎসগুলো থেকে স্বয়ংক্রিয়ভাবে ডাউনলোড হবে তা নির্বাচন করুন"
+                    },
+                    "prevent_self_auto_download": {
+                        "name": "নিজের অটো ডাউনলোড রোধ করুন",
+                        "description": "আপনার নিজের স্ন্যাপ স্বয়ংক্রিয়ভাবে ডাউনলোড হওয়া রোধ করে"
+                    },
+                    "path_format": {
+                        "name": "পাথ ফরম্যাট",
+                        "description": "ফাইল পাথ ফরম্যাট নির্দিষ্ট করুন"
+                    },
+                    "allow_duplicate": {
+                        "name": "ডুপ্লিকেট অনুমতি দিন",
+                        "description": "একই মিডিয়া একাধিকবার ডাউনলোড করার অনুমতি দেয়"
+                    },
+                    "file_hash_check": {
+                        "name": "ফাইল হ্যাশ চেক",
+                        "description": "ফাইল হ্যাশ দিয়ে ডাউনলোড করা মিডিয়া যাচাই করুন"
+                    },
+                    "merge_overlays": {
+                        "name": "ওভারলে মার্জ করুন",
+                        "description": "স্ন্যাপের টেক্সট এবং মিডিয়াকে একটি ফাইলে একত্রিত করে"
+                    },
+                    "force_image_format": {
+                        "name": "ইমেজ ফরম্যাট ফোর্স করুন",
+                        "description": "ছবিগুলোকে একটি নির্দিষ্ট ফরম্যাটে সেভ করতে বাধ্য করে"
+                    },
+                    "force_voice_note_format": {
+                        "name": "ভয়েস নোট ফরম্যাট ফোর্স করুন",
+                        "description": "ভয়েস নোটগুলোকে একটি নির্দিষ্ট ফরম্যাটে সেভ করতে বাধ্য করে"
+                    },
+                    "auto_download_voice_notes": {
+                        "name": "অটো ডাউনলোড ভয়েস নোটস",
+                        "description": "চালানোর সময় ভয়েস নোট স্বয়ংক্রিয়ভাবে ডাউনলোড করে"
+                    },
+                    "call_recorder": {
+                        "name": "কল রেকর্ডার",
+                        "description": "কল রেকর্ডিং সেটিংস ম্যানেজ করুন",
+                        "properties": {
+                            "call_recorder": {
+                                "name": "মোড",
+                                "description": "কী রেকর্ড করা হবে তা নির্বাচন করুন"
+                            },
+                            "auto_start_recording": {
+                                "name": "অটো স্টার্ট রেকর্ডিং",
+                                "description": "কল শুরু হলে স্বয়ংক্রিয়ভাবে রেকর্ডিং শুরু করে"
+                            },
+                            "call_recorder_ui": {
+                                "name": "কল রেকর্ডার UI",
+                                "description": "কলের সময় রেকর্ডিং ওভারলে UI দেখান"
+                            },
+                            "call_recorder_ui_design": {
+                                "name": "UI ডিজাইন",
+                                "description": "কল রেকর্ডার ওভারলে-র ডিজাইন নির্বাচন করুন"
+                            },
+                            "call_recording_saved_toast": "সেভ হয়েছে"
+                        }
+                    },
+                    "chat_wallpaper_downloader": {
+                        "name": "চ্যাট ওয়ালপেপার ডাউনলোডার",
+                        "description": "আপনাকে প্রোফাইল পেজ থেকে চ্যাট ওয়ালপেপার ডাউনলোড করতে দেয়"
+                    },
+                    "download_profile_pictures": {
+                        "name": "প্রোফাইল পিকচার ডাউনলোড",
+                        "description": "আপনাকে প্রোফাইল পেজ থেকে প্রোফাইল পিকচার ডাউনলোড করতে দেয়"
+                    },
+                    "opera_download_button": {
+                        "name": "অপেরা ডাউনলোড বাটন",
+                        "description": "স্ন্যাপ দেখার সময় ওপরের ডান কোণায় একটি ডাউনলোড বাটন যোগ করে।\nবাটনে বেশিক্ষণ চাপ দিলে জোরপূর্বক ডাউনলোড হবে"
+                    },
+                    "download_context_menu": {
+                        "name": "ডাউনলোড কনটেক্সট মেনু",
+                        "description": "কনটেক্সট মেনু ব্যবহার করে কনভারসেশন বা স্টোরি থেকে মেসেজ ডাউনলোড/প্রিভিউ করতে দেয়।\nবাটনে বেশিক্ষণ চাপ দিলে জোরপূর্বক ডাউনলোড হবে"
+                    },
+                    "ffmpeg_options": {
+                        "name": "FFmpeg অপশন",
+                        "description": "অতিরিক্ত FFmpeg অপশন নির্দিষ্ট করুন",
+                        "properties": {
+                            "threads": {
+                                "name": "থ্রেড",
+                                "description": "ব্যবহার করার মতো থ্রেডের সংখ্যা"
+                            },
+                            "preset": {
+                                "name": "প্রিসেট",
+                                "description": "কনভারসেশনের গতি সেট করুন"
+                            },
+                            "constant_rate_factor": {
+                                "name": "কনস্ট্যান্ট রেট ফ্যাক্টর",
+                                "description": "ভিডিও এনকোডারের কনস্ট্যান্ট রেট ফ্যাক্টর সেট করুন\nlibx264 এর জন্য 0 থেকে 51"
+                            },
+                            "video_bitrate": {
+                                "name": "ভিডিও বিটরেট",
+                                "description": "ভিডিও বিটরেট সেট করুন (kbps)"
+                            },
+                            "audio_bitrate": {
+                                "name": "অডিও বিটরেট",
+                                "description": "অডিও বিটরেট সেট করুন (kbps)"
+                            },
+                            "custom_video_codec": {
+                                "name": "কাস্টম ভিডিও কোডেক",
+                                "description": "একটি কাস্টম ভিডিও কোডেক সেট করুন (যেমন libx264)"
+                            },
+                            "custom_audio_codec": {
+                                "name": "কাস্টম অডিও কোডেক",
+                                "description": "একটি কাস্টম অডিও কোডেক সেট করুন (যেমন AAC)"
+                            }
+                        }
+                    },
+                    "logging": {
+                        "name": "লগিং",
+                        "description": "মিডিয়া ডাউনলোড হওয়ার সময় টোস্ট দেখায়"
+                    },
+                    "custom_path_format": {
+                        "name": "কাস্টম পাথ ফরম্যাট",
+                        "description": "ডাউনলোড করা মিডিয়ার জন্য একটি কাস্টম পাথ ফরম্যাট নির্দিষ্ট করুন\n\nউপলব্ধ ভেরিয়েবল:\n - %username%\n - %source%\n - %hash%\n - %date_time%"
+                    }
+                }
+            },
+            "user_interface": {
+                "name": "ইউজার ইন্টারফেস",
+                "description": "স্ন্যাপচ্যাটের রূপ এবং অনুভূতি পরিবর্তন করুন",
+                "properties": {
+                    "enable_app_appearance": {
+                        "name": "অ্যাপ অ্যাপিয়ারেন্স সেটিংস চালু করুন",
+                        "description": "লুকানো অ্যাপ অ্যাপিয়ারেন্স সেটিং চালু করে\nনতুন স্ন্যাপচ্যাট ভার্সনে এটি প্রয়োজন নাও হতে পারে"
+                    },
+                    "friend_feed_message_preview": {
+                        "name": "ফ্রেন্ড ফিড মেসেজ প্রিভিউ",
+                        "description": "ফ্রেন্ড ফিডে শেষ মেসেজের প্রিভিউ দেখায়",
+                        "properties": {
+                            "amount": {
+                                "name": "পরিমাণ",
+                                "description": "কতগুলো মেসেজ প্রিভিউ করা হবে তার পরিমাণ"
+                            }
+                        }
+                    },
+                    "snap_preview": {
+                        "name": "স্ন্যাপ প্রিভিউ",
+                        "description": "চ্যাটে দেখা হয়নি এমন স্ন্যাপের পাশে একটি ছোট প্রিভিউ প্রদর্শন করে"
+                    },
+                    "bootstrap_override": {
+                        "name": "বুটস্ট্র্যাপ ওভাররাইড",
+                        "description": "ইউজার ইন্টারফেস বুটস্ট্র্যাপ সেটিংস ওভাররাইড করে",
+                        "properties": {
+                            "app_appearance": {
+                                "name": "অ্যাপ অ্যাপিয়ারেন্স",
+                                "description": "একটি স্থায়ী অ্যাপ অ্যাপিয়ারেন্স সেট করে"
+                            },
+                            "home_tab": {
+                                "name": "হোম ট্যাব",
+                                "description": "স্ন্যাপচ্যাট খোলার সময় স্টার্টআপ ট্যাব ওভাররাইড করে"
+                            }
+                        }
+                    },
+                    "map_friend_nametags": {
+                        "name": "উন্নত ফ্রেন্ড ম্যাপ নেমট্যাগ",
+                        "description": "স্ন্যাপম্যাপে বন্ধুদের নেমট্যাগ উন্নত করে"
+                    },
+                    "prevent_message_list_auto_scroll": {
+                        "name": "মেসেজ লিস্ট অটো স্ক্রল রোধ করুন",
+                        "description": "মেসেজ পাঠানো/গ্রহণের সময় মেসেজ তালিকা নিচে স্ক্রল হওয়া রোধ করে"
+                    },
+                    "streak_expiration_info": {
+                        "name": "স্ট্রিক এক্সপাইরেশন তথ্য দেখান",
+                        "description": "স্ট্রিকস কাউন্টারের পাশে একটি স্ট্রিক এক্সপাইরেশন টাইমার দেখায়"
+                    },
+                    "hide_friend_feed_entry": {
+                        "name": "ফ্রেন্ড ফিড এন্ট্রি লুকান",
+                        "description": "ফ্রেন্ড ফিড থেকে নির্দিষ্ট বন্ধুকে লুকিয়ে রাখে\nএই ফিচার ম্যানেজ করতে সোশ্যাল ট্যাব ব্যবহার করুন"
+                    },
+                    "hide_streak_restore": {
+                        "name": "স্ট্রিক রিস্টোর লুকান",
+                        "description": "ফ্রেন্ড ফিডে রিস্টোর বাটনটি লুকিয়ে রাখে"
+                    },
+                    "hide_quick_add_suggestions": {
+                        "name": "কুইক অ্যাড সাজেশন লুকান",
+                        "description": "কুইক অ্যাড ফ্রেন্ড সাজেশন সরিয়ে ফেলে"
+                    },
+                    "hide_story_suggestions": {
+                        "name": "স্টোরি সাজেশন লুকান",
+                        "description": "স্টোরিজ পেজ থেকে সাজেশন সরিয়ে ফেলে"
+                    },
+                    "hide_ui_components": {
+                        "name": "UI কম্পোনেন্ট লুকান",
+                        "description": "কোন UI কম্পোনেন্টগুলো লুকাতে চান তা নির্বাচন করুন"
+                    },
+                    "opera_media_quick_info": {
+                        "name": "অপেরা মিডিয়া কুইক ইনফো",
+                        "description": "অপেরা ভিউয়ার কনটেক্সট মেনুতে মিডিয়ার তৈরির তারিখের মতো দরকারি তথ্য দেখায়"
+                    },
+                    "old_bitmoji_selfie": {
+                        "name": "পুরনো বিটমোজি সেলফি",
+                        "description": "পুরনো স্ন্যাপচ্যাট ভার্সনের বিটমোজি সেলফি ফিরিয়ে আনে"
+                    },
+                    "disable_spotlight": {
+                        "name": "স্পটলাইট নিষ্ক্রিয় করুন",
+                        "description": "স্পটলাইট পেজ নিষ্ক্রিয় করে"
+                    },
+                    "friend_feed_menu_buttons": {
+                        "name": "ফ্রেন্ড ফিড মেনু বাটন",
+                        "description": "ফ্রেন্ড ফিড মেনুতে কোন বাটনগুলো দেখাবে তা নির্বাচন করুন"
+                    },
+                    "auto_close_friend_feed_menu": {
+                        "name": "ফ্রেন্ড ফিড মেনু অটো ক্লোজ",
+                        "description": "সেটিং বাটনে চাপ দেওয়ার পর ফ্রেন্ড ফিড মেনু স্বয়ংক্রিয়ভাবে বন্ধ হয়ে যায়"
+                    },
+                    "vertical_story_viewer": {
+                        "name": "ভার্টিকাল স্টোরি ভিউয়ার",
+                        "description": "সব স্টোরির জন্য ভার্টিকাল স্টোরি ভিউয়ার চালু করে"
+                    },
+                    "enable_friend_feed_menu_bar": {
+                        "name": "ফ্রেন্ড ফিড মেনু বার",
+                        "description": "নতুন ফ্রেন্ড ফিড মেনু বার চালু করে"
+                    },
+                    "message_indicators": {
+                        "name": "মেসেজ ইন্ডিকেটর",
+                        "description": "মেসেজে নির্দিষ্ট ইন্ডিকেটর আইকন যোগ করে\nনোট: ইন্ডিকেটরগুলো ১০০% সঠিক নাও হতে পারে"
+                    },
+                    "stealth_mode_indicator": {
+                        "name": "স্টেলথ মোড ইন্ডিকেটর",
+                        "description": "স্টেলথ মোডে থাকা কনভারসেশনের পাশে একটি \ud83d\udc7b ইমোজি যোগ করে"
+                    },
+                    "edit_text_override": {
+                        "name": "এডিট টেক্সট ওভাররাইড",
+                        "description": "টেক্সট ফিল্ডের আচরণ ওভাররাইড করে"
+                    },
+                    "prevent_forced_keyboard": {
+                        "name": "ফোর্সড কিবোর্ড রোধ করুন",
+                        "description": "কনভারসেশন খোলার সময় স্ন্যাপচ্যাট স্বয়ংক্রিয়ভাবে কিবোর্ড পপ-আপ করা রোধ করে"
+                    },
+                    "force_amoled_theme": {
+                        "name": "ফোর্স AMOLED থিম",
+                        "description": "পুরো অ্যাপ UI জুড়ে ট্রু ব্ল্যাক AMOLED থিম ফোর্স করে"
+                    },
+                    "settings_menu": {
+                        "name": "সেটিংস মেনু",
+                        "description": "নতুন এবং লিগ্যাসি সেটিংস মেনু লেআউটের মধ্যে বেছে নিন"
+                    }
+                }
+            },
+            "messaging": {
+                "name": "মেসেজিং",
+                "description": "বন্ধুদের সাথে আপনি কীভাবে ইন্টারঅ্যাক্ট করবেন তা পরিবর্তন করুন",
+                "properties": {
+                    "bypass_screenshot_detection": {
+                        "name": "স্ক্রিনশট ডিটেকশন বাইপাস",
+                        "description": "আপনি স্ক্রিনশট নিলে স্ন্যাপচ্যাটকে তা শনাক্ত করা থেকে বিরত রাখে"
+                    },
+                    "anonymous_story_viewing": {
+                        "name": "বেনামী স্টোরি ভিউয়িং",
+                        "description": "আপনি কারো স্টোরি দেখেছেন তা তাদের জানতে দেয় না"
+                    },
+                    "prevent_story_rewatch_indicator": {
+                        "name": "স্টোরি রিওয়াচ ইন্ডিকেটর রোধ",
+                        "description": "আপনি কারো স্টোরি পুনরায় দেখেছেন তা তাদের জানতে দেয় না"
+                    },
+                    "hide_peek_a_peek": {
+                        "name": "পিক-আ-পিক লুকান",
+                        "description": "আপনি চ্যাটে হাফ সোয়াইপ করলে নোটিফিকেশন পাঠানো রোধ করে"
+                    },
+                    "hide_bitmoji_presence": {
+                        "name": "বিটমোজি উপস্থিতি লুকান",
+                        "description": "চ্যাটে থাকার সময় আপনার বিটমোজি পপ-আপ হওয়া রোধ করে"
+                    },
+                    "hide_typing_notifications": {
+                        "name": "টাইপিং নোটিফিকেশন লুকান",
+                        "description": "আপনি মেসেজ টাইপ করছেন তা কাউকে জানতে দেয় না"
+                    },
+                    "unlimited_snap_view_time": {
+                        "name": "আনলিমিটেড স্ন্যাপ ভিউ টাইম",
+                        "description": "স্ন্যাপ দেখার সময়সীমা সরিয়ে ফেলে"
+                    },
+                    "auto_mark_as_read": {
+                        "name": "অটো মার্ক অ্যাজ রিড",
+                        "description": "স্টেলথ মোড চালু থাকলেও মেসেজ/স্ন্যাপ স্বয়ংক্রিয়ভাবে পড়া হয়েছে হিসেবে চিহ্নিত করে"
+                    },
+                    "mark_snap_as_seen_button": {
+                        "name": "মার্ক স্ন্যাপ অ্যাজ সিন বাটন",
+                        "description": "স্ন্যাপ দেখার সময় সেটিকে সিন হিসেবে চিহ্নিত করতে একটি বাটন যোগ করে।\nএটি স্টেলথ মোড চালু থাকলেও কাজ করবে"
+                    },
+                    "skip_when_marking_as_seen": {
+                        "name": "সিন করার সময় স্কিপ করুন",
+                        "description": "স্ন্যাপ সিন হিসেবে চিহ্নিত করার সময় স্বয়ংক্রিয়ভাবে পরবর্তী স্ন্যাপে চলে যায়।\n'মার্ক স্ন্যাপ অ্যাজ সিন বাটন'-এর সাথে একত্রে ব্যবহার করুন"
+                    },
+                    "loop_media_playback": {
+                        "name": "লুপ মিডিয়া প্লেব্যাক",
+                        "description": "স্ন্যাপ / স্টোরি দেখার সময় মিডিয়া প্লেব্যাক লুপ করে"
+                    },
+                    "disable_replay_in_ff": {
+                        "name": "FF-এ রিপ্লে নিষ্ক্রিয় করুন",
+                        "description": "ফ্রেন্ড ফিড থেকে লং প্রেস করে রিপ্লে করার ক্ষমতা নিষ্ক্রিয় করে"
+                    },
+                    "half_swipe_notifier": {
+                        "name": "হাফ সোয়াইপ নোটিফায়ার",
+                        "description": "কেউ কনভারসেশনে হাফ সোয়াইপ করলে আপনাকে জানায়",
+                        "properties": {
+                            "min_duration": {
+                                "name": "ন্যূনতম সময়কাল",
+                                "description": "হাফ সোয়াইপের ন্যূনতম সময়কাল (সেকেন্ডে)"
+                            },
+                            "max_duration": {
+                                "name": "সর্বোচ্চ সময়কাল",
+                                "description": "হাফ সোয়াইপের সর্বোচ্চ সময়কাল (সেকেন্ডে)"
+                            }
+                        }
+                    },
+                    "call_start_confirmation": {
+                        "name": "কল স্টার্ট কনফার্মেশন",
+                        "description": "কল শুরু করার সময় একটি নিশ্চিতকরণ ডায়ালগ দেখায়"
+                    },
+                    "unlimited_conversation_pinning": {
+                        "name": "আনলিমিটেড কনভারসেশন পিনিং",
+                        "description": "আপনাকে লোকালি অসংখ্য কনভারসেশন পিন করার অনুমতি দেয়"
+                    },
+                    "disable_snap_mode_restrictions": {
+                        "name": "স্ন্যাপ মোড রেস্ট্রিকশন নিষ্ক্রিয় করুন",
+                        "description": "আপনাকে বাধা ছাড়াই সেলফ-ডিস্ট্রাক্টিং স্ন্যাপ দেখার অনুমতি দেয়"
+                    },
+                    "prevent_message_sending": {
+                        "name": "মেসেজ পাঠানো রোধ করুন",
+                        "description": "নির্দিষ্ট ধরণের মেসেজ পাঠানো রোধ করে"
+                    },
+                    "friend_mutation_notifier": {
+                        "name": "ফ্রেন্ড মিউটেশন নোটিফায়ার",
+                        "description": "বন্ধুর প্রোফাইলে কিছু পরিবর্তন হলে আপনাকে জানায়"
+                    },
+                    "better_notifications": {
+                        "name": "বেটার নোটিফিকেশন",
+                        "description": "প্রাপ্ত নোটিফিকেশনে আরও তথ্য যোগ করে",
+                        "properties": {
+                            "group_notifications": {
+                                "name": "গ্রুপ নোটিফিকেশন",
+                                "description": "নোটিফিকেশনগুলোকে একটিতে গ্রুপ করে"
+                            },
+                            "chat_preview": {
+                                "name": "চ্যাট প্রিভিউ",
+                                "description": "নোটিফিকেশনে প্রাপ্ত মেসেজের প্রিভিউ দেখায়"
+                            },
+                            "media_preview": {
+                                "name": "মিডিয়া প্রিভিউ",
+                                "description": "নোটিফিকেশনে নির্বাচিত মিডিয়া টাইপের প্রিভিউ দেখায়"
+                            },
+                            "media_caption": {
+                                "name": "মিডিয়া ক্যাপশন",
+                                "description": "নোটিফিকেশনে মিডিয়ার সংযুক্ত ক্যাপশন দেখায়"
+                            },
+                            "stacked_media_messages": {
+                                "name": "স্ট্যাক করা মিডিয়া মেসেজ",
+                                "description": "প্রিভিউ করা সম্ভব না হলে একাধিক মিডিয়া মেসেজকে একটি টেক্সট নোটিফিকেশনে একত্রিত করে। চ্যাট প্রিভিউ-এর সাথে ব্যবহার করুন"
+                            },
+                            "friend_add_source": {
+                                "name": "ফ্রেন্ড অ্যাড সোর্স",
+                                "description": "নোটিফিকেশনে ফ্রেন্ড রিকোয়েস্টের উৎস দেখায়"
+                            },
+                            "reply_button": {
+                                "name": "রিপ্লাই বাটন",
+                                "description": "নোটিফিকেশনে একটি রিপ্লাই বাটন যোগ করে"
+                            },
+                            "smart_replies": {
+                                "name": "স্মার্ট রিপ্লাই",
+                                "description": "নোটিফিকেশনে সাজেস্টেড রিপ্লাই যোগ করে (Android 10+)। রিপ্লাই বাটনের সাথে ব্যবহার করুন"
+                            },
+                            "download_button": {
+                                "name": "ডাউনলোড বাটন",
+                                "description": "আপনাকে নোটিফিকেশন থেকে মিডিয়া ডাউনলোড করার অনুমতি দেয়"
+                            },
+                            "mark_as_read_button": {
+                                "name": "মার্ক অ্যাজ রিড বাটন",
+                                "description": "আপনাকে নোটিফিকেশন থেকে মেসেজ পড়া হয়েছে হিসেবে চিহ্নিত করার অনুমতি দেয়"
+                            },
+                            "mark_as_read_and_save_in_chat": {
+                                "name": "পড়া হয়েছে মার্ক করুন এবং চ্যাটে সেভ করুন",
+                                "description": "নোটিফিকেশনে 'মার্ক অ্যাজ রিড এবং চ্যাটে সেভ' বাটন যোগ করে"
+                            }
+                        }
+                    },
+                    "notification_blacklist": {
+                        "name": "নোটিফিকেশন ব্ল্যাকলিস্ট",
+                        "description": "কোন নোটিফিকেশনগুলো ব্লক করা হবে তা নির্বাচন করুন"
+                    },
+                    "message_logger": {
+                        "name": "মেসেজ লগার",
+                        "description": "মেসেজ ডিলিট হওয়া রোধ করে",
+                        "properties": {
+                            "keep_my_own_messages": {
+                                "name": "আমার নিজের মেসেজ রাখুন",
+                                "description": "আপনার নিজের মেসেজ ডিলিট হওয়া রোধ করে"
+                            },
+                            "auto_purge": {
+                                "name": "অটো পার্জ",
+                                "description": "নির্দিষ্ট সময়ের চেয়ে পুরনো ক্যাশড মেসেজ স্বয়ংক্রিয়ভাবে ডিলিট করে"
+                            },
+                            "message_filter": {
+                                "name": "মেসেজ ফিল্টার",
+                                "description": "কোন মেসেজগুলো লগ করা হবে তা নির্বাচন করুন (সব মেসেজের জন্য খালি রাখুন)"
+                            },
+                            "deleted_message_color": {
+                                "name": "ডিলিট করা মেসেজের রঙ",
+                                "description": "ডিলিট করা মেসেজের রঙ সেট করে"
+                            }
+                        }
+                    },
+                    "auto_save_messages_in_conversations": {
+                        "name": "মেসেজ অটো সেভ",
+                        "description": "কনভারসেশনের প্রতিটি মেসেজ স্বয়ংক্রিয়ভাবে সেভ করে"
+                    },
+                    "unsaveable_messages": {
+                        "name": "আনসেভেবল মেসেজ",
+                        "description": "চ্যাটে নির্বাচিত মেসেজ টাইপ সেভ করা রোধ করে",
+                        "properties": {
+                            "chat": {
+                                "name": "চ্যাট মেসেজ",
+                                "description": "চ্যাট মেসেজ আনসেভেবল করুন"
+                            },
+                            "snap": {
+                                "name": "স্ন্যাপ",
+                                "description": "স্ন্যাপ আনসেভেবল করুন"
+                            },
+                            "external_media": {
+                                "name": "এক্সটার্নাল মিডিয়া",
+                                "description": "এক্সটার্নাল মিডিয়া আনসেভেবল করুন"
+                            },
+                            "sticker": {
+                                "name": "স্টিকার",
+                                "description": "স্টিকার আনসেভেবল করুন"
+                            },
+                            "share": {
+                                "name": "শেয়ার",
+                                "description": "শেয়ার করা কন্টেন্ট আনসেভেবল করুন"
+                            },
+                            "note": {
+                                "name": "অডিও নোট",
+                                "description": "অডিও নোট আনসেভেবল করুন"
+                            },
+                            "story_reply": {
+                                "name": "স্টোরি রিপ্লাই",
+                                "description": "স্টোরি রিপ্লাই আনসেভেবল করুন"
+                            }
+                        }
+                    },
+                    "gallery_media_send_override": {
+                        "name": "গ্যালারি মিডিয়া সেন্ড ওভাররাইড",
+                        "description": "গ্যালারি থেকে পাঠানোর সময় মিডিয়া সোর্স স্পুফ করে",
+                        "properties": {
+                            "mode": {
+                                "name": "ওভাররাইড মোড",
+                                "description": "গ্যালারি মিডিয়া কীভাবে পাঠানো হবে তা বেছে নিন"
+                            },
+                            "include_camera_snaps": {
+                                "name": "ক্যামেরা স্ন্যাপ অন্তর্ভুক্ত করুন",
+                                "description": "ক্যামেরা স্ন্যাপের জন্যও ওভাররাইড ডায়ালগ দেখান"
+                            }
+                        }
+                    },
+                    "strip_media_metadata": {
+                        "name": "মিডিয়া মেটাডেটা সরান",
+                        "description": "মেসেজ হিসেবে পাঠানোর আগে মিডিয়ার মেটাডেটা সরিয়ে ফেলে"
+                    },
+                    "bypass_message_retention_policy": {
+                        "name": "মেসেজ রিটেনশন পলিসি বাইপাস",
+                        "description": "মেসেজ দেখার পর তা ডিলিট হয়ে যাওয়া রোধ করে"
+                    },
+                    "bypass_message_action_restrictions": {
+                        "name": "মেসেজ অ্যাকশন রেস্ট্রিকশন বাইপাস",
+                        "description": "আপনাকে না খুলেই স্ন্যাপে রিয়েক্ট করতে বা আনসেভেবল মেসেজ সেভ করতে দেয়"
+                    },
+                    "remove_groups_locked_status": {
+                        "name": "গ্রুপ লকড স্ট্যাটাস সরান",
+                        "description": "আপনাকে কিক করার পরেও গ্রুপের তথ্য দেখার অনুমতি দেয়"
+                    },
+                    "double_tap_chat_action": {
+                        "name": "ডাবল ট্যাপ চ্যাট অ্যাকশন",
+                        "description": "চ্যাটে কোনো মেসেজে ডাবল ট্যাপ করলে একটি কাস্টম অ্যাকশন পারফর্ম করে"
+                    },
+                    "double_tap_chat_action_custom_emoji": {
+                        "name": "ডাবল ট্যাপ চ্যাট অ্যাকশন কাস্টম ইমোজি রিয়েকশন",
+                        "description": "ডাবল ট্যাপ চ্যাট অ্যাকশনের জন্য একটি কাস্টম ইমোজি রিয়েকশন সেট করে"
+                    },
+                    "auto_reply": {
+                        "name": "অটো রিপ্লাই",
+                        "description": "আপনি যখন দূরে থাকেন তখন আসা মেসেজের স্বয়ংক্রিয় উত্তর পাঠায়",
+                        "properties": {
+                            "allow_running_in_background": {
+                                "name": "ব্যাকগ্রাউন্ডে চলার অনুমতি দিন",
+                                "description": "অটো রিপ্লাই ব্যাকগ্রাউন্ডে চলার অনুমতি দেয়। নোট: এটি আপনার ব্যাটারি দ্রুত শেষ করবে"
+                            },
+                            "cooldown_seconds": {
+                                "name": "কুলডাউন সেকেন্ড",
+                                "description": "একই কনভারসেশনে অটো-রিপ্লাইয়ের মধ্যে ন্যূনতম সময় (সেকেন্ডে)"
+                            },
+                            "message_age_threshold": {
+                                "name": "মেসেজ এজ থ্রেশহোল্ড",
+                                "description": "শুধুমাত্র এই সময়ের মধ্যে প্রাপ্ত মেসেজের উত্তর দিন (সেকেন্ডে)"
+                            },
+                            "ai_config": {
+                                "name": "AI কনফিগারেশন",
+                                "description": "AI-চালিত অটো-রিপ্লাইয়ের জন্য সেটিংস",
+                                "properties": {
+                                    "enable_ai_replies": {
+                                        "name": "AI রিপ্লাই সক্রিয় করুন",
+                                        "description": "টেমপ্লেট মেসেজের পরিবর্তে বুদ্ধিমান অটো-রিপ্লাই তৈরি করতে AI ব্যবহার করুন"
+                                    },
+                                    "ai_provider": {
+                                        "name": "AI প্রোভাইডার",
+                                        "description": "রিপ্লাই তৈরির জন্য কোন AI পরিষেবা ব্যবহার করবেন তা নির্বাচন করুন"
+                                    },
+                                    "ai_endpoint_url": {
+                                        "name": "AI এন্ডপয়েন্ট URL",
+                                        "description": "AI পরিষেবার জন্য API এন্ডপয়েন্ট URL (যেমন, OpenAI, লোকাল AI সার্ভার)"
+                                    },
+                                    "ai_model": {
+                                        "name": "AI মডেল",
+                                        "description": "রিপ্লাই তৈরির জন্য ব্যবহার করা AI মডেল (যেমন, gpt-3.5-turbo, gpt-4)"
+                                    },
+                                    "ai_api_key": {
+                                        "name": "AI API কী",
+                                        "description": "AI পরিষেবার সাথে অথেন্টিকেশনের জন্য API কী"
+                                    },
+                                    "ai_system_prompt": {
+                                        "name": "AI সিস্টেম প্রম্পট",
+                                        "description": "সিস্টেম প্রম্পট যা AI-এর ব্যক্তিত্ব এবং আচরণ নির্ধারণ করে"
+                                    },
+                                    "ai_max_tokens": {
+                                        "name": "AI ম্যাক্স টোকেন",
+                                        "description": "AI উত্তরে ব্যবহার করতে পারে এমন সর্বোচ্চ টোকেন (শব্দ) সংখ্যা"
+                                    },
+                                    "ai_temperature": {
+                                        "name": "AI টেম্পারেচার",
+                                        "description": "AI উত্তরের র্যান্ডমনেস নিয়ন্ত্রণ করে (0.0 = ডিটারমিনিস্টিক, 2.0 = খুব র্যান্ডম)"
+                                    },
+                                    "ai_context_length": {
+                                        "name": "AI কনটেক্সট লেংথ",
+                                        "description": "AI উত্তরের জন্য কনটেক্সট হিসেবে পূর্ববর্তী মেসেজের সংখ্যা"
+                                    },
+                                    "ai_personality_traits": {
+                                        "name": "AI ব্যক্তিত্বের বৈশিষ্ট্য",
+                                        "description": "AI-এর জন্য কমা দিয়ে আলাদা করা ব্যক্তিত্বের বৈশিষ্ট্য (যেমন, বন্ধুত্বপূর্ণ, ক্যাজুয়াল, সহায়ক)"
+                                    },
+                                    "ai_response_style": {
+                                        "name": "AI রেসপন্স স্টাইল",
+                                        "description": "AI উত্তরের সামগ্রিক ধরন"
+                                    },
+                                    "ai_response_language": {
+                                        "name": "AI রেসপন্স ল্যাঙ্গুয়েজ",
+                                        "description": "AI উত্তরের ভাষা (অটো = প্রাপ্ত মেসেজের মতো)"
+                                    },
+                                    "ai_use_conversation_history": {
+                                        "name": "কনভারসেশন হিস্ট্রি ব্যবহার করুন",
+                                        "description": "আরও প্রাসঙ্গিক AI উত্তরের জন্য পূর্ববর্তী মেসেজগুলো কনটেক্সট হিসেবে অন্তর্ভুক্ত করুন"
+                                    },
+                                    "ai_include_friend_info": {
+                                        "name": "বন্ধুর তথ্য অন্তর্ভুক্ত করুন",
+                                        "description": "AI কনটেক্সটে বন্ধুর নাম এবং অন্যান্য উপলব্ধ তথ্য অন্তর্ভুক্ত করুন"
+                                    },
+                                    "ai_fallback_to_template": {
+                                        "name": "টেমপ্লেটে ফিরে যান",
+                                        "description": "AI উত্তর তৈরি করতে ব্যর্থ হলে টেমপ্লেট মেসেজ ব্যবহার করুন"
+                                    },
+                                    "ai_request_timeout": {
+                                        "name": "AI রিকোয়েস্ট টাইমআউট",
+                                        "description": "AI উত্তরের জন্য অপেক্ষা করার সর্বোচ্চ সময় (সেকেন্ডে)"
+                                    },
+                                    "ai_retry_attempts": {
+                                        "name": "AI রিট্রাই প্রচেষ্টা",
+                                        "description": "ব্যর্থ হলে AI রিকোয়েস্ট কতবার পুনরায় চেষ্টা করবে"
+                                    }
+                                }
+                            },
+                            "auto_trigger_config": {
+                                "name": "অটো ট্রিগার কনফিগারেশন",
+                                "description": "অটো-রিপ্লাই ট্রিগার এবং মেসেজ টেমপ্লেটের সেটিংস",
+                                "properties": {
+                                    "friendSpecificGreeting": {
+                                        "name": "বন্ধু নির্দিষ্ট সম্ভাষণ",
+                                        "description": "ব্যক্তিগতকরণের জন্য অটো-রিপ্লাইয়ে বন্ধুর নাম যোগ করুন"
+                                    },
+                                    "friendGreeting": {
+                                        "name": "বন্ধু সম্ভাষণ",
+                                        "description": "বন্ধু নির্দিষ্ট সম্ভাষণ চালু থাকলে ব্যবহার করার মতো সম্ভাষণ টেক্সট"
+                                    },
+                                    "auto_reply_content_types": {
+                                        "name": "অটো রিপ্লাই ট্রিগার",
+                                        "description": "কোন মেসেজ টাইপগুলো অটো-রিপ্লাই ট্রিগার করবে তা নির্বাচন করুন"
+                                    },
+                                    "chat_messages": {
+                                        "name": "চ্যাট মেসেজ রিপ্লাই",
+                                        "description": "টেক্সট চ্যাট মেসেজের জন্য অটো-রিপ্লাই মেসেজ"
+                                    },
+                                    "snap_messages": {
+                                        "name": "স্ন্যাপ রিপ্লাই",
+                                        "description": "স্ন্যাপের জন্য অটো-রিপ্লাই মেসেজ"
+                                    },
+                                    "story_share_messages": {
+                                        "name": "স্টোরি শেয়ার রিপ্লাই",
+                                        "description": "স্টোরি শেয়ারের জন্য অটো-রিপ্লাই মেসেজ"
+                                    },
+                                    "story_reply_messages": {
+                                        "name": "স্টোরি রিপ্লাই রেসপন্স",
+                                        "description": "স্টোরি রিপ্লাইয়ের জন্য অটো-রিপ্লাই মেসেজ"
+                                    },
+                                    "external_media_messages": {
+                                        "name": "এক্সটার্নাল মিডিয়া রিপ্লাই",
+                                        "description": "এক্সটার্নাল মিডিয়ার জন্য অটো-রিপ্লাই মেসেজ"
+                                    },
+                                    "voice_note_messages": {
+                                        "name": "ভয়েস নোট রিপ্লাই",
+                                        "description": "ভয়েস নোটের জন্য অটো-রিপ্লাই মেসেজ"
+                                    },
+                                    "sticker_messages": {
+                                        "name": "স্টিকার রিপ্লাই",
+                                        "description": "স্টিকারের জন্য অটো-রিপ্লাই মেসেজ"
+                                    },
+                                    "tiny_snap_messages": {
+                                        "name": "টাইনি স্ন্যাপ রিপ্লাই",
+                                        "description": "টাইনি স্ন্যাপের জন্য অটো-রিপ্লাই মেসেজ"
+                                    },
+                                    "map_reaction_messages": {
+                                        "name": "ম্যাপ রিয়েকশন রিপ্লাই",
+                                        "description": "ম্যাপ রিয়েকশনের জন্য অটো-রিপ্লাই মেসেজ"
+                                    },
+                                    "half_swipe_messages": {
+                                        "name": "হাফ সোয়াইপ মেসেজ",
+                                        "description": "হাফ সোয়াইপের জন্য অটো-রিপ্লাই মেসেজ"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "auto_open_snaps": {
+                        "name": "অটো ওপেন স্ন্যাপস সেটিংস",
+                        "description": "অটো ওপেন স্ন্যাপস-এর জন্য বিলম্ব এবং কিউ সেটিংস কনফিগার করুন",
+                        "properties": {
+                            "allow_running_in_background": {
+                                "name": "ব্যাকগ্রাউন্ডে চলার অনুমতি দিন",
+                                "description": "অটো ওপেন স্ন্যাপস ব্যাকগ্রাউন্ডে চলার অনুমতি দেয়। নোট: এটি আপনার ব্যাটারি দ্রুত শেষ করবে"
+                            },
+                            "min_delay": {
+                                "name": "ন্যূনতম বিলম্ব (ms)",
+                                "description": "স্ন্যাপ খোলার আগে মিলিসেকেন্ডে ন্যূনতম বিলম্ব"
+                            },
+                            "max_delay_ms": {
+                                "name": "সর্বোচ্চ বিলম্ব (ms)",
+                                "description": "স্ন্যাপ খোলার আগে মিলিসেকেন্ডে সর্বোচ্চ বিলম্ব"
+                            },
+                            "queue_size": {
+                                "name": "কিউ সাইজ",
+                                "description": "কিউ-তে রাখার মতো সর্বোচ্চ স্ন্যাপ সংখ্যা"
+                            },
+                            "retry_attempts": {
+                                "name": "রিট্রাই প্রচেষ্টা",
+                                "description": "স্ন্যাপ খুলতে ব্যর্থ হলে কতবার পুনরায় চেষ্টা করবে"
+                            },
+                            "retry_delay": {
+                                "name": "রিট্রাই বিলম্ব (ms)",
+                                "description": "পুনরায় চেষ্টার মধ্যে মিলিসেকেন্ডে বিলম্ব"
+                            }
+                        }
+                    },
+                    "auto_delete_sent_messages": {
+                        "name": "পাঠানো মেসেজ অটো ডিলিট",
+                        "description": "একটি নির্দিষ্ট সময়ের পর পাঠানো মেসেজগুলো স্বয়ংক্রিয়ভাবে ডিলিট করে",
+                        "properties": {
+                            "allow_running_in_background": {
+                                "name": "ব্যাকগ্রাউন্ডে চলার অনুমতি দিন",
+                                "description": "পাঠানো মেসেজ অটো ডিলিট ব্যাকগ্রাউন্ডে চলার অনুমতি দেয়। নোট: এটি আপনার ব্যাটারি দ্রুত শেষ করবে"
+                            },
+                            "delete_after_value": {
+                                "name": "এতক্ষণ পর ডিলিট (মান)",
+                                "description": "পাঠানো মেসেজ ডিলিট করার আগে সময়ের মান"
+                            },
+                            "delete_after_unit": {
+                                "name": "সময়ের একক",
+                                "description": "ডিলিট বিলম্বের জন্য সময়ের একক নির্বাচন করুন"
+                            },
+                            "message_types": {
+                                "name": "মেসেজের ধরন",
+                                "description": "কোন ধরনের মেসেজগুলো অটো-ডিলিট হবে তা নির্বাচন করুন"
+                            },
+                            "show_countdown": {
+                                "name": "কাউন্টডাউন দেখান",
+                                "description": "মেসেজ ডিলিট করার আগে কাউন্টডাউন দেখান"
+                            },
+                            "show_notification": {
+                                "name": "নোটিফিকেশন দেখান",
+                                "description": "কাউন্টডাউন চলাকালীন নোটিফিকেশন দেখান"
+                            }
+                        }
+                    },
+                    "instant_translation": {
+                        "name": "মেসেজ ট্রান্সলেটর",
+                        "description": "আসা মেসেজগুলো আপনার পছন্দের ভাষায় স্বয়ংক্রিয়ভাবে অনুবাদ করে",
+                        "properties": {
+                            "enabled": {
+                                "name": "মেসেজ ট্রান্সলেটর সক্রিয় করুন",
+                                "description": "মেসেজের স্বয়ংক্রিয় অনুবাদ সক্রিয় করুন"
+                            },
+                            "source_language": {
+                                "name": "উৎস ভাষা",
+                                "description": "যে ভাষা থেকে অনুবাদ হবে (স্বয়ংক্রিয় শনাক্তকরণের জন্য 'auto' ব্যবহার করুন)"
+                            },
+                            "target_language": {
+                                "name": "গন্তব্য ভাষা",
+                                "description": "যে ভাষায় অনুবাদ হবে"
+                            },
+                            "show_original": {
+                                "name": "মূল টেক্সট দেখান",
+                                "description": "মূল মেসেজ টেক্সট প্রদর্শন করুন"
+                            },
+                            "show_translation": {
+                                "name": "অনুবাদ দেখান",
+                                "description": "অনুদিত টেক্সট প্রদর্শন করুন"
+                            },
+                            "translation_position": {
+                                "name": "অনুবাদ অবস্থান",
+                                "description": "মূল টেক্সটের সাপেক্ষে অনুবাদ কোথায় দেখাবে"
+                            },
+                            "auto_translate": {
+                                "name": "অটো ট্রান্সলেট",
+                                "description": "মেসেজ পাওয়ার সময় স্বয়ংক্রিয়ভাবে অনুবাদ করুন"
+                            },
+                            "translate_on_tap": {
+                                "name": "ট্যাপ করলে অনুবাদ",
+                                "description": "ট্যাপ করলে মেসেজ অনুবাদ করুন"
+                            },
+                            "supported_languages": {
+                                "name": "সমর্থিত ভাষা",
+                                "description": "অনুবাদের জন্য উপলব্ধ ভাষাসমূহ"
+                            },
+                            "pause_on_error": {
+                                "name": "ত্রুটি হলে থামান",
+                                "description": "পরিষেবা ব্লক হলে অনুবাদ থামিয়ে দিন"
+                            },
+                            "max_retries": {
+                                "name": "ম্যাক্স রিট্রাই",
+                                "description": "সর্বোচ্চ সংখ্যক পুনরায় চেষ্টা"
+                            },
+                            "retry_delay": {
+                                "name": "রিট্রাই বিলম্ব",
+                                "description": "পুনরায় চেষ্টার মধ্যে বিলম্ব (মিলিসেকেন্ড)"
+                            }
+                        }
+                    },
+                    "scheduled_send_allow_running_in_background": {
+                        "name": "শিডিউল করা সেন্ড ব্যাকগ্রাউন্ডে চলার অনুমতি দিন",
+                        "description": "স্ন্যাপচ্যাট ব্যাকগ্রাউন্ডে থাকাকালীন শিডিউল করা মেসেজ প্রসেসিং চালু রাখুন"
+                    }
+                }
+            },
+            "global": {
+                "name": "গ্লোবাল",
+                "description": "গ্লোবাল স্ন্যাপচ্যাট সেটিংস টুইক করুন",
+                "properties": {
+                    "ui_settings": {
+                        "name": "UI সেটিংস",
+                        "description": "ফিডব্যাক এবং টোস্ট আচরণ ঠিক করুন",
+                        "properties": {
+                            "haptic_feedback": {
+                                "name": "হ্যাপটিক ফিডব্যাক",
+                                "description": "সমর্থিত ইন্টারঅ্যাকশনে ভাইব্রেট করুন"
+                            },
+                            "use_system_toasts": {
+                                "name": "সিস্টেম টোস্ট ব্যবহার করুন",
+                                "description": "ইন-অ্যাপ ওভারলে-র পরিবর্তে অ্যান্ড্রয়েড টোস্ট দেখান"
+                            }
+                        }
+                    },
+                    "update_settings": {
+                        "name": "আপডেট সেটিংস",
+                        "description": "স্বয়ংক্রিয় আপডেট চেক নিয়ন্ত্রণ করুন",
+                        "properties": {
+                            "auto_update_check": {
+                                "name": "অটো আপডেট চেক",
+                                "description": "স্বয়ংক্রিয়ভাবে নতুন বিল্ড চেক করুন"
+                            },
+                            "update_check_frequency": {
+                                "name": "আপডেট চেক ফ্রিকোয়েন্সি",
+                                "description": "কত ঘনঘন আপডেটের জন্য চেক করা হবে"
+                            }
+                        }
+                    },
+                    "better_location": {
+                        "name": "বেটার লোকেশন",
+                        "description": "স্ন্যাপচ্যাট লোকেশন উন্নত করে",
+                        "properties": {
+                            "spoof_location": {
+                                "name": "লোকেশন স্পুফ করুন",
+                                "description": "আপনার লোকেশন নির্দিষ্ট একটিতে স্পুফ করুন"
+                            },
+                            "location_search_provider": {
+                                "name": "লোকেশন সার্চ প্রোভাইডার",
+                                "description": "লোকেশন খোঁজার জন্য প্রোভাইডার বেছে নিন"
+                            },
+                            "google_maps_api_key": {
+                                "name": "Google Maps API কী",
+                                "description": "Google Maps প্রোভাইডার ব্যবহার করলে প্রয়োজন"
+                            },
+                            "coordinates": {
+                                "name": "স্থানাঙ্ক",
+                                "description": "স্পুফ করা লোকেশনের স্থানাঙ্ক সেট করুন"
+                            },
+                            "walk_radius": {
+                                "name": "হাঁটার ব্যাসার্ধ",
+                                "description": "এই ব্যাসার্ধের মধ্যে র্যান্ডমভাবে ঘুরে বেড়ান (ফুট)"
+                            },
+                            "always_update_location": {
+                                "name": "সর্বদা লোকেশন আপডেট করুন",
+                                "description": "কোনো GPS ডেটা না পেলেও স্ন্যাপচ্যাটকে লোকেশন আপডেট করতে বাধ্য করে"
+                            },
+                            "suspend_location_updates": {
+                                "name": "লোকেশন আপডেট স্থগিত করুন",
+                                "description": "আপনার লোকেশন আপডেট হওয়া রোধ করে"
+                            },
+                            "spoof_battery_level": {
+                                "name": "ব্যাটারি লেভেল স্পুফ করুন",
+                                "description": "ম্যাপে আপনার ডিভাইসের ব্যাটারি লেভেল স্পুফ করে\nমান ০ এবং ১০০ এর মধ্যে হতে হবে"
+                            },
+                            "spoof_headphones": {
+                                "name": "হেডফোন স্পুফ করুন",
+                                "description": "ম্যাপে গান শোনার স্ট্যাটাস স্পুফ করে"
+                            },
+                            "show_battery_level": {
+                                "name": "ব্যাটারি লেভেল দেখান",
+                                "description": "ম্যাপে আপনার বন্ধুদের ব্যাটারি লেভেল দেখায়"
+                            }
+                        }
+                    },
+                    "snapchat_plus": {
+                        "name": "স্ন্যাপচ্যাট প্লাস",
+                        "description": "স্ন্যাপচ্যাট প্লাস ফিচার সক্রিয় করে\nকিছু সার্ভার-সাইড ফিচার কাজ নাও করতে পারে"
+                    },
+                    "media_upload_quality": {
+                        "name": "মিডিয়া আপলোড কোয়ালিটি",
+                        "description": "মিডিয়া আপলোড কোয়ালিটি ওভাররাইড করে",
+                        "properties": {
+                            "force_video_upload_source_quality": {
+                                "name": "ভিডিও আপলোডে সোর্স কোয়ালিটি ফোর্স করুন",
+                                "description": "ভিডিও আপলোড করার সময় স্ন্যাপচ্যাটকে সোর্স কোয়ালিটি ব্যবহার করতে বাধ্য করে\nনোট: এটি মিডিয়া থেকে মেটাডেটা নাও সরাতে পারে"
+                            },
+                            "disable_image_compression": {
+                                "name": "ইমেজ কমপ্রেশন নিষ্ক্রিয় করুন",
+                                "description": "মিডিয়া আপলোড করার সময় ইমেজ কমপ্রেশন নিষ্ক্রিয় করে"
+                            },
+                            "custom_image_upload_format": {
+                                "name": "কাস্টম ইমেজ আপলোড ফরম্যাট",
+                                "description": "একটি কাস্টম ইমেজ আপলোড ফরম্যাট সেট করে\nসেরা মানের জন্য লসলেস ফরম্যাট (যেমন PNG) নির্বাচন করুন"
+                            }
+                        }
+                    },
+                    "disable_confirmation_dialogs": {
+                        "name": "কনফার্মেশন ডায়ালগ নিষ্ক্রিয় করুন",
+                        "description": "নির্বাচিত অ্যাকশনগুলো স্বয়ংক্রিয়ভাবে নিশ্চিত করে"
+                    },
+                    "auto_updater": {
+                        "name": "অটো আপডেটার",
+                        "description": "স্বয়ংক্রিয়ভাবে নতুন আপডেটের জন্য চেক করে"
+                    },
+                    "disable_metrics": {
+                        "name": "মেট্রিক্স নিষ্ক্রিয় করুন",
+                        "description": "স্ন্যাপচ্যাটে নির্দিষ্ট অ্যানালিটিক ডেটা পাঠানো ব্লক করে"
+                    },
+                    "disable_story_sections": {
+                        "name": "স্টোরি সেকশন নিষ্ক্রিয় করুন",
+                        "description": "স্টোরিজ পেজ থেকে সেকশন সরিয়ে ফেলে\nসঠিকভাবে কাজ করার জন্য রিফ্রেশ প্রয়োজন হতে পারে"
+                    },
+                    "block_ads": {
+                        "name": "বিজ্ঞাপন ব্লক করুন",
+                        "description": "বিজ্ঞাপন প্রদর্শন রোধ করে"
+                    },
+                    "disable_custom_tabs": {
+                        "name": "কাস্টম ট্যাব নিষ্ক্রিয় করুন",
+                        "description": "ওয়েব ব্রাউজারের পরিবর্তে সমর্থিত অ্যাপ্লিকেশনে লিঙ্ক খোলে"
+                    },
+                    "disable_permission_requests": {
+                        "name": "পারমিশন রিকোয়েস্ট নিষ্ক্রিয় করুন",
+                        "description": "স্ন্যাপচ্যাটকে নির্দিষ্ট পারমিশন চাইতে বাধা দেয়"
+                    },
+                    "disable_memories_snap_feed": {
+                        "name": "মেমোরিজ স্ন্যাপ ফিড নিষ্ক্রিয় করুন",
+                        "description": "ক্যামেরায় সোয়াইপ আপ করলে স্ন্যাপচ্যাটকে সাম্প্রতিক মেমোরি দেখানো থেকে বিরত রাখে"
+                    },
+                    "spotlight_comments_username": {
+                        "name": "স্পটলাইট কমেন্ট ইউজারনেম",
+                        "description": "স্পটলাইট কমেন্টে লেখকের ইউজারনেম দেখায়"
+                    },
+                    "spotlight_comments_username_icon": {
+                        "name": "স্পটলাইট কমেন্ট ইউজারনেম আইকন",
+                        "description": "স্পটলাইট কমেন্টে ইউজারনেমের পাশে কোন আইকন দেখাবে তা বেছে নিন"
+                    },
+                    "spotlight_creator_info": {
+                        "name": "স্পটলাইট ক্রিয়েটর ইনফো",
+                        "description": "ক্রিয়েটরের ডিসপ্লে নেম, ইউজারনেম এবং ইউজার আইডি দেখার জন্য স্পটলাইট/ডিসকভার স্ন্যাপে একটি ইনফো বাটন দেখান"
+                    },
+                    "bypass_video_length_restriction": {
+                        "name": "ভিডিও লেংথ রেস্ট্রিকশন বাইপাস",
+                        "description": "সিঙ্গেল: একটি একক ভিডিও পাঠায়\nস্প্লিট: এডিটিংয়ের পর ভিডিও ভাগ করে"
+                    },
+                    "default_video_playback_rate": {
+                        "name": "ডিফল্ট ভিডিও প্লেব্যাক রেট",
+                        "description": "ভিডিও প্লেব্যাকের জন্য ডিফল্ট গতি সেট করে\nমান অবশ্যই ০.১ এবং ৪.০ এর মধ্যে হতে হবে"
+                    },
+                    "video_playback_rate_slider": {
+                        "name": "ভিডিও প্লেব্যাক রেট স্লাইডার",
+                        "description": "ভিডিও প্লেব্যাক রেট পরিবর্তন করতে অপেরা কনটেক্সট মেনুতে একটি স্লাইডার যোগ করে\nনোট: পরিবর্তনগুলো শুধুমাত্র পরবর্তী ভিডিওগুলোতে প্রযোজ্য"
+                    },
+                    "disable_google_play_dialogs": {
+                        "name": "Google Play Services ডায়ালগ নিষ্ক্রিয় করুন",
+                        "description": "Google Play Services অ্যাভেলেবিলিটি ডায়ালগ দেখানো রোধ করুন"
+                    },
+                    "default_volume_controls": {
+                        "name": "ডিফল্ট ভলিউম কন্ট্রোল",
+                        "description": "স্ন্যাপচ্যাটকে সিস্টেম ভলিউম কন্ট্রোল ব্যবহার করতে বাধ্য করে"
+                    },
+                    "disable_telecom_framework": {
+                        "name": "টেলিকম ফ্রেমওয়ার্ক নিষ্ক্রিয় করুন",
+                        "description": "স্ন্যাপচ্যাটকে অ্যান্ড্রয়েড টেলিকম ফ্রেমওয়ার্ক ব্যবহার করা থেকে বিরত রাখে\nএটি আপনাকে কলে থাকার সময় গান শোনার অনুমতি দেয়"
+                    },
+                    "hide_active_music": {
+                        "name": "সক্রিয় মিউজিক লুকান",
+                        "description": "স্ন্যাপচ্যাটকে জানতে দেয় না যে আপনি গান শুনছেন\nএটি গান শোনার সময় ভলিউম বাটন ব্যবহার করে স্ন্যাপ নেওয়ার অনুমতি দেবে"
+                    },
+                    "disable_snap_splitting": {
+                        "name": "স্ন্যাপ স্প্লিটিং নিষ্ক্রিয় করুন",
+                        "description": "স্ন্যাপগুলোকে একাধিক অংশে ভাগ হওয়া রোধ করে\nআপনার পাঠানো ছবি ভিডিওতে পরিণত হবে"
+                    }
+                }
+            },
+            "rules": {
+                "name": "রুলস",
+                "description": "অটোমেশন রুলস কনফিগার করুন",
+                "properties": {
+                    "auto_read": {
+                        "name": "অটো রিড"
+                    },
+                    "hide_typing_indicator": {
+                        "name": "টাইপিং ইন্ডিকেটর লুকান"
+                    },
+                    "auto_reply": {
+                        "name": "অটো রিপ্লাই"
+                    },
+                    "auto_delete_sent_messages": {
+                        "name": "পাঠানো মেসেজ অটো ডিলিট"
+                    },
+                    "auto_download": {
+                        "name": "অটো ডাউনলোড"
+                    },
+                    "stealth": {
+                        "name": "স্টেলথ মোড"
+                    },
+                    "auto_save": {
+                        "name": "অটো সেভ"
+                    },
+                    "message_logger": {
+                        "name": "মেসেজ লগার"
+                    },
+                    "unsaveable_messages": {
+                        "name": "আনসেভেবল মেসেজ"
+                    }
+                }
+            },
+            "camera": {
+                "name": "ক্যামেরা",
+                "description": "নিখুঁত স্ন্যাপের জন্য সঠিক সেটিংস অ্যাডজাস্ট করুন",
+                "properties": {
+                    "disable_cameras": {
+                        "name": "ক্যামেরা নিষ্ক্রিয় করুন",
+                        "description": "স্ন্যাপচ্যাটকে নির্বাচিত ক্যামেরা ব্যবহার করা থেকে বিরত রাখে"
+                    },
+                    "black_photos": {
+                        "name": "কালো ছবি",
+                        "description": "তোলা ছবিগুলোকে কালো ব্যাকগ্রাউন্ড দিয়ে প্রতিস্থাপন করে\nভিডিও প্রভাবিত হয় না"
+                    },
+                    "immersive_camera_preview": {
+                        "name": "ইমারসিভ প্রিভিউ",
+                        "description": "স্ন্যাপচ্যাটকে ক্যামেরা প্রিভিউ ক্রপ করা থেকে বিরত রাখে\nএটি কিছু ডিভাইসে ক্যামেরা ফ্লিকার করাতে পারে"
+                    },
+                    "override_front_resolution": {
+                        "name": "ফ্রন্ট রেজোলিউশন ওভাররাইড",
+                        "description": "ফ্রন্ট ক্যামেরার জন্য ক্যামেরা রেজোলিউশন ওভাররাইড করে"
+                    },
+                    "override_back_resolution": {
+                        "name": "ব্যাক রেজোলিউশন ওভাররাইড",
+                        "description": "ব্যাক ক্যামেরার জন্য ক্যামেরা রেজোলিউশন ওভাররাইড করে"
+                    },
+                    "custom_resolution": {
+                        "name": "কাস্টম রেজোলিউশন",
+                        "description": "একটি কাস্টম ক্যামেরা রেজোলিউশন সেট করে, প্রস্থ x উচ্চতা (যেমন 1920x1080)।\nকাস্টম রেজোলিউশনটি আপনার ডিভাইস দ্বারা সমর্থিত হতে হবে"
+                    },
+                    "front_custom_frame_rate": {
+                        "name": "ফ্রন্ট কাস্টম ফ্রেম রেট",
+                        "description": "ফ্রন্ট ক্যামেরার ফ্রেম রেট ওভাররাইড করে"
+                    },
+                    "back_custom_frame_rate": {
+                        "name": "ব্যাক কাস্টম ফ্রেম রেট",
+                        "description": "ব্যাক ক্যামেরার ফ্রেম রেট ওভাররাইড করে"
+                    },
+                    "force_camera_source_encoding": {
+                        "name": "ক্যামেরা সোর্স এনকোডিং ফোর্স করুন",
+                        "description": "ক্যামেরা সোর্স এনকোডিং ফোর্স করে"
+                    },
+                    "startup_default_camera": {
+                        "name": "স্টার্টআপ ডিফল্ট ক্যামেরা",
+                        "description": "স্ন্যাপচ্যাট খোলার সময় ডিফল্ট ক্যামেরা সেট করে"
+                    },
+                    "hevc_recording": {
+                        "name": "HEVC রেকর্ডিং",
+                        "description": "ভিডিও রেকর্ডিংয়ের জন্য HEVC (H.265) কোডেক ব্যবহার করে"
+                    }
+                }
+            },
+            "streaks_reminder": {
+                "name": "স্ট্রিকস রিমাইন্ডার",
+                "description": "আপনার স্ট্রিকস সম্পর্কে পর্যায়ক্রমে আপনাকে নোটিফাই করে",
+                "properties": {
+                    "interval": {
+                        "name": "ইন্টারভাল",
+                        "description": "প্রতিটি রিমাইন্ডারের মধ্যবর্তী বিরতি (ঘণ্টায়)"
+                    },
+                    "remaining_hours": {
+                        "name": "অবশিষ্ট সময়",
+                        "description": "নোটিফিকেশন দেখানোর আগে অবশিষ্ট সময়ের পরিমাণ (ঘণ্টায়)"
+                    },
+                    "group_notifications": {
+                        "name": "গ্রুপ নোটিফিকেশন",
+                        "description": "নোটিফিকেশনগুলোকে একটিতে গ্রুপ করে"
+                    }
+                }
+            },
+            "experimental": {
+                "name": "এক্সপেরিমেন্টাল",
+                "description": "এক্সপেরিমেন্টাল ফিচারস",
+                "properties": {
+                    "native_hooks": {
+                        "name": "নেটিভ হুকস",
+                        "description": "অনিরাপদ ফিচার যা স্ন্যাপচ্যাটের নেটিভ কোডে হুক করে",
+                        "properties": {
+                            "composer_hooks": {
+                                "name": "কম্পোজার হুকস",
+                                "description": "কম্পোজার ক্রস-প্ল্যাটফর্ম UI ফ্রেমওয়ার্কে কোড ইনজেক্ট করে",
+                                "properties": {
+                                    "show_first_created_username": {
+                                        "name": "প্রথম তৈরি ইউজারনেম দেখান",
+                                        "description": "প্রোফাইল পেজে বর্তমান ইউজারনেমের পাশে প্রথম তৈরি ইউজারনেমটি দেখায়"
+                                    },
+                                    "bypass_camera_roll_limit": {
+                                        "name": "ক্যামেরা রোল লিমিট বাইপাস",
+                                        "description": "ক্যামেরা রোল থেকে আপনি যে পরিমাণ মিডিয়া পাঠাতে পারেন তা বৃদ্ধি করে"
+                                    },
+                                    "custom_self_destruct_snap_delay": {
+                                        "name": "কাস্টম সেলফ ডিস্ট্রাক্ট স্ন্যাপ ডিলে",
+                                        "description": "স্ন্যাপ পাঠানোর সময় সেলফ-ডিস্ট্রাক্ট টাইমারের জন্য আরও অপশন দেয়"
+                                    },
+                                    "composer_console": {
+                                        "name": "কম্পোজার কনসোল",
+                                        "description": "আপনাকে কম্পোজারে জাভাস্ক্রিপ্ট কোড এক্সিকিউট করার অনুমতি দেয় (শুধুমাত্র arm64)"
+                                    },
+                                    "composer_logs": {
+                                        "name": "কম্পোজার লগস",
+                                        "description": "কম্পোজারের কনসোল লগগুলো Purrfect-এ রিডাইরেক্ট করে"
+                                    }
+                                }
+                            },
+                            "disable_bitmoji": {
+                                "name": "বিটমোজি নিষ্ক্রিয় করুন",
+                                "description": "ফ্রেন্ডস প্রোফাইল বিটমোজি নিষ্ক্রিয় করে"
+                            },
+                            "custom_emoji_font": {
+                                "name": "কাস্টম ইমোজি ফন্ট",
+                                "description": "আপনাকে একটি কাস্টম ইমোজি ফন্ট ব্যবহার করার অনুমতি দেয়। শুধুমাত্র .ttf ফন্টের সাথে কাজ করে"
+                            },
+                            "custom_shared_library": {
+                                "name": "কাস্টম শেয়ার্ড লাইব্রেরি",
+                                "description": "স্ন্যাপচ্যাটে একটি কাস্টম শেয়ার্ড লাইব্রেরি লোড করে। এই ফিচারটি শুধুমাত্র পরীক্ষার উদ্দেশ্যে"
+                            }
+                        }
+                    },
+                    "spoof": {
+                        "name": "স্পুফ",
+                        "description": "আপনার সম্পর্কে বিভিন্ন তথ্য স্পুফ করুন",
+                        "properties": {
+                            "play_store_installer_package_name": {
+                                "name": "প্লে স্টোর ইনস্টলার প্যাকেজ নেম",
+                                "description": "ইনস্টলার প্যাকেজ নেম com.android.vending এ ওভাররাইড করে"
+                            },
+                            "remove_vpn_transport_flag": {
+                                "name": "VPN ট্রান্সপোর্ট ফ্ল্যাগ সরান",
+                                "description": "স্ন্যাপচ্যাটকে VPN শনাক্ত করা থেকে বিরত রাখে"
+                            },
+                            "remove_mock_location_flag": {
+                                "name": "মক লোকেশন ফ্ল্যাগ সরান",
+                                "description": "স্ন্যাপচ্যাটকে মক লোকেশন শনাক্ত করা থেকে বিরত রাখে"
+                            },
+                            "force_wifi_transport_flag": {
+                                "name": "Wi-Fi ট্রান্সপোর্ট ফ্ল্যাগ ফোর্স করুন",
+                                "description": "মোবাইল ডেটার পরিবর্তে নেটওয়ার্ক ট্রান্সপোর্টকে Wi-Fi রিপোর্ট করতে বাধ্য করে"
+                            },
+                            "spoof_device_id": {
+                                "name": "ডিভাইস ID স্পুফ করুন",
+                                "description": "স্ন্যাপচ্যাটে পাঠানো অ্যান্ড্রয়েড ID ওভাররাইড করুন",
+                                "properties": {
+                                    "spoof_android_id": {
+                                        "name": "অ্যান্ড্রয়েড ID স্পুফ করুন",
+                                        "description": "একটি কাস্টম মান দিয়ে স্ন্যাপচ্যাটে পাঠানো অ্যান্ড্রয়েড ID ওভাররাইড করুন"
+                                    },
+                                    "custom_android_id": {
+                                        "name": "কাস্টম অ্যান্ড্রয়েড ID",
+                                        "description": "অ্যান্ড্রয়েড ID স্পুফ করার সময় ব্যবহার করার মান"
+                                    }
+                                }
+                            },
+                            "spoof_device": {
+                                "name": "ডিভাইস স্পুফ করুন",
+                                "description": "স্ন্যাপচ্যাটকে অন্য ডিভাইস মডেল হিসেবে চলতে দেখান"
+                            },
+                            "device_model": {
+                                "name": "ডিভাইস মডেল",
+                                "description": "কোন ডিভাইস মডেল স্পুফ করবেন তা বাছুন"
+                            }
+                        }
+                    },
+                    "convert_message_locally": {
+                        "name": "লোকালি মেসেজ কনভার্ট করুন",
+                        "description": "স্ন্যাপগুলোকে লোকালি চ্যাট এক্সটার্নাল মিডিয়ায় রূপান্তর করে। এটি চ্যাট ডাউনলোড কনটেক্সট মেনুতে দেখা যায়"
+                    },
+                    "media_file_picker": {
+                        "name": "মিডিয়া ফাইল পিকার",
+                        "description": "আপনাকে গ্যালারি থেকে যেকোনো ভিডিও/অডিও ফাইল বাছতে দেয়"
+                    },
+                    "story_logger": {
+                        "name": "স্টোরি লগার",
+                        "description": "বন্ধুদের স্টোরির একটি ইতিহাস প্রদান করে"
+                    },
+                    "account_switcher": {
+                        "name": "অ্যাকাউন্ট স্যুইচার",
+                        "description": "লগআউট না করেই অ্যাকাউন্ট স্যুইচ করার অনুমতি দেয়\nমেনু খুলতে আপনার বিটমোজি প্রোফাইল-এর পাশের সার্চ আইকনে লং প্রেস করুন\nনোট: এই ফিচারটি পরীক্ষামূলক এবং ভবিষ্যতে সম্ভবত পরিবর্তন হবে",
+                        "properties": {
+                            "auto_backup_current_account": {
+                                "name": "বর্তমান অ্যাকাউন্ট অটো ব্যাকআপ",
+                                "description": "লগআউট বা অ্যাকাউন্ট স্যুইচ করার সময় বর্তমান অ্যাকাউন্টটি স্বয়ংক্রিয়ভাবে ব্যাকআপ করে"
+                            }
+                        }
+                    },
+                    "better_transcript": {
+                        "name": "বেটার ট্রান্সক্রিপ্ট",
+                        "description": "ভয়েস নোট ট্রান্সক্রিপ্ট উন্নত করে",
+                        "properties": {
+                            "force_transcription": {
+                                "name": "ভয়েস নোট ট্রান্সক্রিপশন ফোর্স করুন",
+                                "description": "সব ভয়েস নোট ট্রান্সক্রাইব করার অনুমতি দেয়"
+                            },
+                            "preferred_transcription_lang": {
+                                "name": "পছন্দের ট্রান্সক্রিপশন ভাষা",
+                                "description": "ভয়েস নোট ট্রান্সক্রিপ্টের পছন্দের ভাষা (যেমন EN, ES, FR)"
+                            },
+                            "notification_transcript": {
+                                "name": "নোটিফিকেশন ট্রান্সক্রিপ্ট",
+                                "description": "নোটিফিকেশনে ভয়েস নোট ট্রান্সক্রাইব করে\nএই ফিচারটির জন্য বেটার নোটিফিকেশনে চ্যাট প্রিভিউ ফিচারটি সক্রিয় থাকতে হবে"
+                            }
+                        }
+                    },
+                    "voice_note_auto_play": {
+                        "name": "ভয়েস নোট অটো প্লে",
+                        "description": "বর্তমান ভয়েস নোট শেষ হওয়ার পর স্বয়ংক্রিয়ভাবে পরেরটি চালায়"
+                    },
+                    "friend_notes": {
+                        "name": "ফ্রেন্ড নোটস",
+                        "description": "আপনাকে বন্ধুদের প্রোফাইলে নোট যোগ করার অনুমতি দেয়"
+                    },
+                    "cof_experiments": {
+                        "name": "COF এক্সপেরিমেন্টস",
+                        "description": "অপ্রকাশিত/বিটা স্ন্যাপচ্যাট ফিচারগুলো সক্রিয় করে"
+                    },
+                    "context_menu_fix": {
+                        "name": "কনটেক্সট মেনু ফিক্স",
+                        "description": "ফ্রেন্ড ফিড মেনু ঠিক করার চেষ্টা করে কারণ ডিভাইস অফলাইনে থাকলে এটি সঠিকভাবে প্রদর্শিত নাও হতে পারে"
+                    },
+                    "app_lock": {
+                        "name": "অ্যাপ লক",
+                        "description": "পাসকোড ছাড়া স্ন্যাপচ্যাটে অ্যাক্সেস রোধ করে",
+                        "properties": {
+                            "lock_on_resume": {
+                                "name": "রিজুমে লক করুন",
+                                "description": "অ্যাপটি পুনরায় খোলা হলে লক করে"
+                            }
+                        }
+                    },
+                    "infinite_story_boost": {
+                        "name": "ইনফিনিট স্টোরি বুস্ট",
+                        "description": "স্টোরি বুস্ট লিমিট ডিলে বাইপাস করুন"
+                    },
+                    "meo_passcode_bypass": {
+                        "name": "মাই আইজ অনলি পাসকোড বাইপাস",
+                        "description": "মাই আইজ অনলি পাসকোড বাইপাস করুন\nএটি শুধুমাত্র তখনই কাজ করবে যদি পাসকোডটি আগে সঠিকভাবে প্রবেশ করানো হয়ে থাকে"
+                    },
+                    "no_friend_score_delay": {
+                        "name": "নো ফ্রেন্ড স্কোর ডিলে",
+                        "description": "ফ্রেন্ডস স্কোর দেখার সময় বিলম্ব দূর করে"
+                    },
+                    "best_friend_pinning": {
+                        "name": "বেস্ট ফ্রেন্ড পিনিং",
+                        "description": "আপনাকে একজন বন্ধুকে আপনার এক নম্বর সেরা বন্ধু হিসেবে পিন করার অনুমতি দেয়। নোট: শুধুমাত্র আপনি আপনার পিন করা সেরা বন্ধুকে দেখতে পাবেন"
+                    },
+                    "e2ee": {
+                        "name": "এন্ড-টু-এন্ড এনক্রিপশন",
+                        "description": "একটি শেয়ার্ড সিক্রেট কী ব্যবহার করে AES দিয়ে আপনার মেসেজ এনক্রিপ্ট করে\nআপনার কী কোথাও নিরাপদে সেভ করে রাখতে ভুলবেন না!",
+                        "properties": {
+                            "encrypted_message_indicator": {
+                                "name": "এনক্রিপ্টেড মেসেজ ইন্ডিকেটর",
+                                "description": "এনক্রিপ্টেড মেসেজের পাশে একটি \ud83d\udd12 ইমোজি যোগ করে"
+                            },
+                            "force_message_encryption": {
+                                "name": "মেসেজ এনক্রিপশন ফোর্স করুন",
+                                "description": "যাদের E2E এনক্রিপশন সক্রিয় নেই তাদের কাছে এনক্রিপ্টেড মেসেজ পাঠানো রোধ করে, শুধুমাত্র যখন একাধিক কনভারসেশন নির্বাচিত থাকে"
+                            }
+                        }
+                    },
+                    "add_friend_source_spoof": {
+                        "name": "অ্যাড ফ্রেন্ড সোর্স স্পুফ",
+                        "description": "ফ্রেন্ড রিকোয়েস্টের উৎস স্পুফ করে"
+                    },
+                    "hidden_snapchat_plus_features": {
+                        "name": "লুকানো স্ন্যাপচ্যাট প্লাস ফিচার",
+                        "description": "অপ্রকাশিত/বিটা স্ন্যাপচ্যাট প্লাস ফিচার সক্রিয় করে\nপুরনো স্ন্যাপচ্যাট ভার্সনে কাজ নাও করতে পারে"
+                    },
+                    "custom_streaks_expiration_format": {
+                        "name": "কাস্টম স্ট্রিকস এক্সপাইরেশন ফরম্যাট",
+                        "description": "স্ট্রিকস এক্সপাইরেশন ফরম্যাট কাস্টমাইজ করে\n\nউপলব্ধ ভেরিয়েবল:\n - %c: স্ট্রিকস সংখ্যা\n - %e: আওয়ারগ্লাস ইমোজি\n - %d: দিন\n - %h: ঘণ্টা\n - %m: মিনিট\n - %s: সেকেন্ড\n - %w: অবশিষ্ট সময়"
+                    },
+                    "prevent_forced_logout": {
+                        "name": "ফোর্সড লগআউট রোধ করুন",
+                        "description": "অন্য ডিভাইসে লগইন করলে স্ন্যাপচ্যাট আপনাকে লগআউট করা থেকে বিরত রাখে"
+                    },
+                    "snapscore_changes": {
+                        "name": "স্ন্যাপস্কোর পরিবর্তন",
+                        "description": "বন্ধুদের স্ন্যাপস্কোরের পরিবর্তন ট্র্যাক করে\nএই ফিচারটি শুধুমাত্র স্ন্যাপচ্যাটের নতুন ভার্সনে ব্যবহার করুন"
+                    }
+                }
+            },
+            "scripting": {
+                "name": "স্ক্রিপ্টিং",
+                "description": "Purrfect-এর ক্ষমতা বাড়াতে কাস্টম স্ক্রিপ্ট রান করুন",
+                "properties": {
+                    "developer_mode": {
+                        "name": "ডেভেলপার মোড",
+                        "description": "স্ন্যাপচ্যাটের UI-তে ডিবাগ ইনফো দেখায়"
+                    },
+                    "module_folder": {
+                        "name": "মডিউল ফোল্ডার",
+                        "description": "যে ফোল্ডারে স্ক্রিপ্টগুলো অবস্থিত"
+                    },
+                    "auto_reload": {
+                        "name": "অটো রিলোড",
+                        "description": "স্ক্রিপ্ট পরিবর্তন হলে স্বয়ংক্রিয়ভাবে রিলোড করে"
+                    },
+                    "integrated_ui": {
+                        "name": "ইন্টিগ্রেটেড UI",
+                        "description": "স্ক্রিপ্টগুলোকে স্ন্যাপচ্যাটে কাস্টম UI কম্পোনেন্ট যোগ করার অনুমতি দেয়"
+                    },
+                    "disable_log_anonymization": {
+                        "name": "লগ অ্যানোনিমাইজেশন নিষ্ক্রিয় করুন",
+                        "description": "লগের অ্যানোনিমাইজেশন নিষ্ক্রিয় করে"
+                    },
+                    "disable_optimization": {
+                        "name": "অপটিমাইজেশন নিষ্ক্রিয় করুন",
+                        "description": "স্ক্রিপ্টের অপটিমাইজেশন নিষ্ক্রিয় করে। এটি পারফরম্যান্স সমস্যার কারণ হতে পারে।"
+                    }
+                }
+            },
+            "friend_tracker": {
+                "name": "ফ্রেন্ড ট্র্যাকার",
+                "description": "স্ন্যাপচ্যাটে বন্ধুর কার্যকলাপ রেকর্ড করে",
+                "properties": {
+                    "record_messaging_events": {
+                        "name": "মেসেজিং ইভেন্ট রেকর্ড করুন",
+                        "description": "মেসেজিং ইভেন্ট যেমন স্ন্যাপ খোলা, মেসেজ পড়া ইত্যাদি রেকর্ড করে।"
+                    },
+                    "allow_running_in_background": {
+                        "name": "ব্যাকগ্রাউন্ডে চলার অনুমতি দিন",
+                        "description": "ট্র্যাকারটিকে ব্যাকগ্রাউন্ডে চলার অনুমতি দেয়। নোট: এটি আপনার ব্যাটারি দ্রুত শেষ করবে"
+                    },
+                    "auto_purge": {
+                        "name": "অটো পার্জ",
+                        "description": "নির্দিষ্ট সময়ের চেয়ে পুরনো ক্যাশড ইভেন্টগুলো স্বয়ংক্রিয়ভাবে ডিলিট করে"
+                    }
+                }
+            }
+        },
+        "options": {
+            "empty": "খালি",
+            "location_search_provider": {
+                "osm": "OpenStreetMap (ফ্রি)",
+                "google_maps": "Google Maps"
+            },
+            "unsaveable_messages": {
+                "blacklist": "ব্ল্যাকলিস্ট মোড",
+                "whitelist": "হোয়াইটলিস্ট মোড",
+                "null": "নিষ্ক্রিয়"
+            },
+            "app_appearance": {
+                "always_light": "সর্বদা লাইট",
+                "always_dark": "সর্বদা ডার্ক",
+                "null": "সিস্টেম অনুযায়ী"
+            },
+            "auto_reload": {
+                "snapchat_only": "শুধুমাত্র স্ন্যাপচ্যাট রিলোড করুন",
+                "all": "স্ন্যাপচ্যাট + Purrfect রিলোড করুন",
+                "null": "ডিফল্ট"
+            },
+            "walk_radius": {
+                "null": "ডিফল্ট ব্যাসার্ধ ব্যবহার করুন"
+            },
+            "spoof_battery_level": {
+                "null": "আসল ব্যাটারি লেভেল ব্যবহার করুন"
+            },
+            "friend_feed_menu_buttons": {
+                "auto_download": "\u2b07\ufe0f অটো ডাউনলোড",
+                "auto_save": "\ud83d\udcac মেসেজ অটো সেভ",
+                "unsaveable_messages": "\u2b07\ufe0f আনসেভেবল মেসেজ",
+                "auto_open_snaps": "\ud83d\udcf7 অটো ওপেন স্ন্যাপস",
+                "stealth": "\ud83d\udc7b স্টেলথ মোড",
+                "auto_reply": "\ud83d\udce8 অটো রিপ্লাই",
+                "auto_delete_sent_messages": "\ud83d\uddd1\ufe0f পাঠানো মেসেজ অটো ডিলিট",
+                "mark_snaps_as_seen": "\ud83d\udc40 স্ন্যাপ 'সিন' মার্ক করুন",
+                "mark_stories_as_seen_locally": "\ud83d\udc40 স্টোরি 'সিন' মার্ক করুন (লোকালি)",
+                "conversation_info": "\ud83d\udc64 কনভারসেশন ইনফো",
+                "e2e_encryption": "\ud83d\udd12 E2E এনক্রিপশন ব্যবহার করুন",
+                "message_logger": "\ud83d\udcdd মেসেজ লগার",
+                "auto_read": "\u2705 অটো রিড",
+                "hide_typing_indicator": "\ud83d\ude48 টাইপিং ইন্ডিকেটর লুকান"
+            },
+            "schedule_scheduled_for": "{name}-এর জন্য {time}-এ শিডিউল করা হয়েছে",
+            "schedule_sending_in": "{time}-এর মধ্যে পাঠানো হচ্ছে",
+            "schedule_sent_to": "{name}-কে পাঠানো হয়েছে",
+            "schedule_sent": "শিডিউল করা স্ন্যাপ পাঠানো হয়েছে",
+            "schedule_failed_to": "{name}-কে পাঠাতে ব্যর্থ হয়েছে",
+            "schedule_failed": "শিডিউল করা স্ন্যাপ ব্যর্থ হয়েছে",
+            "schedule_cancelled_for": "{name}-এর জন্য বাতিল করা হয়েছে",
+            "device_model": {
+                "samsung_s25_ultra": "Samsung Galaxy S25 Ultra",
+                "google_pixel_10_pro": "Google Pixel 10 Pro",
+                "oneplus_13": "OnePlus 13",
+                "xiaomi_15_ultra": "Xiaomi 15 Ultra",
+                "null": "ডিভাইস ডিফল্ট"
+            },
+            "settings_menu": {
+                "default": "ডিফল্ট",
+                "legacy": "লিগ্যাসি"
+            },
+            "path_format": {
+                "create_author_folder": "প্রতিটি লেখকের জন্য ফোল্ডার তৈরি করুন",
+                "create_source_folder": "প্রতিটি মিডিয়া সোর্স টাইপের জন্য ফোল্ডার তৈরি করুন",
+                "append_hash": "ফাইলের নামে একটি ইউনিক হ্যাশ যোগ করুন",
+                "append_source": "ফাইলের নামে মিডিয়া সোর্স যোগ করুন",
+                "append_username": "ফাইলের নামে ইউজারনেম যোগ করুন",
+                "append_date_time": "ফাইলের নামে তারিখ এবং সময় যোগ করুন",
+                "append_type": "ফাইলের নামে মিডিয়া টাইপ যোগ করুন"
+            },
+            "auto_download_sources": {
+                "friend_snaps": "ফ্রেন্ড স্ন্যাপস",
+                "friend_stories": "ফ্রেন্ড স্টোরিজ",
+                "public_stories": "পাবলিক স্টোরিজ",
+                "spotlight": "স্পটলাইট"
+            },
+            "logging": {
+                "started": "শুরু হয়েছে",
+                "success": "সফল",
+                "progress": "অগ্রগতি",
+                "failure": "ব্যর্থতা"
+            },
+            "notifications": {
+                "chat_screenshot": "স্ক্রিনশট",
+                "chat_screen_record": "স্ক্রিন রেকর্ড",
+                "snap_replay": "স্ন্যাপ রিপ্লে",
+                "camera_roll_save": "ক্যামেরা রোল সেভ",
+                "chat": "চ্যাট",
+                "chat_reply": "চ্যাট রিপ্লাই",
+                "snap": "স্ন্যাপ",
+                "typing": "টাইপিং",
+                "stories": "স্টোরিজ",
+                "speaking": "কথা বলছেন",
+                "chat_reaction": "DM রিয়েকশন",
+                "group_chat_reaction": "গ্রুপ রিয়েকশন",
+                "initiate_audio": "আসা অডিও কল",
+                "abandon_audio": "মিসড অডিও কল",
+                "initiate_video": "আসা ভিডিও কল",
+                "abandon_video": "মিসড ভিডিও কল",
+                "map_live_location": "ম্যাপ লাইভ লোকেশন"
+            },
+            "auto_read": {
+                "blacklist": "ব্ল্যাকলিস্ট",
+                "whitelist": "হোয়াইটলিস্ট",
+                "disabled": "নিষ্ক্রিয়"
+            },
+            "hide_typing_indicator": {
+                "blacklist": "ব্ল্যাকলিস্ট",
+                "whitelist": "হোয়াইটলিস্ট",
+                "disabled": "নিষ্ক্রিয়"
+            },
+            "auto_delete_sent_messages": {
+                "blacklist": "ব্ল্যাকলিস্ট",
+                "whitelist": "হোয়াইটলিস্ট",
+                "disabled": "নিষ্ক্রিয়"
+            },
+            "auto_download": {
+                "blacklist": "ব্ল্যাকলিস্ট",
+                "whitelist": "হোয়াইটলিস্ট",
+                "disabled": "নিষ্ক্রিয়"
+            },
+            "stealth": {
+                "blacklist": "ব্ল্যাকলিস্ট",
+                "whitelist": "হোয়াইটলিস্ট",
+                "disabled": "নিষ্ক্রিয়"
+            },
+            "auto_save": {
+                "blacklist": "ব্ল্যাকলিস্ট",
+                "whitelist": "হোয়াইটলিস্ট",
+                "disabled": "নিষ্ক্রিয়"
+            },
+            "message_logger": {
+                "blacklist": "ব্ল্যাকলিস্ট",
+                "whitelist": "হোয়াইটলিস্ট",
+                "disabled": "নিষ্ক্রিয়"
+            },
+            "auto_reply": {
+                "blacklist": "ব্ল্যাকলিস্ট",
+                "whitelist": "হোয়াইটলিস্ট",
+                "disabled": "নিষ্ক্রিয়"
+            },
+            "custom_android_id": {
+                "null": "আসল অ্যান্ড্রয়েড ID ব্যবহার করুন"
+            },
+	            "add_friend_source_spoof": {
+	                "added_by_username": "ইউজারনেম দ্বারা",
+	                "added_by_mention": "মেনশন দ্বারা",
+	                "added_by_group_chat": "গ্রুপ চ্যাট দ্বারা",
+	                "added_by_qr_code": "QR কোড দ্বারা",
+	                "added_by_community": "কমিউনিটি দ্বারা",
+	                "added_by_quick_add": "কুইক অ্যাড দ্বারা (ব্যান হওয়ার উচ্চ ঝুঁকি)",
+	                "added_by_spotlight": "স্পটলাইট দ্বারা",
+	                "null": "সোর্স স্পুফ করবেন না"
+	            },
+            "custom_streaks_expiration_format": {
+                "null": "সিস্টেম ডিফল্ট"
+            },
+            "preferred_transcription_lang": {
+                "null": "স্ন্যাপচ্যাট ডিফল্ট ব্যবহার করুন"
+            },
+            "custom_emoji_font": {
+                "null": "ডিফল্ট ইমোজি ফন্ট"
+            },
+            "custom_shared_library": {
+                "null": "ডিফল্ট লাইব্রেরি ব্যবহার করুন"
+            },
+            "override_front_resolution": {
+                "null": "ডিভাইস ডিফল্ট ব্যবহার করুন"
+            },
+            "override_back_resolution": {
+                "null": "ডিভাইস ডিফল্ট ব্যবহার করুন"
+            },
+            "custom_resolution": {
+                "null": "স্বয়ংক্রিয় রেজোলিউশন ব্যবহার করুন"
+            },
+            "startup_default_camera": {
+                "front": "ফ্রন্ট ক্যামেরা",
+                "back": "ব্যাক ক্যামেরা",
+                "null": "শেষ ব্যবহৃতটি মনে রাখুন"
+            },
+            "call_recorder": {
+                "only_record_self": "শুধু নিজেকে রেকর্ড করুন",
+                "only_record_others": "শুধু অন্যদের রেকর্ড করুন",
+                "record_both": "উভয় পক্ষ রেকর্ড করুন"
+            },
+            "call_recorder_ui_design": {
+                "default": "ডিফল্ট",
+                "snapchat": "স্ন্যাপচ্যাট",
+                "cyber": "সাইবার",
+                "frost": "ফ্রস্ট"
+            },
+            "front_custom_frame_rate": {
+                "null": "ডিভাইস ডিফল্ট FPS"
+            },
+            "back_custom_frame_rate": {
+                "null": "ডিভাইস ডিফল্ট FPS"
+            },
+            "force_voice_note_format": {
+                "null": "স্ন্যাপচ্যাট ডিফল্ট ব্যবহার করুন"
+            },
+            "custom_path_format": {
+                "null": "ডিফল্ট প্যাটার্ন ব্যবহার করুন"
+            },
+            "force_image_format": {
+                "null": "স্ন্যাপচ্যাট ডিফল্ট ব্যবহার করুন"
+            },
+            "custom_video_codec": {
+                "null": "ডিফল্ট কোডেক"
+            },
+            "custom_audio_codec": {
+                "null": "ডিফল্ট কোডেক"
+            },
+            "preset": {
+                "null": "ডিফল্ট প্রিসেট"
+            },
+            "app_appearance_override": {
+                "title": "অ্যাপিয়ারেন্স"
+            },
+            "gallery_media_send_override": {
+                "always_ask": "সর্বদা জিজ্ঞাসা করুন",
+                "ORIGINAL": "আসল মিডিয়া",
+                "NOTE": "অডিও নোট",
+                "SNAP": "স্ন্যাপ",
+                "SAVEABLE_SNAP": "সেভেবল স্ন্যাপ",
+                "null": "স্ন্যাপচ্যাট ডিফল্ট",
+                "multiple_media_toast": "আপনি একবারে কেবল একটি মিডিয়া পাঠাতে পারেন"
+            },
+            "strip_media_metadata": {
+                "hide_caption_text": "ক্যাপশন টেক্সট লুকান",
+                "hide_snap_filters": "স্ন্যাপ ফিল্টার লুকান",
+                "hide_extras": "অতিরিক্ত লুকান (যেমন মেনশন)",
+                "remove_audio_note_duration": "অডিও নোটের সময়কাল সরান",
+                "remove_audio_note_transcript_capability": "অডিও নোট ট্রান্সক্রিপ্ট ক্ষমতা সরান"
+            },
+            "hide_ui_components": {
+                "hide_profile_call_buttons": "প্রোফাইল কল বাটন সরান",
+                "hide_chat_call_buttons": "চ্যাট কল বাটন সরান",
+                "hide_live_location_share_button": "লাইভ লোকেশন শেয়ার বাটন সরান",
+                "hide_stickers_button": "স্টিকার বাটন সরান",
+                "hide_voice_record_button": "ভয়েস রেকর্ড বাটন সরান",
+                "hide_unread_chat_hint": "আনরেড চ্যাট হিন্ট সরান",
+                "hide_post_to_story_buttons": "স্ন্যাপ পাঠানোর আগে 'পোস্ট টু স্টোরি' বাটন সরান",
+                "hide_billboard_prompt": "ফ্রেন্ডস ফিডে বিলবোর্ড প্রম্পট সরান",
+                "hide_snapchat_plus_gift_reminders": "কনভারসেশনে স্ন্যাপচ্যাট প্লাস গিফট রিমাইন্ডার সরান",
+                "hide_map_reactions": "ম্যাপ রিয়েকশন সরান"
+            },
+            "hide_story_suggestions": {
+                "hide_suggested_friend_stories": "সাজেস্টেড ফ্রেন্ড স্টোরি লুকান",
+                "hide_my_stories": "আমার স্টোরি লুকান"
+            },
+            "home_tab": {
+                "map": "ম্যাপ",
+                "chat": "চ্যাট",
+                "camera": "ক্যামেরা",
+                "discover": "ডিসকভার",
+                "spotlight": "স্পটলাইট",
+                "null": "স্ন্যাপচ্যাট ডিফল্ট"
+            },
+            "spotlight_comments_username_icon": {
+                "user": "ইউজারনেম আইকন",
+                "\ud83d\udc64": "ইউজারনেম আইকন",
+                "[\ud83d\udc64]": "ইউজারনেম আইকন",
+                "default": "ইউজারনেম আইকন",
+                "no_icon": "কোনো আইকন নেই"
+            },
+            "custom_image_upload_format": {
+                "null": "স্বয়ংক্রিয়"
+            },
+            "update_check_frequency": {
+                "daily": "দৈনিক",
+                "weekly": "সাপ্তাহিক",
+                "monthly": "মাসিক",
+                "null": "অটো"
+            },
+            "snapchat_plus": {
+                "not_subscribed": "সাবস্ক্রাইব করা হয়নি",
+                "basic": "বেসিক",
+                "ad_free": "অ্যাড ফ্রি",
+                "null": "ডিফল্ট"
+            },
+            "bypass_video_length_restriction": {
+                "single": "সিঙ্গেল মিডিয়া",
+                "split": "স্প্লিট মিডিয়া",
+                "null": "ডিফল্ট"
+            },
+            "old_bitmoji_selfie": {
+                "2d": "2D বিটমোজি",
+                "3d": "3D বিটমোজি",
+                "null": "ডিফল্ট বিটমোজি"
+            },
+            "disable_confirmation_dialogs": {
+                "erase_message": "মেসেজ মুছুন",
+                "remove_friend": "বন্ধু সরান",
+                "block_friend": "বন্ধু ব্লক করুন",
+                "ignore_friend": "বন্ধু ইগনোর করুন",
+                "hide_friend": "বন্ধু লুকান",
+                "hide_conversation": "কনভারসেশন লুকান",
+                "clear_conversation": "ফ্রেন্ড ফিড থেকে কনভারসেশন পরিষ্কার করুন"
+            },
+            "edit_text_override": {
+                "multi_line_chat_input": "মাল্টি লাইন চ্যাট ইনপুট",
+                "bypass_text_input_limit": "টেক্সট ইনপুট লিমিট বাইপাস"
+            },
+            "auto_purge": {
+                "never": "কখনও না",
+                "1_hour": "১ ঘণ্টা",
+                "3_hours": "৩ ঘণ্টা",
+                "6_hours": "৬ ঘণ্টা",
+                "12_hours": "১২ ঘণ্টা",
+                "1_day": "১ দিন",
+                "3_days": "৩ দিন",
+                "1_week": "১ সপ্তাহ",
+                "2_weeks": "২ সপ্তাহ",
+                "1_month": "১ মাস",
+                "3_months": "৩ মাস",
+                "6_months": "৬ মাস"
+            },
+            "delete_after_unit": {
+                "seconds": "সেকেন্ড",
+                "minutes": "মিনিট",
+                "hours": "ঘণ্টা"
+            },
+            "disable_story_sections": {
+                "friends": "বন্ধু",
+                "suggested_stories": "সাজেস্টেড স্টোরিজ",
+                "following": "ফলোইং",
+                "discover": "ডিসকভার"
+            },
+            "disable_cameras": {
+                "front": "ফ্রন্ট ক্যামেরা",
+                "back": "ব্যাক ক্যামেরা"
+            },
+            "disable_permission_requests": {
+                "notifications": "নোটিফিকেশন",
+                "read_media_images": "মিডিয়া ইমেজ পড়ুন",
+                "read_media_video": "মিডিয়া ভিডিও পড়ুন",
+                "camera": "ক্যামেরা",
+                "microphone": "মাইক্রোফোন",
+                "location": "লোকেশন",
+                "read_contacts": "কন্টাক্টস পড়ুন",
+                "nearby_devices": "কাছাকাছি ডিভাইস",
+                "phone_calls": "ফোন কল"
+            },
+            "message_indicators": {
+                "encryption_indicator": "শুধুমাত্র আপনাকে পাঠানো মেসেজের পাশে একটি \ud83d\udd12 আইকন যোগ করে",
+                "platform_indicator": "যে প্ল্যাটফর্ম থেকে মিডিয়া পাঠানো হয়েছে তার আইকন যোগ করে (যেমন Android, iOS, Web)",
+                "location_indicator": "লোকেশন চালু রেখে পাঠানো স্ন্যাপে একটি \ud83d\udccd আইকন যোগ করে",
+                "ovf_editor_indicator": "OVF এডিটর ব্যবহার করে স্ন্যাপ পাঠানো হয়েছে কিনা তা নির্দেশ করে",
+                "director_mode_indicator": "ডিরেক্টর মোড ব্যবহার করে পাঠানো স্ন্যাপে একটি \u270f\ufe0f আইকন যোগ করে, যা গ্যালারি ছবি স্ন্যাপ হিসেবে পাঠাতে ব্যবহার করা যেতে পারে"
+            },
+            "auto_mark_as_read": {
+                "conversation_read": "মেসেজ পাঠানোর সময় কনভারসেশন 'পড়া হয়েছে' হিসেবে মার্ক করুন",
+                "snap_reply": "রিপ্লাই করার সময় স্ন্যাপ 'পড়া হয়েছে' হিসেবে মার্ক করুন",
+                "save_snap_in_chat": "স্টেলথ মোডে থাকাকালীন চ্যাটে সেভ করার সময় স্ন্যাপ 'পড়া হয়েছে' হিসেবে মার্ক করুন"
+            },
+            "friend_mutation_notifier": {
+                "remove_friend": "কেউ আপনাকে বন্ধু তালিকা থেকে সরিয়ে দিলে জানান",
+                "birthday_changes": "কেউ তাদের জন্মদিন পরিবর্তন করলে জানান",
+                "bitmoji_selfie_changes": "কেউ তাদের বিটমোজি সেলফি পরিবর্তন করলে জানান",
+                "bitmoji_avatar_changes": "কেউ তাদের বিটমোজি অবতার পরিবর্তন করলে জানান",
+                "bitmoji_background_changes": "কেউ তাদের বিটমোজি ব্যাকগ্রাউন্ড পরিবর্তন করলে জানান",
+                "bitmoji_scene_changes": "কেউ তাদের বিটমোজি সিন পরিবর্তন করলে জানান"
+            },
+            "double_tap_chat_action": {
+                "like_message": "লাইক মেসেজ",
+                "copy_text": "ক্লিপবোর্ডে টেক্সট কপি করুন",
+                "delete_message": "মেসেজ ডিলিট করুন",
+                "mark_as_read": "মার্ক অ্যাজ রিড",
+                "custom_emoji_reaction": "কাস্টম ইমোজি রিয়েকশন",
+                "null": "ডিফল্ট"
+            },
+            "message_types": {
+                "CHAT": "চ্যাট",
+                "SNAP": "স্ন্যাপ",
+                "NOTE": "নোট",
+                "EXTERNAL_MEDIA": "এক্সটার্নাল মিডিয়া",
+                "STICKER": "স্টিকার"
+            },
+            "double_tap_chat_action_custom_emoji": {
+                "Custom emoji reaction": "কাস্টম ইমোজি রিয়েকশন"
+            },
+            "ai_model": {
+                "gemini-2.5-flash": "Gemini 2.5 Flash"
+            },
+            "ai_api_key": {
+                "": "সেট করা নেই"
+            },
+            "ai_system_prompt": {
+                "You are a helpful and friendly assistant responding to messages on Snapchat. Keep responses natural, casual, and conversational. Avoid being overly formal or robotic. Respond as if you're a real person having a normal conversation.": "আপনি স্ন্যাপচ্যাটে মেসেজের উত্তর দেওয়া একজন সহায়ক এবং বন্ধুত্বপূর্ণ সহকারী। উত্তরগুলো স্বাভাবিক, ক্যাজুয়াল এবং কথোপকথনমূলক রাখুন। অতিরিক্ত আনুষ্ঠানিক বা রোবোটিক হওয়া এড়িয়ে চলুন। একজন সাধারণ মানুষের মতো স্বাভাবিক কথোপকথনে উত্তর দিন।"
+            },
+            "ai_provider": {
+                "gemini": "Gemini",
+                "deepseek": "DeepSeek",
+                "openai": "OpenAI",
+                "openrouter": "OpenRouter"
+            },
+            "ai_personality_traits": {
+                "friendly, casual, helpful, empathetic": "বন্ধুত্বপূর্ণ, ক্যাজুয়াল, সহায়ক, সহানুভূতিশীল"
+            },
+            "ai_response_style": {
+                "casual": "ক্যাজুয়াল",
+                "formal": "ফরমাল",
+                "friendly": "বন্ধুত্বপূর্ণ",
+                "humorous": "রসিক",
+                "empathetic": "সহানুভূতিশীল",
+                "toxic": "উদ্ধত",
+                "busy": "ব্যস্ত"
+            },
+            "ai_temperature": {
+                "0.7": "ভারসাম্যপূর্ণ (0.7)"
+            },
+            "ai_response_language": {
+                "auto": "অটো",
+                "en": "ইংরেজি",
+                "es": "স্প্যানিশ",
+                "fr": "ফরাসি",
+                "de": "জার্মান",
+                "it": "ইতালিয়ান",
+                "pt": "পর্তুগিজ",
+                "ru": "রাশিয়ান",
+                "ja": "জাপানি",
+                "ko": "কোরিয়ান",
+                "zh": "চীনা",
+                "ar": "আরবি",
+                "hi": "হিন্দি",
+                "tr": "তুর্কি",
+                "pl": "পোলিশ",
+                "nl": "ডাচ",
+                "sv": "সুইডিশ",
+                "da": "ড্যানিশ",
+                "no": "নরওয়েজিয়ান",
+                "fi": "ফিনিশ"
+            },
+            "friendGreeting": {
+                "Hey": "হেই"
+            },
+            "half_swipe_messages": {
+                "[\"I noticed you half-swiped! I'll respond soon.\"]": "আমি খেয়াল করলাম আপনি হাফ-সোয়াইপ করেছেন! আমি শীঘ্রই উত্তর দেব।"
+            },
+            "tiny_snap_messages": {
+                "Thanks for the tiny snap!": "টাইনি স্ন্যাপের জন্য ধন্যবাদ!"
+            },
+            "voice_note_messages": {
+                "Thanks for the voice note!": "ভয়েস নোটের জন্য ধন্যবাদ!"
+            },
+            "chat_messages": {
+                "Hello! How are you?": "হ্যালো! কেমন আছেন?"
+            },
+            "story_reply_messages": {
+                "Thanks for the story reply!": "স্টোরি রিপ্লাইয়ের জন্য ধন্যবাদ!"
+            },
+            "external_media_messages": {
+                "Nice media!": "সুন্দর মিডিয়া!"
+            },
+            "sticker_messages": {
+                "Cool sticker!": "চমৎকার স্টিকার!"
+            },
+            "snap_messages": {
+                "Thanks for the snap!": "স্ন্যাপের জন্য ধন্যবাদ!"
+            },
+            "story_share_messages": {
+                "Thanks for sharing!": "শেয়ার করার জন্য ধন্যবাদ!"
+            },
+            "map_reaction_messages": {
+                "Thanks for the map reaction!": "ম্যাপ রিয়েকশনের জন্য ধন্যবাদ!"
+            },
+            "auto_reply_content_types": {
+                "chat_messages": "চ্যাট মেসেজ",
+                "snap_messages": "স্ন্যাপ",
+                "story_share_messages": "স্টোরি শেয়ার",
+                "story_reply_messages": "স্টোরি রিপ্লাই",
+                "external_media_messages": "এক্সটার্নাল মিডিয়া",
+                "voice_note_messages": "ভয়েস নোট",
+                "sticker_messages": "স্টিকার",
+                "tiny_snap_messages": "টাইনি স্ন্যাপ",
+                "map_reaction_messages": "ম্যাপ রিয়েকশন",
+                "half_swipes": "হাফ সোয়াইপ"
+            },
+            "supported_languages": {
+                "en": "ইংরেজি",
+                "es": "স্প্যানিশ",
+                "fr": "ফরাসি",
+                "de": "জার্মান",
+                "it": "ইতালিয়ান",
+                "pt": "পর্তুগিজ",
+                "ru": "রাশিয়ান",
+                "ja": "জাপানি",
+                "ko": "কোরিয়ান",
+                "zh": "চীনা",
+                "ar": "আরবি",
+                "hi": "হিন্দি",
+                "tr": "তুর্কি"
+            },
+            "translation_position": {
+                "above": "টেক্সটের উপরে",
+                "below": "টেক্সটের নিচে",
+                "inline": "ইনলাইন"
+            },
+            "source_language": {
+                "auto": "স্বয়ংক্রিয়ভাবে শনাক্ত করুন"
+            },
+            "target_language": {
+                "en": "ইংরেজি"
+            }
+        },
+        "friend_notes": {
+            "placeholder": "একটি নোট যোগ করুন..."
+        }
+    },
+    "friend_menu_option": {
+        "mark_snaps_as_seen": "স্ন্যাপ 'সিন' মার্ক করুন",
+        "mark_stories_as_seen_locally": "স্টোরি 'সিন' মার্ক করুন (লোকালি)",
+        "preview": "প্রিভিউ",
+        "stealth_mode": "স্টেলথ মোড",
+        "auto_download_blacklist": "অটো ডাউনলোড ব্ল্যাকলিস্ট",
+        "anti_auto_save": "অ্যান্টি অটো সেভ"
+    },
+    "content_type": {
+        "CHAT": "চ্যাট",
+        "SNAP": "স্ন্যাপ",
+        "EXTERNAL_MEDIA": "এক্সটার্নাল মিডিয়া",
+        "NOTE": "অডিও নোট",
+        "STICKER": "স্টিকার",
+        "SHARE": "শেয়ার",
+        "STATUS": "স্ট্যাটাস",
+        "LOCATION": "লোকেশন",
+        "STATUS_SAVE_TO_CAMERA_ROLL": "ক্যামেরা রোলে সেভ করা হয়েছে",
+        "STATUS_CONVERSATION_CAPTURE_SCREENSHOT": "স্ক্রিনশট",
+        "STATUS_CONVERSATION_CAPTURE_RECORD": "স্ক্রিন রেকর্ড",
+        "STATUS_CALL_MISSED_VIDEO": "মিসড ভিডিও কল",
+        "STATUS_CALL_MISSED_AUDIO": "মিসড অডিও কল",
+        "LIVE_LOCATION_SHARE": "লাইভ লোকেশন শেয়ার",
+        "CREATIVE_TOOL_ITEM": "ক্রিয়েটিভ টুল আইটেম",
+        "FAMILY_CENTER_INVITE": "ফ্যামিলি সেন্টার ইনভাইট",
+        "FAMILY_CENTER_ACCEPT": "ফ্যামিলি সেন্টার অ্যাকসেপ্ট",
+        "FAMILY_CENTER_LEAVE": "ফ্যামিলি সেন্টার লিভ",
+        "STATUS_PLUS_GIFT": "স্ট্যাটাস প্লাস গিফট",
+        "TINY_SNAP": "টাইনি স্ন্যাপ",
+        "STATUS_COUNTDOWN": "কাউন্টডাউন",
+        "MAP_REACTION": "ম্যাপ রিয়েকশন",
+        "chat_messages": "চ্যাট মেসেজ",
+        "snap_messages": "স্ন্যাপ",
+        "story_share_messages": "স্টোরি শেয়ার",
+        "story_reply_messages": "স্টোরি রিপ্লাই",
+        "external_media_messages": "এক্সটার্নাল মিডিয়া",
+        "voice_note_messages": "ভয়েস নোট",
+        "sticker_messages": "স্টিকার",
+        "tiny_snap_messages": "টাইনি স্ন্যাপ",
+        "map_reaction_messages": "ম্যাপ রিয়েকশন",
+        "half_swipes": "হাফ সোয়াইপ"
+    },
+    "media_download_source": {
+        "none": "কোনটি না",
+        "pending": "পেন্ডিং",
+        "chat_media": "চ্যাট মিডিয়া",
+        "story": "স্টোরি",
+        "public_story": "পাবলিক স্টোরি",
+        "spotlight": "স্পটলাইট",
+        "profile_picture": "প্রোফাইল পিকচার",
+        "story_logger": "স্টোরি লগার",
+        "message_logger": "মেসেজ লগার",
+        "merged": "মার্জড",
+        "voice_call": "ভয়েস কল",
+        "chat_wallpaper": "চ্যাট ওয়ালপেপার"
+    },
+    "chat_action_menu": {
+        "preview_button": "প্রিভিউ",
+        "download_button": "ডাউনলোড",
+        "delete_logged_message_button": "লগ করা মেসেজ ডিলিট করুন",
+        "show_chat_edit_history": "চ্যাট এডিট হিস্ট্রি দেখান",
+        "convert_message": "মেসেজ কনভার্ট করুন"
+    },
+
+    "chat_wallpaper_downloader": {
+        "download_button": "চ্যাট ওয়ালপেপার ডাউনলোড করুন"
+    },
+    "opera_context_menu": {
+        "download": "মিডিয়া ডাউনলোড করুন",
+        "sent_at": "{date}-এ পাঠানো হয়েছে",
+        "created_at": "{date}-এ তৈরি",
+        "expires_at": "{date}-এ মেয়াদ শেষ হবে",
+        "media_size": "মিডিয়া সাইজ: {size}",
+        "media_duration": "মিডিয়া সময়কাল: {duration} ms",
+        "show_debug_info": "ডিবাগ ইনফো দেখান"
+    },
+    "modal_option": {
+        "profile_info": "প্রোফাইল ইনফো",
+        "close": "বন্ধ করুন"
+    },
+    "gallery_media_send_override": {
+        "always_ask": "সর্বদা জিজ্ঞাসা করুন",
+        "ORIGINAL": "আসল মিডিয়া",
+        "NOTE": "অডিও নোট",
+        "SNAP": "স্ন্যাপ",
+        "SAVEABLE_SNAP": "সেভেবল স্ন্যাপ",
+        "null": "স্ন্যাপচ্যাট ডিফল্ট",
+        "multiple_media_toast": "আপনি একবারে কেবল একটি মিডিয়া পাঠাতে পারেন"
+    },
+    "mark_as_seen": {
+        "no_unseen_snaps_toast": "কোনো আনসিন স্ন্যাপ পাওয়া যায়নি!",
+        "seen_toast": "সিন হিসেবে মার্ক করা হয়েছে!",
+        "unseen_toast": "আনসিন হিসেবে মার্ক করা হয়েছে!",
+        "already_seen_toast": "ইতিমধ্যে সিন হিসেবে মার্ক করা!",
+        "already_unseen_toast": "ইতিমধ্যে আনসিন হিসেবে মার্ক করা!"
+    },
+    "conversation_preview": {
+        "streak_expiration": "{day} দিন {hour} ঘণ্টা {minute} মিনিটের মধ্যে মেয়াদ শেষ হবে",
+        "total_messages": "মোট পাঠানো/প্রাপ্ত মেসেজ: \n{count}",
+        "title": "প্রিভিউ",
+        "unknown_user": "অজানা ব্যবহারকারী",
+        "no_messages": "কোনো মেসেজ পাওয়া যায়নি!"
+    },
+    "profile_info": {
+        "title": "প্রোফাইল ইনফো",
+        "first_created_username": "প্রথম তৈরি ইউজারনেম",
+        "mutable_username": "মিউটেবল ইউজারনেম",
+        "display_name": "ডিসপ্লে নেম",
+        "added_date": "যুক্ত করার তারিখ",
+        "birthday": "জন্মদিন : {month} {day}",
+        "hidden_birthday": "জন্মদিন : লুকানো",
+        "friendship": "বন্ধুত্ব",
+        "add_source": "অ্যাড সোর্স",
+        "snapchat_plus": "স্ন্যাপচ্যাট প্লাস",
+        "snapchat_plus_state": {
+            "subscribed": "সাবস্ক্রাইব করা",
+            "not_subscribed": "সাবস্ক্রাইব করা হয়নি"
+        }
+    },
+    "snapchat_plus_state": {
+        "subscribed": "সাবস্ক্রাইব করা",
+        "not_subscribed": "সাবস্ক্রাইব করা হয়নি"
+    },
+    "friendship_link_type": {
+        "mutual": "মিউচুয়াল",
+        "outgoing": "আউটগোয়িং",
+        "blocked": "ব্লক করা",
+        "deleted": "ডিলিট করা",
+        "following": "ফলোইং",
+        "suggested": "সাজেস্টেড",
+        "incoming": "ইনকামিং",
+        "incoming_follower": "ইনকামিং ফলোয়ার"
+    },
+    "bulk_messaging_action": {
+        "actions.title": "অ্যাকশন",
+        "choose_action_title": "একটি অ্যাকশন বাছুন",
+        "progress_status": "প্রসেস করা হচ্ছে {total}-এর মধ্যে {index}টি",
+        "selection_dialog_continue_button": "চালিয়ে যান",
+        "confirmation_dialog": {
+            "title": "আপনি কি নিশ্চিত?",
+            "message": "এটি সব নির্বাচিতকে প্রভাবিত করবে, এই অ্যাকশনটি আনডু করা যাবে না।"
+        },
+        "actions": {
+            "remove_friends": "বন্ধু সরান",
+            "clear_conversations": "কনভারসেশন পরিষ্কার করুন",
+            "clear_friend_feed": "ফ্রেন্ড ফিড পরিষ্কার করুন ({count})",
+            "unfollow": "আনফলো",
+            "remove": "সরান",
+            "accept": "গৃহীত",
+            "ignore": "উপেক্ষিত"
+        },
+        "accept_requests": "রিকোয়েস্ট গ্রহণ করুন",
+        "ignore_requests": "রিকোয়েস্ট উপেক্ষা করুন",
+        "cleared_from_feed": "ফিড থেকে পরিষ্কার করা হয়েছে",
+        "leave_groups": "{count} টি গ্রুপ ত্যাগ করুন",
+        "left_group_success": "সফলভাবে গ্রুপ ত্যাগ করা হয়েছে",
+        "failed_to_leave_group": "গ্রুপ ত্যাগ করতে ব্যর্থ: {error}",
+        "conversation_types": {
+            "friends_only": "শুধুমাত্র বন্ধু",
+            "groups_only": "শুধুমাত্র গ্রুপ",
+            "both": "বন্ধু ও গ্রুপ"
+        },
+        "sort_by": "সাজান",
+        "reverse_order": "উল্টো ক্রম",
+        "search_by_name": "নাম দিয়ে খুঁজুন",
+        "no_friends_found": "কোনো বন্ধু পাওয়া যায়নি",
+        "no_groups_found": "কোনো গ্রুপ পাওয়া যায়নি",
+        "no_friends_or_groups_found": "কোনো বন্ধু বা গ্রুপ পাওয়া যায়নি",
+        "relationship": "সম্পর্ক: ",
+        "unknown_group": "অজানা গ্রুপ",
+        "type_group_chat": "টাইপ: গ্রুপ চ্যাট",
+        "clean_conversations": "{count} টি কনভারসেশন পরিষ্কার করুন",
+        "remove_friends": "{count} জন বন্ধু সরান",
+        "clean_conversations_and_remove_friends": "{count} টি কনভারসেশন পরিষ্কার করুন এবং {count} জন বন্ধু সরান",
+        "clean_group_conversations": "{count} টি গ্রুপ কনভারসেশন পরিষ্কার করুন",
+        "clean_all_conversations": "{count} টি কনভারসেশন পরিষ্কার করুন",
+        "failed_to_fetch_conversations": "কনভারসেশন আনতে ব্যর্থ: {error}",
+        "failed_to_fetch_friend_conversations": "বন্ধুর কনভারসেশন আনতে ব্যর্থ: {error}",
+        "failed_to_process": "{id} প্রসেস করতে ব্যর্থ",
+        "deleted_messages": "{count} টি ডিলিট করা মেসেজ",
+        "filters": {
+            "all": "সব",
+            "my_friends": "আমার বন্ধুরা",
+            "blocked": "ব্লক করা",
+            "removed_me": "আমাকে সরিয়েছে",
+            "suggested": "সাজেস্টেড",
+            "deleted": "ডিলিট করা",
+            "business_accounts": "বিজনেস অ্যাকাউন্ট",
+            "streaks": "স্ট্রিকস",
+            "non_streaks": "নন স্ট্রিকস",
+            "followed": "ফলো করা",
+            "following": "ফলোইং",
+            "incoming": "ফ্রেন্ড রিকোয়েস্ট",
+            "incoming_follower": "ফলোয়ার রিকোয়েস্ট",
+            "location_on_map": "ম্যাপে লোকেশন"
+        },
+        "sort_options": {
+            "none": "কোনটি না",
+            "username": "ইউজারনেম",
+            "added_timestamp": "অ্যাড টাইমস্ট্যাম্প",
+            "snap_score": "স্ন্যাপ স্কোর",
+            "streak_length": "স্ট্রিক দৈর্ঘ্য",
+            "most_messages_sent": "সবচেয়ে বেশি মেসেজ পাঠানো",
+            "most_recent_message": "সবচেয়ে সাম্প্রতিক মেসেজ",
+            "nearest_location": "নিকটতম লোকেশন"
+        }
+    },
+    "chat_export": {
+        "exporter_dialog": {
+            "select_conversations_title": "কনভারসেশন নির্বাচন করুন",
+            "text_field_selection": "{amount} টি নির্বাচিত",
+            "text_field_selection_all": "সব",
+            "export_file_format_title": "এক্সপোর্ট ফাইল ফরম্যাট",
+            "sort_order_title": "মেসেজের ক্রম",
+            "sort_order_newest_to_oldest": "নতুন থেকে পুরনো",
+            "sort_order_oldest_to_newest": "পুরনো থেকে নতুন",
+            "message_type_filter_title": "মেসেজের ধরন অনুযায়ী ফিল্টার করুন",
+            "amount_of_messages_title": "মেসেজের সংখ্যা (সবগুলোর জন্য খালি রাখুন)",
+            "download_medias_title": "মিডিয়া ডাউনলোড করুন"
+        },
+        "dialog_negative_button": "বাতিল",
+        "dialog_positive_button": "এক্সপোর্ট",
+        "exported_to": "{path}-এ এক্সপোর্ট করা হয়েছে",
+        "exporting_chats": "চ্যাট এক্সপোর্ট করা হচ্ছে...",
+        "processing_chats": "{amount} টি কনভারসেশন প্রসেস করা হচ্ছে...",
+        "export_fail": "কনভারসেশন {conversation} এক্সপোর্ট করতে ব্যর্থ",
+        "writing_output": "আউটপুট লেখা হচ্ছে...",
+        "finished": "হয়ে গেছে! আপনি এখন এই ডায়ালগ বন্ধ করতে পারেন।",
+        "no_messages_found": "কোনো মেসেজ পাওয়া যায়নি!",
+        "exporting_message": "{conversation} এক্সপোর্ট করা হচ্ছে..."
+    },
+    "button": {
+        "ok": "ঠিক আছে",
+        "positive": "হ্যাঁ",
+        "negative": "না",
+        "cancel": "বাতিল",
+        "save": "সেভ",
+        "open": "খুলুন",
+        "download": "ডাউনলোড",
+        "import": "ইম্পোর্ট",
+        "send": "পাঠান",
+        "restore_original": "আসল রিস্টোর করুন",
+        "convert_external_media": "এক্সটার্নাল মিডিয়া কনভার্ট করুন"
+    },
+    "tracker_events": {
+        "conversation_enter": "কনভারসেশনে প্রবেশ",
+        "conversation_exit": "কনভারসেশন ত্যাগ",
+        "started_typing": "টাইপিং শুরু করেছেন",
+        "stopped_typing": "টাইপিং থামিয়েছেন",
+        "started_speaking": "কথা বলা শুরু করেছেন",
+        "stopped_speaking": "কথা বলা থামিয়েছেন",
+        "started_peeking": "পিকিং শুরু করেছেন",
+        "stopped_peeking": "পিকিং থামিয়েছেন",
+        "message_read": "মেসেজ পড়া হয়েছে",
+        "message_deleted": "মেসেজ ডিলিট করা হয়েছে",
+        "message_saved": "মেসেজ সেভ করা হয়েছে",
+        "message_unsaved": "মেসেজ আনসেভ করা হয়েছে",
+        "message_edited": "মেসেজ এডিট করা হয়েছে",
+        "message_reaction_add": "মেসেজ রিয়েকশন যোগ করা হয়েছে",
+        "message_reaction_remove": "মেসেজ রিয়েকশন সরানো হয়েছে",
+        "snap_opened": "স্ন্যাপ খোলা হয়েছে",
+        "snap_replayed": "স্ন্যাপ রিপ্লে করা হয়েছে",
+        "snap_replayed_twice": "স্ন্যাপ দুবার রিপ্লে করা হয়েছে",
+        "snap_screenshot": "স্ন্যাপ স্ক্রিনশট",
+        "snap_screen_record": "স্ন্যাপ স্ক্রিন রেকর্ড",
+        "i_can_see_you": "আমি আপনাকে দেখতে পাচ্ছি"
+    },
+    "cleared_from_feed": "ফিড থেকে পরিষ্কার করা হয়েছে",
+    "tracker_actions": {
+        "log": "লগ",
+        "in_app_notification": "ইন-অ্যাপ নোটিফিকেশন",
+        "push_notification": "পুশ নোটিফিকেশন",
+        "custom": "কাস্টম"
+    },
+    "better_notifications": {
+        "button": {
+            "reply": "রিপ্লাই",
+            "download": "ডাউনলোড",
+            "mark_as_read": "মার্ক অ্যাজ রিড"
+        }
+    },
+    "profile_picture_downloader": {
+        "button": "প্রোফাইল পিকচার ডাউনলোড করুন",
+        "title": "প্রোফাইল পিকচার ডাউনলোডার",
+        "avatar_option": "অবতার",
+        "background_option": "ব্যাকগ্রাউন্ড"
+    },
+    "call_start_confirmation": {
+        "dialog_title": "কল শুরু করুন",
+        "dialog_message": "আপনি কি নিশ্চিত যে আপনি একটি কল শুরু করতে চান?"
+    },
+    "half_swipe_notifier": {
+        "notification_channel_name": "হাফ সোয়াইপ",
+        "notification_content_dm": "{friend} মাত্র {duration} সেকেন্ডের জন্য আপনার চ্যাটে হাফ-সোয়াইপ করেছেন",
+        "notification_content_group": "{friend} মাত্র {duration} সেকেন্ডের জন্য {group}-এ হাফ-সোয়াইপ করেছেন"
+    },
+    "download_processor": {
+        "attachment_type": {
+            "snap": "স্ন্যাপ",
+            "sticker": "স্টিকার",
+            "gif": "GIF",
+            "external_media": "এক্সটার্নাল মিডিয়া",
+            "note": "নোট",
+            "original_story": "আসল স্টোরি"
+        },
+        "select_attachments_title": "অ্যাটাচমেন্ট নির্বাচন করুন",
+        "download_started_toast": "ডাউনলোড শুরু হয়েছে",
+        "unsupported_content_type_toast": "অসমর্থিত কন্টেন্ট টাইপ!",
+        "failed_no_longer_available_toast": "মিডিয়া আর উপলব্ধ নেই",
+        "no_attachments_toast": "কোনো অ্যাটাচমেন্ট পাওয়া যায়নি!",
+        "already_queued_toast": "মিডিয়া ইতিমধ্যে কিউ-তে আছে!",
+        "already_downloaded_toast": "মিডিয়া ইতিমধ্যে ডাউনলোড করা হয়েছে!",
+        "content_saved_toast": "সেভ হয়েছে!",
+        "download_toast": "{path} ডাউনলোড হচ্ছে...",
+        "processing_toast": "{path} প্রসেস করা হচ্ছে...",
+        "failed_generic_toast": "ডাউনলোড করতে ব্যর্থ",
+        "failed_to_create_preview_toast": "প্রিভিউ তৈরি করতে ব্যর্থ",
+        "failed_processing_toast": "{error} প্রসেস করতে ব্যর্থ",
+        "failed_gallery_toast": "গ্যালারিতে সেভ করতে ব্যর্থ {error}",
+        "dash_no_chapter": "কোনো চ্যাপ্টার পাওয়া যায়নি",
+        "dash_dialog": {
+            "title": "ড্যাশ মিডিয়া ডাউনলোড করুন",
+            "download_all": "সব ডাউনলোড করুন",
+            "segment_text": "সেগমেন্ট {from} - {to}"
+        }
+    },
+    "streaks_reminder": {
+        "notification_title": "স্ট্রিকস",
+        "notification_text": "{friend}-এর সাথে আপনার স্ট্রিক {hoursLeft} ঘণ্টার মধ্যে হারিয়ে যাবে"
+    },
+    "biometric_auth": {
+        "unlock_button": "আনলক",
+        "title": "স্ন্যাপচ্যাট আনলক করুন",
+        "subtitle": "স্ন্যাপচ্যাট আনলক করতে অনুগ্রহ করে অথেন্টিকেট করুন"
+    },
+    "end_to_end_encryption": {
+        "toolbox": {
+            "no_shared_key": "আপনার এই বন্ধুর সাথে এখনও কোনো শেয়ার্ড সিক্রেট নেই। একটি নতুন শুরু করতে নিচে ক্লিক করুন।",
+            "shared_key_fingerprint": "আপনার ফিঙ্গারপ্রিন্ট হলো:\n\n{fingerprint}\n\nএটি আপনার বন্ধুর ফিঙ্গারপ্রিন্টের সাথে মিলছে কিনা তা নিশ্চিত করুন!",
+            "initiate_exchange_button": "কী এক্সচেঞ্জ শুরু করুন"
+        },
+        "confirmation_dialogs": {
+            "title": "এন্ড-টু-এন্ড এনক্রিপশন",
+            "confirmation_1": "সতর্কতা: এটি আপনার বিদ্যমান কী ওভাররাইট করবে। আপনি এই বন্ধুর কাছ থেকে আসা সমস্ত এনক্রিপ্টেড মেসেজের অ্যাক্সেস হারাবেন। আপনি কি নিশ্চিত যে আপনি চালিয়ে যেতে চান?",
+            "confirmation_2": "আপনি কি সত্যিই নিশ্চিত যে আপনি চালিয়ে যেতে চান? এটি ফিরে আসার শেষ সুযোগ।"
+        },
+        "unencrypted_conversation_send_failure_toast": "আপনি এনক্রিপ্টেড এবং আনএনক্রিপ্টেড উভয় কনভারসেশনে একসাথে এনক্রিপ্টেড কন্টেন্ট পাঠাতে পারবেন না!",
+        "native_hooks_send_failure_toast": "পাঠাতে ব্যর্থ! অনুগ্রহ করে সেটিংসে নেটিভ হুকস সক্রিয় করুন।",
+        "no_participants_to_encrypt_toast": "এই কনভারসেশনে মেসেজ এনক্রিপ্ট করার মতো কোনো বন্ধু নেই!",
+        "encryption_failed_toast": "মেসেজ এনক্রিপ্ট করতে ব্যর্থ! আরও বিস্তারিত জানতে logcat চেক করুন।",
+        "missing_friend_id_toast": "conversationId {conversationId}-এর জন্য friendId পাওয়া যাচ্ছে না",
+        "key_exchange_failed_toast": "friendId {friendId}-এর জন্য কী এক্সচেঞ্জ তৈরি করা যাচ্ছে না",
+        "accept_public_key_success_toast": "পাবলিক কী সফলভাবে গৃহীত হয়েছে!",
+        "accept_secret_key_success_toast": "হয়ে গেছে! আপনি এখন এই বন্ধুর সাথে এনক্রিপ্টেড মেসেজ আদান-প্রদান করতে পারেন।",
+        "accept_public_key_failure_toast": "পাবলিক কী গ্রহণ করতে ব্যর্থ",
+        "accept_secret_key_failure_toast": "সিক্রেট কী গ্রহণ করতে ব্যর্থ",
+        "accept_secret_button": "সিক্রেট গ্রহণ করুন",
+        "accept_public_key_button": "পাবলিক কী গ্রহণ করুন",
+        "outgoing_pk_message": "কী এক্সচেঞ্জ রিকোয়েস্ট",
+        "outgoing_secret_message": "কী এক্সচেঞ্জ রেসপন্স",
+        "incoming_pk_message": "আপনি মাত্র একটি পাবলিক কী রিকোয়েস্ট পেয়েছেন। এটি গ্রহণ করতে নিচে ক্লিক করুন।",
+        "incoming_secret_message": "আপনার বন্ধু মাত্র আপনার পাবলিক কী গ্রহণ করেছেন। সিক্রেট গ্রহণ করতে নিচে ক্লিক করুন।"
+    },
+    "account_switcher_ui": {
+        "already_logged_in": "{username} হিসেবে ইতিমধ্যে লগইন করা আছে",
+        "login_failed_toast": "লগইন করতে ব্যর্থ। আরও তথ্যের জন্য লগ দেখুন।",
+        "logged_out_toast": "লগ আউট হয়েছে",
+        "data_not_found_toast": "অ্যাকাউন্ট ডেটা পাওয়া যায়নি",
+        "restore_failed_toast": "অ্যাকাউন্ট ডেটা রিস্টোর করতে ব্যর্থ",
+        "logged_in_as_toast": "{username} হিসেবে লগইন করা হয়েছে",
+        "backup_success_toast": "অ্যাকাউন্ট ব্যাকআপ হয়েছে!",
+        "backup_failure_toast": "অ্যাকাউন্ট ব্যাকআপ করতে ব্যর্থ। আরও তথ্যের জন্য লগ দেখুন।",
+        "import_success_toast": "{username} ইম্পোর্ট করা হয়েছে!",
+        "import_failure_toast": "অ্যাকাউন্ট ইম্পোর্ট করতে ব্যর্থ: {message}",
+        "export_success_toast": "অ্যাকাউন্ট এক্সপোর্ট হয়েছে!",
+        "export_failed_toast": "অ্যাকাউন্ট এক্সপোর্ট করতে ব্যর্থ। আরও তথ্যের জন্য লগ দেখুন।",
+        "forced_logout_toast": "ফোর্সড লগআউটের কারণে অ্যাকাউন্ট সরানো হয়েছে"
+    },
+    "auto_open_snaps": {
+        "title": "অটো ওপেন স্ন্যাপস",
+        "priority_title": "অটো ওপেন স্ন্যাপস (অগ্রাধিকার)",
+        "error_title": "অটো ওপেন স্ন্যাপস (ত্রুটি)",
+        "channel_description": "অটো-ওপেনিং স্ন্যাপস কিউ স্ট্যাটাসের জন্য নোটিফিকেশন",
+        "priority_channel_description": "অটো-ওপেনিং স্ন্যাপসের জন্য উচ্চ অগ্রাধিকার নোটিফিকেশন",
+        "error_channel_description": "অটো-ওপেনিং স্ন্যাপস ব্যর্থ হলে ত্রুটি নোটিফিকেশন",
+        "paused_status": "অটো ওপেন স্ন্যাপস পজ করা হয়েছে",
+        "processing_status": "স্ন্যাপ প্রসেস হচ্ছে: {queued} টি কিউ-তে, {processed} টি প্রসেস করা হয়েছে",
+        "monitor_status": "মনিটর করা হচ্ছে...",
+        "recent_snaps": "সাম্প্রতিক স্ন্যাপ",
+        "action_pause": "পজ",
+        "action_resume": "রিজুমে",
+        "action_clear": "কিউ পরিষ্কার করুন",
+        "action_reset": "গণনা রিসেট করুন",
+        "error_content": "{sender} থেকে স্ন্যাপ খুলতে ব্যর্থ: {error}",
+        "resumed_feedback": "অটো ওপেন আবার শুরু হয়েছে",
+        "paused_feedback": "অটো ওপেন পজ করা হয়েছে",
+        "resumed_message": "কিউ-তে থাকা স্ন্যাপগুলোর জন্য প্রসেসিং স্বয়ংক্রিয়ভাবে চলবে",
+        "paused_message": "প্রসেসিং পজ করা হয়েছে। কিউ সংরক্ষিত ({count} টি স্ন্যাপ)",
+        "status_paused": "পজড",
+        "status_monitoring": "মনিটরিং",
+        "status_active": "সক্রিয়",
+        "queue_cleared": "কিউ পরিষ্কার করা হয়েছে এবং পরিসংখ্যান রিসেট হয়েছে",
+        "queue_cleared_title": "কিউ পরিষ্কার হয়েছে",
+        "queue_cleared_reset": "কিউ পরিষ্কার ও রিসেট হয়েছে",
+        "queue_cleared_feedback": "{count} টি কিউড স্ন্যাপ পরিষ্কার হয়েছে \u2022 {processed} টি প্রসেসড গণনা রিসেট হয়েছে",
+        "queue_cleared_feedback_simple": "{processed} টি প্রসেসড গণনা রিসেট হয়েছে",
+        "unknown_sender": "অজানা",
+        "unknown_user": "অজানা ব্যবহারকারী",
+        "content_type_external_media": "এক্সটার্নাল মিডিয়া",
+        "content_type_snap": "স্ন্যাপ",
+        "conversation_type_friend_dm": "ফ্রেন্ড DM",
+        "conversation_type_dm": "DM",
+        "conversation_type_group_chat": "গ্রুপ চ্যাট",
+        "conversation_type_chat": "চ্যাট",
+        "notification_status": "স্ট্যাটাস",
+        "notification_statistics": "পরিসংখ্যান",
+        "notification_queue_size": "কিউ সাইজ",
+        "notification_total_opened": "মোট খোলা স্ন্যাপ",
+        "notification_queue_preview": "কিউ প্রিভিউ",
+        "notification_processing_continue": "প্রসেসিং স্বয়ংক্রিয়ভাবে চলবে...",
+        "notification_no_snaps_queue": "কিউ-তে কোনো স্ন্যাপ নেই।",
+        "notification_queue_cleared_opened": "কিউ পরিষ্কার হয়েছে ({opened} টি খোলা হয়েছে)",
+        "content_type_photo_video_snap": "ফটো/ভিডিও স্ন্যাপ",
+        "conversation_type_group_with_name": "গ্রুপ: {name}",
+        "delete_logs_title": "লগ ডিলিট করবেন?",
+        "delete_logs_progress": "{count} টি লগ ডিলিট করা হচ্ছে...",
+        "delete_logs_description": "এটি বর্তমান ফিল্টার এবং সার্চ কোয়েরির উপর ভিত্তি করে লগ ডিলিট করবে। এই অ্যাকশনটি আনডু করা যাবে না।",
+        "export_logs_title": "লগ এক্সপোর্ট করবেন?",
+        "export_logs_progress": "লগ এক্সপোর্ট করা হচ্ছে...",
+        "export_logs_description": "এটি বর্তমান ফিল্টার এবং সার্চ কোয়েরির উপর ভিত্তি করে লগ এক্সপোর্ট করবে।",
+        "export_logs_as": "{type} হিসেবে এক্সপোর্ট করুন",
+        "export_logs_success": "লগ এক্সপোর্ট হয়েছে!",
+        "export_logs_failure": "লগ এক্সপোর্ট করতে ব্যর্থ। আরও বিস্তারিত জানতে logcat চেক করুন।",
+        "deleted_logs_count": "{count} টি লগ ডিলিট করা হয়েছে"
+    },
+    "script_imported": "স্ক্রিপ্ট {name} ইম্পোর্ট হয়েছে!",
+    "script_import_failed": "স্ক্রিপ্ট ইম্পোর্ট করতে ব্যর্থ। {error}। আরও বিস্তারিত জানতে লগ চেক করুন",
+    "script_updating": "স্ক্রিপ্ট {name} আপডেট হচ্ছে...",
+    "script_updated": "{name} আপডেট হয়ে ভার্সন {version} হয়েছে",
+    "script_update_failed": "মডিউল আপডেট করতে ব্যর্থ। আরও বিস্তারিত জানতে লগ চেক করুন",
+    "script_edit_failed": "মডিউল ফাইল খুলতে ব্যর্থ। আরও বিস্তারিত জানতে লগ চেক করুন",
+    "script_data_cleared": "মডিউল ডেটা পরিষ্কার হয়েছে!",
+    "script_data_clear_failed": "মডিউল ডেটা পরিষ্কার করতে ব্যর্থ। আরও বিস্তারিত জানতে লগ চেক করুন",
+    "script_deleted": "স্ক্রিপ্ট {name} ডিলিট হয়েছে!",
+    "script_delete_failed": "মডিউল ডিলিট করতে ব্যর্থ। আরও বিস্তারিত জানতে লগ চেক করুন",
+    "script_actions": "অ্যাকশন",
+    "script_no_description": "কোনো বিবরণ নেই",
+    "script_update_available": "আপডেট উপলব্ধ: {version}",
+    "script_loaded": "লোড করা স্ক্রিপ্ট {name}",
+    "script_unloaded": "আনলোড করা স্ক্রিপ্ট {name}",
+    "script_enable_disable_failed": "স্ক্রিপ্ট {action} করতে ব্যর্থ। আরও বিস্তারিত জানতে লগ চেক করুন",
+    "script_no_settings": "এই মডিউলের কোনো সেটিংস নেই",
+    "script_no_scripts_found": "কোনো স্ক্রিপ্ট পাওয়া যায়নি",
+    "script_ok_timeout": "ঠিক আছে {timeout}",
+    "scripting_tagline": "স্ক্রিপ্ট, ইম্পোর্ট এবং ফোল্ডার ম্যানেজ করুন",
+    "installed_scripts_tab": "ইনস্টল করা হয়েছে",
+    "catalog_tab": "ক্যাটালগ",
+    "no_scripts_folder_selected_title": "শুরু করতে আপনার স্ক্রিপ্ট ফোল্ডার নির্বাচন করুন",
+    "select_folder_button": "ফোল্ডার বাছুন",
+    "select_scripts_folder_toast": "দয়া করে প্রথমে একটি স্ক্রিপ্ট ফোল্ডার নির্বাচন করুন",
+    "delete_rule_title": "রুল ডিলিট",
+    "delete_rule_description": "আপনি কি নিশ্চিত যে আপনি এই রুলটি ডিলিট করতে চান?",
+    "rule_name": "রুলের নাম",
+    "friend_tracker_notifications": {
+        "notification_channel_name": "ফ্রেন্ড ট্র্যাকার",
+        "notification_title": "বন্ধুর কার্যকলাপ",
+        "conversation_enter": "{friend} {conversation}-এ প্রবেশ করেছেন",
+        "conversation_exit": "{friend} {conversation} ত্যাগ করেছেন",
+        "started_typing": "{friend} {conversation}-এ টাইপ করা শুরু করেছেন",
+        "stopped_typing": "{friend} {conversation}-এ টাইপ করা থামিয়েছেন",
+        "started_speaking": "{friend} {conversation}-এ কথা বলা শুরু করেছেন",
+        "stopped_speaking": "{friend} {conversation}-এ কথা বলা থামিয়েছেন",
+        "started_peeking": "{friend} {conversation}-এ পিকিং শুরু করেছেন",
+        "stopped_peeking": "{friend} {conversation}-এ পিকিং থামিয়েছেন",
+        "message_read": "{friend} {conversation}-এ একটি মেসেজ পড়েছেন",
+        "message_deleted": "{friend} {conversation}-এ একটি মেসেজ ডিলিট করেছেন",
+        "message_saved": "{friend} {conversation}-এ একটি মেসেজ সেভ করেছেন",
+        "message_unsaved": "{friend} {conversation}-এ একটি মেসেজ আনসেভ করেছেন",
+        "message_edited": "{friend} {conversation}-এ একটি মেসেজ এডিট করেছেন",
+        "message_reaction_add": "{friend} {conversation}-এ একটি রিয়েকশন যোগ করেছেন",
+        "message_reaction_remove": "{friend} {conversation}-এ একটি রিয়েকশন সরিয়েছেন",
+        "snap_opened": "{friend} {conversation}-এ একটি স্ন্যাপ খুলেছেন",
+        "snap_replayed": "{friend} {conversation}-এ একটি স্ন্যাপ রিপ্লে করেছেন",
+        "snap_replayed_twice": "{friend} {conversation}-এ একটি স্ন্যাপ দুবার রিপ্লে করেছেন",
+        "snap_screenshot": "{friend} {conversation}-এ একটি স্ক্রিনশট নিয়েছেন",
+        "snap_screen_record": "{friend} {conversation}-এ স্ক্রিন রেকর্ড করেছেন",
+        "i_can_see_you": "{conversation}-এ {friend}-এর কার্যকলাপ: {details}"
+    },
+    "friend_mutation_observer": {
+        "notification_channel_name": "ফ্রেন্ড মিউটেশন অবজারভার",
+        "friend_removed": "{username} আপনাকে বন্ধু হিসেবে সরিয়েছেন",
+        "birthday_removed": "{username} তাদের জন্মদিন সরিয়েছেন ({birthday})",
+        "birthday_added": "{username} তাদের জন্মদিন যোগ করেছেন ({birthday})",
+        "birthday_changed": "{username} তাদের জন্মদিন {oldBirthday} থেকে {newBirthday}-তে পরিবর্তন করেছেন",
+        "bitmoji_selfie_changed": "{username} তাদের বিটমোজি সেলফি পরিবর্তন করেছেন",
+        "bitmoji_avatar_changed": "{username} তাদের বিটমোজি অবতার পরিবর্তন করেছেন",
+        "bitmoji_background_changed": "{username} তাদের বিটমোজি ব্যাকগ্রাউন্ড পরিবর্তন করেছেন",
+        "bitmoji_scene_changed": "{username} তাদের বিটমোজি সিন পরিবর্তন করেছেন"
+    },
+    "material3_strings": {
+        "date_range_picker_start_headline": "শুরু",
+        "date_range_picker_end_headline": "শেষ",
+        "date_range_picker_title": "তারিখের ব্যাপ্তি নির্বাচন করুন",
+        "date_picker_switch_to_calendar_mode": "ক্যালেন্ডার",
+        "date_picker_switch_to_input_mode": "ইনপুট",
+        "date_range_picker_scroll_to_previous_month": "পূর্ববর্তী মাস",
+        "date_range_picker_scroll_to_next_month": "পরবর্তী মাস",
+        "date_picker_today_description": "আজ",
+        "date_range_picker_day_in_range": "নির্বাচিত",
+        "date_input_invalid_for_pattern": "অবৈধ তারিখ",
+        "date_input_invalid_year_range": "অবৈধ বছর",
+        "date_input_invalid_not_allowed": "অবৈধ তারিখ",
+        "date_range_input_invalid_range_input": "অবৈধ তারিখের ব্যাপ্তি"
+    },
+    "send_override_dialog": {
+        "title": "মিডিয়া এভাবে পাঠান",
+        "duration": "সময়কাল: {duration}",
+        "saveable_snap_hint": "চ্যাটে স্ন্যাপ সেভ করার যোগ্য করুন",
+        "unlimited_duration": "আনলিমিটেড",
+        "schedule": "শিডিউল",
+        "select_time": "সময় বাছুন",
+        "select": "নির্বাচন করুন",
+        "select_date_first": "অনুগ্রহ করে প্রথমে একটি তারিখ বাছুন",
+        "invalid_time": "অনুগ্রহ করে ভবিষ্যতের একটি সময় বাছুন"
+    },
+    "spotlight_creator_info": {
+        "title": "ক্রিয়েটর ইনফো",
+        "close": "বন্ধ করুন",
+        "creator_info": "ক্রিয়েটর ইনফো",
+        "display_name": "ডিসপ্লে নেম",
+        "username": "ইউজারনেম",
+        "user_id": "ইউজার আইডি",
+        "posted_on": "পোস্ট করা হয়েছে",
+        "loading_username": "লোড হচ্ছে…",
+        "username_copied": "ইউজারনেম কপি হয়েছে",
+        "user_id_copied": "ইউজার আইডি কপি হয়েছে",
+        "friend_status": "বন্ধু স্ট্যাটাস",
+        "mutual_friend": "মিউচুয়াল বন্ধু",
+        "following": "ফলোইং",
+        "friend_request_sent": "রিকোয়েস্ট পাঠানো হয়েছে",
+        "friend_request_received": "রিকোয়েস্ট পাওয়া গেছে",
+        "blocked": "ব্লক করা",
+        "friend_removed": "সরানো হয়েছে"
+    },
+    "auto_reply_messages": {
+        "dialog": {
+            "add_message": "মেসেজ যোগ করুন",
+            "edit_message": "মেসেজ এডিট করুন",
+            "message_label": "মেসেজ",
+            "no_messages": "এখনও কোনো মেসেজ নেই। আপনার প্রথম মেসেজ যোগ করুন!",
+            "message_placeholder": "আপনার অটো-রিপ্লাই মেসেজ লিখুন..."
+        }
+    },
+    "auto_delete_sent_messages": {
+        "countdown_toast": "মেসেজটি {time}-এর মধ্যে ডিলিট হবে",
+        "delete_success_toast": "মেসেজ সফলভাবে ডিলিট হয়েছে",
+        "delete_failed_toast": "মেসেজ ডিলিট করতে ব্যর্থ",
+        "queue_cleared_toast": "অটো ডিলিট কিউ পরিষ্কার হয়েছে"
+    },
+    "translation_position": {
+        "above": "উপরে",
+        "below": "নিচে",
+        "inline": "ইনলাইন"
+    },
+    "language_codes": {
+        "en": "ইংরেজি",
+        "es": "স্প্যানিশ",
+        "fr": "ফরাসি",
+        "de": "জার্মান",
+        "it": "ইতালিয়ান",
+        "pt": "পর্তুগিজ",
+        "ru": "রাশিয়ান",
+        "ja": "জাপানি",
+        "ko": "কোরিয়ান",
+        "zh": "চীনা",
+        "ar": "আরবি",
+        "hi": "হিন্দি",
+        "tr": "তুর্কি",
+        "nl": "ডাচ",
+        "pl": "পোলিশ",
+        "sv": "সুইডিশ",
+        "da": "ড্যানিশ",
+        "no": "নরওয়েজিয়ান",
+        "fi": "ফিনিশ",
+        "cs": "চেক",
+        "hu": "হাঙ্গেরিয়ান",
+        "ro": "রোমানিয়ান",
+        "bg": "বুলগেরিয়ান",
+        "hr": "ক্রোয়েশিয়ান",
+        "sk": "স্লোভাক",
+        "sl": "স্লোভেনিয়ান",
+        "et": "এস্তোনিয়ান",
+        "lv": "লাটভিয়ান",
+        "lt": "লিথুয়ানিয়ান",
+        "mt": "মাল্টিজ",
+        "ga": "আইরিশ",
+        "cy": "ওয়েলশ"
+    },
+    "tracker": {
+        "tabs": {
+            "logs": "লগস",
+            "rules": "রুলস"
+        },
+        "actions": {
+            "export": "এক্সপোর্ট",
+            "delete": "ডিলিট",
+            "add_rule": "রুল যোগ করুন",
+            "save_rule": "রুল সেভ করুন"
+        },
+        "messages": {
+            "no_logs_found": "কোনো লগ পাওয়া যায়নি",
+            "no_rules_found": "কোনো রুল পাওয়া যায়নি",
+            "no_events": "কোনো ইভেন্ট নেই"
+        },
+        "scopes_suffix": "স্কোপ",
+        "search": {
+            "placeholder": "অনুসন্ধান"
+        },
+        "filters": {
+            "newest_first": "নতুনগুলো আগে",
+            "pick_a_date": "তারিখ বাছুন",
+            "title": "ফিল্টার",
+            "search_by": "অনুসন্ধানের মাধ্যম",
+            "since": "শুরু",
+            "until": "শেষ",
+            "types": {
+                "username": "ইউজারনেম",
+                "conversation": "কনভারসেশন",
+                "event": "ইভেন্ট"
+            },
+            "event_types": {
+                "conversation_enter": "কনভারসেশনে প্রবেশ করেছেন",
+                "conversation_exit": "কনভারসেশন ত্যাগ করেছেন",
+                "started_typing": "টাইপিং শুরু করেছেন",
+                "stopped_typing": "টাইপিং থামিয়েছেন",
+                "started_speaking": "কথা বলা শুরু করেছেন",
+                "stopped_speaking": "কথা বলা থামিয়েছেন",
+                "started_peeking": "পিকিং শুরু করেছেন",
+                "stopped_peeking": "পিকিং থামিয়েছেন",
+                "message_read": "মেসেজ পড়েছেন",
+                "message_deleted": "মেসেজ ডিলিট করেছেন",
+                "message_saved": "মেসেজ সেভ করেছেন",
+                "message_unsaved": "মেসেজ আনসেভ করেছেন",
+                "message_edited": "মেসেজ এডিট করেছেন",
+                "message_reaction_add": "রিয়েকশন যোগ করেছেন",
+                "message_reaction_remove": "রিয়েকশন সরিয়েছেন",
+                "snap_opened": "স্ন্যাপ খুলেছেন",
+                "snap_replayed": "স্ন্যাপ রিপ্লে করেছেন",
+                "snap_replayed_twice": "স্ন্যাপ দুবার রিপ্লে করেছেন",
+                "snap_screenshot": "স্ক্রিনশট নিয়েছেন",
+                "snap_screen_record": "স্ক্রিন রেকর্ড করেছেন"
+            }
+        },
+        "logs": {
+            "export_dialog": {
+                "title": "লগ এক্সপোর্ট করুন",
+                "description": "আপনার ফ্রেন্ড ট্র্যাকার লগ একটি ফাইলে এক্সপোর্ট করুন",
+                "progress": "লগ এক্সপোর্ট করা হচ্ছে...",
+                "export_as": "{type} হিসেবে এক্সপোর্ট করুন",
+                "format_json": "JSON",
+                "format_csv": "CSV"
+            },
+            "delete_dialog": {
+                "title": "লগ ডিলিট করুন",
+                "message": "আপনি কি নিশ্চিত যে আপনি সব লগ ডিলিট করতে চান? এই অ্যাকশনটি আনডু করা যাবে না।",
+                "confirm": "সব ডিলিট করুন",
+                "cancel": "বাতিল",
+                "progress": "{count} টি লগ ডিলিট করা হচ্ছে..."
+            },
+            "log_entry": {
+                "in_conversation": "{conversation}-এ",
+                "unknown_user": "অজানা",
+                "unknown_conversation": "DM",
+                "i_can_see_you_entered": "প্রবেশ করেছেন",
+                "i_can_see_you_left": "ত্যাগ করেছেন",
+                "i_can_see_you_duration": "সময়কাল",
+                "i_can_see_you_not_available": "N/A",
+                "i_can_see_you_unit_hour": "ঘণ্টা",
+                "i_can_see_you_unit_minute": "মিনিট",
+                "i_can_see_you_unit_second": "সেকেন্ড",
+                "event_text": "{friend} {conversation}-এ {event}",
+                "events": {
+                    "conversation_enter": "প্রবেশ করেছেন",
+                    "conversation_exit": "ত্যাগ করেছেন",
+                    "started_typing": "টাইপিং শুরু করেছেন",
+                    "stopped_typing": "টাইপিং থামিয়েছেন",
+                    "started_speaking": "কথা বলা শুরু করেছেন",
+                    "stopped_speaking": "কথা বলা থামিয়েছেন",
+                    "started_peeking": "পিকিং শুরু করেছেন",
+                    "stopped_peeking": "পিকিং থামিয়েছেন",
+                    "message_read": "একটি মেসেজ পড়েছেন",
+                    "message_deleted": "একটি মেসেজ ডিলিট করেছেন",
+                    "message_saved": "একটি মেসেজ সেভ করেছেন",
+                    "message_unsaved": "একটি মেসেজ আনসেভ করেছেন",
+                    "message_edited": "একটি মেসেজ এডিট করেছেন",
+                    "message_reaction_add": "একটি রিয়েকশন যোগ করেছেন",
+                    "message_reaction_remove": "একটি রিয়েকশন সরিয়েছেন",
+                    "snap_opened": "একটি স্ন্যাপ খুলেছেন",
+                    "snap_replayed": "একটি স্ন্যাপ রিপ্লে করেছেন",
+                    "snap_replayed_twice": "একটি স্ন্যাপ দুবার রিপ্লে করেছেন",
+                    "snap_screenshot": "একটি স্ক্রিনশট নিয়েছেন",
+                    "snap_screen_record": "স্ক্রিন রেকর্ড করেছেন",
+                    "i_can_see_you": "সক্রিয় ছিলেন"
+                }
+            }
+        },
+        "edit_rule": {
+            "custom_rule": "কাস্টম রুল",
+            "scope": "স্কোপ",
+            "events": "ইভেন্ট",
+            "add_event": "ইভেন্ট যোগ করুন",
+            "type": "টাইপ",
+            "triggers": "ট্রিগার",
+            "conditions": "শর্তাবলী",
+            "only_inside_conversation": "শুধুমাত্র যখন আমি কনভারসেশনে থাকি",
+            "only_outside_conversation": "শুধুমাত্র যখন আমি কনভারসেশনের বাইরে থাকি",
+            "only_when_app_active": "শুধুমাত্র যখন স্ন্যাপচ্যাট সক্রিয় থাকে",
+            "only_when_app_inactive": "শুধুমাত্র যখন স্ন্যাপচ্যাট নিষ্ক্রিয় থাকে",
+            "no_notification_when_app_active": "স্ন্যাপচ্যাট সক্রিয় থাকলে কোনো নোটিফিকেশন নয়",
+            "scope_options": {
+                "all_friends_groups": "সব বন্ধু/গ্রুপ",
+                "no_one_except": "এরা ছাড়া কেউ না",
+                "everyone_except": "সবাই, এরা ছাড়া"
+            }
+        }
+    },
+    "debug": {
+        "title": "ডিবাগ",
+        "clear": "পরিষ্কার",
+        "files": {
+            "config_json": "কনফিগারেশন ফাইল",
+            "mappings_json": "ম্যাপিং ফাইল",
+            "message_logger_db": "মেসেজ লগার ডাটাবেস",
+            "pinned_best_friend_txt": "পিন করা বেস্ট ফ্রেন্ড ফাইল",
+            "native_sig_cache_txt": "নেটিভ সিগনেচার ক্যাশ ফাইল"
+        },
+        "settings": {
+            "test_mode": "টেস্ট মোড (শুধুমাত্র ডিবাগিংয়ের জন্য)",
+            "disable_feature_loading": "ফিচার লোডিং নিষ্ক্রিয় করুন",
+            "disable_auto_mapper": "অটো ম্যাপার নিষ্ক্রিয় করুন",
+            "disable_bypass_status_indicator": "বাইপাস স্ট্যাটাস ইন্ডিকেটর নিষ্ক্রিয় করুন"
+        }
+    },
+    "ui_settings_title": "UI সেটিংস",
+    "haptic_feedback_label": "হ্যাপটিক ফিডব্যাক",
+    "updates_title": "আপডেট",
+    "auto_update_check": "অটো আপডেট চেক",
+    "update_check_frequency_daily": "দৈনিক",
+    "update_check_frequency_weekly": "সাপ্তাহিক",
+    "update_check_frequency_monthly": "মাসিক",
+    "update_channel_stable": "স্টেবল",
+    "update_channel_prerelease": "প্রি-রিলিজ",
+    "friend_notes_title": "ফ্রেন্ড নোটস",
+    "friend_notes_description": "আপনার ফ্রেন্ড নোট ম্যানেজ এবং ব্যাকআপ করুন",
+    "app_theme_title": "অ্যাপ থিম",
+    "theme_mode_system": "সিস্টেম",
+    "theme_mode_light": "লাইট",
+    "theme_mode_dark": "ডার্ক",
+    "test_mode_label": "PurrAura সক্রিয় করুন",
+    "disable_feature_loading_label": "ফিচার লোডিং নিষ্ক্রিয় করুন",
+    "disable_auto_mapper_label": "অটো ম্যাপার নিষ্ক্রিয় করুন",
+    "disable_bypass_indicator_label": "বাইপাস ইন্ডিকেটর নিষ্ক্রিয় করুন",
+    "friend_list": {
+        "manage_title": "ফ্রেন্ড লিস্ট ম্যানেজ করুন",
+        "export_description": "এক্সপোর্ট ফ্রেন্ডস আপনাকে আপনার বন্ধুদের আইডির তালিকা একটি টেক্সট ফাইলে সেভ করতে দেয়। ফাইল থেকে ইম্পোর্ট করলে বন্ধুদের একটি তালিকায় দেখাবে যেখানে আপনি তাদের যোগ করতে পারবেন।",
+        "export_friends": "বন্ধু এক্সপোর্ট করুন",
+        "import_from_file": "ফাইল থেকে ইম্পোর্ট",
+        "load_suggested_friends": "সাজেস্টেড ফ্রেন্ডস লোড করুন",
+        "add": "যোগ করুন"
+    },
+    "memories": {
+        "export_title": "মেমোরিজ এক্সপোর্ট করুন",
+        "total_memories": "মোট মেমোরি: {count}",
+        "date_range": "তারিখের ব্যাপ্তি",
+        "select": "নির্বাচন করুন",
+        "sort_by_folder": "ফোল্ডার অনুযায়ী সাজান",
+        "include_my_eyes_only": "মাই আইজ অনলি অন্তর্ভুক্ত করুন",
+        "cancel": "বাতিল",
+        "export": "এক্সপোর্ট",
+        "quit": "বেরোন",
+        "done": "সম্পন্ন",
+        "ok": "ঠিক আছে",
+        "exporting_memories": "মেমোরিজ এক্সপোর্ট করা হচ্ছে... ({failed} ব্যর্থ)"
+    },
+    "scripting_ui": {
+        "no_scripts_folder_selected": "কোনো স্ক্রিপ্ট ফোল্ডার নির্বাচন করা হয়নি",
+        "select_folder": "ফোল্ডার বাছুন",
+        "import_from_url": "URL থেকে ইম্পোর্ট",
+        "open_scripts_folder": "স্ক্রিপ্ট ফোল্ডার খুলুন",
+        "import_script_from_url": "URL থেকে স্ক্রিপ্ট ইম্পোর্ট",
+        "warning_imported_scripts": "সতর্কতা: ইম্পোর্ট করা স্ক্রিপ্ট আপনার ডিভাইসের জন্য ক্ষতিকারক হতে পারে। শুধুমাত্র বিশ্বস্ত উৎস থেকে স্ক্রিপ্ট ইম্পোর্ট করুন।",
+        "enter_url_here": "URL এখানে লিখুন:",
+        "import": "ইম্পোর্ট",
+        "cancel": "বাতিল",
+        "documentation": "ডকুমেন্টেশন"
+    },
+    "common": {
+        "cancel": "বাতিল",
+        "close": "বন্ধ করুন",
+        "add": "যোগ করুন",
+        "ok": "ঠিক আছে",
+        "quit": "বেরোন",
+        "done": "সম্পন্ন",
+        "back": "ফিরে যান",
+        "unknown": "অজানা",
+        "unknown_error": "অজানা ত্রুটি",
+        "not_available": "N/A",
+        "added": "যোগ করা হয়েছে",
+        "no_friends_found": "কোনো বন্ধু পাওয়া যায়নি",
+        "exporting_memories": "মেমোরিজ এক্সপোর্ট করা হচ্ছে... ({failed} ব্যর্থ)"
+    },
+    "clear_friend_feed": "ফ্রেন্ড ফিড পরিষ্কার করুন",
+    "task_media_conversion_title": "মিডিয়া কনভার্সন",
+    "task_call_recording_title": "{author} কল রেকর্ডিং",
+    "select_date": "তারিখ নির্বাচন করুন",
+    "schedule_scheduled_for": "{name}-এর জন্য {time}-এ শিডিউল করা হয়েছে",
+    "schedule_sending_in": "{time}-এর মধ্যে পাঠানো হচ্ছে",
+    "schedule_sent_to": "{name}-কে পাঠানো হয়েছে",
+    "schedule_sent": "শিডিউল করা স্ন্যাপ পাঠানো হয়েছে",
+    "schedule_failed_to": "{name}-কে পাঠাতে ব্যর্থ হয়েছে",
+    "schedule_failed": "শিডিউল করা স্ন্যাপ ব্যর্থ হয়েছে",
+    "schedule_cancelled_for": "{name}-এর জন্য বাতিল করা হয়েছে",
+    "by_author": "{author} দ্বারা",
+    "version": "ভার্সন {version}",
+    "delete_button": "ডিলিট",
+    "logger_history": {
+        "download_started": "ডাউনলোড শুরু হয়েছে!",
+        "downloaded_to": "{path}-এ ডাউনলোড হয়েছে",
+        "failed_to_download": "ডাউনলোড করতে ব্যর্থ {message}",
+        "select_conversation": "একটি কনভারসেশন নির্বাচন করুন",
+        "select_conversation_placeholder": "একটি কনভারসেশন নির্বাচন করুন",
+        "edited_at": "{date}-এ এডিট করা হয়েছে",
+        "download_attachment_failed_toast": "অ্যাটাচমেন্ট ডাউনলোড করতে ব্যর্থ",
+        "message_parse_failed": "মেসেজ পার্স করতে ব্যর্থ",
+        "empty_message": "খালি মেসেজ",
+        "no_more_messages": "আর কোনো মেসেজ নেই",
+        "reverse_order_checkbox": "উল্টো ক্রম",
+        "view_logger_history_button": "লগার হিস্ট্রি দেখুন",
+        "posted_at": "{date}-এ পোস্ট করা হয়েছে",
+        "created_at": "{date}-এ তৈরি",
+        "failed_to_open_file": "ফাইল খুলতে ব্যর্থ। আরও তথ্যের জন্য লগ দেখুন",
+        "failed_to_get_file": "ফাইল পেতে ব্যর্থ",
+        "download_button": "ডাউনলোড",
+        "chat_attachment": "অ্যাটাচমেন্ট {index}",
+        "log_header_format": "{username} ? {type} ? {date}",
+        "edited_at_text": "{date}-এ \"{message}\" এডিট করা হয়েছে",
+        "list_group_format": "গ্রুপ {name}",
+        "list_friend_format": "বন্ধু {name}",
+        "download_started_toast": "ডাউনলোড শুরু হয়েছে",
+        "download_success_toast": "{path}-এ ডাউনলোড হয়েছে",
+        "download_failed_toast": "ডাউনলোড ব্যর্থ: {message}",
+        "close_button_description": "অনুসন্ধান বন্ধ করুন",
+        "search_button_description": "মেসেজ অনুসন্ধান করুন"
+    },
+    "debug_dialogs": {
+        "info": "ইনফো",
+        "refs": "রেফস",
+        "arroyo": "Arroyo",
+        "message": "মেসেজ",
+        "media_references": "মিডিয়া রেফারেন্স",
+        "arroyo_proto": "Arroyo প্রোটো",
+        "message_proto": "মেসেজ প্রোটো"
+    },
+    "error_messages": {
+        "failed_to_fetch_message": "মেসেজ আনতে ব্যর্থ: {error}",
+        "failed_to_edit_message": "মেসেজ এডিট করতে ব্যর্থ: {error}"
+    },
+    "toast_snapchat_not_installed": "অ্যাকশনটি করা যাচ্ছে না: স্ন্যাপচ্যাট ইনস্টল করা নেই",
+    "invalid_input_toast": "অবৈধ ইনপুট! নিশ্চিত করুন আপনি সঠিক মান দিয়েছেন।",
+    "toast_async_task_failed": "অ্যাসিঙ্ক টাস্ক ব্যর্থ হয়েছে: {message}",
+    "toast_snapchat_crashed": "স্ন্যাপচ্যাট ক্র্যাশ করেছে! অনুগ্রহ করে আরও বিস্তারিত জানতে লগ চেক করুন।",
+    "toast_init_features_failed": "ফিচার শুরু করতে ব্যর্থ! কিছু কার্যকারিতা ঠিকমতো কাজ নাও করতে পারে।",
+    "toast_init_script_runtime_failed": "স্ক্রিপ্ট রানটাইম শুরু করতে ব্যর্থ!",
+    "toast_database_corrupted": "{path} ডাটাবেস নষ্ট হয়ে গেছে! রিস্টার্ট হচ্ছে...",
+    "toast_feature_init_failed": "{feature} ফিচার শুরু করতে ব্যর্থ! আরও বিস্তারিত জানতে logcat চেক করুন।",
+    "toast_updating_purrfect": "Purrfect আপডেট হচ্ছে। অনুগ্রহ করে অপেক্ষা করুন...",
+    "toast_update_purrfect_failed": "Purrfect আপডেট করতে ব্যর্থ। অনুগ্রহ করে আরও বিস্তারিত জানতে logcat চেক করুন।",
+    "toast_purrfect_updated": "Purrfect আপডেট হয়েছে!",
+    "toast_export_memories_failed": "মেমোরিজ এক্সপোর্ট করতে ব্যর্থ",
+    "toast_exported_to_path": "{path}-এ এক্সপোর্ট করা হয়েছে",
+    "toast_open_memories_db_failed": "মেমোরিজ ডাটাবেস খুলতে ব্যর্থ",
+    "toast_friend_add_unavailable": "বন্ধু যোগ করতে ব্যর্থ: FriendRelationshipChanger ইনস্ট্যান্স উপলব্ধ নেই",
+    "toast_friend_add_failed": "বন্ধু যোগ করতে ব্যর্থ: {message}",
+    "toast_friends_exported": "{count} জন বন্ধু এক্সপোর্ট করা হয়েছে!",
+    "toast_friends_import_failed": "বন্ধু ইম্পোর্ট করতে ব্যর্থ: {message}",
+    "toast_translation_service_unavailable": "অনুবাদ পরিষেবা সাময়িকভাবে অনুপলব্ধ",
+    "toast_send_message_failed": "মেসেজ পাঠাতে ব্যর্থ: {error}",
+    "toast_mark_conversation_read_failed": "কনভারসেশন 'পড়া হয়েছে' হিসেবে মার্ক করতে ব্যর্থ",
+    "toast_fetch_conversation_failed": "কনভারসেশন আনতে ব্যর্থ",
+    "toast_open_snap_failed": "স্ন্যাপ খুলতে ব্যর্থ",
+    "toast_mark_message_read_failed": "মেসেজ 'পড়া হয়েছে' হিসেবে মার্ক করতে ব্যর্থ। আরও বিস্তারিত জানতে লগ চেক করুন",
+    "toast_open_conversation_first": "আপনাকে প্রথমে একটি কনভারসেশন খুলতে হবে",
+    "conversation_toolbox": {
+        "title": "কনভারসেশন টুলবক্স",
+        "loaded_script": "লোড করা স্ক্রিপ্ট",
+        "failed_to_load": "লোড করতে ব্যর্থ: {message}"
+    },
+    "toast_open_link_failed": "লিঙ্ক খুলতে ব্যর্থ",
+    "ai_response_style": {
+        "casual": "ক্যাজুয়াল",
+        "formal": "ফরমাল",
+        "friendly": "বন্ধুত্বপূর্ণ",
+        "humorous": "রসিক",
+        "empathetic": "সহানুভূতিশীল",
+        "busy": "ব্যস্ত",
+        "toxic": "বিষাক্ত"
+    },
+    "ai_response_language": {
+        "auto": "অটো (প্রাপ্ত ভাষার মতো)",
+        "en": "ইংরেজি",
+        "es": "স্প্যানিশ",
+        "fr": "ফরাসি",
+        "de": "জার্মান",
+        "it": "ইতালিয়ান",
+        "pt": "পর্তুগিজ",
+        "ru": "রাশিয়ান",
+        "ja": "জাপানি",
+        "ko": "কোরিয়ান",
+        "zh": "চীনা",
+        "ar": "আরবি (UAE) এবং (KSA)",
+        "hi": "হিন্দি",
+        "tr": "তুর্কি",
+        "pl": "পোলিশ",
+        "nl": "ডাচ",
+        "sv": "সুইডিশ",
+        "da": "ড্যানিশ",
+        "no": "নরওয়েজিয়ান",
+        "fi": "ফিনিশ"
+    },
+    "ai_provider": {
+        "gemini": "Gemini",
+        "deepseek": "DeepSeek",
+        "openai": "OpenAI",
+        "openrouter": "OpenRouter"
+    }
+}

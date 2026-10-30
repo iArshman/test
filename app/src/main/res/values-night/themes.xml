@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:fontFamily">@font/avenir_next_medium</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- Use a softer dark for 'normal' dark mode, true AMOLED in amoled mode only (see below) -->
+        <item name="android:navigationBarColor">@color/primaryBackground</item>
+        <item name="android:textColor">@color/primaryText</item>
+        <item name="android:editTextColor">@color/primaryText</item>
+        <item name="android:alertDialogTheme">@android:style/Theme.DeviceDefault.Dialog.Alert</item>
+    </style>
+</resources>

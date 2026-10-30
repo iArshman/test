@@ -1,0 +1,95 @@
+[versions]
+accompanist = "0.36.0"
+agp = "9.0.0-alpha05"
+colorpicker-compose = "1.1.2"
+libsu = "6.0.0"
+guava = "33.4.8-jre"
+jsoup = "1.21.2"
+kotlin = "2.2.20"
+compose-compiler = "2.2.20"
+kotlinx-coroutines-android = "1.10.2"
+activity-ktx = "1.11.0"
+lifecycle = "2.9.0"
+savedstate = "1.3.0"
+androidx-documentfile = "1.1.0"
+coil-compose = "2.7.0"
+navigation-compose = "2.9.4"
+osmdroid-android = "6.1.20"
+recyclerview = "1.4.0"
+compose-bom = "2025.09.00" # make sure all ui components are fully working after updating this
+#noinspection GradleDependency
+bcprov-jdk18on = "1.78.1"
+dexlib2 = "3.0.9"
+dexkit = "2.0.3"
+gson = "2.13.2"
+junit = "5.13.4"
+material3 = "1.3.2"
+okhttp = "5.1.0"
+rhino = "1.7.15"
+rhino-android = "1.6.0"
+rust-android = "0.9.6"
+hiddenapibypass = "6.1"
+smart-exception-java = "0.2.1"
+workmanager = "2.10.4"
+fetch = "3.4.1"
+yukihookapi = "1.3.1"
+kavaref = "1.0.2"
+constraintlayout-compose = "1.1.0"
+constraintlayout = "2.2.1"
+android-liquid-glass = "1.0.1"
+
+[libraries]
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-constraintlayout-compose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayout-compose" }
+accompanist-navigation-animation = { module = "com.google.accompanist:accompanist-navigation-animation", version.ref = "accompanist" }
+fetch = { group = "com.github.tonyofrancis.Fetch", name = "fetch2", version.ref = "fetch" }
+androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "workmanager" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity-ktx" }
+androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime", version.ref = "lifecycle" }
+androidx-savedstate = { group = "androidx.savedstate", name = "savedstate", version.ref = "savedstate" }
+androidx-documentfile = { group = "androidx.documentfile", name = "documentfile", version.ref = "androidx-documentfile" }
+
+androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+androidx-material-icons-core = { module = "androidx.compose.material:material-icons-core" }
+androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
+foundation = { module = "androidx.compose.foundation:foundation" }
+ui = { module = "androidx.compose.ui:ui" }
+foundation-layout = { module = "androidx.compose.foundation:foundation-layout" }
+androidx-material-ripple = { module = "androidx.compose.material:material-ripple" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigation-compose" }
+androidx-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+androidx-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+apksig = { module = "com.android.tools.build:apksig", version.ref = "agp" }
+bcprov-jdk18on = { module = "org.bouncycastle:bcprov-jdk18on", version.ref = "bcprov-jdk18on" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil-compose" }
+coil-video = { module = "io.coil-kt:coil-video", version.ref = "coil-compose" }
+colorpicker-compose = { module = "com.github.skydoves:colorpicker-compose", version.ref = "colorpicker-compose" }
+libsu = { module = "com.github.topjohnwu.libsu:core", version.ref = "libsu" }
+coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines-android" }
+dexlib2 = { group = "com.android.tools.smali", name = "smali-dexlib2", version.ref = "dexlib2" }
+dexkit = { module = "org.luckypray:dexkit", version.ref = "dexkit" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+guava = { module = "com.google.guava:guava", version.ref = "guava" }
+jsoup = { module = "org.jsoup:jsoup", version.ref = "jsoup" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+junit = { group = "org.junit.vintage", name = "junit-vintage-engine", version.ref = "junit" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+osmdroid-android = { group = "org.osmdroid", name = "osmdroid-android", version.ref = "osmdroid-android" }
+hiddenapibypass = { module = "org.lsposed.hiddenapibypass:hiddenapibypass", version.ref = "hiddenapibypass" }
+recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+rhino = { module = "org.mozilla:rhino", version.ref = "rhino" }
+rhino-android = { group = "com.faendir.rhino", name = "rhino-android", version.ref = "rhino-android" }
+smart-exception-java = { module = "com.arthenica:smart-exception-java", version.ref = "smart-exception-java" }
+yukihookapi-api = { module = "com.highcapable.yukihookapi:api", version.ref = "yukihookapi" }
+kavaref-core = { module = "com.highcapable.kavaref:kavaref-core", version.ref = "kavaref" }
+kavaref-extension = { module = "com.highcapable.kavaref:kavaref-extension", version.ref = "kavaref" }
+android-liquid-glass = { module = "io.github.kyant0:backdrop", version.ref = "android-liquid-glass" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "compose-compiler" }
+rust-android = { id = "org.mozilla.rust-android-gradle.rust-android", version.ref = "rust-android" }
+
+[bundles]

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name" translatable="false">Purrfect</string>
+    <string name="instagram_json_select_config">Select JSON Config</string>
+    <string name="instagram_json_target_not_specified">Target package not specified.</string>
+    <string name="instagram_json_sent">Sent to Instagram.</string>
+    <string name="instagram_json_not_valid">Not a valid JSON file.</string>
+    <string name="instagram_json_read_failed">Failed to read file: %1$s</string>
+    <string name="instagram_json_cancelled">Cancelled or no file selected.</string>
+    <string name="instagram_export_no_config_data">No config data received.</string>
+    <string name="instagram_export_config_success">Config exported successfully.</string>
+    <string name="instagram_export_config_failed">Failed to save: %1$s</string>
+    <string name="instagram_export_invalid_uri">Invalid URI</string>
+</resources>

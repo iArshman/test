@@ -1,0 +1,236 @@
+name: Purrfect Release CI
+on:
+  workflow_dispatch:
+    inputs:
+      ci_upload:
+        description: 'Upload to CI channel'
+        required: false
+        type: boolean
+jobs:
+  job_armv8:
+    runs-on: ubuntu-latest
+    outputs:
+      armv8_apk: ${{ steps.upload_apk.outputs.artifact-paths }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: gradle
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Setup NPM Dependencies
+        run: npm install typescript -g
+      - name: Add Android targets for Rust
+        run: rustup target add armv7-linux-androideabi aarch64-linux-android
+      - name: Prepare release keystore for Gradle signing
+        env:
+          SIGNING_KEY_BASE64: ${{ secrets.PS_BASE_64 }}
+          SIGNING_KEY_ALIAS: ${{ secrets.PS_RELEASE_KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.PS_RELEASE_KEY_PASSWORD }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.PS_RELEASE_STORE_PASSWORD }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SIGNING_KEY_BASE64}" ] || [ -z "${SIGNING_KEY_ALIAS}" ] || [ -z "${SIGNING_STORE_PASSWORD}" ] || [ -z "${SIGNING_KEY_PASSWORD}" ]; then
+            echo "Signing secrets are missing. Ensure PS_BASE_64, PS_RELEASE_KEY_ALIAS, PS_RELEASE_STORE_PASSWORD, PS_RELEASE_KEY_PASSWORD are set." >&2
+            exit 1
+          fi
+          mkdir -p "${HOME}/.android"
+          printf '%s' "${SIGNING_KEY_BASE64}" | base64 --decode > "${HOME}/.android/purrfect-release.keystore"
+          if [ ! -s "${HOME}/.android/purrfect-release.keystore" ]; then
+            echo "Decoded keystore is empty or invalid." >&2
+            exit 1
+          fi
+          mkdir -p "${HOME}/.gradle"
+          {
+            echo "PS_RELEASE_STORE_PASSWORD=${SIGNING_STORE_PASSWORD}"
+            echo "PS_RELEASE_KEY_ALIAS=${SIGNING_KEY_ALIAS}"
+            echo "PS_RELEASE_KEY_PASSWORD=${SIGNING_KEY_PASSWORD}"
+          } >> "${HOME}/.gradle/gradle.properties"
+      - name: Build
+        run: ./gradlew --configuration-cache assembleArmv8Release
+      - name: Determine the latest Build Tools version installed
+        shell: bash
+        run: |
+          SDK_ROOT="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
+          echo "SDK_ROOT=${SDK_ROOT}" >> $GITHUB_ENV
+          echo "BUILD_TOOL_VERSION=$(ls "${SDK_ROOT}/build-tools/" | tail -n 1)" >> $GITHUB_ENV
+      - name: Sign APK
+        env:
+          BUILD_TOOLS_VERSION: ${{ env.BUILD_TOOL_VERSION }}
+          SIGNING_KEY_BASE64: ${{ secrets.PS_BASE_64 }}
+          SIGNING_KEY_ALIAS: ${{ secrets.PS_RELEASE_KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.PS_RELEASE_KEY_PASSWORD }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.PS_RELEASE_STORE_PASSWORD }}
+        run: |
+          set -euo pipefail
+          SIGNING_DIR="app/build/outputs/apk/armv8/release"
+          KEYSTORE_PATH="${SIGNING_DIR}/signingKey.jks"
+          if [ -z "${SIGNING_KEY_BASE64}" ] || [ -z "${SIGNING_KEY_ALIAS}" ] || [ -z "${SIGNING_STORE_PASSWORD}" ] || [ -z "${SIGNING_KEY_PASSWORD}" ]; then
+            echo "Signing secrets are missing. Ensure PS_BASE_64, PS_RELEASE_KEY_ALIAS, PS_RELEASE_STORE_PASSWORD, PS_RELEASE_KEY_PASSWORD are set." >&2
+            exit 1
+          fi
+          printf '%s' "${SIGNING_KEY_BASE64}" | base64 --decode > "${KEYSTORE_PATH}"
+          if [ ! -s "${KEYSTORE_PATH}" ]; then
+            echo "Decoded keystore is empty or invalid." >&2
+            exit 1
+          fi
+          APK_INPUT=$(ls "${SIGNING_DIR}"/*.apk | head -n 1)
+          "${SDK_ROOT}/build-tools/${BUILD_TOOLS_VERSION}/zipalign" -v 4 "${APK_INPUT}" "${SIGNING_DIR}/purrfect-armv8Release-aligned.apk"
+          "${SDK_ROOT}/build-tools/${BUILD_TOOLS_VERSION}/apksigner" sign \
+            --ks "${KEYSTORE_PATH}" \
+            --ks-key-alias "${SIGNING_KEY_ALIAS}" \
+            --ks-pass "pass:${SIGNING_STORE_PASSWORD}" \
+            --key-pass "pass:${SIGNING_KEY_PASSWORD}" \
+            --ks-type JKS \
+            --out "${SIGNING_DIR}/purrfect-armv8Release-signed.apk" \
+            "${SIGNING_DIR}/purrfect-armv8Release-aligned.apk"
+      - name: Get current build version
+        id: version-env
+        run: |
+          ./gradlew --configuration-cache getVersion
+          echo "version=$(cat app/build/version.txt)" >> $GITHUB_ENV
+      - name: Delete unsigned APK file and rename the signed one
+        run: |
+          find app/build/outputs/apk/armv8/release/ -type f ! -name '*-signed*' -delete
+          mv app/build/outputs/apk/armv8/release/purrfect-armv8Release-signed.apk app/build/outputs/apk/armv8/release/purrfect_${{ env.version }}-armv8Release.apk
+      - name: Upload artifact
+        id: upload_apk
+        uses: actions/upload-artifact@v4
+        with:
+          name: purrfect-armv8-release
+          path: app/build/outputs/apk/armv8/release/*.apk
+  job_armv7:
+    runs-on: ubuntu-latest
+    outputs:
+      armv7_apk: ${{ steps.upload_apk.outputs.artifact-paths }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: gradle
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Setup NPM Dependencies
+        run: npm install typescript -g
+      - name: Add Android targets for Rust
+        run: rustup target add armv7-linux-androideabi aarch64-linux-android
+      - name: Prepare release keystore for Gradle signing
+        env:
+          SIGNING_KEY_BASE64: ${{ secrets.PS_BASE_64 }}
+          SIGNING_KEY_ALIAS: ${{ secrets.PS_RELEASE_KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.PS_RELEASE_KEY_PASSWORD }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.PS_RELEASE_STORE_PASSWORD }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SIGNING_KEY_BASE64}" ] || [ -z "${SIGNING_KEY_ALIAS}" ] || [ -z "${SIGNING_STORE_PASSWORD}" ] || [ -z "${SIGNING_KEY_PASSWORD}" ]; then
+            echo "Signing secrets are missing. Ensure PS_BASE_64, PS_RELEASE_KEY_ALIAS, PS_RELEASE_STORE_PASSWORD, PS_RELEASE_KEY_PASSWORD are set." >&2
+            exit 1
+          fi
+          mkdir -p "${HOME}/.android"
+          printf '%s' "${SIGNING_KEY_BASE64}" | base64 --decode > "${HOME}/.android/purrfect-release.keystore"
+          if [ ! -s "${HOME}/.android/purrfect-release.keystore" ]; then
+            echo "Decoded keystore is empty or invalid." >&2
+            exit 1
+          fi
+          mkdir -p "${HOME}/.gradle"
+          {
+            echo "PS_RELEASE_STORE_PASSWORD=${SIGNING_STORE_PASSWORD}"
+            echo "PS_RELEASE_KEY_ALIAS=${SIGNING_KEY_ALIAS}"
+            echo "PS_RELEASE_KEY_PASSWORD=${SIGNING_KEY_PASSWORD}"
+          } >> "${HOME}/.gradle/gradle.properties"
+      - name: Build
+        run: ./gradlew --configuration-cache assembleArmv7Release
+      - name: Determine the latest Build Tools version installed
+        shell: bash
+        run: |
+          SDK_ROOT="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
+          echo "SDK_ROOT=${SDK_ROOT}" >> $GITHUB_ENV
+          echo "BUILD_TOOL_VERSION=$(ls "${SDK_ROOT}/build-tools/" | tail -n 1)" >> $GITHUB_ENV
+      - name: Sign APK
+        env:
+          BUILD_TOOLS_VERSION: ${{ env.BUILD_TOOL_VERSION }}
+          SIGNING_KEY_BASE64: ${{ secrets.PS_BASE_64 }}
+          SIGNING_KEY_ALIAS: ${{ secrets.PS_RELEASE_KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.PS_RELEASE_KEY_PASSWORD }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.PS_RELEASE_STORE_PASSWORD }}
+        run: |
+          set -euo pipefail
+          SIGNING_DIR="app/build/outputs/apk/armv7/release"
+          KEYSTORE_PATH="${SIGNING_DIR}/signingKey.jks"
+          if [ -z "${SIGNING_KEY_BASE64}" ] || [ -z "${SIGNING_KEY_ALIAS}" ] || [ -z "${SIGNING_STORE_PASSWORD}" ] || [ -z "${SIGNING_KEY_PASSWORD}" ]; then
+            echo "Signing secrets are missing. Ensure PS_BASE_64, PS_RELEASE_KEY_ALIAS, PS_RELEASE_STORE_PASSWORD, PS_RELEASE_KEY_PASSWORD are set." >&2
+            exit 1
+          fi
+          printf '%s' "${SIGNING_KEY_BASE64}" | base64 --decode > "${KEYSTORE_PATH}"
+          if [ ! -s "${KEYSTORE_PATH}" ]; then
+            echo "Decoded keystore is empty or invalid." >&2
+            exit 1
+          fi
+          APK_INPUT=$(ls "${SIGNING_DIR}"/*.apk | head -n 1)
+          "${SDK_ROOT}/build-tools/${BUILD_TOOLS_VERSION}/zipalign" -v 4 "${APK_INPUT}" "${SIGNING_DIR}/purrfect-armv7Release-aligned.apk"
+          "${SDK_ROOT}/build-tools/${BUILD_TOOLS_VERSION}/apksigner" sign \
+            --ks "${KEYSTORE_PATH}" \
+            --ks-key-alias "${SIGNING_KEY_ALIAS}" \
+            --ks-pass "pass:${SIGNING_STORE_PASSWORD}" \
+            --key-pass "pass:${SIGNING_KEY_PASSWORD}" \
+            --ks-type JKS \
+            --out "${SIGNING_DIR}/purrfect-armv7Release-signed.apk" \
+            "${SIGNING_DIR}/purrfect-armv7Release-aligned.apk"
+      - name: Get current build version
+        id: version-env
+        run: |
+          ./gradlew --configuration-cache getVersion
+          echo "version=$(cat app/build/version.txt)" >> $GITHUB_ENV
+      - name: Delete unsigned APK file and rename the signed one
+        run: |
+          find app/build/outputs/apk/armv7/release/ -type f ! -name '*-signed*' -delete
+          mv app/build/outputs/apk/armv7/release/purrfect-armv7Release-signed.apk app/build/outputs/apk/armv7/release/purrfect_${{ env.version }}-armv7Release.apk
+      - name: Upload artifact
+        id: upload_apk
+        uses: actions/upload-artifact@v4
+        with:
+          name: purrfect-armv7-release
+          path: app/build/outputs/apk/armv7/release/*.apk
+  make_release:
+    needs: [job_armv7, job_armv8]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+      - name: Download all build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: ./all-apks
+      - name: Display all files for debug
+        run: find ./all-apks
+      - name: Set up GitHub CLI
+        run: |
+          sudo apt-get install -y gh
+      - name: Create Release with all APKs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=$(awk 'NR==1 && $1=="##" {print $2; exit}' changelogs-stable.txt)
+          NOTE=$(awk 'NR==1 {next} /^## / {exit} {sub(/^[[:space:]]+/, "", $0); print}' changelogs-stable.txt)
+          if [ -z "${VERSION}" ] || [ -z "${NOTE}" ]; then
+            echo "Failed to parse changelogs-stable.txt for release title/body." >&2
+            exit 1
+          fi
+          TITLE="${VERSION}"
+          APKLIST=$(find ./all-apks -type f -name '*.apk' | tr '\n' ' ')
+          echo "APKS: $APKLIST"
+          gh release create "$VERSION" $APKLIST --repo ${{ github.repository }} --title "$TITLE" --notes "$NOTE"

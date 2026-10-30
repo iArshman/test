@@ -1,0 +1,60 @@
+package me.eternal.purrfect.common.util.snap
+
+import me.eternal.purrfect.common.Constants
+import me.eternal.purrfect.common.util.ktx.await
+import okhttp3.Headers
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import java.io.InputStream
+import java.util.Base64
+
+object RemoteMediaResolver {
+    const val CF_ST_CDN_D = "https://cf-st.sc-cdn.net/d/"
+
+    val okHttpClient = OkHttpClient.Builder()
+        .followRedirects(true)
+        .retryOnConnectionFailure(true)
+        .connectTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
+        .readTimeout(40, java.util.concurrent.TimeUnit.SECONDS)
+        .writeTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
+        .build()
+
+    fun newResolveRequest(protoKey: ByteArray): Request {
+        return Request.Builder()
+            .url("https://gcp.api.snapchat.com/bolt-http/resolve?co=" + Base64.getUrlEncoder().encodeToString(protoKey))
+            .addHeader("User-Agent", Constants.USER_AGENT)
+            .build()
+    }
+
+    suspend inline fun downloadMedia(url: String, decryptionCallback: (InputStream) -> InputStream = { it }, result: (InputStream, Long) -> Unit) {
+        okHttpClient.newCall(Request.Builder().url(url).build()).await().use { response ->
+            if (!response.isSuccessful) {
+                throw Throwable("invalid response ${response.code}")
+            }
+            result(decryptionCallback(response.body.byteStream()), response.body.contentLength())
+        }
+    }
+
+    suspend inline fun downloadBoltMedia(
+        protoKey: ByteArray,
+        decryptionCallback: (InputStream) -> InputStream = { it },
+        resultCallback: (stream: InputStream, length: Long) -> Unit
+    ) {
+        okHttpClient.newCall(newResolveRequest(protoKey)).await().use { response ->
+            if (!response.isSuccessful) {
+                throw Throwable("invalid response ${response.code}")
+            }
+            resultCallback(
+                decryptionCallback(
+                    response.body.byteStream()
+                ),
+                response.body.contentLength()
+            )
+        }
+    }
+
+    fun getMediaHeaders(protoKey: ByteArray): Headers {
+        val request = newResolveRequest(protoKey)
+        return okHttpClient.newCall(request.newBuilder().method("HEAD", null).build()).execute().headers
+    }
+}

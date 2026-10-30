@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Softer background for normal dark -->
+    <color name="primaryText">#DEDEDE</color>
+    <color name="primaryBackground">#23272E</color>
+    <color name="dialogBackground">#31343A</color>
+    <color name="borderColor">#424242</color>
+    <!-- AMOLED (optionally override in new values-amoled/colors.xml) -->
+</resources>

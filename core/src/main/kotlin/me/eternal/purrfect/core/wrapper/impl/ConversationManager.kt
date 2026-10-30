@@ -1,0 +1,258 @@
+package me.eternal.purrfect.core.wrapper.impl
+
+import me.eternal.purrfect.common.data.MessageUpdate
+import me.eternal.purrfect.core.ModContext
+import me.eternal.purrfect.core.util.CallbackBuilder
+import me.eternal.purrfect.core.util.dataBuilder
+import me.eternal.purrfect.core.util.ktx.getObjectField
+import me.eternal.purrfect.core.util.ktx.setObjectField
+import me.eternal.purrfect.core.wrapper.AbstractWrapper
+import me.eternal.purrfect.mapper.impl.CallbackMapper
+
+typealias CallbackResult = (error: String?) -> Unit
+
+class ConversationManager(
+    val context: ModContext,
+    obj: Any
+) : AbstractWrapper(obj) {
+    private fun findMethodByName(name: String) = sequence {
+        var current: Class<*>? = context.classCache.conversationManager
+        while (current != null && current != Any::class.java && current != Object::class.java) {
+            yield(current)
+            current = current.superclass
+        }
+    }.flatMap { clazz -> clazz.declaredMethods.asSequence() }
+        .firstOrNull { it.name == name }
+        ?: throw RuntimeException("Could not find method $name")
+
+    private val updateMessageMethod by lazy { findMethodByName("updateMessage") }
+    private val fetchConversationWithMessagesPaginatedMethod by lazy { findMethodByName("fetchConversationWithMessagesPaginated") }
+    private val fetchConversationWithMessagesMethod by lazy { findMethodByName("fetchConversationWithMessages") }
+    private val fetchMessageByServerId by lazy { findMethodByName("fetchMessageByServerId") }
+    private val fetchMessagesByServerIds by lazy { findMethodByName("fetchMessagesByServerIds") }
+    private val fetchPrefetchableMessagesForConversationsMethod by lazy { findMethodByName("fetchPrefetchableMessagesForConversations") }
+    private val displayedMessagesMethod by lazy { findMethodByName("displayedMessages") }
+    private val fetchMessage by lazy { findMethodByName("fetchMessage") }
+    private val clearConversation by lazy { findMethodByName("clearConversation") }
+    private val getOneOnOneConversationIds by lazy { findMethodByName("getOneOnOneConversationIds") }
+    private val dismissStreakRestore by lazy { findMethodByName("dismissStreakRestore") }
+    private val reactToMessageMethod by lazy { findMethodByName("reactToMessage") }
+
+
+    private fun getCallbackClass(name: String): Class<*> {
+        lateinit var result: Class<*>
+        context.mappings.useMapper(CallbackMapper::class) {
+            result = context.androidContext.classLoader.loadClass(callbacks.get()!![name])
+        }
+        return result
+    }
+
+
+    fun updateMessage(conversationId: String, messageId: Long, action: MessageUpdate, onResult: CallbackResult = {}) {
+        updateMessageMethod.invoke(
+            instanceNonNull(),
+            SnapUUID(conversationId).instanceNonNull(),
+            messageId,
+            context.classCache.messageUpdateEnum.enumConstants!!.first { it.toString() == action.toString() },
+            CallbackBuilder(getCallbackClass("Callback"))
+                .override("onSuccess") { onResult(null) }
+                .override("onError") { onResult(it.arg<Any>(0).toString()) }.build()
+        )
+    }
+
+    fun fetchConversationWithMessagesPaginated(conversationId: String, lastMessageId: Long, amount: Int, onSuccess: (message: List<Message>) -> Unit, onError: (error: String) -> Unit) {
+        val callback = CallbackBuilder(getCallbackClass("FetchConversationWithMessagesCallback"))
+            .override("onFetchConversationWithMessagesComplete") { param ->
+                onSuccess(param.arg<List<*>>(1).map { Message(it) })
+            }
+            .override("onServerRequest", shouldUnhook = false) {}
+            .override("onError") {
+                onError(it.arg<Any>(0).toString())
+            }.build()
+        fetchConversationWithMessagesPaginatedMethod.invoke(instanceNonNull(), conversationId.toSnapUUID().instanceNonNull(), lastMessageId, amount, callback)
+    }
+
+    fun fetchConversationWithMessages(conversationId: String, onSuccess: (List<Message>) -> Unit, onError: (error: String) -> Unit) {
+        fetchConversationWithMessagesMethod.invoke(
+            instanceNonNull(),
+            conversationId.toSnapUUID().instanceNonNull(),
+            CallbackBuilder(getCallbackClass("FetchConversationWithMessagesCallback"))
+                .override("onFetchConversationWithMessagesComplete") { param ->
+                    onSuccess(param.arg<List<*>>(1).map { Message(it) })
+                }
+                .override("onServerRequest", shouldUnhook = false) {}
+                .override("onError") {
+                    onError(it.arg<Any>(0).toString())
+                }.build()
+        )
+    }
+
+    fun displayedMessages(conversationId: String, messageId: Long, onResult: CallbackResult = {}) {
+        displayedMessagesMethod.invoke(
+            instanceNonNull(),
+            conversationId.toSnapUUID().instanceNonNull(),
+            messageId,
+            CallbackBuilder(getCallbackClass("Callback"))
+                .override("onSuccess") { onResult(null) }
+                .override("onError") { onResult(it.arg<Any>(0).toString()) }.build()
+        )
+    }
+
+    fun fetchMessage(conversationId: String, messageId: Long, onSuccess: (Message) -> Unit, onError: (error: String) -> Unit = {}) {
+        fetchMessage.invoke(
+            instanceNonNull(),
+            conversationId.toSnapUUID().instanceNonNull(),
+            messageId,
+            CallbackBuilder(getCallbackClass("FetchMessageCallback"))
+                .override("onFetchMessageComplete") { param ->
+                    onSuccess(Message(param.arg(0)))
+                }
+                .override("onError") {
+                    onError(it.arg<Any>(0).toString())
+                }.build()
+        )
+    }
+
+    fun fetchMessageByServerId(conversationId: String, serverMessageId: Long, onSuccess: (Message) -> Unit, onError: (error: String) -> Unit) {
+        val serverMessageIdentifier = context.classCache.serverMessageIdentifier.dataBuilder {
+            set("mServerConversationId",  conversationId.toSnapUUID().instanceNonNull())
+            set("mServerMessageId", serverMessageId)
+        }
+        val conversationUuid = conversationId.toSnapUUID().instanceNonNull()
+
+        val callback = CallbackBuilder(getCallbackClass("FetchMessageCallback"))
+            .override("onFetchMessageComplete") { param ->
+                onSuccess(Message(param.arg(0)))
+            }
+            .override("onError") {
+                onError(it.arg<Any>(0).toString())
+            }.build()
+
+        val args = fetchMessageByServerId.parameterTypes.mapIndexed { index, parameterType ->
+            when {
+                parameterType.isInstance(serverMessageIdentifier) -> serverMessageIdentifier
+                parameterType.isInstance(callback) -> callback
+                parameterType.isInstance(conversationUuid) -> conversationUuid
+                parameterType == Boolean::class.javaPrimitiveType || parameterType == Boolean::class.javaObjectType -> false
+                else -> throw IllegalStateException(
+                    "Unsupported fetchMessageByServerId parameter at index $index: ${parameterType.name}"
+                )
+            }
+        }.toTypedArray()
+
+        fetchMessageByServerId.invoke(instanceNonNull(), *args)
+    }
+
+    fun fetchMessagesByServerIds(conversationId: String, serverMessageIds: List<Long>, onSuccess: (List<Message>) -> Unit, onError: (error: String) -> Unit) {
+        fetchMessagesByServerIds.invoke(
+            instanceNonNull(),
+            serverMessageIds.map {
+                CallbackBuilder.createEmptyObject(context.classCache.serverMessageIdentifier.constructors.first())?.apply {
+                    setObjectField("mServerConversationId", conversationId.toSnapUUID().instanceNonNull())
+                    setObjectField("mServerMessageId", it)
+                }
+            },
+            CallbackBuilder(getCallbackClass("FetchMessagesByServerIdsCallback"))
+                .override("onSuccess") { param ->
+                    onSuccess(param.arg<List<*>>(0).mapNotNull {
+                        Message(it?.getObjectField("mMessage") ?: return@mapNotNull null)
+                    })
+                }
+                .override("onError") {
+                    onError(it.arg<Any>(0).toString())
+                }.build()
+        )
+    }
+
+    fun fetchPrefetchableMessagesForConversations(
+        conversationIds: List<String>,
+        strategyName: String,
+        messagesPerConversation: Int,
+        onSuccess: (List<Message>) -> Unit = {},
+        onError: (error: String) -> Unit = {}
+    ) {
+        val prefetchRequestClass = fetchPrefetchableMessagesForConversationsMethod.parameterTypes.firstOrNull {
+            it.name == "com.snapchat.client.messaging.PrefetchRequest"
+        } ?: error("PrefetchRequest parameter type not found")
+        val strategyClass = context.androidContext.classLoader.loadClass("com.snapchat.client.messaging.PrefetchStrategy")
+        val strategy = strategyClass.enumConstants?.firstOrNull { it.toString() == strategyName }
+            ?: error("PrefetchStrategy $strategyName not found")
+        val prefetchRequest = prefetchRequestClass
+            .getConstructor(strategyClass, Int::class.javaPrimitiveType)
+            .newInstance(strategy, messagesPerConversation)
+
+        fetchPrefetchableMessagesForConversationsMethod.invoke(
+            instanceNonNull(),
+            conversationIds.map { it.toSnapUUID().instanceNonNull() }.toCollection(ArrayList()),
+            prefetchRequest,
+            CallbackBuilder(getCallbackClass("FetchMessagesCallback"))
+                .override("onFetchMessagesComplete") { param ->
+                    onSuccess(param.arg<List<*>>(0).map { Message(it) })
+                }
+                .override("onError") {
+                    onError(it.arg<Any>(0).toString())
+                }.build()
+        )
+    }
+
+    fun clearConversation(conversationId: String, onSuccess: () -> Unit, onError: (error: String) -> Unit) {
+        val callback = CallbackBuilder(getCallbackClass("Callback"))
+            .override("onSuccess") { onSuccess() }
+            .override("onError") { onError(it.arg<Any>(0).toString()) }.build()
+        clearConversation.invoke(instanceNonNull(), conversationId.toSnapUUID().instanceNonNull(), callback)
+    }
+
+    fun getOneOnOneConversationIds(userIds: List<String>, onSuccess: (List<Pair<String, String>>) -> Unit, onError: (error: String) -> Unit) {
+        val callback = CallbackBuilder(getCallbackClass("GetOneOnOneConversationIdsCallback"))
+            .override("onSuccess") { param ->
+                onSuccess(param.arg<ArrayList<*>>(0).map {
+                    SnapUUID(it.getObjectField("mUserId")).toString() to SnapUUID(it.getObjectField("mConversationId")).toString()
+                })
+            }
+            .override("onError") { onError(it.arg<Any>(0).toString()) }.build()
+        getOneOnOneConversationIds.invoke(instanceNonNull(), userIds.map { it.toSnapUUID().instanceNonNull() }.toMutableList(), callback)
+    }
+
+    fun editMessage(conversationId: String, messageId: Long, content: ByteArray, onSuccess: () -> Unit, onError: (error: String) -> Unit) {
+        val editMessageMethod = instanceNonNull()::class.java.methods.first { it.name == "editMessage" }
+        editMessageMethod.invoke(instanceNonNull(), editMessageMethod.parameterTypes[0].dataBuilder {
+            set("mConversationId", conversationId.toSnapUUID().instanceNonNull())
+            set("mMessageId", messageId)
+        }, editMessageMethod.parameterTypes[1].dataBuilder {
+            set("mContent", content)
+            set("mMentionInfo", null)
+        }, CallbackBuilder(getCallbackClass("Callback"))
+            .override("onSuccess") { onSuccess() }
+            .override("onError") { onError(it.arg<Any>(0).toString()) }.build()
+        )
+    }
+
+    fun isEditMessageSupported() = instanceNonNull()::class.java.methods.any { it.name == "editMessage" }
+
+    fun dismissStreakRestore(conversationId: String, onSuccess: () -> Unit, onError: (error: String) -> Unit) {
+        val callback = CallbackBuilder(getCallbackClass("Callback"))
+            .override("onSuccess") { onSuccess() }
+            .override("onError") { onError(it.arg<Any>(0).toString()) }.build()
+        dismissStreakRestore.invoke(instanceNonNull(), conversationId.toSnapUUID().instanceNonNull(), callback)
+    }
+
+    fun reactToMessage(conversationId: String, messageId: Long, emoji: String? = null, intentionType: Long? = null, onSuccess: () -> Unit, onError: (error: String) -> Unit) {
+        reactToMessageMethod.invoke(
+            instanceNonNull(),
+            conversationId.toSnapUUID().instanceNonNull(),
+            messageId,
+            reactToMessageMethod.parameterTypes[2].dataBuilder {
+                set("mEmoji", emoji)
+                set("mIntentionType", intentionType)
+            },
+            reactToMessageMethod.parameterTypes[3].dataBuilder {
+                set("mMetricsMessageMediaType", "NO_MEDIA")
+                set("mMetricsMessageType", "TEXT")
+                set("mReactionSource", "NONE")
+            },
+            CallbackBuilder(getCallbackClass("Callback"))
+            .override("onSuccess") { onSuccess() }
+            .override("onError") { onError(it.arg<Any>(0).toString()) }.build()
+        )
+    }
+}

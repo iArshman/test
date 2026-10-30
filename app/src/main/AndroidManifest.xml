@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <queries>
+        <package android:name="com.snapchat.android" />
+        <package android:name="com.reddit.frontpage" />
+        <package android:name="com.whatsapp" />
+        <package android:name="com.instagram.android" />
+        <package android:name="com.instagold.android" />
+        <package android:name="com.instaflux.app" />
+        <package android:name="com.myinsta.android" />
+        <package android:name="cc.honista.app" />
+        <package android:name="com.instaprime.android" />
+        <package android:name="com.instafel.android" />
+        <package android:name="com.instadm.android" />
+        <package android:name="com.dfistagram.android" />
+        <package android:name="com.Instander.android" />
+        <package android:name="com.aero.instagram" />
+        <package android:name="com.instapro.android" />
+        <package android:name="com.instaflow.android" />
+        <package android:name="com.instagram1.android" />
+        <package android:name="com.instagram2.android" />
+        <package android:name="com.instagramclone.android" />
+        <package android:name="com.instaclone.android" />
+    </queries>
+    <application
+        android:usesCleartextTraffic="true"
+        android:label="@string/app_name"
+        tools:targetApi="34"
+        android:allowBackup="false"
+        android:hasFragileUserData="false"
+        android:enableOnBackInvokedCallback="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round">
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="Purrfect" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="93" />
+        <meta-data
+            android:name="xposedsharedprefs"
+            android:value="true" />
+        <meta-data
+            android:name="xposedscope"
+            android:value="com.snapchat.android,com.reddit.frontpage,com.whatsapp,com.instagram.android,com.instagold.android,com.instaflux.app,com.myinsta.android,cc.honista.app,com.instaprime.android,com.instafel.android,com.instadm.android,com.dfistagram.android,com.Instander.android,com.aero.instagram,com.instapro.android,com.instaflow.android,com.instagram1.android,com.instagram2.android,com.instagramclone.android,com.instaclone.android" />
+        <service
+            android:name=".bridge.BridgeService"
+            android:exported="true"
+            android:permission="com.snapchat.android.permission.UPDATE_STICKER_INDEX">
+        </service>
+        <service
+            android:name=".instagram.InstagramDownloadSaveService"
+            android:exported="true"
+            android:foregroundServiceType="dataSync">
+            <intent-filter>
+                <action android:name="me.eternal.purrfect.action.INSTAGRAM_DOWNLOAD_SAVE" />
+            </intent-filter>
+        </service>
+        <activity
+            android:name=".ui.manager.MainActivity"
+            android:theme="@style/AppTheme"
+            android:launchMode="singleTask"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.setup.SetupActivity"
+            android:launchMode="singleTask"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".bridge.ForceStartActivity"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:excludeFromRecents="true"
+            android:exported="true" />
+        <activity android:name=".bridge.MappingGenerationActivity"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:excludeFromRecents="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.eternal.purrfect.action.GENERATE_MAPPINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".bridge.BiometricPromptActivity"
+            android:theme="@style/BiometricPromptTheme"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:permission="com.snapchat.android.permission.UPDATE_STICKER_INDEX" />
+        <activity
+            android:name=".instagram.InstagramJsonImportActivity"
+            android:theme="@style/AppTheme"
+            android:exported="true" />
+        <activity
+            android:name=".instagram.InstagramJsonExportActivity"
+            android:theme="@style/AppTheme"
+            android:exported="true" />
+        <receiver android:name=".StreaksReminder" />
+        <receiver
+            android:name=".reddit.RedditConfigBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.eternal.purrfect.action.REDDIT_CONFIG_REQUEST" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".bridge.RedditLogReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.eternal.purrfect.REDDIT_LOG" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".debug.ConfigUpdateReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.eternal.purrfect.action.DEBUG_UPDATE_CONFIG" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".snapchat.SnapchatUiElementCaptureReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.eternal.purrfect.action.SNAPCHAT_UI_ELEMENT_CAPTURED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".snapchat.SnapchatThemeSurfaceCaptureReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.eternal.purrfect.action.SNAPCHAT_THEME_SURFACE_CAPTURED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".whatsapp.WhatsAppConfigBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.eternal.purrfect.action.WHATSAPP_CONFIG_REQUEST" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".whatsapp.WhatsAppUiElementCaptureReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.eternal.purrfect.action.WHATSAPP_UI_ELEMENT_CAPTURED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".bridge.WhatsAppLogReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.eternal.purrfect.WHATSAPP_LOG" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".instagram.InstagramDexKitScanReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.eternal.purrfect.action.INSTAGRAM_DEXKIT_SCAN" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".instagram.InstagramConfigBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.eternal.purrfect.action.INSTAGRAM_CONFIG_REQUEST" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".instagram.InstagramFeatureUpdateReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.eternal.purrfect.action.INSTAGRAM_FEATURE_PREF_UPDATE" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".instagram.InstagramUiElementCaptureReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.eternal.purrfect.action.INSTAGRAM_UI_ELEMENT_CAPTURED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".bridge.InstagramLogReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.eternal.purrfect.INSTAGRAM_LOG" />
+            </intent-filter>
+        </receiver>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="me.eternal.purrfect.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+        <provider
+            android:name=".snapchat.SnapchatThemeBackgroundProvider"
+            android:authorities="${applicationId}.snapchat.themebackground"
+            android:exported="true"
+            android:grantUriPermissions="true" />
+        <provider
+            android:name=".reddit.RedditConfigProvider"
+            android:authorities="me.eternal.purrfect.reddit.config"
+            android:exported="true" />
+        <provider
+            android:name=".whatsapp.WhatsAppConfigProvider"
+            android:authorities="me.eternal.purrfect.whatsapp.config"
+            android:exported="true" />
+        <provider
+            android:name=".instagram.InstagramConfigProvider"
+            android:authorities="me.eternal.purrfect.instagram.config"
+            android:exported="true" />
+        <provider
+            android:name=".instagram.InstagramEmojiFontProvider"
+            android:authorities="me.eternal.purrfect.instagram.emoji"
+            android:exported="true"
+            android:grantUriPermissions="true" />
+    </application>
+</manifest>

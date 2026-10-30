@@ -1,0 +1,18 @@
+- New: Bulk Manage Friend Requests(tq to RSR)
+- Fix: Bulk Action Progress Dialogs(tq to RSR)
+- Fix: Audio note send override(tq to RSR)
+- Fix: Improve PurrAura Active indicator(tq to RSR)
+- Fix: Prevent Story Rewatch(tq to Brandon)
+- Fix: Location search(tq to Brandon)
+- Fix: story download & decryption(tq to Hazelnut)
+- New: Add confirmation dialogs for Reset Purrfect option
+- New: Google Maps Integration(tq to Brandon)
+- Fix: support more translation keys
+- Fix: several inconsistencies
+- Fix: add proper support for scripts
+- New: Swap wiki with new website
+- Fix: Custom emoji is now stable!
+- Fix: Poor Call recorder quality
+- New: order feature for chat exports
+- Fix: Gemini Auto Reply(tq to RSR)
+- New: Spotlight Creator Info(tq to RSR)

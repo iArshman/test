@@ -1,0 +1,18 @@
+seed: 0xDEADBEEF
+functions:
+  - "shouldBlockEndpoint"
+  - "shouldBlockDuplexClient"
+  - "shouldBlockAuthContext"
+  - "shouldBlockApiInvocation"
+  - "ss_get_detection_blob"
+  - "ss_get_hermod_dup"
+  - "ss_get_risk_block_blob"
+  - "verify_key"
+  - "jni_verify_key"
+  - "verify_library_checksum"
+  - "verify_apk_integrity"
+passes:
+  - "InstructionsSubstitution"
+  - "BogusControlFlow"
+  - "ControlFlowFlattening"
+  - "StringsEncryption"

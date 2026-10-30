@@ -1,0 +1,9 @@
+Purrfect is an open-source module for Snapchat that adds advanced customization and utility features for rooted and non-rooted setups.
+
+It includes media download options, privacy controls, interface tweaks, automation tools, and quality-of-life improvements designed to give users more control over their Snapchat experience.
+
+Highlights:
+- Media and download utilities
+- Privacy and visibility controls
+- UI customization and theming
+- Rooted and non-rooted support

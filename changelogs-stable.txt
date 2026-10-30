@@ -1,0 +1,465 @@
+## v1.7.6
+- Reddit: We now support reddit too!
+- New: Reddit is now supported! Features:
+- New: Ad Blocker
+- New: Premium spoof
+- New: Link controls
+- New: Navigation controls
+- New: Shelf controls
+- New: Dialog controls
+- New: Scroll to top button
+- Snapchat side changes:
+- Fix: Converted Media now opens reliably(tq 𝚜𝚌𝚑𝚛𝚘𝚍𝚒𝚗𝚐𝚎𝚛𝚜𝚙𝚎𝚝)
+- Fix: Social Tab Disappearing bug fixes.
+- Fix: Randomised Device profile not applying in spoof options has been fixed.
+- Fix: Disappearing chats when "Hide Story Suggestions" is enabled is fixed.
+- Fix: Blank snaps when filters are used is fixed.
+- Fix: Continuous send notification UI fix, now all buttons have been removed.
+- Fix: Unlimited pins issue fix.
+- Fix: Snap Auto Open engine revert.
+- Feat: Implemented new Config Import/Export layout.
+- Feat: Implemented new Randomized Device profile viewer layout.
+
+## v1.7.1
+- Auto-Open Engine ghost notification fix.
+- Continous Send notifiction bug fix.
+- Disappering chats fix.
+- Social page automatic selection bug fix.
+
+## v1.7.0
+- Features:
+- Implemented "PurrfectSnap AI" (tq ΞTΞRNAL)
+- Implemented app intro showcase (tq ΞTΞRNAL)
+- Implemented "Spoof follower count" (tq <RSR/>)
+- Implemented Social Tab sorting by Streak Length (tq Javalsta)
+- Implemented "Chat Hold Kill" (tq SUJΛL)
+- Implemented "Snapchat plus purchase date spoof" (tq SUJΛL)
+- Implemented Message log export for individual chat (tq 𝚜𝚌𝚑𝚛𝚘𝚍𝚒𝚗𝚐𝚎𝚛𝚜𝚙𝚎𝚝)
+- Implemented Memory message icon indicator(tq <RSR/>)
+- Implemented two new message indicator toggles, for self snaps and group.
+- Implemented new toggles for chat and snap stealth mode in friend feed menu.
+- Implemented new notification card for Continous send feature. 
+
+- Fixes:
+- Improved message icon indicator reliability and redesigned all chat status indicators. (tq <RSR/>)
+- Media resend flow bug fixes. (tq 𝚜𝚌𝚑𝚛𝚘𝚍𝚒𝚗𝚐𝚎𝚛𝚜𝚙𝚎𝚝)
+- Message Logger backup import bug fixes and implemented logging to report success or failure. (tq 𝚜𝚌𝚑𝚛𝚘𝚍𝚒𝚗𝚐𝚎𝚛𝚜𝚙𝚎𝚝)
+- Media download support through message logger. (tq 𝚜𝚌𝚑𝚛𝚘𝚍𝚒𝚗𝚐𝚎𝚛𝚜𝚙𝚎𝚝)
+- Snapchat Plus bug fixes to improve stability.
+- Spoof Device profile Backup/Restore bug fixes.
+- Redesgined manager app Logs filtering UI.
+- Media Downloader stability and bug fixes.
+- Performance Mode: Fixed Max Performance mode persistence after app restart.
+- Chat Preview: Realignment of the chat preview layout.
+- Update Checker: Refactored the app update checker to follow a single, stable release track with automated daily checks.
+- Auto-Open engine: Expanded Notification UI has been refactored and redundant stats has been removed.
+- Social tab: Converted the rules configuration page to a Lazy Column architecture. This eliminates UI freezes when managing large friend lists.
+- Chat feed scroll stutter: Implemented a thread-safe memory cache for chat suppression logic. This instant memory check allows Snapchat chat feed to scroll at 100% native speed.
+- GPU Offloading: Forced hardware-layer acceleration for all camera and video preview views to reduce CPU thermal load and power consumption.
+- Refactored all runBlocking calls and main-thread database queries across 12 major pages to eliminate the UI freezes/stutters and the scrolling, navigation, and page transitions are now locked at high frame rates.
+- Migrated heavy bridge data processing (JSON parsing and DB writes) to background IO coroutines, preventing ANR (App Not Responding) crashes during large data synchronizations.
+
+
+## v1.6.9
+- New: Updated the Stealth mode for better visibility with the chat stealth mode (keeps chats from being read), and snap stealth-mode and full stealth mode toggle (normal stealth-mode). (tq Javalsta) 
+- Fix: Fixed performance mode profile save/load so Disabled persists correctly and no longer falls back to Max mode on app restart. (tq schrodingerspet)
+- Fix: Fixed the resume/reopen UI break when max performance mode is turned on, and other bug fixes. (tq schrodingerspet)
+- New: Implemented an Auto Open Stop Button directly within the notification card.
+- New: Added a log filter menu in logs page to isolate Auto-Open, Media downloads, friend tracker, and Core logs. 
+- Fix: Completely rewritten Auto Open Engine to optimize the auto open engine. 
+- Fix: Fixed Batch Story Download feature not working.
+- FIx: Minor bug fixes for media downloader in stories and spotlight.
+- Fix: Bug fixes to improve custom emojis stability.
+
+## v1.6.8
+- Fix: Many improvements to the Performance Mode feature(Max, turned on by Default), changes are pretty noticeable: faster loading of chats, long group messages optimizations, many snapmap optimizations
+- Fix: Crash issues for some devices
+- Fix: Block Ads
+- Fix: Snapchat automatically restarting if kept idle
+- Fix: Feed Flickering issue for some devices
+- Fix: Implemented Dual-Thread Sync Architecture with a 1,000 depth that proactively scans the database for missed history, thus resolving the "failed to open..." and "Tap to load" snaps before marking them, clearing historical gaps automatically(tq to ᴋᴀʟᴀᴅɪɴ)
+- New: Implemented Screen Guard where Auto Open Engine now detects screen state and stops all notification work while the device is locked, thus reducing excessive battery drain and heat spike during background processing(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Disk read/write frequency increased from 1s to 5 minutes, to eliminate constant background disk friction, thus reducing overheating of the device while processing(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Slid chat switching delays from 2.0s down to 40ms, thus achieving near-instant processing of 1000+ snap bursts(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Removed "Auto Open pause while Gaming" toggle(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Reworked "Snap Pre-Fetch" toggle to the global Messaging settings page(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Refactored Auto Open engine notification cards to declutter it and removed redundant stats(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Corrected speed labels in the Auto Open notification to show "Idle" when monitoring and accurate notions (Full Speed/Throttled) when active(tq to ᴋᴀʟᴀᴅɪɴ)
+
+## v1.6.6
+- Fix: Persistent auto open snap disabled notification(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Crash issues for some devices
+- Fix: upload quality for snaps sent through send override
+- Fix: Refactored the notification card for Auto Open to remove the looping progress bar while the engine is in Monitoring stage(tq to ᴋᴀʟᴀᴅɪɴ)
+- New: Implemented a "Pre Fetch snaps" toggle, when enabled this will pre-fetch the snaps in the auto open queue and load them for the engine to open them efficiently and thus reducing the "Failed to Open..." status(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: The Auto Open engine now only fires the status update if the status text, processed count, or queue structural state actually changes. This reduces system wake-ups during idle periods which helps in battery drain management(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Disk Optimization: Previous versions wrote the auto open queue to the disk every 25 snaps, this update modified this to a 3-minute windowed save. This reduces Disk I/O by ~75%, keeping the device from overheating excessively during Auto Open processes(tq to ᴋᴀʟᴀᴅɪɴ)
+
+## v1.6.5
+- New: Performance mode will now be set to max by default!
+- Fix: Several optimizations to the performance mode feature which will make your snapchat experience more smooth!
+- Fix: Crash issues for some devices after enabling spoof
+- Fix: Notification Icon for the Announcements(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Auto Open Engine not processing, stuck on monitor/retry/failed loop causing overheating of the devices(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Refactor the Notification card for the Auto Open to remove dynamic progress bar to add the native progress bar(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Auto Open Statistics have been refactored to now show the dynamic queue status(tq to ᴋᴀʟᴀᴅɪɴ)
+- New: Auto Open Thermal Protection/Throttle toggle, when turned on the processing will be doubled down to reduce the temps of the device to maintain a study temp of 40 C and below(tq to ᴋᴀʟᴀᴅɪɴ)
+
+## v1.6.4
+- New: Performance mode feature!(Smooth & Max)
+- Fix: Failed to init feature Device Spoofer for some devices
+- Fix: Increase the default queue of auto open snaps
+- Fix: user_conversation error spam
+
+## v1.6.3
+- Fix: Blank Global Settings page
+- New: Backup & Restore option for Randomized Device Profile feature!
+
+## v1.6.2
+- New: Randomized Device Profile Feature!
+  - Show Activation Overlay
+  - Build Properties
+    - Device Identity
+      - Manufacturer + Model
+      - Brand + Product
+      - Hardware + Board
+    - ABI Lists
+      - Combined ABIs
+      - Split ABIs
+    - System Properties
+      - Build
+      - Locale
+      - Telephony
+    - Build Version
+      - Fingerprint
+      - Display
+      - Host
+      - Bootloader
+      - Build Time
+  - Locale Options
+    - Locale
+      - Language
+      - Region
+    - Time
+      - Time Zone ID
+      - Time Zone Display Name
+      - Auto Time
+      - Auto Time Zone
+  - Telephony Options
+    - MMS
+      - User Agent
+    - Network Identity
+      - Network Type
+      - Operator Numeric
+      - Operator Name
+      - Country ISO
+    - SIM Identity
+      - Country ISO
+      - Operator Numeric
+      - Operator Name
+      - SIM State
+      - Has ICC Card
+    - Phone Capabilities
+      - Phone Count
+      - Hearing Aid Support
+      - TTY Support
+      - World Phone
+      - Roaming
+      - SMS + Voice Capability
+      - Phone Type
+  - Settings Options
+    - Secure Settings
+      - Base
+      - TTS
+    - System Settings
+      - Base
+      - Bluetooth
+    - Global Settings
+      - Base
+  - Network Options
+    - Wi-Fi
+      - SSID
+      - RSSI
+    - DNS
+      - Servers
+      - Search Domains
+      - Private DNS
+    - Captive Portal
+      - Capability
+  - Identifier Options
+    - Android ID
+      - String Value
+      - Long Value
+    - Advertising ID
+      - Settings Value
+      - Play Services
+    - Hardware Addresses
+      - Wi-Fi MAC
+      - Bluetooth MAC
+  - Persistent App Language
+  - Randomize IP Address
+  - Generate Fresh Profile
+  - View Current Profile
+- New: Spoof Viewing Gallery Presence
+- New: Spoof Reply Camera Presence
+- New: I Can See you 2 Friend Tracker Rule
+- New: I Can See you 3 Friend Tracker Rule
+- New: Disable "Can't Login?" overlay feature
+- Fix: Social Tab showing Failed to fetch Data for some accounts
+- Fix: Pick a Location Dialog Crash
+- Fix: Auto Open Notification duplication when snapchat is killed or force closed(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Fixed a logic error where AutoOpenSnaps would ignore per-conversation rules(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Auto Open engine stuck in "Monitoring" even when there are snaps in the queue(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Auto Open session toggles not working as expected(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Auto Open engine is now optimmized to work with the lower end devices to reduce the overheating and excessive lag(tq to ᴋᴀʟᴀᴅɪɴ)
+- New: Auto Open Scheduler, a new toggle and a new clock picker to schedule time period for your auto open engine to process(tq to ᴋᴀʟᴀᴅɪɴ)
+- New: Auto Open Notification session statistics toggles, now you can choose which stats to show in the notification(tq to ᴋᴀʟᴀᴅɪɴ)
+- New: Updated Auto Open notification stats which now includes a tiered "Processing Speed" and "Estimated Finish" stats(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Video Downloader is saving the video files from spotlight and stories with extension as ".dat file"(tq to ᴋᴀʟᴀᴅɪɴ)
+
+## v1.6.1
+- Fix: Custom Frame Rate
+- Fix: Conversation Sound Style
+- Fix: Auto Reactions when downloading stories(Removed story thumbnail feature)
+
+## v1.6.0
+- New: Conversation Sound Effects!(Sound when you send or receive a msg while in chat)
+- New: Call Metadata Notifier!
+- New: Pin Messages!(Locally)
+- Fix: Select highest quality media by comparing resolution(tq to Issac XT)
+
+## v1.5.9
+- New: Block Calls Feature!
+- New: Unlock Zoom Limit Feature!
+
+## v1.5.8
+- New: Implemented 30Mbps Video and 320kbps/48kHz Audio bitrates(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Advanced hardware ISP processing modes for superior dynamic range and less noisy video footage(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Optimized 1MB socket buffers for high-speed throughput which should upload the video/snap faster then before(tq to ᴋᴀʟᴀᴅɪɴ)
+- New: Aphelion Task page went full layout overhaul with segmented "Active" and "Scheduled" tab views(tq to ᴋᴀʟᴀᴅɪɴ)
+- FixL Auto-Open Status Card: Restored real-time visibility of processed snaps and queue status(tq to ᴋᴀʟᴀᴅɪɴ)
+- New: Smart trickle which has background processing with resource awareness (Paused/Trickle/Normal states)(tq to ᴋᴀʟᴀᴅɪɴ)
+- New: Four different states for auto open processing so that the device can be usable with auto open in the background(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: memory hogging of the auto open queues, now the device should run much faster without any lag or stuttures(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: "dot in username issue" with the implementation of unique incrementing ((1).jpg), where previously it was overwriting the previous file(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Lock Indicator for the snaps, which should now accurately be working on all versions(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Pressing back while keyboard is open in spoofed coordinates would close the dialog
+- Fix: Not able to scroll in the "Can't Login?" dialog
+
+## v1.5.6
+- New: Add "Can't login" hint directly in the login screen
+
+## v1.5.5
+- Fix: Custom Emoji now works for all devices!
+- New: Story preview in story batch download dialog
+- Fix: Auto Skip Stories getting stuck
+- Fix: Stories ending up saving in .dat format
+
+## v1.5.4
+- Fix: Streak & Non-Streak category in Bulk Messaging Action for newer versions of snap
+- Fix: Spoof Coordinates Title
+- New: Changelogs feature
+
+## v1.5.3
+- New: Mark as Seen Mode(Limit per run[Custom] or Complete Queue)
+- Fix: PurrfectSnap crash if you try to open any dialog setting through in-app overlay
+- New: Translucent Dialogs & refreshed animation
+- Fix: Adjusted Snap Preview Location
+
+## v1.5.2
+- New: Continuous snap sender feature!
+- Fix: Snap send failure for E2E Chats
+
+## v1.5.1
+- Fix: Splitting issue for video snaps sent through gallery media send override!
+- New: Toggle to turn off/on splitting for video snaps sent through send override
+- Fix: Aphelion task page layout optimization(tq to ᴋᴀʟᴀᴅɪɴ)
+
+## v1.5.0
+- Fix: Skip when marking as seen for newer versions of Snapchat
+- New: Hide Conversation Toolbox UI
+
+## v1.4.9
+- Fix: Force AMOLED Theme for newer versions of Snapchat
+- New: Redesign some dialogs(Call confirmation & Mark Snaps as seen)
+
+## v1.4.8
+- Fix: Crash Issues for some devices
+- Fix: Crash when using the theme button in android 11 & 12(tq to ᴋᴀʟᴀᴅɪɴ) 
+- Fix: Both side call recording for newer versions of snapchat
+- Fix: Missing Accept Key button for E2E Encryption for newer versions of snapchat
+
+## v1.4.6
+- Fix: Half Swipe Notifications for newer versions of snapchat
+- Fix: No Config import/export button if Aphelion theme is turned off
+
+## v1.4.5
+- New: Spoof Snap Score Locally(tq to <RSR/>)
+- New: Video Recording Timer(tq to <RSR/>)
+- New: Auto Skip(tq to <RSR/>)
+- Fix: Processing failed to save snaps(tq to <RSR/>)
+- Fix: Story counter & story source for newer versions of snapchat(tq to <RSR/>)
+- Fix: Features page using Aphelion scroll even when Aphelion is not in use(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Aphelion Task page not showing the thumbnails of the completed tasks(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Tasks page not showing the merge button when Aphelion is not in use(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Features and its sub pages scroll state is remembered infintely, causing the pages to load where they were exited even after the app is closed(tq to ᴋᴀʟᴀᴅɪɴ)
+- New: Expanded Friend Mutation Observer to include the new layout when Aphelion is in use(tq to ᴋᴀʟᴀᴅɪɴ)
+- New: Theme Transition Animation(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Friend feed menu button overlapping for group chats
+- Fix: Duplicate opera download & mark snaps as seen buttons
+
+## v1.4.1
+- New: Improved device spoofing, now you can create accounts & bypass login issue where login doesn't work(tq to <RSR/>)
+- Fix: Story Counter/Story Source position(tq to AhmedRaza)
+- Fix: Better Location Overlay Icon for newer Snapchat versions
+- Fix: Double tap to mark chat as read for newer Snapchat versions
+- New: Mark Chat as Read(Friend feed menu)
+- Fix: Opera Download button duplicating
+- Fix: All friends getting automatically added even after unselecting in the social tab
+- Fix: Spotlight Creator Info
+
+## v1.4.0
+- Fix: Download profile picture button showing in all pages
+- Fix: Opera Download button & Mark Snaps as seen for newer snapchat versions
+- Fix: Crash issues
+- Fix: Sync Binder died
+- Fix: Random friends showing up in Social tab
+- Fix: Untranslated strings in the message preview section(en_US only for now)
+- Fix: Show First Created Username
+- Fix: Call recording starting automatically when taking snaps/videos
+- Fix: Snap Downloading issue for some devices
+- New: Story Snap Batch Download(tq to <RSR/>)
+- New: Aphelion Theme!(tq to ᴋᴀʟᴀᴅɪɴ)
+- Fix: Monochrome icon of PurrfectSnap(tq to ᴋᴀʟᴀᴅɪɴ)
+
+## v1.3.9
+- Fix: Improve ads & metrics blocking
+- Fix: Hide Typing Notifications & Hide Bitmoji Presence
+- Fix: Many fixes & improvements
+
+## v1.3.8
+- Fix: Download profile picture button shape
+- New: Auto Patcher(Jingmatrix Lspatch) updated to v0.8
+- Fix: Video playback rate slider mobility
+- New: Redesign Convert Message dialog
+- Fix: Media File Picker issues
+- Fix: REQUEST_NOT_SUCCESSFUL issues while updating PurrfectSnap for some devices
+
+## v1.3.6
+- Fix: Crash issues for some devices
+- Fix: Scroll state
+- New: Redesign profile picture downloader & spotlight comments username dialog
+- New: Change the profile picture download button to an icon
+- New: Redesign playback slider & saved coordinates buttons
+- Fix: Add missing translations(en_US only for now, all languages to be supported in the next update)
+- Fix: Deadosobjectexception
+
+## v1.3.5
+- New: Added support for Snap versions upto v13.81(server side update, requires v1.3.2 and above)
+- New: Migration from libxposed API to YukiHook
+- New: Switch to kavaref
+- Fix: better location overlay crash
+- Fix: better location icon position for newer snap versions
+- New: Story counter(tq to <RSR/>)
+- New: Story Source(tq to <RSR/>)
+- Fix: Snaps getting saved even if the option is unchecked(tq to AhmedRaza)
+- Fix: Chat edit history UI(tq to AhmedRaza)
+- Fix: Media quality(tq to <RSR/>)
+- New: Remove support for Android 9 and 10
+
+## v1.3.2
+- ⚠️ ALL USERS ARE REQUESTED TO UPDATE TO THIS VERSION AS SOON AS POSSIBLE!⚠️
+- Fix: Crucial fixes
+- Fix: Media File Picker and added mapper(tq to <RSR/>)
+
+## v1.3.0
+- New: Bulk Manage Friend Requests(tq to <RSR/>)
+- Fix: Bulk Action Progress Dialogs(tq to <RSR/>)
+- Fix: Audio note send override(tq to <RSR/>)
+- Fix: Improve PurrAura Active indicator(tq to <RSR/>)
+- Fix: Prevent Story Rewatch(tq to Brandon)
+- Fix: Location search(tq to Brandon)
+- Fix: story download & decryption(tq to Hazelnut)
+- New: Add confirmation dialogs for Reset PurrfectSnap option
+- New: Google Maps Integration(tq to Brandon)
+- Fix: support more translation keys
+- Fix: several inconsistencies
+- Fix: add proper support for scripts
+- New: Swap wiki with new website
+- Fix: Custom emoji is now stable!
+- Fix: Poor Call recorder quality
+- New: order feature for chat exports
+- Fix: Gemini Auto Reply(tq to <RSR/>)
+- New: Spotlight Creator Info(tq to <RSR/>)
+
+## v1.2.6
+- Fix: All translations are now high quality and up to date
+
+## v1.2.5
+- Fix: Prevent snap replay/missed audio voice call(tq to <RSR/>)
+- New: Call Recording UI(tq to <RSR/>)
+- Fix: weird Search bar behaviour in overlay
+- New: wrong architecture detector
+- Fix: Arabic Translation(tq to <RSR/>)
+- New: Fresh look of PurrAura Indicator(tq to <RSR/>)
+- Fix: no such directory auto patcher
+- New: Auto Mapper for Manage Friend List(tq to <RSR/>)
+- Fix: remove audio note duration & transcription(tq to <RSR/>)
+- Fix: Missing translations
+- New: Chat Wallpaper download button UI
+
+## v1.2.0
+- Fix: Prevent snap replay/missed audio voice call(thanks to <RSR/>)
+- Fix: Various messaging fixes for newer snap versions(thanks to <RSR/>)
+- New: Announcements feature(directly view important announcements right through the app!)
+- Fix: Missing about page
+- Fix: incorrect snap version instructions
+
+## v1.1.2
+- New: Chat Wallpaper Download(upstream commit) 
+- Fix: mappings error
+- Fix: armv7 failed to initialize error
+- New: Feature to record both sides while call recording(upstream commit)
+- Fix: Various Android 9 issues
+
+## v1.1.1
+- Fix: Quick Tiles crash.
+
+## v1.1.0
+- Fix: message preview overlap in French.
+- Fix: transparent gallery media send override dialog.
+- Fix: message logger autopurge "Never" no longer resets to 3 days.
+- Fix: crash during auto patching on certain older Android versions.
+- Fix: audio mismatch.
+- Fix: app lock crash.
+- New: translations added.
+- Fix: message list no longer autoscrolls.
+- New: included an Easter egg.
+- Fix: disable Bitmoji feature.
+- UI: various UI elements fixed.
+- UI: add friends dialog now includes an "Unselect all" button.
+- UI: redesigned remaining UI elements.
+- New: select folder screen has "Use default" option for cloned installs.
+- Fix: export memories crash on certain devices.
+- Fix: config state persistence on certain devices.
+- Fix: notification crash on certain devices.
+- Fix: friend suggestions (again).
+- Change: removed pull down gesture to open menu; use Quick Add instead.
+- New: custom color feature for export chat list.
+- New: exported chat messages now include message logger.
+- Fix: unsaveable snaps.
+- UI: many UI elements made symmetrical.
+- UI: redesigned file imports screen.
+- Fix: config.json and update frequency dialogs now open on click.
+- Fix: bypass camera roll limit.
+- Fix: "no friends found" text now visible in bulk messaging action.
+- Fix: search results list no longer autoscrolls while typing.
+- New: in-app guides for rooted and non-rooted devices plus a troubleshooting guide.
+- New: Snapchat auto downloader for rooted devices.
+- Fix: quick tiles appearance.
+- Fix: dialog position in Friend Tracker sort dialog.
+- New: about section added.
+- Improvement: optimizations throughout the app.
+
+## v1.0.0
+- Test.

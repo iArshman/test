@@ -1,0 +1,124 @@
+package me.eternal.purrfect.common.bridge.wrapper
+
+import android.content.Context
+import android.os.ParcelFileDescriptor
+import android.os.ParcelFileDescriptor.AutoCloseInputStream
+import com.google.gson.JsonObject
+import com.google.gson.JsonParser
+import me.eternal.purrfect.bridge.storage.FileHandleManager
+import me.eternal.purrfect.common.bridge.FileHandleScope
+import me.eternal.purrfect.common.logger.AbstractLogger
+import me.eternal.purrfect.common.util.LazyBridgeValue
+import java.util.Locale
+
+
+class LocaleWrapper(
+    private val context: Context,
+    private val fileHandleManager: LazyBridgeValue<FileHandleManager>,
+    private val prefix: String = "",
+    private val parent: LocaleWrapper? = null
+) {
+    companion object {
+        const val DEFAULT_LOCALE = "en_US"
+
+        fun fetchAvailableLocales(context: Context): List<String> {
+            return context.resources.assets.list("lang")?.map { it.substringBefore(".") }?.sorted() ?: listOf(DEFAULT_LOCALE)
+        }
+    }
+
+    var userLocale = DEFAULT_LOCALE
+
+    private val translationMap = linkedMapOf<String, String>()
+
+    lateinit var loadedLocale: Locale
+
+    private fun load(locale: String, pfd: ParcelFileDescriptor) {
+        loadedLocale = when (locale) {
+            "zh_SIMPLIFIED" -> Locale.SIMPLIFIED_CHINESE
+            else -> {
+                if (locale.contains("_")) {
+                    val split = locale.split("_", limit = 2)
+                    val language = split[0]
+                    val region = split.getOrNull(1)
+                    runCatching {
+                        val builder = Locale.Builder().setLanguage(language)
+                        if (!region.isNullOrBlank() && region.length in 2..3) {
+                            builder.setRegion(region)
+                        }
+                        builder.build()
+                    }.getOrElse {
+                        Locale.forLanguageTag(locale.replace('_', '-'))
+                    }
+                } else {
+                    Locale.forLanguageTag(locale)
+                }
+            }
+        }
+
+        val translations = AutoCloseInputStream(pfd).use {
+            runCatching {
+                JsonParser.parseReader(it.reader()).asJsonObject
+            }.onFailure {
+                AbstractLogger.directError("Failed to parse locale file: ${it.message}", it)
+            }.getOrNull()
+        }
+        if (translations == null || translations.isJsonNull) {
+            throw IllegalStateException("Failed to parse $locale.json")
+        }
+
+        fun scanObject(jsonObject: JsonObject, prefix: String = "") {
+            jsonObject.entrySet().forEach {
+                if (it.value.isJsonPrimitive) {
+                    val key = "$prefix${it.key}"
+                    translationMap[key] = it.value.asString
+                }
+                if (!it.value.isJsonObject) return@forEach
+                scanObject(it.value.asJsonObject, "$prefix${it.key}.")
+            }
+        }
+
+        scanObject(translations)
+    }
+
+    fun load() {
+        fileHandleManager.value.getFileHandle(FileHandleScope.LOCALE.key, "$DEFAULT_LOCALE.json")?.open(ParcelFileDescriptor.MODE_READ_ONLY)?.use {
+            load(DEFAULT_LOCALE, it)
+        } ?: run {
+            throw IllegalStateException("Failed to load default locale")
+        }
+
+        if (userLocale != DEFAULT_LOCALE) {
+            fileHandleManager.value.getFileHandle(FileHandleScope.LOCALE.key, "$userLocale.json")?.open(ParcelFileDescriptor.MODE_READ_ONLY)?.use {
+                load(userLocale, it)
+            }
+        }
+    }
+
+    fun reload(locale: String, isSetup: Boolean = false) {
+        userLocale = locale
+        translationMap.clear()
+        load()
+        if (isSetup) return
+        context.sendBroadcast(android.content.Intent("me.eternal.purrfect.RESTART"))
+    }
+
+    operator fun get(key: String) = getOrNull(key) ?: key.also { AbstractLogger.directDebug("Missing translation for $key") }
+
+    fun getOrNull(key: String): String? {
+        val prefixedKey = if (prefix.isNotEmpty()) "$prefix.$key" else key
+        return translationMap[prefixedKey] ?: parent?.getOrNull(key)
+    }
+
+
+    fun format(key: String, vararg args: Pair<String, String>): String {
+        return args.fold(get(key)) { acc, pair ->
+            acc.replace("{${pair.first}}", pair.second)
+        }
+    }
+
+    fun getCategory(key: String): LocaleWrapper {
+        return LocaleWrapper(context, fileHandleManager, key, this).also {
+            it.translationMap.putAll(this.translationMap)
+        }
+    }
+}

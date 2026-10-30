@@ -1,0 +1,27 @@
+--- /mnt/D/Android/Purrfect/core/src/main/kotlin/me/eternal/purrfect/core/features/impl/experiments/ConvertMessageLocally.kt
++++ /mnt/D/Android/Purrfect/core/src/main/kotlin/me/eternal/purrfect/core/features/impl/experiments/ConvertMessageLocally.kt
+@@ -48,6 +48,7 @@
+ import me.eternal.purrfect.core.event.events.impl.OnSnapInteractionEvent
+ import kotlinx.coroutines.launch
+ import android.os.SystemClock
++import me.eternal.purrfect.mapper.impl.ChatEventDispatcherMapper
+ import android.view.MotionEvent
+ import android.view.View
+ import android.view.ViewConfiguration
+@@ -165,6 +166,16 @@
+                 }
+             }
+ 
++            // Agent 2: Tap pipeline agent - finding real tap paths
++            context.mappings.useMapper(ChatEventDispatcherMapper::class) {
++                val clazz = classReference.getAsClass() ?: return@useMapper
++                clazz.methods.forEach { method ->
++                    if (method.name.contains("Click") || method.name.contains("Tap")) {
++                        method.hook(HookStage.BEFORE) { param ->
++                            context.log.verbose("ChatEventDispatcher method fired: ${method.name} with args: ${param.args().joinToString()}", "ConvertMessageTap")
++                        }
++                    }
++                }
++            }
++
+             // Intercept taps directly on the View because converted external media

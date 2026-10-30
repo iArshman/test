@@ -1,0 +1,39 @@
+## v1.1.0
+- Fix: Download Context Menu now resolves Message Logger deleted media when available.
+- Fix: message preview overlap in French.
+- Fix: transparent gallery media send override dialog.
+- Fix: message logger autopurge "Never" no longer resets to 3 days.
+- Fix: crash during auto patching on certain older Android versions.
+- Fix: audio mismatch.
+- Fix: app lock crash.
+- New: translations added.
+- Fix: message list no longer autoscrolls.
+- New: included an Easter egg.
+- Fix: disable Bitmoji feature.
+- UI: various UI elements fixed.
+- UI: add friends dialog now includes an "Unselect all" button.
+- UI: redesigned remaining UI elements.
+- New: select folder screen has "Use default" option for cloned installs.
+- Fix: export memories crash on certain devices.
+- Fix: config state persistence on certain devices.
+- Fix: notification crash on certain devices.
+- Fix: friend suggestions (again).
+- Change: removed pull down gesture to open menu; use Quick Add instead.
+- New: custom color feature for export chat list.
+- New: exported chat messages now include message logger.
+- Fix: unsaveable snaps.
+- UI: many UI elements made symmetrical.
+- UI: redesigned file imports screen.
+- Fix: config.json and update frequency dialogs now open on click.
+- Fix: bypass camera roll limit.
+- Fix: "no friends found" text now visible in bulk messaging action.
+- Fix: search results list no longer autoscrolls while typing.
+- New: in-app guides for rooted and non-rooted devices plus a troubleshooting guide.
+- New: Snapchat auto downloader for rooted devices.
+- Fix: quick tiles appearance.
+- Fix: dialog position in Friend Tracker sort dialog.
+- New: about section added.
+- Improvement: optimizations throughout the app.
+
+## v1.0.0
+- Test

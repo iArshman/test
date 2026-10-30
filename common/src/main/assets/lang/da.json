@@ -1,0 +1,3643 @@
+{
+    "setup": {
+        "activity": {
+            "wrong_apk_title": "Forkert APK installeret",
+            "wrong_apk_message": "Din enhed er armv8, download venligst armv8-apk'en, ikke armv7.",
+            "close_button": "Luk",
+            "important_confirm_timeout": "Jeg forstår ({seconds}s)",
+            "important_confirm": "Jeg forstår",
+            "important_title": "Vigtigt!",
+            "important_message": "Hvis du har brugt SnapEnhance eller en anden mod udover Purrfect, anbefaler vi at afinstallere alt og blive på standard Snapchat i en uge. Skift derefter til Purrfect efter næste fredag.",
+            "language_subtitle": "Indstil Purrfect til at tale dit sprog før alt andet.",
+            "install_mode_title": "Vælg din enhed",
+            "install_mode_subtitle": "Vælg den sti, der passer til, hvordan du vil installere Purrfect.",
+            "permissions_subtitle": "Giv de vigtigste tilladelser, så overlays, downloads og advarsler forbliver pålidelige.",
+            "patch_title": "Auto-patcher",
+            "patch_subtitle": "Strømlinet download, patch og installation i ét flow.",
+            "root_install_title": "Snapchat-installationsprogram",
+            "root_install_subtitle": "Download og installer den anbefalede Snapchat-version.",
+            "save_folder_subtitle": "Vælg din personlige boks, så snaps lander præcis, hvor du forventer.",
+            "mappings_subtitle": "Vi kalibrerer alt til din installation, så magien fungerer fejlfrit.",
+            "step_counter": "Trin {current} af {total}",
+            "step_complete": "Afkrydset",
+            "step_active": "I gang",
+            "step_upcoming": "Klar næste",
+            "finish_button": "Afslut opsætning",
+            "continue_button": "Fortsæt"
+        },
+        "dialogs": {
+            "select_language": "Vælg sprog",
+            "save_folder": "Vælg hvor downloads skal gemmes",
+            "select_save_folder_button": "Vælg mappe",
+            "hex_color_label": "Hex-farve"
+        },
+        "install_mode": {
+            "confirm_timeout": "Jeg forstår ({seconds}s)",
+            "confirm": "Jeg forstår",
+            "notice_title": "Bemærk venligst!",
+            "notice_intro": "Vælg den type enhed, du har: rootet eller ikke-rootet. Hvis du er i tvivl, så vælg Ikke-root og fortsæt.",
+            "notice_non_root_title": "Ikke-rootede enheder",
+            "notice_non_root_body": "Vælg Ikke-root, så klarer appen alt. Tryk på Installer Patchet Snapchat, når det vises. Efter installationen må du ikke åbne Snapchat endnu. Fortsæt Purrfect-opsætningen; når den er færdig, kan du åbne Snapchat og nyde det.",
+            "notice_root_title": "Rootede enheder",
+            "notice_root_body": "Sørg for, at du har flashet LSPosed først. Vi anbefaler JingMatrix LSPosed eller LSPosed Irena. Når du har valgt Root, installerer appen den anbefalede Snapchat-version. Åbn den ikke endnu; fortsæt Purrfect-opsætningen. Når opsætningen er færdig, skal du aktivere Purrfect i LSPosed og genstarte din telefon. Begynd derefter at bruge Snapchat. Vi anbefaler stærkt at løsrive Snapchat fra Play Butik med Zygisk Detach-modulet for at forhindre automatiske opdateringer.",
+            "notice_issues_hint": "Hvis du støder på installationsproblemer, vises løsningen her. Læs den venligst omhyggeligt.",
+            "notice_note_prefix": "Bemærk: ",
+            "notice_note_body": "Nye konti bliver let låst! Det anbefales at bruge en ældre konto med Purrfect.",
+            "step_title": "Vælg din enhed",
+            "step_subtitle": "Hvis du ikke ved det, skal du vælge Ikke-rootet enhed og fortsætte.",
+            "root_option_title": "Rootet enhed",
+            "root_option_subtitle": "Brug Lsposed og spring auto-patching over.",
+            "non_root_option_title": "Ikke-rootet enhed",
+            "non_root_option_subtitle": "Brug den inkluderede auto-patcher til at installere patchet Snapchat.",
+            "skip_auto_setup": "Spring auto-opsætning over"
+        },
+        "mappings": {
+            "dialog": "Genererer mappings...",
+            "generate_failure_no_snapchat": "Purrfect kunne ikke registrere Snapchat, prøv venligst at geninstallere Snapchat.",
+            "generate_failure": "Der opstod en fejl under generering af mappings, prøv igen.",
+            "confirm_understand_timeout": "Jeg forstår ({seconds}s)",
+            "confirm_understand": "Jeg forstår",
+            "notice_title": "Bemærk venligst!",
+            "notice_intro": "Hvis du ser fejlen \"Konto midlertidigt deaktiveret\", mens du logger ind, skal du ikke bekymre dig. Følg disse trin i rækkefølge:",
+            "notice_step_1": "1. Genåbn Snapchat og log ind. Dette løser det det meste af tiden.",
+            "notice_step_2": "2. Hvis det stadig mislykkes, så tryk gentagne gange på login-knappen. Dette dækker normalt den næste del.",
+            "notice_step_3": "3. Hvis det stadig mislykkes, så ryd Snapchats data, deaktiver enhver VPN, og log ind igen.",
+            "notice_rooted_title": "For rootede brugere:",
+            "notice_rooted_body": "Genåbn Snapchat og log ind. Hvis det stadig mislykkes, skal du deaktivere Purrfect i LSPosed, logge ind og derefter genaktivere Purrfect.",
+            "warnings_info": "{count} advarsel(er) opstod under generering af mappings:\n\n{warnings}",
+            "progress_hint": "Dette tager kun et øjeblik. Hold appen åben, mens magien sker!"
+        },
+        "patch": {
+            "title": "Auto-patcher",
+            "ready_log": "Auto-patcher er klar.",
+            "install_confirmed_log": "Snapchat-installation bekræftet. Du har tilladelse til at fortsætte.",
+            "download_recommended_status": "Downloader anbefalet Snapchat-version ({version})...",
+            "starting_log": "Starter Auto-patcher for anbefalet Snapchat-version.",
+            "uninstall_prompt_status": "Snapchat er installeret. Afinstaller det venligst først (behold ikke data), og start derefter Auto-patcher igen.",
+            "uninstall_prompt_error": "Snapchat er stadig installeret. Afinstaller det først for at fortsætte.",
+            "module_apk_not_found_error": "Modul-apk ikke fundet",
+            "fetching_apk_status": "Henter anbefalet Snapchat APK...",
+            "download_failed_error": "Download mislykkedes",
+            "download_completed_status": "Download fuldført: {fileName}",
+            "starting_patch_status": "Starter patch drevet af Jingmatrix Lspatch",
+            "patched_not_produced_error": "Patchet apk blev ikke produceret",
+            "patched_ready_status": "Patchet build klar. Installer for at afslutte.",
+            "failed_status": "Mislykkedes: {message}",
+            "mark_installed_log": "Markeret som installeret manuelt. Du har tilladelse til at fortsætte.",
+            "issues_title": "Oplever du problemer?",
+            "issues_confirm": "Forstået",
+            "issues_heading": "Sådan rettes installationsfejl",
+            "issues_conflict_issue": "Problem: App kan ikke installeres, fordi den er i konflikt med en eksisterende pakke.",
+            "issues_conflict_fix": "Løsning: Download Snapchat fra Play Butik og afinstaller det uden at beholde data. Kør Auto-patcher igen. Hvis det stadig ikke virker, kør:",
+            "issues_adb_command": "adb uninstall com.snapchat.android",
+            "issues_invalid_issue": "Problem: App ikke installeret, fordi pakken ser ud til at være ugyldig.",
+            "issues_invalid_fix": "Løsning: Download og installer JingMatrix LSPatch, og patch derefter en Snapchat-version (en hvilken som helst) fra dette interval, dvs. mellem 13.65.1.0 og 13.71.0.51, i Integreret tilstand. Vælg Indlejr moduler og indlejr Purrfect APK'en. Vælg derefter Spring auto-opsætning over under Purrfect-opsætning for at springe Auto-patcher over.",
+            "status_downloading": "Downloader Snapchat {percent}%",
+            "status_patching": "Patcher...",
+            "status_initializing": "Initialiserer...",
+            "logs_copied": "Logs kopieret til udklipsholder.",
+            "install_success": "Patchet APK installeret",
+            "start_button": "Start auto-patch",
+            "install_button": "Installer patchet Snapchat",
+            "already_installed_button": "Allerede installeret?",
+            "powered_by_label": "Drevet af Jingmatrix Lspatch",
+            "logs_title": "Logs",
+            "copy_button": "Kopier",
+            "log_line_prefix": "- {line}"
+        },
+        "permissions": {
+            "dialog": "Gennemfør disse vigtige punkter for at fortsætte:",
+            "notification_access": "Adgang til notifikationer",
+            "battery_optimization": "Batterioptimering",
+            "display_over_other_apps": "Vis over andre apps",
+            "request_button": "Anmod",
+            "notification_access_description": "Advarer dig i det sekund, downloads er færdige.",
+            "battery_optimization_description": "Holder baggrundsopgaver i live uden at blive dræbt.",
+            "display_over_other_apps_description": "Aktiverer flydende overlays, mens du er i Snapchat.",
+            "granted_label": "Givet"
+        },
+        "pick_language": {
+            "current_selection": "Nuværende valg",
+            "browse_languages": "Gennemse sprog",
+            "change_anytime_hint": "Du kan ændre dette når som helst fra Purrfect-indstillinger.",
+            "available_languages": "Tilgængelige sprog"
+        },
+        "root_install": {
+            "title": "Snapchat-installationsprogram",
+            "ready_log": "Snapchat-installationsprogram er klar.",
+            "install_confirmed_log": "Snapchat-installation bekræftet. Du har tilladelse til at fortsætte.",
+            "download_recommended_status": "Downloader anbefalet Snapchat-version ({version})...",
+            "mark_installed_log": "Markeret som installeret manuelt. Du har tilladelse til at fortsætte.",
+            "start_download_log": "Starter Snapchat-download for rootet installation.",
+            "uninstall_prompt_status": "Snapchat er installeret. Afinstaller det venligst først (behold ikke data), og prøv derefter igen.",
+            "uninstall_prompt_error": "Snapchat er stadig installeret. Afinstaller det først for at fortsætte.",
+            "fetching_apk_status": "Henter anbefalet Snapchat APK...",
+            "download_failed_error": "Download mislykkedes",
+            "download_completed_status": "Download fuldført: {fileName}",
+            "launching_installer_status": "Starter installationsprogram...",
+            "failed_status": "Mislykkedes: {message}",
+            "status_downloading": "Downloader Snapchat {percent}%",
+            "status_preparing": "Forbereder installationsprogram...",
+            "logs_copied": "Logs kopieret til udklipsholder.",
+            "install_success": "Snapchat installeret",
+            "download_button": "Download Snapchat",
+            "install_button": "Installer Snapchat",
+            "already_installed_button": "Allerede installeret?",
+            "logs_title": "Logs",
+            "copy_button": "Kopier",
+            "log_line_prefix": "- {line}"
+        },
+        "save_folder": {
+            "description": "Vælg venligst den placering, hvor medier skal downloades til.",
+            "destination_label": "Destination",
+            "system_default_label": "Systemstandard",
+            "use_default_location_button": "Brug standardplacering",
+            "no_picker_title": "Mappevælger ikke tilgængelig",
+            "no_picker_message": "Nogle klonede/dual-app-miljøer blokerer systemets mappevælger. Du kan fortsætte med at bruge systemets standard gemmeplacering, eller åbne appen uden for klontilstand for at vælge en brugerdefineret mappe.",
+            "use_default_button": "Brug standard",
+            "permission_hint": "Purrfect kræver lagertilladelser for at downloade og gemme medier fra Snapchat."
+        }
+    },
+    "scopes": {
+        "friend": "Ven",
+        "group": "Gruppe"
+    },
+    "manager": {
+        "routes": {
+            "tasks": "Opgaver",
+            "features": "Funktioner",
+            "manage_rule_feature": "Administrer regelfunktion",
+            "home": "Hjem",
+            "home_about": "Om",
+            "home_settings": "Indstillinger",
+            "home_logs": "Logs",
+            "logger_history": "Logger-historik",
+            "logged_stories": "Loggede Stories",
+            "friend_tracker": "Ven-tracker",
+            "friend_tracker_catalog": "Ven-tracker katalog",
+            "manage_friend_tracker_repos": "Administrer Ven-tracker Repositorier",
+            "edit_rule": "Rediger regel",
+            "file_imports": "Filimporter",
+            "manage_repos": "Administrer Repositorier",
+            "social": "Socialt",
+            "manage_scope": "Administrer omfang",
+            "messaging_preview": "Forhåndsvisning",
+            "scripts": "Scripts",
+            "manage_script_repos": "Administrer Script Repositorier",
+            "view_logger_history": "Logger-historik",
+            "better_location": "Bedre Lokation"
+        },
+        "navigation": {
+            "customize_bottom_bar_title": "Tilpas bundlinje",
+            "customize_bottom_bar_subtitle": "Vælg hvilke faner der vises på din startskærm",
+            "available_tabs_title": "Tilgængelige faner",
+            "shown_tabs_title": "Viste faner",
+            "reset_button": "Nulstil",
+            "done_button": "Færdig"
+        },
+        "sections": {
+            "home": {
+                "version_title": "v{versionName}",
+                "update_title": "Purrfect-opdatering",
+                "update_content": "Version {version} er tilgængelig!",
+                "update_button": "Download",
+                "hero_tagline": "Et Xposed-modul beregnet til at forbedre din Snapchat-oplevelse",
+                "hero_version_label": "Version: {version} - {channel}",
+                "hero_build_label": "Build: {build}",
+                "update_ready_label": "Klar til installation",
+                "purr_aura_active_label": "PurrAura Aktiv!",
+                "purr_aura_inactive_label": "PurrAura Inaktiv",
+                "open_settings_button": "Åbn indstillinger",
+                "wiki_button": "Wiki",
+                "github_button": "PurrfectGit",
+                "telegram_button": "Telegram",
+                "channel_label_stable": "Stabil",
+                "channel_label_prerelease": "Pre-release",
+                "announcements_button_description": "Meddelelser",
+                "update_arch_not_supported_toast": "Din enhedsarkitektur understøttes ikke til automatiske opdateringer.",
+                "update_download_started_toast": "Download startet",
+                "update_download_completed_toast": "Download fuldført",
+                "update_install_failed_toast": "Kunne ikke installere opdatering. Tjek logs for flere detaljer.",
+                "update_download_failed_toast": "Download mislykkedes: {error}",
+                "debug_build_summary_title": "Du kører et debug-build af Purrfect",
+                "debug_build_summary_content": "Version {versionName} ({versionCode})",
+                "debug_build_summary_date": "Build-dato: {date} ({days} dage siden)",
+                "quick_actions_title": "Hurtige handlinger",
+                "quick_actions_empty_title": "Ingen hurtige fliser endnu",
+                "quick_actions_empty_subtitle": "Design dit drømme-grid med de handlinger, du bruger mest.",
+                "quick_actions_add_tile_button": "Tilføj flise",
+                "quick_actions_manage_button": "Administrer",
+                "quick_actions_count_label": "{count} kuraterede genveje",
+                "enabled": "Aktiveret",
+                "disabled": "Deaktiveret",
+                "changelog_dialog_title": "Ændringslog",
+                "changelog_dialog_update_button": "Opdater",
+                "changelog_dialog_cancel_button": "Annuller",
+                "changelog_dialog_loading": "Indlæser ændringslog...",
+                "changelog_dialog_error": "Kunne ikke indlæse ændringslog",
+                "changelog_dialog_empty": "Ændringslog ikke tilgængelig",
+                "announcements_dialog_title": "Meddelelser",
+                "announcements_dialog_close_button": "Luk",
+                "announcements_dialog_loading": "Indlæser meddelelser...",
+                "announcements_dialog_error": "Kunne ikke indlæse meddelelser",
+                "announcements_dialog_empty": "Meddelelser ikke tilgængelige"
+            },
+            "home_about": {
+                "about_title": "Purrfect",
+                "about_tagline": "Et Xposed-modul beregnet til at forbedre din Snapchat-oplevelse!",
+                "about_lead_developers_title": "Ledende udviklere",
+                "about_story_title": "Vores historie",
+                "about_story": "Purrfect blev grundlagt den 2. oktober 2025 som en fork af SnapEnhance med en vision om at give brugerne den kvalitetsoplevelse af Snapchat, de fortjener. Denne app var blot ment som en mindre opdatering i SnapEnhance-repositoryet, men den blev hurtigt til en separat app, hvor bidragyderne blev ved med at tilføje funktioner. Så sluttede udvikleren <RSR/> sig til teamet, og denne app blev hurtigt en kæmpe succes. Vi modtog meget kærlighed og støtte og opnåede 1K+ downloads på bare to dage! Vi takker alle brugere og bidragydere; uden jeres støtte ville vi ikke have nået hertil. Vi vil også gerne udtrykke vores store tak til rhunk, den ledende udvikler af SnapEnhance, da denne app uden ham ikke engang ville eksistere. Vi er ham utroligt taknemmelige. Til sidst vil vi gerne takke alle vores administratorer, især: CLASSIC GENIUS, Harry, Sujal, Zain & schrodingerspet, som var med os helt fra begyndelsen. Vi vil også gerne takke alle testere, især Leo & Toxic, der kontinuerligt testede og rapporterede fejl. Vi er utroligt taknemmelige for jeres bidrag.",
+                "about_thanks_title": "Med kærlighed, Purrfect Team",
+                "about_magic_toast": "Tryk 5 gange på denne skærm for at se noget magi 😉!",
+                "github_button": "PurrfectGit",
+                "telegram_button": "Telegram"
+            },
+            "home_logs": {
+                "no_logs_hint": "Ingen logs tilgængelige",
+                "refresh_hint": "Træk for at opdatere eller udløs en handling for at se nye poster.",
+                "clear_logs_button": "Ryd logs",
+                "export_logs_button": "Eksporter logs",
+                "saving_logs_toast": "Gemmer logs, dette kan tage lidt tid ...",
+                "saved_logs_success_toast": "Logs gemt succesfuldt",
+                "saved_logs_failure_toast": "Kunne ikke gemme logs",
+                "read_logs_failed_toast": "Kunne ikke læse logs!"
+            },
+            "home_settings": {
+                "actions_title": "Handlinger",
+                "message_logger_title": "Besked-logger",
+                "debug_title": "Debug",
+                "success_toast": "Færdig!",
+                "message_logger_summary": "{messageCount} beskeder\n{storyCount} stories",
+                "export_button": "Eksporter",
+                "import_button": "Importer",
+                "clear_button": "Ryd",
+                "view_logger_history_button": "Se Logger-historik",
+                "message_logger_import_title": "Importer besked-logger",
+                "message_logger_import_text": "Import vil overskrive din nuværende besked-logger database. Fortsæt?",
+                "ui_settings_title": "UI Indstillinger",
+                "haptic_feedback_label": "Haptisk feedback",
+                "use_system_toasts_label": "Brug system-toasts",
+                "updates_title": "Opdateringer",
+                "auto_update_check": "Automatisk opdateringstjek",
+                "update_check_frequency_daily": "Dagligt",
+                "update_check_frequency_weekly": "Ugentligt",
+                "update_check_frequency_monthly": "Månedligt",
+                "update_channel_stable": "Stabil",
+                "update_channel_prerelease": "Pre-release",
+                "update_notification_channel_name": "Opdateringer",
+                "update_notification_channel_description": "Få besked, når nye udgivelser er tilgængelige",
+                "update_notification_title": "Ny opdatering tilgængelig",
+                "update_notification_text": "Tryk for at åbne Purrfect og downloade det nyeste build.",
+                "app_theme_title": "App-tema",
+                "theme_icon_description": "Åbn temavælger",
+                "theme_mode_system": "System",
+                "theme_mode_light": "Lys",
+                "theme_mode_dark": "Mørk",
+                "friend_notes_title": "Venne-noter",
+                "friend_notes_description": "Administrer og sikkerhedskopier dine venne-noter",
+                "friend_notes_no_notes_to_backup": "Ingen noter at sikkerhedskopiere endnu",
+                "friend_notes_backup_success": "Venne-noter sikkerhedskopieret",
+                "friend_notes_restore_success": "Venne-noter gendannet",
+                "backup_button": "Backup",
+                "restore_button": "Gendan",
+                "view_button": "Vis",
+                "customize_bottom_bar_title": "Tilpas bundlinje",
+                "customize_bottom_bar_subtitle": "Vælg hvilke faner der vises på din startskærm",
+                "available_tabs_title": "Tilgængelige faner",
+                "reset_setup_title": "Nulstil Purrfect",
+                "reset_setup_action": "Nulstil og genstart opsætning",
+                "reset_setup_dialog_title": "Er du sikker?",
+                "reset_setup_dialog_text": "Dette vil nulstille Purrfect og genstarte opsætningen.",
+                "reset_button": "Nulstil",
+                "done_button": "Færdig",
+                "clear_friend_feed": "Ryd Vennefeed",
+                "test_mode_label": "Aktiver PurrAura",
+                "purr_aura_disable_title": "Er du sikker?",
+                "purr_aura_disable_text": "At gøre dette vil bringe din konto i fare og forårsage bans!",
+                "disable_feature_loading_label": "Deaktiver indlæsning af funktioner",
+                "disable_auto_mapper_label": "Deaktiver Auto-mapper",
+                "disable_bypass_indicator_label": "Deaktiver omgåelses-indikator",
+                "open_file_failed_toast": "Kunne ikke åbne fil! {message}",
+                "import_failed_toast": "Import mislykkedes: {message}"
+            },
+            "retro_flight": {
+                "title": "Retro Flight",
+                "game_over_label": "GAME OVER",
+                "restart_button": "GENSTART",
+                "left_button": "VENSTRE",
+                "right_button": "HØJRE"
+            },
+            "tasks": {
+                "no_tasks": "Ingen opgaver",
+                "merge_button": "Flet",
+                "summary_active": "{active} aktive \u00b7 {recent} nylige",
+                "summary_idle": "Inaktiv \u00b7 {recent} nylige",
+                "running_count": "{count} kører",
+                "clear_button_description": "Ryd opgaver",
+                "failed_to_open_file": "Kunne ikke åbne fil",
+                "merge_files_toast": "Fletter {count} filer",
+                "remove_selected_tasks_title": "Er du sikker på, at du vil fjerne valgte opgaver?",
+                "remove_all_tasks_title": "Er du sikker på, at du vil fjerne alle opgaver?",
+                "delete_files_option": "Slet også filer",
+                "delete_files_option_hint": "Fjern også downloadede filer fra enheden",
+                "remove_selected_tasks_confirm": "Fjern {count} opgaver?",
+                "remove_all_tasks_confirm": "Fjern alle opgaver?"
+            },
+            "features": {
+                "disabled": "Deaktiveret",
+                "export_option": "Eksporter",
+                "import_option": "Importer",
+                "reset_option": "Nulstil",
+                "config_export_success_toast": "Konfiguration eksporteret succesfuldt",
+                "config_import_success_toast": "Konfiguration importeret succesfuldt",
+                "config_import_failure_toast": "Kunne ikke importere konfiguration {error}",
+                "config_export_failure_toast": "Kunne ikke eksportere konfiguration {error}",
+                "saved_config_snackbar": "Konfiguration gemt",
+                "older_required": "Denne funktion kræver Snapchat v{version} eller ældre for at fungere korrekt",
+                "newer_required": "Denne funktion kræver Snapchat v{version} eller nyere for at fungere korrekt",
+                "search_button": "Søg",
+                "search_results_count": "{count} beskeder",
+                "clear_history": "Ryd søgehistorik",
+                "subtitle": "Søg og administrer funktioner"
+            },
+            "bypass_status": {
+                "active": "PurrAura Aktiv",
+                "inactive": "PurrAura Inaktiv"
+            },
+            "manage_rule_feature": {
+                "disable_state_option": "Deaktiveret",
+                "disable_state_subtext": "Ingen venner/grupper vil blive påvirket",
+                "whitelist_state_option": "Ingen undtagen ...",
+                "whitelist_state_subtext": "Kun {count} venner/grupper vil blive påvirket af denne regel",
+                "whitelist_state_button": "Vælg tilladte venner/grupper",
+                "blacklist_state_option": "Alle undtagen ...",
+                "blacklist_state_subtext": "Alle undtagen {count} venner/grupper vil blive påvirket af denne regel",
+                "blacklist_state_button": "Vælg udelukkede venner/grupper",
+                "clear_list_button": "Ryd liste over venner/grupper",
+                "dialog_clear_confirmation_text": "Er du sikker på, at du vil rydde listen?",
+                "dialog_clear_confirm_button": "Ryd",
+                "dialog_clear_cancel_button": "Annuller"
+            },
+            "social": {
+                "friends_tab": "Venner",
+                "groups_tab": "Grupper",
+                "search_button_description": "Søg",
+                "close_search_button_description": "Luk søgning",
+                "clear_search_button_description": "Ryd søgning",
+                "empty_hint": "Din liste er tom lige nu",
+                "friends_empty_title": "Ingen venner tilføjet endnu",
+                "groups_empty_title": "Ingen grupper synkroniseret endnu",
+                "streaks_expiration_short": "{hours}t",
+                "social_tagline": "Administrer omfang, streaks og forhåndsvisninger",
+                "social_empty_hint": "Tryk på + knappen for at synkronisere venner eller grupper."
+            },
+            "manage_scope": {
+                "manage_scope_title": "Administrer",
+                "logged_stories_button": "Vis loggede Stories",
+                "e2ee_title": "End-to-End Kryptering",
+                "e2ee_subtitle": "Administrer din delte nøgle for denne ven.",
+                "export_base64_button": "Eksporter Base64",
+                "import_base64_button": "Importer Base64",
+                "invalid_key_size_32_bytes": "Ugyldig nøglestørrelse. Angiv en 32-byte nøgle.",
+                "successfully_imported_key": "Nøgle importeret succesfuldt.",
+                "failed_to_import_key": "Kunne ikke importere nøgle: {message}",
+                "rules_title": "Regler",
+                "participants_text": "{count} deltagere",
+                "not_found": "Ikke fundet",
+                "streaks_title": "Streaks",
+                "streaks_length_text": "Længde: {length}",
+                "streaks_expiration_text": "Udløber om {eta}",
+                "streaks_expiration_text_expired": "Udløbet",
+                "reminder_button": "Indstil påmindelse",
+                "delete_scope_confirm_dialog_title": "Er du sikker på, at du vil slette et {scope}?",
+                "notes_placeholder": "Klik for at tilføje en note"
+            },
+            "logged_stories": {
+                "story_failed_to_load": "Kunne ikke indlæse",
+                "no_stories": "Ingen stories fundet",
+                "save_from_cache_button": "Gem fra cache"
+            },
+            "messaging_preview": {
+                "bridge_connection_failed": "Kunne ikke oprette forbindelse til bro. Sørg for at Snapchat kører i baggrunden",
+                "bridge_connection_error": "Kunne ikke oprette forbindelse til bro. Sørg for at Snapchat kører i baggrunden",
+                "bridge_init_failed": "Kunne ikke initialisere besked-bro. Sørg for at Snapchat kører i baggrunden",
+                "message_fetch_failed": "Kunne ikke hente beskeder",
+                "no_message_hint": "Ingen besked",
+                "sender_unknown": "Ukendt",
+                "sender_you": "Dig",
+                "sender_friend": "Ven",
+                "subtitle": "Hold for at vælge",
+                "actions_title": "Samtalehandlinger",
+                "choose_message_types_subtitle": "Vælg beskedyper",
+                "save_selection_option": "Gem valg",
+                "save_all_option": "Gem alle",
+                "save_selected_messages_subtitle": "Gem valgte beskeder",
+                "save_by_content_type_subtitle": "Gem efter indholdstype",
+                "unsave_selection_option": "Fjern gemte valg",
+                "unsave_all_option": "Fjern alle gemte",
+                "unsave_selected_messages_subtitle": "Fjern gemte for valgte beskeder",
+                "unsave_by_content_type_subtitle": "Fjern gemte efter indholdstype",
+                "mark_selection_as_seen_option": "Marker valgte Snap som set",
+                "mark_all_as_seen_option": "Marker alle Snaps som set",
+                "mark_as_seen_subtitle": "Markerer snaps som set",
+                "delete_selection_option": "Slet valg",
+                "delete_all_option": "Slet alle",
+                "delete_selected_messages_subtitle": "Slet valgte beskeder",
+                "delete_by_content_type_subtitle": "Slet efter indholdstype",
+                "processed_message_toast": "Behandlede {count} beskeder",
+                "processed_messages_toast": "Behandlede {count} beskeder",
+                "processed_messages_text": "Behandlet {count}",
+                "close_button_description": "Ryd valg"
+            },
+            "logger_history": {
+                "list_friend_format": "Ven {name}",
+                "list_group_format": "Gruppe {name}",
+                "no_more_messages": "Ingen flere beskeder",
+                "reverse_order_checkbox": "Omvendt rækkefølge",
+                "chat_attachment": "Vedhæftning {index}",
+                "empty_message": "Tom chatbesked",
+                "message_parse_failed": "Kunne ikke parse besked",
+                "unknown_sender": "Ukendt afsender",
+                "download_attachment_failed_toast": "Kunne ikke downloade vedhæftning"
+            },
+            "file_imports": {
+                "import_file_button": "Importer fil",
+                "file_not_found": "Fil ikke fundet",
+                "file_import_failed": "Kunne ikke importere fil: {error}",
+                "file_imported": "Fil importeret succesfuldt",
+                "file_delete_failed": "Kunne ikke slette fil",
+                "no_files_hint": "Her kan du importere filer til brug i Snapchat. Tryk på knappen nedenfor for at importere en fil."
+            },
+            "better_location": {
+                "spoofed_coordinates_title": "Bredde {latitude}, Længde {longitude}",
+                "save_coordinates_dialog_title": "Gem koordinater",
+                "saved_name_dialog_hint": "Gemt navn",
+                "latitude_dialog_hint": "Breddegrad",
+                "longitude_dialog_hint": "Længdegrad",
+                "save_dialog_button": "Gem",
+                "choose_location_button": "Vælg en placering",
+                "search_or_tap_map_hint": "Søg eller tryk på kortet",
+                "search_location_placeholder": "Søg placering...",
+                "search_icon_description": "Søg",
+                "searching_label": "Søger...",
+                "manual_coordinates_hint": "Finjuster koordinaterne manuelt.",
+                "saved_coordinates_subtitle": "Administrer dine gemte spoof-placeringer",
+                "teleport_to_friend_button": "Teleporter til ven",
+                "spoof_location_toggle": "Spoof placering",
+                "suspend_location_updates": "Sæt placeringsopdateringer på pause",
+                "saved_coordinates_title": "Gemte koordinater",
+                "no_saved_coordinates_hint": "Ingen gemte koordinater",
+                "delete_dialog_title": "Slet gemt koordinat",
+                "delete_dialog_message": "Er du sikker på, at du vil slette denne gemte koordinat?",
+                "teleport_to_friend_title": "Teleporter til ven",
+                "search_bar": "Søg",
+                "no_friends_map": "Ingen venner på kortet",
+                "no_friends_found": "Ingen venner fundet",
+                "include_saved_locations": "Inkluder gemte placeringer",
+                "include_saved_locations_description": "Eksporter dine gemte placeringskoordinater",
+                "location_search_provider_title": "Placeringssøgningsudbyder",
+                "google_maps_api_key_title": "Google Maps API-nøgle",
+                "option_osm": "OpenStreetMap (Gratis)",
+                "option_google_maps": "Google Maps"
+            }
+        },
+        "dialogs": {
+            "add_friend": {
+                "title": "Tilføj ven eller gruppe",
+                "search_hint": "Søg",
+                "fetch_error": "Kunne ikke hente data",
+                "category_groups": "Grupper",
+                "category_friends": "Venner",
+                "participants_text": "{count} deltagere",
+                "unselect_all_button": "Fravælg alle"
+            },
+            "scripting": {
+                "repo_hint": "Indsæt en repository-URL"
+            },
+            "scripting_warning": {
+                "title": "Advarsel",
+                "content": "Purrfect inkluderer et scripting-værktøj, der tillader udførelse af brugerdefineret kode på din enhed. Vær ekstremt forsigtig, og installer kun moduler fra kendte, pålidelige kilder. Uautoriserede eller ubekræftede moduler kan udgøre en sikkerhedsrisiko for dit system."
+            },
+            "reset_config": {
+                "title": "Nulstil konfiguration",
+                "content": "Er du sikker på, at du vil nulstille konfigurationen?",
+                "success_toast": "Konfiguration nulstillet succesfuldt"
+            },
+            "quick_actions_dialog": {
+                "title": "Hurtige handlinger",
+                "subtitle": "Få adgang til dine yndlingsværktøjer hurtigere"
+            },
+            "export_config": {
+                "title": "Eksporter følsomme data?",
+                "content": "Vil du eksportere konfigurationen med følsomme data? (Såsom placeringskoordinater osv.)"
+            },
+            "messaging_action": {
+                "title": "Vælg indholdstyper til behandling",
+                "select_all_button": "Vælg alle"
+            },
+            "file_imports": {
+                "no_files_settings_hint": "Ingen filer fundet. Sørg for, at du har importeret de krævede filer i afsnittet Filimporter",
+                "settings_select_file_hint": "Vælg en importeret fil",
+                "settings_select_file_subtitle": "Vælg en fil fra din liste over importerede filer"
+            }
+        },
+        "scripting": {
+            "actions_button": "Handlinger",
+            "actions_title": "Handlinger",
+            "catalog_tab": "Katalog",
+            "clear_module_data_button": "Ryd data",
+            "clear_module_data_failed": "Kunne ikke rydde moduldata",
+            "delete_module_button": "Slet",
+            "delete_module_failed": "Kunne ikke slette modul",
+            "documentation_button": "Dok",
+            "download_script_failed": "Kunne ikke downloade script",
+            "downloading_script": "Downloader script...",
+            "edit_module_button": "Rediger",
+            "enter_url_label": "Indtast URL",
+            "import_button": "Importer",
+            "import_from_url_button": "Importer fra URL",
+            "import_script_from_url_title": "Importer script fra URL",
+            "import_failed": "Import mislykkedes: {message}",
+            "import_script_warning": "Installer kun scripts fra kilder, du stoler på.",
+            "installed_scripts_tab": "Installeret",
+            "manage_repos_button": "Administrer repos",
+            "module_data_cleared": "Moduldata ryddet!",
+            "module_not_found": "Modul ikke fundet",
+            "no_description": "Ingen beskrivelse",
+            "no_scripts_folder_selected_title": "Vælg din scripts-mappe for at komme i gang",
+            "no_scripts_found_title": "Ingen scripts fundet",
+            "no_settings_for_module": "Dette modul har ingen indstillinger",
+            "open_module_failed": "Kunne ikke åbne modulfil",
+            "open_scripts_folder_button": "Åbn scripts-mappe",
+            "loaded_script": "Indlæste script {name}",
+            "unloaded_script": "Deaktiverede script {name}",
+            "script_already_installed": "Script allerede installeret",
+            "select_folder_button": "Vælg mappe",
+            "select_scripts_folder_toast": "Vælg venligst en scripts-mappe først",
+            "update_module_button": "Opdater modul",
+            "update_module_failed": "Kunne ikke opdatere modul",
+            "use_catalog_to_add_scripts": "Brug kataloget til at tilføje scripts",
+            "ok_button_timeout": "OK {timeout}",
+            "catalog": {
+                "no_repos_added": "Ingen repositorier tilføjet",
+                "repo_list_info": "Find repositorier her:",
+                "link_text": "Repository-liste",
+                "loading": "Indlæser katalog...",
+                "script_already_installed": "Script allerede installeret",
+                "script_downloaded": "Script downloadet",
+                "could_not_create_file": "Kunne ikke oprette fil",
+                "no_scripts_folder_selected": "Vælg en scripts-mappe først",
+                "no_scripts_available": "Ingen scripts tilgængelige",
+                "installed_button": "Installeret",
+                "download_button": "Download"
+            },
+            "repos": {
+                "no_repos_added": "Ingen repositorier tilføjet",
+                "add_repo_button": "Tilføj repository",
+                "add_repo_dialog_title": "Tilføj repository",
+                "repo_url_label": "Repository URL",
+                "add_button": "Tilføj",
+                "invalid_repo_title": "Ugyldigt repository",
+                "invalid_repo_error": "Dette repository mangler påkrævede data.",
+                "repo_added_toast": "Repository tilføjet",
+                "add_repo_failed_toast": "Kunne ikke tilføje repository: {message}",
+                "remove_button": "Fjern",
+                "remove_repo_dialog_title": "Fjern repository",
+                "remove_repo_dialog_text": "Er du sikker på, at du vil fjerne dette repository?"
+            }
+        },
+        "friend_tracker": {
+            "rules_tab": "Regler",
+            "logs_tab": "Logs",
+            "catalog_button": "Katalog",
+            "add_rule_button": "Tilføj regel",
+            "import_button": "Importer",
+            "filters_title": "Filtre",
+            "search_by_label": "Søg efter",
+            "newest_first_label": "Nyeste først",
+            "since_label": "Siden",
+            "until_label": "Indtil",
+            "unit_label": "Enhed",
+            "pick_a_date_button": "Vælg en dato",
+            "export_button": "Eksporter",
+            "delete_button": "Slet",
+            "search_placeholder": "Søg",
+            "no_logs_found": "Ingen logs fundet",
+            "no_rules_found": "Ingen regler fundet",
+            "export_logs_dialog_title": "Eksporter logs",
+            "export_logs_dialog_confirm_text": "Eksporter logs med nuværende filtre?",
+            "export_as_button": "Eksporter som {type}",
+            "new_rule_title": "Ny regel",
+            "edit_rule_title": "Rediger regel",
+            "general_section_title": "Generelt",
+            "rule_name_label": "Regelnavn",
+            "default_rule_name": "Ny regel",
+            "author_name_label": "Forfatter",
+            "scope_section_title": "Omfang",
+            "scope_all": "Alle Venner/Grupper",
+            "scope_whitelist": "Ingen undtagen",
+            "scope_blacklist": "Alle undtagen",
+            "events_section_title": "Begivenheder",
+            "events_suffix": "begivenheder",
+            "scopes_suffix": "omfang",
+            "no_events_text": "Ingen begivenheder tilføjet endnu",
+            "add_event_dialog_title": "Tilføj begivenhed",
+            "event_type_label": "Begivenhedstype",
+            "triggers_title": "Udløsere",
+            "conditions_title": "Betingelser",
+            "condition_only_inside_conversation": "Kun når jeg er inde i en samtale",
+            "condition_only_outside_conversation": "Kun når jeg er uden for en samtale",
+            "condition_only_when_app_active": "Kun når Snapchat er aktiv",
+            "condition_only_when_app_inactive": "Kun når Snapchat er inaktiv",
+            "condition_no_push_notification_when_app_active": "Ingen notifikation når Snapchat er aktiv",
+            "add_button": "Tilføj",
+            "cannot_save_rule_dialog_title": "Kan ikke gemme regel",
+            "cannot_save_rule_dialog_text": "Udfyld de manglende felter for at gemme denne regel.",
+            "duplicate_rule_name_dialog_title": "Dubleret regelnavn",
+            "duplicate_rule_name_dialog_text": "En regel med dette navn findes allerede. Vælg et nyt navn.",
+            "discard_changes_dialog_title": "Kasser ændringer?",
+            "discard_changes_dialog_text": "Du har ugemte ændringer. Kasser dem?",
+            "rule_subtitle": "Konfigurer udløsere og omfang for denne regel.",
+            "discard_button": "Kasser",
+            "enabled_label": "Aktiveret",
+            "disabled_label": "Deaktiveret",
+            "delete_rule_dialog_title": "Slet regel",
+            "delete_rule_dialog_text": "Er du sikker på, at du vil slette denne regel?",
+            "no_repos_added": "Ingen repositorier tilføjet",
+            "import_dialog_title": "Importer regler",
+            "read_file_failed_toast": "Kunne ikke læse fil: {message}",
+            "bulk_import_button": "Masseimport",
+            "individual_import_button": "Enkelt import",
+            "invalid_import_type_dialog_title": "Ugyldig import",
+            "invalid_import_type_dialog_text": "Den valgte filtype matcher ikke importtilstanden.",
+            "export_dialog_title": "Eksporter regler",
+            "bulk_export_button": "Masseeksport",
+            "individual_export_button": "Enkelt eksport",
+            "reverse_order_checkbox": "Omvendt rækkefølge",
+            "delete_logs_dialog_title": "Slet logs",
+            "delete_logs_dialog_confirm_text": "Slet alle logs, der matcher de aktuelle filtre?",
+            "select_friends_groups_button": "Vælg venner / grupper"
+        },
+        "friend_tracker_export": {
+            "title": "Eksporter Ven-tracker",
+            "save_button": "Gem",
+            "back_button_description": "Gå tilbage",
+            "expand_button_description": "Udvid eller skjul kategori",
+            "tracker_author_label": "Forfatter",
+            "tracker_enabled_label": "Aktiveret",
+            "tracker_enabled_value": "Aktiveret",
+            "tracker_disabled_value": "Deaktiveret",
+            "exported_toast": "Tracker-konfiguration eksporteret",
+            "export_failed_toast": "Kunne ikke eksportere tracker: {message}"
+        },
+        "friend_tracker_import": {
+            "title": "Importer Ven-tracker",
+            "confirm_button": "Importer",
+            "back_button_description": "Gå tilbage",
+            "expand_button_description": "Udvid eller skjul kategori",
+            "tracker_author_label": "Forfatter",
+            "tracker_enabled_label": "Aktiveret",
+            "tracker_enabled_value": "Aktiveret",
+            "tracker_disabled_value": "Deaktiveret",
+            "imported_toast": "Tracker importeret",
+            "import_failed_toast": "Kunne ikke importere tracker: {message}"
+        },
+        "friend_tracker_catalog": {
+            "title": "Ven-tracker katalog",
+            "no_repos_added": "Ingen repositorier tilføjet",
+            "manage_repos_description": "Administrer repositorier"
+        },
+        "friend_tracker_repos": {
+            "no_repos_added": "Ingen repositorier tilføjet",
+            "add_repo_button": "Tilføj repository",
+            "add_repo_dialog_title": "Tilføj repository",
+            "repo_url_label": "Repository URL",
+            "add_button": "Tilføj",
+            "invalid_repo_title": "Ugyldigt repository",
+            "invalid_repo_error": "Dette repository mangler påkrævede data.",
+            "repo_added_toast": "Repository tilføjet",
+            "add_repo_failed_toast": "Kunne ikke tilføje repository: {message}",
+            "remove_button": "Fjern",
+            "remove_repo_dialog_title": "Fjern repository",
+            "remove_repo_dialog_text": "Er du sikker på, at du vil fjerne dette repository?"
+        },
+        "logger_history": {
+            "select_conversation_placeholder": "Vælg en samtale"
+        },
+        "features": {
+            "config_export": {
+                "title": "Eksporter konfigurations-oversigt",
+                "back_button_description": "Gå tilbage",
+                "save_button": "Gem",
+                "expand_button_description": "Udvid eller skjul kategori",
+                "enabled": "Aktiveret",
+                "disabled": "Deaktiveret",
+                "enable_feature": "Aktiver funktion"
+            },
+            "config_import": {
+                "title": "Importer konfigurations-oversigt",
+                "back_button_description": "Gå tilbage",
+                "confirm_button": "Importer",
+                "expand_button_description": "Udvid eller skjul kategori",
+                "enabled": "Aktiveret",
+                "disabled": "Deaktiveret",
+                "enable_feature": "Aktiver funktion",
+                "config_imported_toast": "Konfiguration importeret succesfuldt",
+                "config_import_failure_toast": "Kunne ikke importere konfiguration {error}"
+            }
+        }
+    },
+    "rules": {
+        "toasts": {
+            "enabled": "{ruleName} aktiveret",
+            "disabled": "{ruleName} deaktiveret"
+        },
+        "modes": {
+            "blacklist": "Blacklist-tilstand",
+            "whitelist": "Whitelist-tilstand"
+        },
+        "properties": {
+            "auto_download": {
+                "name": "Auto-download",
+                "description": "Download automatisk Snaps, når du ser dem",
+                "options": {
+                    "blacklist": "Ekskluder fra Auto-download",
+                    "whitelist": "Auto-download"
+                }
+            },
+            "stealth": {
+                "name": "Stealth-tilstand",
+                "description": "Forhindrer nogen i at vide, at du har åbnet deres Snaps/Chats og samtaler",
+                "options": {
+                    "blacklist": "Ekskluder fra Stealth-tilstand",
+                    "whitelist": "Stealth-tilstand"
+                }
+            },
+            "auto_save": {
+                "name": "Auto-gem",
+                "description": "Gemmer chatbeskeder, når du ser dem",
+                "options": {
+                    "blacklist": "Ekskluder fra Auto-gem",
+                    "whitelist": "Auto-gem"
+                }
+            },
+            "unsaveable_messages": {
+                "name": "Beskeder der ikke kan gemmes",
+                "description": "Forhindrer beskeder i at blive gemt i chatten af andre personer",
+                "options": {
+                    "blacklist": "Ekskluder fra Beskeder der ikke kan gemmes",
+                    "whitelist": "Beskeder der ikke kan gemmes"
+                }
+            },
+            "auto_open_snaps": {
+                "name": "Åbn Snaps automatisk",
+                "description": "Åbner automatisk Snaps, når du modtager dem",
+                "options": {
+                    "blacklist": "Ekskluder fra Åbn Snaps automatisk",
+                    "whitelist": "Åbn Snaps automatisk"
+                }
+            },
+            "hide_friend_feed": {
+                "name": "Skjul fra Vennefeed"
+            },
+            "e2e_encryption": {
+                "name": "Brug E2E-kryptering"
+            },
+            "pin_conversation": {
+                "name": "Fastgør samtale"
+            },
+            "exclude_message_logger": {
+                "name": "Ekskluder fra Besked-logger"
+            },
+            "auto_reply": {
+                "name": "Auto-svar",
+                "description": "Sender automatisk svar på indgående beskeder, når du ikke er til stede",
+                "options": {
+                    "blacklist": "Ekskluder fra Auto-svar",
+                    "whitelist": "Auto-svar"
+                }
+            },
+            "auto_delete_sent_messages": {
+                "name": "Slet sendte beskeder automatisk",
+                "description": "Sletter automatisk sendte beskeder efter en bestemt tidsperiode",
+                "options": {
+                    "blacklist": "Ekskluder fra Slet sendte beskeder automatisk",
+                    "whitelist": "Slet sendte beskeder automatisk"
+                }
+            },
+            "message_logger": {
+                "name": "Besked-logger",
+                "description": "Behold en kopi af beskeder, selvom de slettes",
+                "options": {
+                    "blacklist": "Ekskluder fra Besked-logger",
+                    "whitelist": "Besked-logger"
+                }
+            },
+            "auto_read": {
+                "name": "Auto-læs",
+                "description": "Marker automatisk snaps og chats som læst",
+                "options": {
+                    "blacklist": "Ekskluder fra Auto-læs",
+                    "whitelist": "Auto-læs"
+                }
+            },
+            "hide_typing_indicator": {
+                "name": "Skjul skriveindikator",
+                "description": "Forhindrer andre i at se, når du skriver",
+                "options": {
+                    "blacklist": "Ekskluder fra Skjul skriveindikator",
+                    "whitelist": "Skjul skriveindikator"
+                }
+            }
+        }
+    },
+    "actions": {
+        "clean_snapchat_cache": {
+            "name": "Rens Snapchat-cache",
+            "description": "Renser Snapchat-cachen"
+        },
+        "manage_friend_list": {
+            "name": "Administrer venneliste",
+            "description": "Importer/eksporter din venneliste ved backup"
+        },
+        "export_chat_messages": {
+            "name": "Eksporter chatbeskeder",
+            "description": "Eksporterer samtalebeskeder til en JSON/HTML/TXT-fil"
+        },
+        "export_memories": {
+            "name": "Eksporter minder",
+            "description": "Eksporterer minder til en ZIP-fil"
+        },
+        "bulk_messaging_action": {
+            "name": "Massebesked-handling",
+            "description": "Udfører handlinger såsom sletning af venner eller massesletning af samtaler"
+        },
+        "regen_mappings": {
+            "name": "Regenerer Mappings",
+            "description": "Regenerer mappings manuelt"
+        },
+        "change_language": {
+            "name": "Skift sprog",
+            "description": "Skift sproget for Purrfect"
+        },
+        "file_imports": {
+            "name": "Filimporter",
+            "description": "Importer filer til brug i Snapchat"
+        },
+        "friend_tracker": {
+            "name": "Ven-tracker",
+            "description": "Spor dine venner på Snapchat"
+        },
+        "logger_history": {
+            "name": "Logger-historik",
+            "description": "Se historikken over loggede beskeder"
+        }
+    },
+    "features": {
+        "notices": {
+            "unstable": "\u26a0 Ustabil",
+            "ban_risk": "\u26a0 Denne funktion kan medføre bans",
+            "internal_behavior": "\u26a0 Dette kan ødelægge Snapchats interne adfærd"
+        },
+        "properties": {
+            "downloader": {
+                "name": "Downloader",
+                "description": "Download Snapchat-medier",
+                "properties": {
+                    "save_folder": {
+                        "name": "Gemmemappe",
+                        "description": "Vælg den mappe, som alle medier skal downloades til"
+                    },
+                    "auto_download_sources": {
+                        "name": "Kilder til automatisk download",
+                        "description": "Vælg kilderne, der skal downloades automatisk fra"
+                    },
+                    "prevent_self_auto_download": {
+                        "name": "Forhindre automatisk download af egne",
+                        "description": "Forhindrer dine egne Snaps i at blive downloadet automatisk"
+                    },
+                    "path_format": {
+                        "name": "Stiformat",
+                        "description": "Angiv filstiformatet"
+                    },
+                    "allow_duplicate": {
+                        "name": "Tillad dubletter",
+                        "description": "Tillader, at det samme medie downloades flere gange"
+                    },
+                    "file_hash_check": {
+                        "name": "Fil-hash kontrol",
+                        "description": "Verificer downloadede medier med fil-hashes"
+                    },
+                    "merge_overlays": {
+                        "name": "Flet overlays",
+                        "description": "Kombinerer teksten og mediet i en Snap til en enkelt fil"
+                    },
+                    "force_image_format": {
+                        "name": "Tving billedformat",
+                        "description": "Tvinger billeder til at blive gemt i et bestemt format"
+                    },
+                    "force_voice_note_format": {
+                        "name": "Tving stemmebeskedformat",
+                        "description": "Tvinger stemmebeskeder til at blive gemt i et bestemt format"
+                    },
+                    "auto_download_voice_notes": {
+                        "name": "Auto-download stemmebeskeder",
+                        "description": "Downloader automatisk stemmebeskeder, når de afspilles"
+                    },
+                    "call_recorder": {
+                        "name": "Opkaldsoptager",
+                        "description": "Administrer indstillinger for opkaldsoptagelse",
+                        "properties": {
+                            "call_recorder": {
+                                "name": "Tilstand",
+                                "description": "Vælg hvad der skal optages"
+                            },
+                            "auto_start_recording": {
+                                "name": "Start optagelse automatisk",
+                                "description": "Start automatisk optagelse, når et opkald starter"
+                            },
+                            "call_recorder_ui": {
+                                "name": "Opkaldsoptager UI",
+                                "description": "Vis optagelses-overlay UI under opkald"
+                            },
+                            "call_recorder_ui_design": {
+                                "name": "UI Design",
+                                "description": "Vælg designet for opkaldsoptager-overlayet"
+                            },
+                            "call_recording_saved_toast": "Gemt"
+                        }
+                    },
+                    "chat_wallpaper_downloader": {
+                        "name": "Chat-baggrundsdownloader",
+                        "description": "Giver dig mulighed for at downloade chat-baggrunde fra profilsiden"
+                    },
+                    "download_profile_pictures": {
+                        "name": "Download profilbilleder",
+                        "description": "Giver dig mulighed for at downloade profilbilleder fra profilsiden"
+                    },
+                    "opera_download_button": {
+                        "name": "Opera Download-knap",
+                        "description": "Tilføjer en download-knap i øverste højre hjørne, når du ser en Snap.\nLangt tryk på knapper vil tvinge download"
+                    },
+                    "download_context_menu": {
+                        "name": "Download kontekstmenu",
+                        "description": "Giver dig mulighed for at downloade/forhåndsvise beskeder fra en samtale eller en story ved hjælp af kontekstmenuen.\nLangt tryk på knapper vil tvinge download"
+                    },
+                    "ffmpeg_options": {
+                        "name": "FFmpeg-indstillinger",
+                        "description": "Angiv yderligere FFmpeg-indstillinger",
+                        "properties": {
+                            "threads": {
+                                "name": "Tråde",
+                                "description": "Mængden af tråde, der skal bruges"
+                            },
+                            "preset": {
+                                "name": "Forudindstilling",
+                                "description": "Indstil hastigheden for konverteringen"
+                            },
+                            "constant_rate_factor": {
+                                "name": "Konstant hastighedsfaktor",
+                                "description": "Indstil den konstante hastighedsfaktor for videoindkoderen\nFra 0 til 51 for libx264"
+                            },
+                            "video_bitrate": {
+                                "name": "Video bitrate",
+                                "description": "Indstil video bitrate (kbps)"
+                            },
+                            "audio_bitrate": {
+                                "name": "Lyd bitrate",
+                                "description": "Indstil lyd bitrate (kbps)"
+                            },
+                            "custom_video_codec": {
+                                "name": "Brugerdefineret video-codec",
+                                "description": "Indstil et brugerdefineret video-codec (f.eks. libx264)"
+                            },
+                            "custom_audio_codec": {
+                                "name": "Brugerdefineret lyd-codec",
+                                "description": "Indstil et brugerdefineret lyd-codec (f.eks. AAC)"
+                            }
+                        }
+                    },
+                    "logging": {
+                        "name": "Logning",
+                        "description": "Viser toasts, når medier downloader"
+                    },
+                    "custom_path_format": {
+                        "name": "Brugerdefineret stiformat",
+                        "description": "Angiv et brugerdefineret stiformat for downloadede medier\n\nTilgængelige variabler:\n - %username%\n - %source%\n - %hash%\n - %date_time%"
+                    }
+                }
+            },
+            "user_interface": {
+                "name": "Brugergrænseflade",
+                "description": "Ændre udseendet og følelsen af Snapchat",
+                "properties": {
+                    "enable_app_appearance": {
+                        "name": "Aktiver indstillinger for app-udseende",
+                        "description": "Aktiverer den skjulte indstilling for app-udseende\nEr muligvis ikke påkrævet på nyere Snapchat-versioner"
+                    },
+                    "friend_feed_message_preview": {
+                        "name": "Forhåndsvisning af besked i Vennefeed",
+                        "description": "Viser en forhåndsvisning af de sidste beskeder i Vennefeedet",
+                        "properties": {
+                            "amount": {
+                                "name": "Mængde",
+                                "description": "Mængden af beskeder, der skal forhåndsvises"
+                            }
+                        }
+                    },
+                    "snap_preview": {
+                        "name": "Snap-forhåndsvisning",
+                        "description": "Viser en lille forhåndsvisning ved siden af usete Snaps i chat"
+                    },
+                    "bootstrap_override": {
+                        "name": "Bootstrap-tilsidesættelse",
+                        "description": "Tilsidesætter bootstrap-indstillinger for brugergrænsefladen",
+                        "properties": {
+                            "app_appearance": {
+                                "name": "App-udseende",
+                                "description": "Indstiller et vedvarende app-udseende"
+                            },
+                            "home_tab": {
+                                "name": "Hjem-fane",
+                                "description": "Tilsidesætter opstartsfanen, når Snapchat åbnes"
+                            }
+                        }
+                    },
+                    "map_friend_nametags": {
+                        "name": "Forbedrede navneskilte på vennekort",
+                        "description": "Forbedrer navneskiltene på venner på Snapkortet"
+                    },
+                    "prevent_message_list_auto_scroll": {
+                        "name": "Forhindre automatisk rulning af beskedliste",
+                        "description": "Forhindrer beskedlisten i at rulle til bunden, når du sender/modtager en besked"
+                    },
+                    "streak_expiration_info": {
+                        "name": "Vis information om Streak-udløb",
+                        "description": "Viser en timer for Streak-udløb ved siden af Streaks-tælleren"
+                    },
+                    "hide_friend_feed_entry": {
+                        "name": "Skjul Vennefeed-indgang",
+                        "description": "Skjuler en bestemt ven fra Vennefeedet\nBrug fanen Socialt til at administrere denne funktion"
+                    },
+                    "hide_streak_restore": {
+                        "name": "Skjul gendannelse af Streak",
+                        "description": "Skjuler gendannelsesknappen i vennefeedet"
+                    },
+                    "hide_quick_add_suggestions": {
+                        "name": "Skjul forslag til hurtig tilføjelse",
+                        "description": "Fjerner forslag til hurtig tilføjelse af venner"
+                    },
+                    "hide_story_suggestions": {
+                        "name": "Skjul forslag til Stories",
+                        "description": "Fjerner forslag fra Stories-siden"
+                    },
+                    "hide_ui_components": {
+                        "name": "Skjul UI-komponenter",
+                        "description": "Vælg hvilke UI-komponenter der skal skjules"
+                    },
+                    "opera_media_quick_info": {
+                        "name": "Opera Medie Hurtig Info",
+                        "description": "Viser nyttig information om medier såsom oprettelsesdato i opera-fremviserens kontekstmenu"
+                    },
+                    "old_bitmoji_selfie": {
+                        "name": "Gammel Bitmoji-selfie",
+                        "description": "Bringer Bitmoji-selfies tilbage fra ældre Snapchat-versioner"
+                    },
+                    "disable_spotlight": {
+                        "name": "Deaktiver Spotlight",
+                        "description": "Deaktiverer Spotlight-siden"
+                    },
+                    "friend_feed_menu_buttons": {
+                        "name": "Menu-knapper i Vennefeed",
+                        "description": "Vælg hvilke knapper der skal vises i Vennefeed-menuen"
+                    },
+                    "auto_close_friend_feed_menu": {
+                        "name": "Luk Vennefeed-menu automatisk",
+                        "description": "Lukker automatisk Vennefeed-menuen efter tryk på en indstillingsknap"
+                    },
+                    "vertical_story_viewer": {
+                        "name": "Lodret Story-fremviser",
+                        "description": "Aktiverer den lodrette story-fremviser for alle stories"
+                    },
+                    "enable_friend_feed_menu_bar": {
+                        "name": "Menulinje i Vennefeed",
+                        "description": "Aktiverer den nye menulinje i Vennefeed"
+                    },
+                    "message_indicators": {
+                        "name": "Beskedindikatorer",
+                        "description": "Tilføjer specifikke indikatorikoner til beskeder\nBemærk: Indikatorer er muligvis ikke 100% nøjagtige"
+                    },
+                    "stealth_mode_indicator": {
+                        "name": "Stealth-tilstand indikator",
+                        "description": "Tilføjer en \ud83d\udc7b emoji ved siden af samtaler i stealth-tilstand"
+                    },
+                    "edit_text_override": {
+                        "name": "Rediger tekst-tilsidesættelse",
+                        "description": "Tilsidesætter tekstfeltadfærd"
+                    },
+                    "prevent_forced_keyboard": {
+                        "name": "Forhindre tvunget tastatur",
+                        "description": "Forhindrer Snapchat i automatisk at poppe tastaturet op, når du åbner en samtale"
+                    },
+                    "force_amoled_theme": {
+                        "name": "Tving AMOLED-tema",
+                        "description": "Tving et ægte sort AMOLED-tema på tværs af appens brugergrænseflade"
+                    },
+                    "settings_menu": {
+                        "name": "Indstillingsmenu",
+                        "description": "Vælg mellem det nye og det gamle indstillingsmenu-layout"
+                    }
+                }
+            },
+            "messaging": {
+                "name": "Beskeder",
+                "description": "Ændre hvordan du interagerer med venner",
+                "properties": {
+                    "bypass_screenshot_detection": {
+                        "name": "Omgå screenshot-detektion",
+                        "description": "Forhindrer Snapchat i at opdage, når du tager et screenshot"
+                    },
+                    "anonymous_story_viewing": {
+                        "name": "Anonym Story-visning",
+                        "description": "Forhindrer nogen i at vide, at du har set deres story"
+                    },
+                    "prevent_story_rewatch_indicator": {
+                        "name": "Forhindre indikator for genset Story",
+                        "description": "Forhindrer nogen i at vide, at du har genset deres story"
+                    },
+                    "hide_peek_a_peek": {
+                        "name": "Skjul Peek-a-Peek",
+                        "description": "Forhindrer notifikation i at blive sendt, når du halvt swiper ind i en chat"
+                    },
+                    "hide_bitmoji_presence": {
+                        "name": "Skjul Bitmoji-tilstedeværelse",
+                        "description": "Forhindrer din Bitmoji i at poppe op, mens du er i chat"
+                    },
+                    "hide_typing_notifications": {
+                        "name": "Skjul skrivenotifikationer",
+                        "description": "Forhindrer nogen i at vide, at du skriver en besked"
+                    },
+                    "unlimited_snap_view_time": {
+                        "name": "Ubegrænset Snap-visningstid",
+                        "description": "Fjerner tidsbegrænsningen for visning af Snaps"
+                    },
+                    "auto_mark_as_read": {
+                        "name": "Marker automatisk som læst",
+                        "description": "Markerer automatisk beskeder/snaps som læst, selv når Stealth-tilstand er aktiveret"
+                    },
+                    "mark_snap_as_seen_button": {
+                        "name": "Marker Snap som set-knap",
+                        "description": "Tilføjer en knap til at markere en Snap som set, når du ser den.\nDette vil virke, selv når Stealth-tilstand er aktiveret"
+                    },
+                    "skip_when_marking_as_seen": {
+                        "name": "Spring over når der markeres som set",
+                        "description": "Springer automatisk til næste Snap, når en Snap markeres som set.\nBrug i kombination med Marker Snap som set-knap"
+                    },
+                    "loop_media_playback": {
+                        "name": "Loop medieafspilning",
+                        "description": "Looper medieafspilning ved visning af Snaps / Stories"
+                    },
+                    "disable_replay_in_ff": {
+                        "name": "Deaktiver genafspilning i VF",
+                        "description": "Deaktiverer muligheden for at genafspille med et langt tryk fra Vennefeedet"
+                    },
+                    "half_swipe_notifier": {
+                        "name": "Halv-swipe notifikator",
+                        "description": "Giver dig besked, når nogen halvt swiper ind i en samtale",
+                        "properties": {
+                            "min_duration": {
+                                "name": "Minimum varighed",
+                                "description": "Den mindste varighed af det halve swipe (i sekunder)"
+                            },
+                            "max_duration": {
+                                "name": "Maksimum varighed",
+                                "description": "Den maksimale varighed af det halve swipe (i sekunder)"
+                            }
+                        }
+                    },
+                    "call_start_confirmation": {
+                        "name": "Bekræftelse ved start af opkald",
+                        "description": "Viser en bekræftelsesdialog ved start af et opkald"
+                    },
+                    "unlimited_conversation_pinning": {
+                        "name": "Ubegrænset fastgørelse af samtaler",
+                        "description": "Giver dig mulighed for at fastgøre et ubegrænset antal samtaler lokalt"
+                    },
+                    "disable_snap_mode_restrictions": {
+                        "name": "Deaktiver begrænsninger for Snap-tilstand",
+                        "description": "Giver dig mulighed for at se selvdestruerende Snaps uden begrænsninger"
+                    },
+                    "prevent_message_sending": {
+                        "name": "Forhindre afsendelse af besked",
+                        "description": "Forhindrer afsendelse af visse typer beskeder"
+                    },
+                    "friend_mutation_notifier": {
+                        "name": "Venneændrings-notifikator",
+                        "description": "Giver dig besked, når noget ændres i en vens profil"
+                    },
+                    "better_notifications": {
+                        "name": "Bedre notifikationer",
+                        "description": "Tilføjer mere information i modtagne notifikationer",
+                        "properties": {
+                            "group_notifications": {
+                                "name": "Gruppenotifikationer",
+                                "description": "Grupper notifikationer i en enkelt"
+                            },
+                            "chat_preview": {
+                                "name": "Chat-forhåndsvisning",
+                                "description": "Viser en forhåndsvisning af modtagne beskeder i notifikationen"
+                            },
+                            "media_preview": {
+                                "name": "Medie-forhåndsvisning",
+                                "description": "Viser en forhåndsvisning af de valgte medietyper i notifikationen"
+                            },
+                            "media_caption": {
+                                "name": "Medietekst",
+                                "description": "Viser den vedhæftede tekst til medier i notifikationen"
+                            },
+                            "stacked_media_messages": {
+                                "name": "Stakkede mediebeskeder",
+                                "description": "Kombinerer flere mediebeskeder til én tekstnotifikation, når de ikke kan forhåndsvises. Brug i kombination med Chat-forhåndsvisning"
+                            },
+                            "friend_add_source": {
+                                "name": "Kilde til vennetilføjelse",
+                                "description": "Viser kilden til en vennetilføjelse i notifikationen"
+                            },
+                            "reply_button": {
+                                "name": "Svar-knap",
+                                "description": "Tilføjer en svarknap til notifikationen"
+                            },
+                            "smart_replies": {
+                                "name": "Smarte svar",
+                                "description": "Tilføjer foreslåede svar til notifikationer (Android 10+). Brug i kombination med Svar-knap"
+                            },
+                            "download_button": {
+                                "name": "Download-knap",
+                                "description": "Giver dig mulighed for at downloade medier fra notifikationen"
+                            },
+                            "mark_as_read_button": {
+                                "name": "Marker som læst-knap",
+                                "description": "Giver dig mulighed for at markere en besked som læst fra notifikationen"
+                            },
+                            "mark_as_read_and_save_in_chat": {
+                                "name": "Marker som læst og gem i chat",
+                                "description": "Tilføjer en marker som læst og gem i chat-knap til notifikationen"
+                            }
+                        }
+                    },
+                    "notification_blacklist": {
+                        "name": "Notifikations-blacklist",
+                        "description": "Vælg notifikationer, der skal blokeres"
+                    },
+                    "message_logger": {
+                        "name": "Besked-logger",
+                        "description": "Forhindrer beskeder i at blive slettet",
+                        "properties": {
+                            "keep_my_own_messages": {
+                                "name": "Behold mine egne beskeder",
+                                "description": "Forhindrer dine egne beskeder i at blive slettet"
+                            },
+                            "auto_purge": {
+                                "name": "Auto-sletning",
+                                "description": "Sletter automatisk cachede beskeder, der er ældre end den angivne tidsperiode"
+                            },
+                            "message_filter": {
+                                "name": "Beskedfilter",
+                                "description": "Vælg hvilke beskeder der skal logges (tom for alle beskeder)"
+                            },
+                            "deleted_message_color": {
+                                "name": "Farve på slettede beskeder",
+                                "description": "Indstiller farven på slettede beskeder"
+                            }
+                        }
+                    },
+                    "auto_save_messages_in_conversations": {
+                        "name": "Gem automatisk beskeder",
+                        "description": "Gemmer automatisk hver besked i samtaler"
+                    },
+                    "unsaveable_messages": {
+                        "name": "Beskeder der ikke kan gemmes",
+                        "description": "Forhindrer valgte beskedyper i at blive gemt i chat",
+                        "properties": {
+                            "chat": {
+                                "name": "Chatbeskeder",
+                                "description": "Gør chatbeskeder umulige at gemme"
+                            },
+                            "snap": {
+                                "name": "Snaps",
+                                "description": "Gør snaps umulige at gemme"
+                            },
+                            "external_media": {
+                                "name": "Eksterne medier",
+                                "description": "Gør eksterne medier umulige at gemme"
+                            },
+                            "sticker": {
+                                "name": "Klistermærker",
+                                "description": "Gør klistermærker umulige at gemme"
+                            },
+                            "share": {
+                                "name": "Delinger",
+                                "description": "Gør delt indhold umuligt at gemme"
+                            },
+                            "note": {
+                                "name": "Lydnoter",
+                                "description": "Gør lydnoter umulige at gemme"
+                            },
+                            "story_reply": {
+                                "name": "Story-svar",
+                                "description": "Gør story-svar umulige at gemme"
+                            }
+                        }
+                    },
+                    "gallery_media_send_override": {
+                        "name": "Tilsidesættelse af afsendelse fra galleri",
+                        "description": "Spoofer mediekilden ved afsendelse fra galleriet",
+                        "properties": {
+                            "mode": {
+                                "name": "Tilsidesættelsestilstand",
+                                "description": "Vælg hvordan gallerimedier sendes"
+                            },
+                            "include_camera_snaps": {
+                                "name": "Inkluder kamera-snaps",
+                                "description": "Vis også tilsidesættelsesdialogen for kamera-snaps"
+                            }
+                        }
+                    },
+                    "strip_media_metadata": {
+                        "name": "Fjern mediemetadata",
+                        "description": "Fjerner metadata fra medier, før de sendes som en besked"
+                    },
+                    "bypass_message_retention_policy": {
+                        "name": "Omgå politik for beskedopbevaring",
+                        "description": "Forhindrer beskeder i at blive slettet efter visning"
+                    },
+                    "bypass_message_action_restrictions": {
+                        "name": "Omgå begrænsninger for beskedhandlinger",
+                        "description": "Giver dig mulighed for at reagere på en snap uden at have åbnet den eller at gemme en besked, der ikke kan gemmes"
+                    },
+                    "remove_groups_locked_status": {
+                        "name": "Fjern låst status for grupper",
+                        "description": "Giver dig mulighed for at se gruppeoplysninger efter at være blevet smidt ud"
+                    },
+                    "double_tap_chat_action": {
+                        "name": "Dobbeltklik chat-handling",
+                        "description": "Udfører en brugerdefineret handling, når du dobbeltklikker på en besked i chat"
+                    },
+                    "double_tap_chat_action_custom_emoji": {
+                        "name": "Dobbeltklik chat-handling brugerdefineret emoji-reaktion",
+                        "description": "Indstiller en brugerdefineret emoji-reaktion til dobbeltklik chat-handlingen"
+                    },
+                    "auto_reply": {
+                        "name": "Auto-svar",
+                        "description": "Sender automatisk svar på indgående beskeder, når du ikke er til stede",
+                        "properties": {
+                            "allow_running_in_background": {
+                                "name": "Tillad kørsel i baggrunden",
+                                "description": "Tillader Auto-svar at køre i baggrunden. Bemærk: Dette vil dræne dit batteri betydeligt"
+                            },
+                            "cooldown_seconds": {
+                                "name": "Nedkølingsekunder",
+                                "description": "Minimumstid mellem auto-svar til samme samtale (i sekunder)"
+                            },
+                            "message_age_threshold": {
+                                "name": "Tærskel for beskedalder",
+                                "description": "Svar kun på beskeder modtaget inden for denne tidsramme (i sekunder)"
+                            },
+                            "ai_config": {
+                                "name": "AI-konfiguration",
+                                "description": "Indstillinger for AI-drevne auto-svar",
+                                "properties": {
+                                    "enable_ai_replies": {
+                                        "name": "Aktiver AI-svar",
+                                        "description": "Brug AI til at generere intelligente auto-svar i stedet for skabelonbeskeder"
+                                    },
+                                    "ai_provider": {
+                                        "name": "AI-udbyder",
+                                        "description": "Vælg hvilken AI-tjeneste der skal bruges til generering af svar"
+                                    },
+                                    "ai_endpoint_url": {
+                                        "name": "AI-slutpunkts-URL",
+                                        "description": "API-slutpunkts-URL for AI-tjenesten (f.eks. OpenAI, lokal AI-server)"
+                                    },
+                                    "ai_model": {
+                                        "name": "AI-model",
+                                        "description": "AI-model der skal bruges til generering af svar (f.eks. gpt-3.5-turbo, gpt-4)"
+                                    },
+                                    "ai_api_key": {
+                                        "name": "AI API-nøgle",
+                                        "description": "API-nøgle til godkendelse med AI-tjenesten"
+                                    },
+                                    "ai_system_prompt": {
+                                        "name": "AI-systemprompt",
+                                        "description": "Systemprompt, der definerer AI'ens personlighed og adfærd"
+                                    },
+                                    "ai_max_tokens": {
+                                        "name": "AI maks. tokens",
+                                        "description": "Maksimalt antal tokens (ord), AI'en kan bruge i svar"
+                                    },
+                                    "ai_temperature": {
+                                        "name": "AI temperatur",
+                                        "description": "Styrer tilfældighed i AI-svar (0.0 = deterministisk, 2.0 = meget tilfældig)"
+                                    },
+                                    "ai_context_length": {
+                                        "name": "AI kontekstlængde",
+                                        "description": "Antal tidligere beskeder, der skal inkluderes som kontekst for AI-svar"
+                                    },
+                                    "ai_personality_traits": {
+                                        "name": "AI personlighedstræk",
+                                        "description": "Kommaseparerede personlighedstræk for AI'en (f.eks. venlig, afslappet, hjælpsom)"
+                                    },
+                                    "ai_response_style": {
+                                        "name": "AI svarstil",
+                                        "description": "Overordnet stil for AI-svar"
+                                    },
+                                    "ai_response_language": {
+                                        "name": "AI svarsprog",
+                                        "description": "Sprog for AI-svar (auto = samme som modtaget besked)"
+                                    },
+                                    "ai_use_conversation_history": {
+                                        "name": "Brug samtalehistorik",
+                                        "description": "Inkluder tidligere beskeder som kontekst for mere relevante AI-svar"
+                                    },
+                                    "ai_include_friend_info": {
+                                        "name": "Inkluder venneinfo",
+                                        "description": "Inkluder vens navn og anden tilgængelig info i AI-kontekst"
+                                    },
+                                    "ai_fallback_to_template": {
+                                        "name": "Fallback til skabelon",
+                                        "description": "Brug skabelonbeskeder, hvis AI mislykkes med at generere et svar"
+                                    },
+                                    "ai_request_timeout": {
+                                        "name": "AI anmodningstimeout",
+                                        "description": "Maksimal tid at vente på AI-svar (i sekunder)"
+                                    },
+                                    "ai_retry_attempts": {
+                                        "name": "AI genforsøg",
+                                        "description": "Antal gange at forsøge AI-anmodninger igen, hvis de mislykkes"
+                                    }
+                                }
+                            },
+                            "auto_trigger_config": {
+                                "name": "Auto-udløser konfiguration",
+                                "description": "Indstillinger for auto-svar udløsere og beskedskabeloner",
+                                "properties": {
+                                    "friendSpecificGreeting": {
+                                        "name": "Vennespecifik hilsen",
+                                        "description": "Tilføj vens navn til auto-svar for personliggørelse"
+                                    },
+                                    "friendGreeting": {
+                                        "name": "Vennehilsen",
+                                        "description": "Hilsenstekst, der skal bruges, når vennespecifik hilsen er aktiveret"
+                                    },
+                                    "auto_reply_content_types": {
+                                        "name": "Auto-svar udløsere",
+                                        "description": "Vælg hvilke beskedyper der skal udløse auto-svar"
+                                    },
+                                    "chat_messages": {
+                                        "name": "Svar på chatbeskeder",
+                                        "description": "Auto-svar beskeder for tekstchatbeskeder"
+                                    },
+                                    "snap_messages": {
+                                        "name": "Svar på Snaps",
+                                        "description": "Auto-svar beskeder for snaps"
+                                    },
+                                    "story_share_messages": {
+                                        "name": "Svar på Story-delinger",
+                                        "description": "Auto-svar beskeder for story-delinger"
+                                    },
+                                    "story_reply_messages": {
+                                        "name": "Svar på Story-svar",
+                                        "description": "Auto-svar beskeder for story-svar"
+                                    },
+                                    "external_media_messages": {
+                                        "name": "Svar på eksterne medier",
+                                        "description": "Auto-svar beskeder for eksterne medier"
+                                    },
+                                    "voice_note_messages": {
+                                        "name": "Svar på stemmebeskeder",
+                                        "description": "Auto-svar beskeder for stemmebeskeder"
+                                    },
+                                    "sticker_messages": {
+                                        "name": "Svar på klistermærker",
+                                        "description": "Auto-svar beskeder for klistermærker"
+                                    },
+                                    "tiny_snap_messages": {
+                                        "name": "Svar på små snaps",
+                                        "description": "Auto-svar beskeder for små snaps"
+                                    },
+                                    "map_reaction_messages": {
+                                        "name": "Svar på kortreaktioner",
+                                        "description": "Auto-svar beskeder for kortreaktioner"
+                                    },
+                                    "half_swipe_messages": {
+                                        "name": "Beskeder ved halvt swipe",
+                                        "description": "Auto-svar beskeder for halve swipes"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "auto_open_snaps": {
+                        "name": "Indstillinger for Åbn Snaps automatisk",
+                        "description": "Konfigurer forsinkelses- og køindstillinger for Åbn Snaps automatisk",
+                        "properties": {
+                            "allow_running_in_background": {
+                                "name": "Tillad kørsel i baggrunden",
+                                "description": "Tillader Åbn Snaps automatisk at køre i baggrunden. Bemærk: Dette vil dræne dit batteri betydeligt"
+                            },
+                            "min_delay": {
+                                "name": "Min. forsinkelse (ms)",
+                                "description": "Minimumsforsinkelse i millisekunder før åbning af en snap"
+                            },
+                            "max_delay_ms": {
+                                "name": "Maks. forsinkelse (ms)",
+                                "description": "Maksimal forsinkelse i millisekunder før åbning af en snap"
+                            },
+                            "queue_size": {
+                                "name": "Køstørrelse",
+                                "description": "Maksimalt antal snaps at beholde i kø"
+                            },
+                            "retry_attempts": {
+                                "name": "Genforsøg",
+                                "description": "Antal gange at forsøge at åbne en snap igen, hvis det mislykkes"
+                            },
+                            "retry_delay": {
+                                "name": "Genforsøgsforsinkelse (ms)",
+                                "description": "Forsinkelse i millisekunder mellem genforsøg"
+                            }
+                        }
+                    },
+                    "auto_delete_sent_messages": {
+                        "name": "Slet sendte beskeder automatisk",
+                        "description": "Sletter automatisk sendte beskeder efter en bestemt tidsperiode",
+                        "properties": {
+                            "allow_running_in_background": {
+                                "name": "Tillad kørsel i baggrunden",
+                                "description": "Tillader Slet sendte beskeder automatisk at køre i baggrunden. Bemærk: Dette vil dræne dit batteri betydeligt"
+                            },
+                            "delete_after_value": {
+                                "name": "Slet efter (værdi)",
+                                "description": "Tidsværdi før sletning af den sendte besked"
+                            },
+                            "delete_after_unit": {
+                                "name": "Tidsenhed",
+                                "description": "Vælg tidsenheden for sletningsforsinkelse"
+                            },
+                            "message_types": {
+                                "name": "Beskedyper",
+                                "description": "Vælg hvilke beskedyper der skal slettes automatisk"
+                            },
+                            "show_countdown": {
+                                "name": "Vis nedtælling",
+                                "description": "Vis nedtælling før sletning af beskeden"
+                            },
+                            "show_notification": {
+                                "name": "Vis notifikation",
+                                "description": "Vis notifikation under nedtælling"
+                            }
+                        }
+                    },
+                    "instant_translation": {
+                        "name": "Beskedoversætter",
+                        "description": "Oversæt automatisk indgående beskeder til dit foretrukne sprog",
+                        "properties": {
+                            "enabled": {
+                                "name": "Aktiver beskedoversætter",
+                                "description": "Aktiver automatisk oversættelse af beskeder"
+                            },
+                            "source_language": {
+                                "name": "Kildesprog",
+                                "description": "Sprog at oversætte fra (brug 'auto' for automatisk detektering)"
+                            },
+                            "target_language": {
+                                "name": "Målsprog",
+                                "description": "Sprog at oversætte til"
+                            },
+                            "show_original": {
+                                "name": "Vis originaltekst",
+                                "description": "Vis den originale beskedtekst"
+                            },
+                            "show_translation": {
+                                "name": "Vis oversættelse",
+                                "description": "Vis den oversatte tekst"
+                            },
+                            "translation_position": {
+                                "name": "Oversættelsesposition",
+                                "description": "Hvor oversættelsen skal vises i forhold til originalteksten"
+                            },
+                            "auto_translate": {
+                                "name": "Auto-oversæt",
+                                "description": "Oversæt automatisk beskeder, når de modtages"
+                            },
+                            "translate_on_tap": {
+                                "name": "Oversæt ved tryk",
+                                "description": "Oversæt beskeder, når der trykkes på dem"
+                            },
+                            "supported_languages": {
+                                "name": "Understøttede sprog",
+                                "description": "Sprog tilgængelige for oversættelse"
+                            },
+                            "pause_on_error": {
+                                "name": "Pause ved fejl",
+                                "description": "Pause oversættelse, når tjenesten er blokeret"
+                            },
+                            "max_retries": {
+                                "name": "Maks. genforsøg",
+                                "description": "Maksimalt antal forsøg på genforsøg"
+                            },
+                            "retry_delay": {
+                                "name": "Forsinkelse ved genforsøg",
+                                "description": "Forsinkelse mellem forsøg på genforsøg (millisekunder)"
+                            }
+                        }
+                    },
+                    "scheduled_send_allow_running_in_background": {
+                        "name": "Tillad planlagt afsendelse at køre i baggrunden",
+                        "description": "Hold planlagte beskeder i gang, mens Snapchat er i baggrunden"
+                    }
+                }
+            },
+            "global": {
+                "name": "Globalt",
+                "description": "Juster globale Snapchat-indstillinger",
+                "properties": {
+                    "ui_settings": {
+                        "name": "UI-indstillinger",
+                        "description": "Juster feedback og toast-adfærd",
+                        "properties": {
+                            "haptic_feedback": {
+                                "name": "Haptisk feedback",
+                                "description": "Vibrer ved understøttede interaktioner"
+                            },
+                            "use_system_toasts": {
+                                "name": "Brug system-toasts",
+                                "description": "Vis Android-toasts i stedet for in-app overlays"
+                            }
+                        }
+                    },
+                    "update_settings": {
+                        "name": "Opdateringsindstillinger",
+                        "description": "Styr automatiske opdateringstjek",
+                        "properties": {
+                            "auto_update_check": {
+                                "name": "Automatisk opdateringstjek",
+                                "description": "Tjek for nye builds automatisk"
+                            },
+                            "update_check_frequency": {
+                                "name": "Opdateringstjek frekvens",
+                                "description": "Hvor ofte der skal tjekkes for opdateringer"
+                            }
+                        }
+                    },
+                    "better_location": {
+                        "name": "Bedre Lokation",
+                        "description": "Forbedrer Snapchat Lokation",
+                        "properties": {
+                            "spoof_location": {
+                                "name": "Spoof lokation",
+                                "description": "Spoofer din lokation til en specificeret"
+                            },
+                            "location_search_provider": {
+                                "name": "Lokationssøgningsudbyder",
+                                "description": "Vælg udbyderen til søgning af lokationer"
+                            },
+                            "google_maps_api_key": {
+                                "name": "Google Maps API-nøgle",
+                                "description": "Påkrævet hvis Google Maps udbyder bruges"
+                            },
+                            "coordinates": {
+                                "name": "Koordinater",
+                                "description": "Indstil koordinaterne for spoof-lokationen"
+                            },
+                            "walk_radius": {
+                                "name": "Gå-radius",
+                                "description": "Gå tilfældigt rundt inden for denne radius (ft)"
+                            },
+                            "always_update_location": {
+                                "name": "Opdater altid lokation",
+                                "description": "Tving Snapchat til at opdatere lokation, selvom der ikke modtages GPS-data"
+                            },
+                            "suspend_location_updates": {
+                                "name": "Sæt lokationsopdateringer på pause",
+                                "description": "Forhindrer din lokation i at blive opdateret"
+                            },
+                            "spoof_battery_level": {
+                                "name": "Spoof batteriniveau",
+                                "description": "Spoofer batteriniveauet for din enhed på kortet\nVærdien skal være mellem 0 og 100"
+                            },
+                            "spoof_headphones": {
+                                "name": "Spoof hovedtelefoner",
+                                "description": "Spoofer status for lytning til musik på kortet"
+                            },
+                            "show_battery_level": {
+                                "name": "Vis batteriniveau",
+                                "description": "Viser batteriniveauet for dine venner på kortet"
+                            }
+                        }
+                    },
+                    "snapchat_plus": {
+                        "name": "Snapchat Plus",
+                        "description": "Aktiverer Snapchat Plus-funktioner\nNogle server-side funktioner virker muligvis ikke"
+                    },
+                    "media_upload_quality": {
+                        "name": "Medie-uploadkvalitet",
+                        "description": "Tilsidesætter medie-uploadkvaliteten",
+                        "properties": {
+                            "force_video_upload_source_quality": {
+                                "name": "Tving video-upload kildekvalitet",
+                                "description": "Tvinger Snapchat til at bruge kildekvaliteten ved upload af videoer\nBemærk venligst, at dette muligvis ikke fjerner metadata fra medier"
+                            },
+                            "disable_image_compression": {
+                                "name": "Deaktiver billedkomprimering",
+                                "description": "Deaktiverer billedkomprimering ved upload af medier"
+                            },
+                            "custom_image_upload_format": {
+                                "name": "Brugerdefineret billed-uploadformat",
+                                "description": "Indstiller et brugerdefineret billed-uploadformat\nVælg et tabsfri format (som PNG) for den bedste kvalitet"
+                            }
+                        }
+                    },
+                    "disable_confirmation_dialogs": {
+                        "name": "Deaktiver bekræftelsesdialoger",
+                        "description": "Bekræfter automatisk valgte handlinger"
+                    },
+                    "auto_updater": {
+                        "name": "Auto-opdatering",
+                        "description": "Tjekker automatisk for nye opdateringer"
+                    },
+                    "disable_metrics": {
+                        "name": "Deaktiver målinger",
+                        "description": "Blokerer afsendelse af specifikke analytiske data til Snapchat"
+                    },
+                    "disable_story_sections": {
+                        "name": "Deaktiver Story-sektioner",
+                        "description": "Fjerner sektioner fra Stories-siden\nKan kræve en opdatering for at fungere korrekt"
+                    },
+                    "block_ads": {
+                        "name": "Bloker reklamer",
+                        "description": "Forhindrer reklamer i at blive vist"
+                    },
+                    "disable_custom_tabs": {
+                        "name": "Deaktiver brugerdefinerede faner",
+                        "description": "Åbner links i understøttede applikationer i stedet for i webbrowseren"
+                    },
+                    "disable_permission_requests": {
+                        "name": "Deaktiver tilladelsesanmodninger",
+                        "description": "Forhindrer Snapchat i at bede om specifikke tilladelser"
+                    },
+                    "disable_memories_snap_feed": {
+                        "name": "Deaktiver minder snap-feed",
+                        "description": "Forhindrer Snapchat i at vise nylige minder, når du swiper op i kameraet"
+                    },
+                    "spotlight_comments_username": {
+                        "name": "Spotlight-kommentarer brugernavn",
+                        "description": "Viser forfatterens brugernavn i Spotlight-kommentarer"
+                    },
+                    "spotlight_comments_username_icon": {
+                        "name": "Spotlight-kommentarer brugernavn-ikon",
+                        "description": "Vælg hvilket ikon der vises ved siden af brugernavne i Spotlight-kommentarer"
+                    },
+                    "spotlight_creator_info": {
+                        "name": "Spotlight skaber-info",
+                        "description": "Vis en infoknap på Spotlight/Discover snaps for at se skaberens visningsnavn, brugernavn og bruger-ID"
+                    },
+                    "bypass_video_length_restriction": {
+                        "name": "Omgå videolængdebegrænsninger",
+                        "description": "Enkelt: sender en enkelt video\nOpdelt: opdel videoer efter redigering"
+                    },
+                    "default_video_playback_rate": {
+                        "name": "Standard videoafspilningshastighed",
+                        "description": "Indstiller standardhastigheden for afspilning af videoer\nVærdien skal være mellem 0.1 og 4.0"
+                    },
+                    "video_playback_rate_slider": {
+                        "name": "Videoafspilningshastighed-skyder",
+                        "description": "Tilføjer en skyder i opera-kontekstmenuen til at ændre videoafspilningshastigheden\nBemærk: Ændringer gælder kun for efterfølgende videoer"
+                    },
+                    "disable_google_play_dialogs": {
+                        "name": "Deaktiver Google Play Services-dialoger",
+                        "description": "Forhindrer Google Play Services tilgængelighedsdialoger i at blive vist"
+                    },
+                    "default_volume_controls": {
+                        "name": "Standard lydstyrkekontroller",
+                        "description": "Tvinger Snapchat til at bruge systemets lydstyrkekontroller"
+                    },
+                    "disable_telecom_framework": {
+                        "name": "Deaktiver Telecom Framework",
+                        "description": "Forhindrer Snapchat i at bruge Android Telecom frameworket\nDette giver dig mulighed for at lytte til musik, mens du er i et opkald"
+                    },
+                    "hide_active_music": {
+                        "name": "Skjul aktiv musik",
+                        "description": "Forhindrer Snapchat i at vide, at du lytter til musik\nDette giver dig mulighed for at tage snaps ved hjælp af lydstyrkeknapperne, mens du lytter til musik"
+                    },
+                    "disable_snap_splitting": {
+                        "name": "Deaktiver Snap-opdeling",
+                        "description": "Forhindrer Snaps i at blive opdelt i flere dele\nBilleder, du sender, vil blive til videoer"
+                    }
+                }
+            },
+            "rules": {
+                "name": "Regler",
+                "description": "Konfigurer automatiseringsregler",
+                "properties": {
+                    "auto_read": {
+                        "name": "Auto-læs"
+                    },
+                    "hide_typing_indicator": {
+                        "name": "Skjul skriveindikator"
+                    },
+                    "auto_reply": {
+                        "name": "Auto-svar"
+                    },
+                    "auto_delete_sent_messages": {
+                        "name": "Slet sendte beskeder automatisk"
+                    },
+                    "auto_download": {
+                        "name": "Auto-download"
+                    },
+                    "stealth": {
+                        "name": "Stealth-tilstand"
+                    },
+                    "auto_save": {
+                        "name": "Auto-gem"
+                    },
+                    "message_logger": {
+                        "name": "Besked-logger"
+                    },
+                    "unsaveable_messages": {
+                        "name": "Beskeder der ikke kan gemmes"
+                    }
+                }
+            },
+            "camera": {
+                "name": "Kamera",
+                "description": "Juster de rigtige indstillinger for det perfekte snap",
+                "properties": {
+                    "disable_cameras": {
+                        "name": "Deaktiver kameraer",
+                        "description": "Forhindrer Snapchat i at bruge de valgte kameraer"
+                    },
+                    "black_photos": {
+                        "name": "Sorte billeder",
+                        "description": "Erstatter optagne billeder med en sort baggrund\nVideoer påvirkes ikke"
+                    },
+                    "immersive_camera_preview": {
+                        "name": "Immersiv forhåndsvisning",
+                        "description": "Forhindrer Snapchat i at beskære kameraets forhåndsvisning\nDette kan få kameraet til at flimre på nogle enheder"
+                    },
+                    "override_front_resolution": {
+                        "name": "Tilsidesæt front-opløsning",
+                        "description": "Tilsidesætter kameraopløsningen for frontkameraet"
+                    },
+                    "override_back_resolution": {
+                        "name": "Tilsidesæt bag-opløsning",
+                        "description": "Tilsidesætter kameraopløsningen for bagkameraet"
+                    },
+                    "custom_resolution": {
+                        "name": "Brugerdefineret opløsning",
+                        "description": "Indstiller en brugerdefineret kameraopløsning, bredde x højde (f.eks. 1920x1080).\nDen brugerdefinerede opløsning skal understøttes af din enhed"
+                    },
+                    "front_custom_frame_rate": {
+                        "name": "Front brugerdefineret billedhastighed",
+                        "description": "Tilsidesætter frontkameraets billedhastighed"
+                    },
+                    "back_custom_frame_rate": {
+                        "name": "Bag brugerdefineret billedhastighed",
+                        "description": "Tilsidesætter bagkameraets billedhastighed"
+                    },
+                    "force_camera_source_encoding": {
+                        "name": "Tving kamerasorcekodning",
+                        "description": "Tvinger kamerasorcekodningen"
+                    },
+                    "startup_default_camera": {
+                        "name": "Opstart standardkamera",
+                        "description": "Indstiller standardkameraet, når Snapchat åbnes"
+                    },
+                    "hevc_recording": {
+                        "name": "HEVC-optagelse",
+                        "description": "Bruger HEVC (H.265) codec til videooptagelse"
+                    }
+                }
+            },
+            "streaks_reminder": {
+                "name": "Streaks-påmindelse",
+                "description": "Påminder dig periodisk om dine Streaks",
+                "properties": {
+                    "interval": {
+                        "name": "Interval",
+                        "description": "Intervallet mellem hver påmindelse (timer)"
+                    },
+                    "remaining_hours": {
+                        "name": "Resterende tid",
+                        "description": "Den resterende tid før notifikationen vises (timer)"
+                    },
+                    "group_notifications": {
+                        "name": "Gruppenotifikationer",
+                        "description": "Grupper notifikationer i en enkelt"
+                    }
+                }
+            },
+            "experimental": {
+                "name": "Eksperimentel",
+                "description": "Eksperimentelle funktioner",
+                "properties": {
+                    "native_hooks": {
+                        "name": "Native Hooks",
+                        "description": "Usikre funktioner, der hooker ind i Snapchats native kode",
+                        "properties": {
+                            "composer_hooks": {
+                                "name": "Composer Hooks",
+                                "description": "Indsprøjter kode i Composer cross-platform UI-frameworket",
+                                "properties": {
+                                    "show_first_created_username": {
+                                        "name": "Vis først oprettede brugernavn",
+                                        "description": "Viser det først oprettede brugernavn ved siden af det nuværende brugernavn på profilsiden"
+                                    },
+                                    "bypass_camera_roll_limit": {
+                                        "name": "Omgå kamerarulle-grænse",
+                                        "description": "Øger det maksimale antal medier, du kan sende fra kamerarullen"
+                                    },
+                                    "custom_self_destruct_snap_delay": {
+                                        "name": "Brugerdefineret selvdestruktions-snap forsinkelse",
+                                        "description": "Giver flere muligheder for selvdestruktionstimeren ved afsendelse af en Snap"
+                                    },
+                                    "composer_console": {
+                                        "name": "Composer-konsol",
+                                        "description": "Giver dig mulighed for at udføre JavaScript-kode i Composer (kun arm64)"
+                                    },
+                                    "composer_logs": {
+                                        "name": "Composer-logs",
+                                        "description": "Omdirigerer konsollogs fra Composer til Purrfect"
+                                    }
+                                }
+                            },
+                            "disable_bitmoji": {
+                                "name": "Deaktiver Bitmoji",
+                                "description": "Deaktiverer venners profil Bitmoji"
+                            },
+                            "custom_emoji_font": {
+                                "name": "Brugerdefineret emoji-skrifttype",
+                                "description": "Giver dig mulighed for at bruge en brugerdefineret emoji-skrifttype. Virker kun med .ttf skrifttyper"
+                            },
+                            "custom_shared_library": {
+                                "name": "Brugerdefineret delt bibliotek",
+                                "description": "Indlæser et brugerdefineret delt bibliotek i Snapchat. Denne funktion er kun til testformål"
+                            }
+                        }
+                    },
+                    "spoof": {
+                        "name": "Spoof",
+                        "description": "Spoof forskellige oplysninger om dig",
+                        "properties": {
+                            "play_store_installer_package_name": {
+                                "name": "Play Butik installationspakkenavn",
+                                "description": "Tilsidesætter installationspakkenavnet til com.android.vending"
+                            },
+                            "remove_vpn_transport_flag": {
+                                "name": "Fjern VPN-transportflag",
+                                "description": "Forhindrer Snapchat i at opdage VPN'er"
+                            },
+                            "remove_mock_location_flag": {
+                                "name": "Fjern Mock Location-flag",
+                                "description": "Forhindrer Snapchat i at opdage Mock location"
+                            },
+                            "force_wifi_transport_flag": {
+                                "name": "Tving Wi-Fi-transportflag",
+                                "description": "Tving netværkstransport til at rapportere Wi-Fi i stedet for mobildata"
+                            },
+                            "spoof_device_id": {
+                                "name": "Spoof enheds-ID",
+                                "description": "Tilsidesæt Android-ID'et sendt til Snapchat",
+                                "properties": {
+                                    "spoof_android_id": {
+                                        "name": "Spoof Android-ID",
+                                        "description": "Tilsidesæt Android-ID'et sendt til Snapchat med en brugerdefineret værdi"
+                                    },
+                                    "custom_android_id": {
+                                        "name": "Brugerdefineret Android-ID",
+                                        "description": "Værdi der skal bruges ved spoofing af Android-ID'et"
+                                    }
+                                }
+                            },
+                            "spoof_device": {
+                                "name": "Spoof enhed",
+                                "description": "Præsenter Snapchat som kørende på en anden enhedsmodel"
+                            },
+                            "device_model": {
+                                "name": "Enhedsmodel",
+                                "description": "Vælg hvilken enhedsmodel der skal spoofes"
+                            }
+                        }
+                    },
+                    "convert_message_locally": {
+                        "name": "Konverter besked lokalt",
+                        "description": "Konverterer snaps til chat eksterne medier lokalt. Dette vises i chat-download kontekstmenuen"
+                    },
+                    "media_file_picker": {
+                        "name": "Mediefilvælger",
+                        "description": "Giver dig mulighed for at vælge enhver video/lydfil fra galleriet"
+                    },
+                    "story_logger": {
+                        "name": "Story-logger",
+                        "description": "Giver en historik over venners stories"
+                    },
+                    "account_switcher": {
+                        "name": "Konto-skifter",
+                        "description": "Giver dig mulighed for at skifte mellem konti uden at logge ud\nLangt tryk på søgeikonet ved siden af din Bitmoji-profil for at åbne menuen\nBemærk: Denne funktion er eksperimentel og vil sandsynligvis ændre sig i fremtiden",
+                        "properties": {
+                            "auto_backup_current_account": {
+                                "name": "Auto-backup nuværende konto",
+                                "description": "Sikkerhedskopierer automatisk den nuværende konto, når du logger ud eller skifter konto"
+                            }
+                        }
+                    },
+                    "better_transcript": {
+                        "name": "Bedre transskription",
+                        "description": "Forbedrer transskriptionen af stemmebeskeder",
+                        "properties": {
+                            "force_transcription": {
+                                "name": "Tving transskription af stemmebeskeder",
+                                "description": "Tillader at alle stemmebeskeder transskriberes"
+                            },
+                            "preferred_transcription_lang": {
+                                "name": "Foretrukket transskriptionssprog",
+                                "description": "Det foretrukne sprog til transskription af stemmebeskeder (f.eks. DA, EN, ES)"
+                            },
+                            "notification_transcript": {
+                                "name": "Notifikations-transskription",
+                                "description": "Transskriberer stemmebeskeder i notifikationer\nDenne funktion kræver, at funktionen Chat-forhåndsvisning er aktiveret i Bedre notifikationer"
+                            }
+                        }
+                    },
+                    "voice_note_auto_play": {
+                        "name": "Auto-afspilning af stemmebeskeder",
+                        "description": "Afspiller automatisk den næste stemmebesked, efter den nuværende er færdig"
+                    },
+                    "friend_notes": {
+                        "name": "Venne-noter",
+                        "description": "Giver dig mulighed for at tilføje noter til venners profiler"
+                    },
+                    "cof_experiments": {
+                        "name": "COF-eksperimenter",
+                        "description": "Aktiverer ikke-udgivne/beta Snapchat-funktioner"
+                    },
+                    "context_menu_fix": {
+                        "name": "Kontekstmenu fix",
+                        "description": "Forsøg at reparere Vennefeed-menuen, da den ikke kan vises korrekt, når enheden er offline"
+                    },
+                    "app_lock": {
+                        "name": "App-lås",
+                        "description": "Forhindrer adgang til Snapchat uden en adgangskode",
+                        "properties": {
+                            "lock_on_resume": {
+                                "name": "Lås ved genoptagelse",
+                                "description": "Låser appen, når den genåbnes"
+                            }
+                        }
+                    },
+                    "infinite_story_boost": {
+                        "name": "Uendelig Story Boost",
+                        "description": "Omgå forsinkelsen for Story Boost-grænsen"
+                    },
+                    "meo_passcode_bypass": {
+                        "name": "My Eyes Only adgangskode-omgåelse",
+                        "description": "Omgå My Eyes Only-adgangskoden\nDette vil kun virke, hvis adgangskoden er indtastet korrekt før"
+                    },
+                    "no_friend_score_delay": {
+                        "name": "Ingen forsinkelse på vennescore",
+                        "description": "Fjerner forsinkelsen ved visning af en vennescore"
+                    },
+                    "best_friend_pinning": {
+                        "name": "Fastgørelse af bedste ven",
+                        "description": "Giver dig mulighed for at fastgøre en ven som din nummer et bedste ven. Bemærk: Kun du kan se din fastgjorte bedste ven"
+                    },
+                    "e2ee": {
+                        "name": "End-To-End Kryptering",
+                        "description": "Krypterer dine beskeder med AES ved hjælp af en delt hemmelig nøgle\nSørg for at gemme din nøgle et sikkert sted!",
+                        "properties": {
+                            "encrypted_message_indicator": {
+                                "name": "Krypteret besked-indikator",
+                                "description": "Tilføjer en \ud83d\udd12 emoji ved siden af krypterede beskeder"
+                            },
+                            "force_message_encryption": {
+                                "name": "Tving beskedkryptering",
+                                "description": "Forhindrer afsendelse af krypterede beskeder til folk, der ikke har E2E-kryptering aktiveret, kun når flere samtaler er valgt"
+                            }
+                        }
+                    },
+                    "add_friend_source_spoof": {
+                        "name": "Spoof af kilde til vennetilføjelse",
+                        "description": "Spoofer kilden til en venneanmodning"
+                    },
+                    "hidden_snapchat_plus_features": {
+                        "name": "Skjulte Snapchat Plus-funktioner",
+                        "description": "Aktiverer ikke-udgivne/beta Snapchat Plus-funktioner\nVirker muligvis ikke på ældre Snapchat-versioner"
+                    },
+                    "custom_streaks_expiration_format": {
+                        "name": "Brugerdefineret format for Streaks-udløb",
+                        "description": "Tilpasser formatet for Streaks-udløb\n\nTilgængelige variabler:\n - %c: Streaks-antal\n - %e: Timeglas-emoji\n - %d: Dage\n - %h: Timer\n - %m: Minutter\n - %s: Sekunder\n - %w: Resterende tid"
+                    },
+                    "prevent_forced_logout": {
+                        "name": "Forhindre tvunget logout",
+                        "description": "Forhindrer Snapchat i at logge dig ud, når du logger ind på en anden enhed"
+                    },
+                    "snapscore_changes": {
+                        "name": "Snapscore-ændringer",
+                        "description": "Sporer ændringer i venners Snapscore\nBrug kun denne funktion i nyere versioner af Snapchat"
+                    }
+                }
+            },
+            "scripting": {
+                "name": "Scripting",
+                "description": "Kør brugerdefinerede scripts for at udvide Purrfect",
+                "properties": {
+                    "developer_mode": {
+                        "name": "Udviklertilstand",
+                        "description": "Viser debug-info på Snapchats UI"
+                    },
+                    "module_folder": {
+                        "name": "Modulmappe",
+                        "description": "Mappen hvor scripts er placeret"
+                    },
+                    "auto_reload": {
+                        "name": "Auto-genindlæs",
+                        "description": "Genindlæser automatisk scripts, når de ændres"
+                    },
+                    "integrated_ui": {
+                        "name": "Integreret UI",
+                        "description": "Giver scripts mulighed for at tilføje brugerdefinerede UI-komponenter til Snapchat"
+                    },
+                    "disable_log_anonymization": {
+                        "name": "Deaktiver log-anonymisering",
+                        "description": "Deaktiverer anonymiseringen af logs"
+                    },
+                    "disable_optimization": {
+                        "name": "Deaktiver optimering",
+                        "description": "Deaktiverer optimeringen af scripts. Dette kan forårsage ydelsesproblemer."
+                    }
+                }
+            },
+            "friend_tracker": {
+                "name": "Ven-tracker",
+                "description": "Registrerer venners aktivitet på Snapchat",
+                "properties": {
+                    "record_messaging_events": {
+                        "name": "Registrer beskedbegivenheder",
+                        "description": "Registrerer beskedbegivenheder såsom åbning af en snap, læsning af en besked osv."
+                    },
+                    "allow_running_in_background": {
+                        "name": "Tillad kørsel i baggrunden",
+                        "description": "Tillader trackeren at køre i baggrunden. Bemærk: Dette vil dræne dit batteri betydeligt"
+                    },
+                    "auto_purge": {
+                        "name": "Auto-sletning",
+                        "description": "Sletter automatisk cachede begivenheder, der er ældre end den angivne tidsperiode"
+                    }
+                }
+            }
+        },
+        "options": {
+            "empty": "Tom",
+            "location_search_provider": {
+                "osm": "OpenStreetMap (Gratis)",
+                "google_maps": "Google Maps"
+            },
+            "unsaveable_messages": {
+                "blacklist": "Blacklist-tilstand",
+                "whitelist": "Whitelist-tilstand",
+                "null": "Deaktiveret"
+            },
+            "app_appearance": {
+                "always_light": "Altid lys",
+                "always_dark": "Altid mørk",
+                "null": "Match system"
+            },
+            "auto_reload": {
+                "snapchat_only": "Genindlæs kun Snapchat",
+                "all": "Genindlæs Snapchat + Purrfect",
+                "null": "Standard"
+            },
+            "walk_radius": {
+                "null": "Brug standardradius"
+            },
+            "spoof_battery_level": {
+                "null": "Brug rigtigt batteriniveau"
+            },
+            "friend_feed_menu_buttons": {
+                "auto_download": "\u2b07\ufe0f Auto-download",
+                "auto_save": "\ud83d\udcac Gem automatisk beskeder",
+                "unsaveable_messages": "\u2b07\ufe0f Beskeder der ikke kan gemmes",
+                "auto_open_snaps": "\ud83d\udcf7 Åbn Snaps automatisk",
+                "stealth": "\ud83d\udc7b Stealth-tilstand",
+                "auto_reply": "\ud83d\udce8 Auto-svar",
+                "auto_delete_sent_messages": "\ud83d\uddd1\ufe0f Slet sendte beskeder automatisk",
+                "mark_snaps_as_seen": "\ud83d\udc40 Marker Snaps som set",
+                "mark_stories_as_seen_locally": "\ud83d\udc40 Marker Stories som set lokalt",
+                "conversation_info": "\ud83d\udc64 Samtaleinfo",
+                "e2e_encryption": "\ud83d\udd12 Brug E2E-kryptering",
+                "message_logger": "\ud83d\udcdd Besked-logger",
+                "auto_read": "\u2705 Auto-læs",
+                "hide_typing_indicator": "\ud83d\ude48 Skjul skriveindikator"
+            },
+            "schedule_scheduled_for": "Planlagt til {name} om {time}",
+            "schedule_sending_in": "Sender om {time}",
+            "schedule_sent_to": "Sendt til {name}",
+            "schedule_sent": "Planlagt snap sendt",
+            "schedule_failed_to": "Kunne ikke sende til {name}",
+            "schedule_failed": "Planlagt snap mislykkedes",
+            "schedule_cancelled_for": "Annulleret for {name}",
+            "device_model": {
+                "samsung_s25_ultra": "Samsung Galaxy S25 Ultra",
+                "google_pixel_10_pro": "Google Pixel 10 Pro",
+                "oneplus_13": "OnePlus 13",
+                "xiaomi_15_ultra": "Xiaomi 15 Ultra",
+                "null": "Enhedsstandard"
+            },
+            "settings_menu": {
+                "default": "Standard",
+                "legacy": "Gammel"
+            },
+            "path_format": {
+                "create_author_folder": "Opret mappe for hver forfatter",
+                "create_source_folder": "Opret mappe for hver mediekildetype",
+                "append_hash": "Tilføj en unik hash til filnavnet",
+                "append_source": "Tilføj mediekilden til filnavnet",
+                "append_username": "Tilføj brugernavnet til filnavnet",
+                "append_date_time": "Tilføj dato og klokkeslæt til filnavnet",
+                "append_type": "Tilføj medietypen til filnavnet"
+            },
+            "auto_download_sources": {
+                "friend_snaps": "Venne-snaps",
+                "friend_stories": "Venne-stories",
+                "public_stories": "Offentlige stories",
+                "spotlight": "Spotlight"
+            },
+            "logging": {
+                "started": "Startet",
+                "success": "Succes",
+                "progress": "Fremskridt",
+                "failure": "Fiasko"
+            },
+            "notifications": {
+                "chat_screenshot": "Screenshot",
+                "chat_screen_record": "Skærmoptagelse",
+                "snap_replay": "Snap-genafspilning",
+                "camera_roll_save": "Gem i kamerarulle",
+                "chat": "Chat",
+                "chat_reply": "Chat-svar",
+                "snap": "Snap",
+                "typing": "Skriver",
+                "stories": "Stories",
+                "speaking": "Taler",
+                "chat_reaction": "DM-reaktion",
+                "group_chat_reaction": "Gruppereaktion",
+                "initiate_audio": "Indgående lydopkald",
+                "abandon_audio": "Mistet lydopkald",
+                "initiate_video": "Indgående videoopkald",
+                "abandon_video": "Mistet videoopkald",
+                "map_live_location": "Kort live-lokation"
+            },
+            "auto_read": {
+                "blacklist": "Blacklist",
+                "whitelist": "Whitelist",
+                "disabled": "Deaktiveret"
+            },
+            "hide_typing_indicator": {
+                "blacklist": "Blacklist",
+                "whitelist": "Whitelist",
+                "disabled": "Deaktiveret"
+            },
+            "auto_delete_sent_messages": {
+                "blacklist": "Blacklist",
+                "whitelist": "Whitelist",
+                "disabled": "Deaktiveret"
+            },
+            "auto_download": {
+                "blacklist": "Blacklist",
+                "whitelist": "Whitelist",
+                "disabled": "Deaktiveret"
+            },
+            "stealth": {
+                "blacklist": "Blacklist",
+                "whitelist": "Whitelist",
+                "disabled": "Deaktiveret"
+            },
+            "auto_save": {
+                "blacklist": "Blacklist",
+                "whitelist": "Whitelist",
+                "disabled": "Deaktiveret"
+            },
+            "message_logger": {
+                "blacklist": "Blacklist",
+                "whitelist": "Whitelist",
+                "disabled": "Deaktiveret"
+            },
+            "auto_reply": {
+                "blacklist": "Blacklist",
+                "whitelist": "Whitelist",
+                "disabled": "Deaktiveret"
+            },
+            "custom_android_id": {
+                "null": "Brug rigtigt Android-ID"
+            },
+            "add_friend_source_spoof": {
+                "added_by_username": "Ved brugernavn",
+                "added_by_mention": "Ved omtale",
+                "added_by_group_chat": "Ved gruppechat",
+                "added_by_qr_code": "Ved QR-kode",
+                "added_by_community": "Ved fællesskab",
+                "added_by_quick_add": "Ved hurtig tilføjelse (høj risiko for at blive bannet)",
+                "added_by_spotlight": "Ved Spotlight",
+                "null": "Spoof ikke kilde"
+            },
+            "custom_streaks_expiration_format": {
+                "null": "Systemstandard"
+            },
+            "preferred_transcription_lang": {
+                "null": "Brug Snapchat-standard"
+            },
+            "custom_emoji_font": {
+                "null": "Standard emoji-skrifttype"
+            },
+            "custom_shared_library": {
+                "null": "Brug standardbibliotek"
+            },
+            "override_front_resolution": {
+                "null": "Brug enhedsstandard"
+            },
+            "override_back_resolution": {
+                "null": "Brug enhedsstandard"
+            },
+            "custom_resolution": {
+                "null": "Brug automatisk opløsning"
+            },
+            "startup_default_camera": {
+                "front": "Frontkamera",
+                "back": "Bagkamera",
+                "null": "Husk sidst brugte"
+            },
+            "call_recorder": {
+                "only_record_self": "Optag kun mig selv",
+                "only_record_others": "Optag kun andre",
+                "record_both": "Optag begge sider"
+            },
+            "call_recorder_ui_design": {
+                "default": "Standard",
+                "snapchat": "Snapchat",
+                "cyber": "Cyber",
+                "frost": "Frost"
+            },
+            "front_custom_frame_rate": {
+                "null": "Enhedsstandard FPS"
+            },
+            "back_custom_frame_rate": {
+                "null": "Enhedsstandard FPS"
+            },
+            "force_voice_note_format": {
+                "null": "Brug Snapchat-standard"
+            },
+            "custom_path_format": {
+                "null": "Brug standardmønster"
+            },
+            "force_image_format": {
+                "null": "Brug Snapchat-standard"
+            },
+            "custom_video_codec": {
+                "null": "Standard Codec"
+            },
+            "custom_audio_codec": {
+                "null": "Standard Codec"
+            },
+            "preset": {
+                "null": "Standard forudindstilling"
+            },
+            "app_appearance_override": {
+                "title": "Udseende"
+            },
+            "gallery_media_send_override": {
+                "always_ask": "Spørg altid",
+                "ORIGINAL": "Originalt medie",
+                "NOTE": "Lydnote",
+                "SNAP": "Snap",
+                "SAVEABLE_SNAP": "Snap der kan gemmes",
+                "null": "Snapchat-standard",
+                "multiple_media_toast": "Du kan kun sende ét medie ad gangen"
+            },
+            "strip_media_metadata": {
+                "hide_caption_text": "Skjul billedtekst",
+                "hide_snap_filters": "Skjul snap-filtre",
+                "hide_extras": "Skjul ekstraudstyr (f.eks. omtaler)",
+                "remove_audio_note_duration": "Fjern varighed af lydnote",
+                "remove_audio_note_transcript_capability": "Fjern mulighed for transskription af lydnote"
+            },
+            "hide_ui_components": {
+                "hide_profile_call_buttons": "Fjern profilopkaldsknapper",
+                "hide_chat_call_buttons": "Fjern chatopkaldsknapper",
+                "hide_live_location_share_button": "Fjern knap til deling af live-lokation",
+                "hide_stickers_button": "Fjern klistermærkeknap",
+                "hide_voice_record_button": "Fjern stemmeoptagelsesknap",
+                "hide_unread_chat_hint": "Fjern hint om ulæst chat",
+                "hide_post_to_story_buttons": "Fjern Slå op på Story-knapper før afsendelse af en Snap",
+                "hide_billboard_prompt": "Fjern Billboard-prompt i Vennefeed",
+                "hide_snapchat_plus_gift_reminders": "Fjern Snapchat Plus gavepåmindelser i samtaler",
+                "hide_map_reactions": "Fjern kortreaktioner"
+            },
+            "hide_story_suggestions": {
+                "hide_suggested_friend_stories": "Skjul foreslåede venne-stories",
+                "hide_my_stories": "Skjul mine stories"
+            },
+            "home_tab": {
+                "map": "Kort",
+                "chat": "Chat",
+                "camera": "Kamera",
+                "discover": "Opdag",
+                "spotlight": "Spotlight",
+                "null": "Snapchat-standard"
+            },
+            "spotlight_comments_username_icon": {
+                "user": "Brugernavn-ikon",
+                "\ud83d\udc64": "Brugernavn-ikon",
+                "[\ud83d\udc64]": "Brugernavn-ikon",
+                "default": "Brugernavn-ikon",
+                "no_icon": "Intet ikon"
+            },
+            "custom_image_upload_format": {
+                "null": "Automatisk"
+            },
+            "update_check_frequency": {
+                "daily": "Dagligt",
+                "weekly": "Ugentligt",
+                "monthly": "Månedligt",
+                "null": "Auto"
+            },
+            "snapchat_plus": {
+                "not_subscribed": "Ikke abonneret",
+                "basic": "Basis",
+                "ad_free": "Reklamefri",
+                "null": "Standard"
+            },
+            "bypass_video_length_restriction": {
+                "single": "Enkelt medie",
+                "split": "Opdelt medie",
+                "null": "Standard"
+            },
+            "old_bitmoji_selfie": {
+                "2d": "2D Bitmoji",
+                "3d": "3D Bitmoji",
+                "null": "Standard Bitmoji"
+            },
+            "disable_confirmation_dialogs": {
+                "erase_message": "Slet besked",
+                "remove_friend": "Fjern ven",
+                "block_friend": "Bloker ven",
+                "ignore_friend": "Ignorer ven",
+                "hide_friend": "Skjul ven",
+                "hide_conversation": "Skjul samtale",
+                "clear_conversation": "Ryd samtale fra Vennefeed"
+            },
+            "edit_text_override": {
+                "multi_line_chat_input": "Flerlinjet chat-input",
+                "bypass_text_input_limit": "Omgå tekstinput-grænse"
+            },
+            "auto_purge": {
+                "never": "Aldrig",
+                "1_hour": "1 time",
+                "3_hours": "3 timer",
+                "6_hours": "6 timer",
+                "12_hours": "12 timer",
+                "1_day": "1 dag",
+                "3_days": "3 dage",
+                "1_week": "1 uge",
+                "2_weeks": "2 uger",
+                "1_month": "1 måned",
+                "3_months": "3 måneder",
+                "6_months": "6 måneder"
+            },
+            "delete_after_unit": {
+                "seconds": "Sekunder",
+                "minutes": "Minutter",
+                "hours": "Timer"
+            },
+            "disable_story_sections": {
+                "friends": "Venner",
+                "suggested_stories": "Foreslåede stories",
+                "following": "Følger",
+                "discover": "Opdag"
+            },
+            "disable_cameras": {
+                "front": "Frontkamera",
+                "back": "Bagkamera"
+            },
+            "disable_permission_requests": {
+                "notifications": "Notifikationer",
+                "read_media_images": "Læs mediebilleder",
+                "read_media_video": "Læs medievideo",
+                "camera": "Kamera",
+                "microphone": "Mikrofon",
+                "location": "Lokation",
+                "read_contacts": "Læs kontakter",
+                "nearby_devices": "Enheder i nærheden",
+                "phone_calls": "Telefonopkald"
+            },
+            "message_indicators": {
+                "encryption_indicator": "Tilføjer et \ud83d\udd12 ikon ved siden af beskeder, der kun er sendt til dig",
+                "platform_indicator": "Tilføjer platformsikonet, hvorfra et medie blev sendt (f.eks. Android, iOS, Web)",
+                "location_indicator": "Tilføjer et \ud83d\udccd ikon til snaps, når de er sendt med lokation aktiveret",
+                "ovf_editor_indicator": "Indikerer, om en snap er blevet sendt ved hjælp af OVF Editor",
+                "director_mode_indicator": "Tilføjer et \u270f\ufe0f ikon til snaps, når de er blevet sendt ved hjælp af Instruktørtilstand, som kan bruges til at sende galleribilleder som snaps"
+            },
+            "auto_mark_as_read": {
+                "conversation_read": "Marker samtale som læst ved afsendelse af en besked",
+                "snap_reply": "Marker snaps som læst ved besvarelse af dem",
+                "save_snap_in_chat": "Marker snaps som læst ved lagring i chat, mens du er i Stealth-tilstand"
+            },
+            "friend_mutation_notifier": {
+                "remove_friend": "Giv besked, når nogen fjerner dig som ven",
+                "birthday_changes": "Giv besked, når nogen ændrer deres fødselsdag",
+                "bitmoji_selfie_changes": "Giv besked, når nogen ændrer deres Bitmoji-selfie",
+                "bitmoji_avatar_changes": "Giv besked, når nogen ændrer deres Bitmoji-avatar",
+                "bitmoji_background_changes": "Giv besked, når nogen ændrer deres Bitmoji-baggrund",
+                "bitmoji_scene_changes": "Giv besked, når nogen ændrer deres Bitmoji-scene"
+            },
+            "double_tap_chat_action": {
+                "like_message": "Synes godt om besked",
+                "copy_text": "Kopier tekst til udklipsholder",
+                "delete_message": "Slet besked",
+                "mark_as_read": "Marker som læst",
+                "custom_emoji_reaction": "Brugerdefineret emoji-reaktion",
+                "null": "Standard"
+            },
+            "message_types": {
+                "CHAT": "Chat",
+                "SNAP": "Snap",
+                "NOTE": "Note",
+                "EXTERNAL_MEDIA": "Eksternt medie",
+                "STICKER": "Klistermærke"
+            },
+            "double_tap_chat_action_custom_emoji": {
+                "Custom emoji reaction": "Brugerdefineret emoji-reaktion"
+            },
+            "ai_model": {
+                "gemini-2.5-flash": "Gemini 2.5 Flash"
+            },
+            "ai_api_key": {
+                "": "Ikke indstillet"
+            },
+            "ai_system_prompt": {
+                "You are a helpful and friendly assistant responding to messages on Snapchat. Keep responses natural, casual, and conversational. Avoid being overly formal or robotic. Respond as if you're a real person having a normal conversation.": "Du er en hjælpsom og venlig assistent, der svarer på beskeder på Snapchat. Hold svarene naturlige, afslappede og samtaleprægede. Undgå at være alt for formel eller robotagtig. Svar som om du er en rigtig person, der har en normal samtale."
+            },
+            "ai_provider": {
+                "gemini": "Gemini",
+                "deepseek": "DeepSeek",
+                "openai": "OpenAI",
+                "openrouter": "OpenRouter"
+            },
+            "ai_personality_traits": {
+                "friendly, casual, helpful, empathetic": "venlig, afslappet, hjælpsom, empatisk"
+            },
+            "ai_response_style": {
+                "casual": "Afslappet",
+                "formal": "Formel",
+                "friendly": "Venlig",
+                "humorous": "Humoristisk",
+                "empathetic": "Empatisk",
+                "toxic": "Kantet",
+                "busy": "Travl"
+            },
+            "ai_temperature": {
+                "0.7": "Balanceret (0.7)"
+            },
+            "ai_response_language": {
+                "auto": "Auto",
+                "en": "Engelsk",
+                "es": "Spansk",
+                "fr": "Fransk",
+                "de": "Tysk",
+                "it": "Italiensk",
+                "pt": "Portugisisk",
+                "ru": "Russisk",
+                "ja": "Japansk",
+                "ko": "Koreansk",
+                "zh": "Kinesisk",
+                "ar": "Arabisk",
+                "hi": "Hindi",
+                "tr": "Tyrkisk",
+                "pl": "Polsk",
+                "nl": "Hollandsk",
+                "sv": "Svensk",
+                "da": "Dansk",
+                "no": "Norsk",
+                "fi": "Finsk"
+            },
+            "friendGreeting": {
+                "Hey": "Hej"
+            },
+            "half_swipe_messages": {
+                "[\"I noticed you half-swiped! I'll respond soon.\"]": "Jeg bemærkede, at du halvt swipede! Jeg svarer snart."
+            },
+            "tiny_snap_messages": {
+                "Thanks for the tiny snap!": "Tak for den lille snap!"
+            },
+            "voice_note_messages": {
+                "Thanks for the voice note!": "Tak for stemmebeskeden!"
+            },
+            "chat_messages": {
+                "Hello! How are you?": "Hej! Hvordan går det?"
+            },
+            "story_reply_messages": {
+                "Thanks for the story reply!": "Tak for story-svaret!"
+            },
+            "external_media_messages": {
+                "Nice media!": "Fedt medie!"
+            },
+            "sticker_messages": {
+                "Cool sticker!": "Sejt klistermærke!"
+            },
+            "snap_messages": {
+                "Thanks for the snap!": "Tak for snappen!"
+            },
+            "story_share_messages": {
+                "Thanks for sharing!": "Tak for delingen!"
+            },
+            "map_reaction_messages": {
+                "Thanks for the map reaction!": "Tak for kortreaktionen!"
+            },
+            "auto_reply_content_types": {
+                "chat_messages": "Chatbeskeder",
+                "snap_messages": "Snaps",
+                "story_share_messages": "Story-delinger",
+                "story_reply_messages": "Story-svar",
+                "external_media_messages": "Eksterne medier",
+                "voice_note_messages": "Stemmebeskeder",
+                "sticker_messages": "Klistermærker",
+                "tiny_snap_messages": "Små snaps",
+                "map_reaction_messages": "Kortreaktioner",
+                "half_swipes": "Halve swipes"
+            },
+            "supported_languages": {
+                "en": "Engelsk",
+                "es": "Spansk",
+                "fr": "Fransk",
+                "de": "Tysk",
+                "it": "Italiensk",
+                "pt": "Portugisisk",
+                "ru": "Russisk",
+                "ja": "Japansk",
+                "ko": "Koreansk",
+                "zh": "Kinesisk",
+                "ar": "Arabisk",
+                "hi": "Hindi",
+                "tr": "Tyrkisk"
+            },
+            "translation_position": {
+                "above": "Over tekst",
+                "below": "Under tekst",
+                "inline": "Inline"
+            },
+            "source_language": {
+                "auto": "Registrer automatisk"
+            },
+            "target_language": {
+                "en": "Engelsk"
+            }
+        },
+        "friend_notes": {
+            "placeholder": "Tilføj en note..."
+        }
+    },
+    "friend_menu_option": {
+        "mark_snaps_as_seen": "Marker Snaps som set",
+        "mark_stories_as_seen_locally": "Marker Stories som set lokalt",
+        "preview": "Forhåndsvisning",
+        "stealth_mode": "Stealth-tilstand",
+        "auto_download_blacklist": "Auto-download Blacklist",
+        "anti_auto_save": "Anti Auto-gem"
+    },
+    "content_type": {
+        "CHAT": "Chat",
+        "SNAP": "Snap",
+        "EXTERNAL_MEDIA": "Eksternt medie",
+        "NOTE": "Lydnote",
+        "STICKER": "Klistermærke",
+        "SHARE": "Del",
+        "STATUS": "Status",
+        "LOCATION": "Lokation",
+        "STATUS_SAVE_TO_CAMERA_ROLL": "Gemt i kamerarulle",
+        "STATUS_CONVERSATION_CAPTURE_SCREENSHOT": "Screenshot",
+        "STATUS_CONVERSATION_CAPTURE_RECORD": "Skærmoptagelse",
+        "STATUS_CALL_MISSED_VIDEO": "Mistet videoopkald",
+        "STATUS_CALL_MISSED_AUDIO": "Mistet lydopkald",
+        "LIVE_LOCATION_SHARE": "Deling af live-lokation",
+        "CREATIVE_TOOL_ITEM": "Kreativt værktøjselement",
+        "FAMILY_CENTER_INVITE": "Familiecenter-invitation",
+        "FAMILY_CENTER_ACCEPT": "Familiecenter accepteret",
+        "FAMILY_CENTER_LEAVE": "Familiecenter forladt",
+        "STATUS_PLUS_GIFT": "Status Plus gave",
+        "TINY_SNAP": "Lille Snap",
+        "STATUS_COUNTDOWN": "Nedtælling",
+        "MAP_REACTION": "Kortreaktion",
+        "chat_messages": "Chatbeskeder",
+        "snap_messages": "Snaps",
+        "story_share_messages": "Story-delinger",
+        "story_reply_messages": "Story-svar",
+        "external_media_messages": "Eksterne medier",
+        "voice_note_messages": "Stemmebesked",
+        "sticker_messages": "Klistermærke",
+        "tiny_snap_messages": "Lille Snap",
+        "map_reaction_messages": "Kortreaktion",
+        "half_swipes": "Halve swipes"
+    },
+    "media_download_source": {
+        "none": "Ingen",
+        "pending": "Afventer",
+        "chat_media": "Chatmedie",
+        "story": "Story",
+        "public_story": "Offentlig story",
+        "spotlight": "Spotlight",
+        "profile_picture": "Profilbillede",
+        "story_logger": "Story-logger",
+        "message_logger": "Besked-logger",
+        "merged": "Flettet",
+        "voice_call": "Stemmeopkald",
+        "chat_wallpaper": "Chat-baggrund"
+    },
+    "chat_action_menu": {
+        "preview_button": "Forhåndsvisning",
+        "download_button": "Download",
+        "delete_logged_message_button": "Slet logget besked",
+        "show_chat_edit_history": "Vis historik for chatredigering",
+        "convert_message": "Konverter besked"
+    },
+
+    "chat_wallpaper_downloader": {
+        "download_button": "Download chat-baggrund"
+    },
+    "opera_context_menu": {
+        "download": "Download medie",
+        "sent_at": "Sendt den {date}",
+        "created_at": "Oprettet den {date}",
+        "expires_at": "Udløber den {date}",
+        "media_size": "Mediestørrelse: {size}",
+        "media_duration": "Medievarighed: {duration} ms",
+        "show_debug_info": "Vis debug-info"
+    },
+    "modal_option": {
+        "profile_info": "Profilinfo",
+        "close": "Luk"
+    },
+    "gallery_media_send_override": {
+        "always_ask": "Spørg altid",
+        "ORIGINAL": "Originalt medie",
+        "NOTE": "Lydnote",
+        "SNAP": "Snap",
+        "SAVEABLE_SNAP": "Snap der kan gemmes",
+        "null": "Snapchat-standard",
+        "multiple_media_toast": "Du kan kun sende ét medie ad gangen"
+    },
+    "mark_as_seen": {
+        "no_unseen_snaps_toast": "Ingen usete Snaps fundet!",
+        "seen_toast": "Markeret som set!",
+        "unseen_toast": "Markeret som uset!",
+        "already_seen_toast": "Allerede markeret som set!",
+        "already_unseen_toast": "Allerede markeret som uset!"
+    },
+    "conversation_preview": {
+        "streak_expiration": "udløber om {day} dage {hour} timer {minute} minutter",
+        "total_messages": "Samlet sendte/modtagne beskeder: \n{count}",
+        "title": "Forhåndsvisning",
+        "unknown_user": "Ukendt bruger",
+        "no_messages": "Ingen beskeder fundet!"
+    },
+    "profile_info": {
+        "title": "Profilinfo",
+        "first_created_username": "Først oprettede brugernavn",
+        "mutable_username": "Foranderligt brugernavn",
+        "display_name": "Visningsnavn",
+        "added_date": "Tilføjet dato",
+        "birthday": "Fødselsdag : {month} {day}",
+        "hidden_birthday": "Fødselsdag : Skjult",
+        "friendship": "Venskab",
+        "add_source": "Tilføj kilde",
+        "snapchat_plus": "Snapchat Plus",
+        "snapchat_plus_state": {
+            "subscribed": "Abonneret",
+            "not_subscribed": "Ikke abonneret"
+        }
+    },
+    "snapchat_plus_state": {
+        "subscribed": "Abonneret",
+        "not_subscribed": "Ikke abonneret"
+    },
+    "friendship_link_type": {
+        "mutual": "Gensidig",
+        "outgoing": "Udgående",
+        "blocked": "Blokeret",
+        "deleted": "Slettet",
+        "following": "Følger",
+        "suggested": "Foreslået",
+        "incoming": "Indgående",
+        "incoming_follower": "Indgående følger"
+    },
+    "bulk_messaging_action": {
+        "actions.title": "Handlinger",
+        "choose_action_title": "Vælg en handling",
+        "progress_status": "Behandler {index} af {total}",
+        "selection_dialog_continue_button": "Fortsæt",
+        "confirmation_dialog": {
+            "title": "Er du sikker?",
+            "message": "Dette vil påvirke alle valgte , Denne handling kan ikke fortrydes."
+        },
+        "actions": {
+            "remove_friends": "Fjern venner",
+            "clear_conversations": "Ryd samtaler",
+            "clear_friend_feed": "Ryd Vennefeed ({count})",
+            "unfollow": "Følg ikke længere",
+            "remove": "Fjern",
+            "accept": "Accepteret",
+            "ignore": "Ignoreret"
+        },
+        "accept_requests": "Accepter anmodninger",
+        "ignore_requests": "Ignorer anmodninger",
+        "cleared_from_feed": "Ryddet fra feed",
+        "leave_groups": "Forlad {count} grupper",
+        "left_group_success": "Forlod gruppe succesfuldt",
+        "failed_to_leave_group": "Kunne ikke forlade gruppe: {error}",
+        "conversation_types": {
+            "friends_only": "Kun venner",
+            "groups_only": "Kun grupper",
+            "both": "Venner & Grupper"
+        },
+        "sort_by": "Sorter efter",
+        "reverse_order": "Omvendt rækkefølge",
+        "search_by_name": "Søg efter navn",
+        "no_friends_found": "Ingen venner fundet",
+        "no_groups_found": "Ingen grupper fundet",
+        "no_friends_or_groups_found": "Ingen venner eller grupper fundet",
+        "relationship": "Forhold: ",
+        "unknown_group": "Ukendt gruppe",
+        "type_group_chat": "Type: Gruppechat",
+        "clean_conversations": "Rens {count} samtaler",
+        "remove_friends": "Fjern {count} venner",
+        "clean_conversations_and_remove_friends": "Rens {count} samtaler og fjern {count} venner",
+        "clean_group_conversations": "Rens {count} gruppesamtaler",
+        "clean_all_conversations": "Rens {count} samtaler",
+        "failed_to_fetch_conversations": "Kunne ikke hente samtaler: {error}",
+        "failed_to_fetch_friend_conversations": "Kunne ikke hente vennesamtaler: {error}",
+        "failed_to_process": "Kunne ikke behandle {id}",
+        "deleted_messages": "{count} slettede beskeder",
+        "filters": {
+            "all": "Alle",
+            "my_friends": "Mine venner",
+            "blocked": "Blokerede",
+            "removed_me": "Fjernede mig",
+            "suggested": "Foreslåede",
+            "deleted": "Slettede",
+            "business_accounts": "Virksomhedskonti",
+            "streaks": "Streaks",
+            "non_streaks": "Ikke-streaks",
+            "followed": "Fulgte",
+            "following": "Følger",
+            "incoming": "Venneanmodninger",
+            "incoming_follower": "Følgeranmodninger",
+            "location_on_map": "Lokation på kort"
+        },
+        "sort_options": {
+            "none": "Ingen",
+            "username": "Brugernavn",
+            "added_timestamp": "Tilføjet tidsstempel",
+            "snap_score": "Snap-score",
+            "streak_length": "Streak-længde",
+            "most_messages_sent": "Flest beskeder sendt",
+            "most_recent_message": "Nyeste besked",
+            "nearest_location": "Nærmeste lokation"
+        }
+    },
+    "chat_export": {
+        "exporter_dialog": {
+            "select_conversations_title": "Vælg samtaler",
+            "text_field_selection": "{amount} valgt",
+            "text_field_selection_all": "Alle",
+            "export_file_format_title": "Eksporter filformat",
+            "sort_order_title": "Beskedrækkefølge",
+            "sort_order_newest_to_oldest": "Nyeste til ældste",
+            "sort_order_oldest_to_newest": "Ældste til nyeste",
+            "message_type_filter_title": "Filtrer beskeder efter type",
+            "amount_of_messages_title": "Beskedantal (lad være tom for alle)",
+            "download_medias_title": "Download medier"
+        },
+        "dialog_negative_button": "Annuller",
+        "dialog_positive_button": "Eksporter",
+        "exported_to": "Eksporteret til {path}",
+        "exporting_chats": "Eksporterer chats...",
+        "processing_chats": "Behandler {amount} samtaler...",
+        "export_fail": "Kunne ikke eksportere samtale {conversation}",
+        "writing_output": "Skriver output...",
+        "finished": "Færdig! Du kan nu lukke denne dialog.",
+        "no_messages_found": "Ingen beskeder fundet!",
+        "exporting_message": "Eksporterer {conversation}..."
+    },
+    "button": {
+        "ok": "OK",
+        "positive": "Ja",
+        "negative": "Nej",
+        "cancel": "Annuller",
+        "save": "Gem",
+        "open": "Åbn",
+        "download": "Download",
+        "import": "Importer",
+        "send": "Send",
+        "restore_original": "Gendan original",
+        "convert_external_media": "Konverter eksternt medie"
+    },
+    "tracker_events": {
+        "conversation_enter": "Samtale indgang",
+        "conversation_exit": "Samtale udgang",
+        "started_typing": "Begyndte at skrive",
+        "stopped_typing": "Stoppede med at skrive",
+        "started_speaking": "Begyndte at tale",
+        "stopped_speaking": "Stoppede med at tale",
+        "started_peeking": "Begyndte at kigge",
+        "stopped_peeking": "Stoppede med at kigge",
+        "message_read": "Besked læst",
+        "message_deleted": "Besked slettet",
+        "message_saved": "Besked gemt",
+        "message_unsaved": "Besked ikke længere gemt",
+        "message_edited": "Besked redigeret",
+        "message_reaction_add": "Beskedreaktion tilføj",
+        "message_reaction_remove": "Beskedreaktion fjern",
+        "snap_opened": "Snap åbnet",
+        "snap_replayed": "Snap genafspillet",
+        "snap_replayed_twice": "Snap genafspillet to gange",
+        "snap_screenshot": "Snap screenshot",
+        "snap_screen_record": "Snap skærmoptagelse",
+        "i_can_see_you": "Jeg kan se dig"
+    },
+    "cleared_from_feed": "Ryddet fra feed",
+    "tracker_actions": {
+        "log": "Log",
+        "in_app_notification": "In-App notifikation",
+        "push_notification": "Push-notifikation",
+        "custom": "Brugerdefineret"
+    },
+    "better_notifications": {
+        "button": {
+            "reply": "Svar",
+            "download": "Download",
+            "mark_as_read": "Marker som læst"
+        }
+    },
+    "profile_picture_downloader": {
+        "button": "Download profilbillede",
+        "title": "Profilbillede-downloader",
+        "avatar_option": "Avatar",
+        "background_option": "Baggrund"
+    },
+    "call_start_confirmation": {
+        "dialog_title": "Start opkald",
+        "dialog_message": "Er du sikker på, at du vil starte et opkald?"
+    },
+    "half_swipe_notifier": {
+        "notification_channel_name": "Halvt swipe",
+        "notification_content_dm": "{friend} swipede lige halvt ind i jeres chat i {duration} sekunder",
+        "notification_content_group": "{friend} swipede lige halvt ind i {group} i {duration} sekunder"
+    },
+    "download_processor": {
+        "attachment_type": {
+            "snap": "Snap",
+            "sticker": "Klistermærke",
+            "gif": "GIF",
+            "external_media": "Eksternt medie",
+            "note": "Note",
+            "original_story": "Original Story"
+        },
+        "select_attachments_title": "Vælg vedhæftninger",
+        "download_started_toast": "Download startet",
+        "unsupported_content_type_toast": "Ikke-understøttet indholdstype!",
+        "failed_no_longer_available_toast": "Medie ikke længere tilgængeligt",
+        "no_attachments_toast": "Ingen vedhæftninger fundet!",
+        "already_queued_toast": "Medie allerede i kø!",
+        "already_downloaded_toast": "Medie allerede downloadet!",
+        "content_saved_toast": "Gemt!",
+        "download_toast": "Downloader {path}...",
+        "processing_toast": "Behandler {path}...",
+        "failed_generic_toast": "Kunne ikke downloade",
+        "failed_to_create_preview_toast": "Kunne ikke oprette forhåndsvisning",
+        "failed_processing_toast": "Kunne ikke behandle {error}",
+        "failed_gallery_toast": "Kunne ikke gemme i galleri {error}",
+        "dash_no_chapter": "Ingen kapitel fundet",
+        "dash_dialog": {
+            "title": "Download dash medie",
+            "download_all": "Download alle",
+            "segment_text": "Segment {from} - {to}"
+        }
+    },
+    "streaks_reminder": {
+        "notification_title": "Streaks",
+        "notification_text": "Du mister din Streak med {friend} om {hoursLeft} timer"
+    },
+    "biometric_auth": {
+        "unlock_button": "Lås op",
+        "title": "Lås Snapchat op",
+        "subtitle": "Godkend venligst for at låse Snapchat op"
+    },
+    "end_to_end_encryption": {
+        "toolbox": {
+            "no_shared_key": "Du har ikke en delt hemmelighed med denne ven endnu. Klik nedenfor for at initiere en ny.",
+            "shared_key_fingerprint": "Dit fingeraftryk er:\n\n{fingerprint}\n\nSørg for at tjekke, om det matcher din vens fingeraftryk!",
+            "initiate_exchange_button": "Initier nøgleudveksling"
+        },
+        "confirmation_dialogs": {
+            "title": "End-to-end kryptering",
+            "confirmation_1": "ADVARSEL: Dette vil overskrive din eksisterende nøgle. Du vil miste adgang til alle krypterede beskeder fra denne ven. Er du sikker på, at du vil fortsætte?",
+            "confirmation_2": "Er du VIRKELIG sikker på, at du vil fortsætte? Dette er din sidste chance for at bakke ud."
+        },
+        "unencrypted_conversation_send_failure_toast": "Du kan ikke sende krypteret indhold til både krypterede og ukrypterede samtaler!",
+        "native_hooks_send_failure_toast": "Kunne ikke sende! Aktiver venligst Native Hooks i indstillingerne.",
+        "no_participants_to_encrypt_toast": "Du har ingen venner i denne samtale at kryptere beskeder med!",
+        "encryption_failed_toast": "Kunne ikke kryptere besked! Tjek logcat for flere detaljer.",
+        "missing_friend_id_toast": "Kan ikke finde friendId for conversationId {conversationId}",
+        "key_exchange_failed_toast": "Kan ikke oprette nøgleudveksling for friendId {friendId}",
+        "accept_public_key_success_toast": "Offentlig nøgle accepteret succesfuldt!",
+        "accept_secret_key_success_toast": "Færdig! Du kan nu sende og modtage krypterede beskeder med denne ven.",
+        "accept_public_key_failure_toast": "Kunne ikke acceptere offentlig nøgle",
+        "accept_secret_key_failure_toast": "Kunne ikke acceptere hemmelig nøgle",
+        "accept_secret_button": "Accepter hemmelighed",
+        "accept_public_key_button": "Accepter offentlig nøgle",
+        "outgoing_pk_message": "Anmodning om nøgleudveksling",
+        "outgoing_secret_message": "Svar på nøgleudveksling",
+        "incoming_pk_message": "Du har lige modtaget en anmodning om offentlig nøgle. Klik nedenfor for at acceptere den.",
+        "incoming_secret_message": "Din ven har lige accepteret din offentlige nøgle. Klik nedenfor for at acceptere hemmeligheden."
+    },
+    "account_switcher_ui": {
+        "already_logged_in": "Allerede logget ind som {username}",
+        "login_failed_toast": "Kunne ikke logge ind. Tjek logs for mere info.",
+        "logged_out_toast": "Logget ud",
+        "data_not_found_toast": "Kontodata ikke fundet",
+        "restore_failed_toast": "Kunne ikke gendanne kontodata",
+        "logged_in_as_toast": "Logget ind som {username}",
+        "backup_success_toast": "Konto sikkerhedskopieret!",
+        "backup_failure_toast": "Kunne ikke sikkerhedskopiere konto. Tjek logs for mere info.",
+        "import_success_toast": "Importerede {username}!",
+        "import_failure_toast": "Kunne ikke importere konto: {message}",
+        "export_success_toast": "Konto eksporteret!",
+        "export_failed_toast": "Kunne ikke eksportere konto. Tjek logs for mere info.",
+        "forced_logout_toast": "Fjernede konto på grund af tvunget logout"
+    },
+    "auto_open_snaps": {
+        "title": "Åbn Snaps automatisk",
+        "priority_title": "Åbn Snaps automatisk (Prioritet)",
+        "error_title": "Åbn Snaps automatisk (Fejl)",
+        "channel_description": "Notifikationer for køstatus ved automatisk åbning af snaps",
+        "priority_channel_description": "Højprioritetsnotifikationer for automatisk åbning af snaps",
+        "error_channel_description": "Fejlnotifikationer når automatisk åbning af snaps mislykkes",
+        "paused_status": "Åbn Snaps automatisk sat på pause",
+        "processing_status": "Behandler snaps: {queued} i kø, {processed} behandlet",
+        "monitor_status": "Overvåger...",
+        "recent_snaps": "Nylige Snaps",
+        "action_pause": "Pause",
+        "action_resume": "Genoptag",
+        "action_clear": "Ryd kø",
+        "action_reset": "Nulstil tæller",
+        "error_content": "Kunne ikke åbne snap fra {sender}: {error}",
+        "resumed_feedback": "Auto-åbning genoptaget",
+        "paused_feedback": "Auto-åbning sat på pause",
+        "resumed_message": "Behandling vil fortsætte automatisk for snaps i kø",
+        "paused_message": "Behandling sat på pause. Kø bevaret ({count} snaps)",
+        "status_paused": "Sat på pause",
+        "status_monitoring": "Overvåger",
+        "status_active": "Aktiv",
+        "queue_cleared": "Kø ryddet og statistikker nulstillet",
+        "queue_cleared_title": "Kø ryddet",
+        "queue_cleared_reset": "Kø ryddet & nulstillet",
+        "queue_cleared_feedback": "Ryddede {count} snaps i kø \u2022 Nulstillede {processed} behandlet tæller",
+        "queue_cleared_feedback_simple": "Nulstillede {processed} behandlet tæller",
+        "unknown_sender": "Ukendt",
+        "unknown_user": "Ukendt bruger",
+        "content_type_external_media": "Eksternt medie",
+        "content_type_snap": "Snap",
+        "conversation_type_friend_dm": "Venne-DM",
+        "conversation_type_dm": "DM",
+        "conversation_type_group_chat": "Gruppechat",
+        "conversation_type_chat": "Chat",
+        "notification_status": "Status",
+        "notification_statistics": "STATISTIKKER",
+        "notification_queue_size": "Køstørrelse",
+        "notification_total_opened": "Total Snaps åbnet",
+        "notification_queue_preview": "KØ FORHÅNDSVISNING",
+        "notification_processing_continue": "Behandling vil fortsætte automatisk...",
+        "notification_no_snaps_queue": "Ingen snaps i kø.",
+        "notification_queue_cleared_opened": "Kø ryddet ({opened} åbnet)",
+        "content_type_photo_video_snap": "Foto/Video Snap",
+        "conversation_type_group_with_name": "Gruppe: {name}",
+        "delete_logs_title": "Slet logs?",
+        "delete_logs_progress": "Sletter {count} logs...",
+        "delete_logs_description": "Dette vil slette logs baseret på det nuværende filter og søgeforespørgslen. Denne handling kan ikke fortrydes.",
+        "export_logs_title": "Eksporter logs?",
+        "export_logs_progress": "Eksporterer logs...",
+        "export_logs_description": "Dette vil eksportere logs baseret på det nuværende filter og søgeforespørgslen.",
+        "export_logs_as": "Eksporter som {type}",
+        "export_logs_success": "Eksporterede logs!",
+        "export_logs_failure": "Kunne ikke eksportere logs. Tjek logcat for flere detaljer.",
+        "deleted_logs_count": "Slettede {count} logs"
+    },
+    "script_imported": "Script {name} importeret!",
+    "script_import_failed": "Kunne ikke importere script. {error}. Tjek logs for flere detaljer",
+    "script_updating": "Opdaterer script {name}...",
+    "script_updated": "Opdaterede {name} til version {version}",
+    "script_update_failed": "Kunne ikke opdatere modul. Tjek logs for flere detaljer",
+    "script_edit_failed": "Kunne ikke åbne modulfil. Tjek logs for flere detaljer",
+    "script_data_cleared": "Moduldata ryddet!",
+    "script_data_clear_failed": "Kunne ikke rydde moduldata. Tjek logs for flere detaljer",
+    "script_deleted": "Slettede script {name}!",
+    "script_delete_failed": "Kunne ikke slette modul. Tjek logs for flere detaljer",
+    "script_actions": "Handlinger",
+    "script_no_description": "Ingen beskrivelse",
+    "script_update_available": "Opdatering tilgængelig: {version}",
+    "script_loaded": "Indlæste script {name}",
+    "script_unloaded": "Deaktiverede script {name}",
+    "script_enable_disable_failed": "Kunne ikke {action} script. Tjek logs for flere detaljer",
+    "script_no_settings": "Dette modul har ingen indstillinger",
+    "script_no_scripts_found": "Ingen scripts fundet",
+    "script_ok_timeout": "OK {timeout}",
+    "scripting_tagline": "Administrer scripts, imports og mapper",
+    "installed_scripts_tab": "Installeret",
+    "catalog_tab": "Katalog",
+    "no_scripts_folder_selected_title": "Vælg din scripts-mappe for at komme i gang",
+    "select_folder_button": "Vælg mappe",
+    "select_scripts_folder_toast": "Vælg venligst en scripts-mappe først",
+    "delete_rule_title": "Slet regel",
+    "delete_rule_description": "Er du sikker på, at du vil slette denne regel?",
+    "rule_name": "Regelnavn",
+    "friend_tracker_notifications": {
+        "notification_channel_name": "Ven-tracker",
+        "notification_title": "Venneaktivitet",
+        "conversation_enter": "{friend} gik ind i {conversation}",
+        "conversation_exit": "{friend} forlod {conversation}",
+        "started_typing": "{friend} begyndte at skrive i {conversation}",
+        "stopped_typing": "{friend} stoppede med at skrive i {conversation}",
+        "started_speaking": "{friend} begyndte at tale i {conversation}",
+        "stopped_speaking": "{friend} stoppede med at tale i {conversation}",
+        "started_peeking": "{friend} begyndte at kigge i {conversation}",
+        "stopped_peeking": "{friend} stoppede med at kigge i {conversation}",
+        "message_read": "{friend} læste en besked i {conversation}",
+        "message_deleted": "{friend} slettede en besked i {conversation}",
+        "message_saved": "{friend} gemte en besked i {conversation}",
+        "message_unsaved": "{friend} fjernede gemt besked i {conversation}",
+        "message_edited": "{friend} redigerede en besked i {conversation}",
+        "message_reaction_add": "{friend} tilføjede en reaktion i {conversation}",
+        "message_reaction_remove": "{friend} fjernede en reaktion i {conversation}",
+        "snap_opened": "{friend} åbnede en snap i {conversation}",
+        "snap_replayed": "{friend} genafspillede en snap i {conversation}",
+        "snap_replayed_twice": "{friend} genafspillede en snap to gange i {conversation}",
+        "snap_screenshot": "{friend} tog et screenshot i {conversation}",
+        "snap_screen_record": "{friend} skærmoptog i {conversation}",
+        "i_can_see_you": "{friend} aktivitet i {conversation}: {details}"
+    },
+    "friend_mutation_observer": {
+        "notification_channel_name": "Venneændrings-observatør",
+        "friend_removed": "{username} har fjernet dig som ven",
+        "birthday_removed": "{username} har fjernet sin fødselsdag ({birthday})",
+        "birthday_added": "{username} har tilføjet sin fødselsdag ({birthday})",
+        "birthday_changed": "{username} har ændret sin fødselsdag fra {oldBirthday} til {newBirthday}",
+        "bitmoji_selfie_changed": "{username} har ændret sin Bitmoji-selfie",
+        "bitmoji_avatar_changed": "{username} har ændret sin Bitmoji-avatar",
+        "bitmoji_background_changed": "{username} har ændret sin Bitmoji-baggrund",
+        "bitmoji_scene_changed": "{username} har ændret sin Bitmoji-scene"
+    },
+    "material3_strings": {
+        "date_range_picker_start_headline": "Fra",
+        "date_range_picker_end_headline": "Til",
+        "date_range_picker_title": "Vælg datointerval",
+        "date_picker_switch_to_calendar_mode": "Kalender",
+        "date_picker_switch_to_input_mode": "Input",
+        "date_range_picker_scroll_to_previous_month": "Forrige måned",
+        "date_range_picker_scroll_to_next_month": "Næste måned",
+        "date_picker_today_description": "I dag",
+        "date_range_picker_day_in_range": "Valgt",
+        "date_input_invalid_for_pattern": "Ugyldig dato",
+        "date_input_invalid_year_range": "Ugyldigt år",
+        "date_input_invalid_not_allowed": "Ugyldig dato",
+        "date_range_input_invalid_range_input": "Ugyldigt datointerval"
+    },
+    "send_override_dialog": {
+        "title": "Send medie som",
+        "duration": "Varighed: {duration}",
+        "saveable_snap_hint": "Gør Snap gembar i chatten",
+        "unlimited_duration": "Ubegrænset",
+        "schedule": "Planlæg",
+        "select_time": "Vælg tidspunkt",
+        "select": "Vælg",
+        "select_date_first": "Vælg venligst en dato",
+        "invalid_time": "Vælg venligst et fremtidigt tidspunkt"
+    },
+    "spotlight_creator_info": {
+        "title": "Skaber-info",
+        "close": "Luk",
+        "creator_info": "Skaber-info",
+        "display_name": "Visningsnavn",
+        "username": "Brugernavn",
+        "user_id": "Bruger-ID",
+        "posted_on": "Opslået",
+        "loading_username": "Indlæser...",
+        "username_copied": "Brugernavn kopieret",
+        "user_id_copied": "Bruger-ID kopieret",
+        "friend_status": "Vennestatus",
+        "mutual_friend": "Gensidig ven",
+        "following": "Følger",
+        "friend_request_sent": "Anmodning sendt",
+        "friend_request_received": "Anmodning modtaget",
+        "blocked": "Blokeret",
+        "friend_removed": "Fjernet"
+    },
+    "auto_reply_messages": {
+        "dialog": {
+            "add_message": "Tilføj besked",
+            "edit_message": "Rediger besked",
+            "message_label": "Besked",
+            "no_messages": "Ingen beskeder endnu. Tilføj din første besked!",
+            "message_placeholder": "Indtast din auto-svar besked..."
+        }
+    },
+    "auto_delete_sent_messages": {
+        "countdown_toast": "Besked vil blive slettet om {time}",
+        "delete_success_toast": "Besked slettet succesfuldt",
+        "delete_failed_toast": "Kunne ikke slette besked",
+        "queue_cleared_toast": "Auto-sletningskø ryddet"
+    },
+    "translation_position": {
+        "above": "Over",
+        "below": "Under",
+        "inline": "Inline"
+    },
+    "language_codes": {
+        "en": "Engelsk",
+        "es": "Spansk",
+        "fr": "Fransk",
+        "de": "Tysk",
+        "it": "Italiensk",
+        "pt": "Portugisisk",
+        "ru": "Russisk",
+        "ja": "Japansk",
+        "ko": "Koreansk",
+        "zh": "Kinesisk",
+        "ar": "Arabisk",
+        "hi": "Hindi",
+        "tr": "Tyrkisk",
+        "nl": "Hollandsk",
+        "pl": "Polsk",
+        "sv": "Svensk",
+        "da": "Dansk",
+        "no": "Norsk",
+        "fi": "Finsk",
+        "cs": "Tjekkisk",
+        "hu": "Ungarsk",
+        "ro": "Rumænsk",
+        "bg": "Bulgarsk",
+        "hr": "Kroatisk",
+        "sk": "Slovakisk",
+        "sl": "Slovensk",
+        "et": "Estisk",
+        "lv": "Lettisk",
+        "lt": "Litauisk",
+        "mt": "Maltesisk",
+        "ga": "Irsk",
+        "cy": "Walisisk"
+    },
+    "tracker": {
+        "tabs": {
+            "logs": "Logs",
+            "rules": "Regler"
+        },
+        "actions": {
+            "export": "Eksporter",
+            "delete": "Slet",
+            "add_rule": "Tilføj regel",
+            "save_rule": "Gem regel"
+        },
+        "messages": {
+            "no_logs_found": "Ingen logs fundet",
+            "no_rules_found": "Ingen regler fundet",
+            "no_events": "Ingen begivenheder"
+        },
+        "scopes_suffix": "omfang",
+        "search": {
+            "placeholder": "Søg"
+        },
+        "filters": {
+            "newest_first": "Nyeste først",
+            "pick_a_date": "Vælg en dato",
+            "title": "Filtre",
+            "search_by": "Søg efter",
+            "since": "Siden",
+            "until": "Indtil",
+            "types": {
+                "username": "Brugernavn",
+                "conversation": "Samtale",
+                "event": "Begivenhed"
+            },
+            "event_types": {
+                "conversation_enter": "Gik ind i samtale",
+                "conversation_exit": "Forlod samtale",
+                "started_typing": "Begyndte at skrive",
+                "stopped_typing": "Stoppede med at skrive",
+                "started_speaking": "Begyndte at tale",
+                "stopped_speaking": "Stoppede med at tale",
+                "started_peeking": "Begyndte at kigge",
+                "stopped_peeking": "Stoppede med at kigge",
+                "message_read": "Læste besked",
+                "message_deleted": "Slettede besked",
+                "message_saved": "Gemte besked",
+                "message_unsaved": "Fjernede gemt besked",
+                "message_edited": "Redigerede besked",
+                "message_reaction_add": "Tilføjede reaktion",
+                "message_reaction_remove": "Fjernede reaktion",
+                "snap_opened": "Åbnede snap",
+                "snap_replayed": "Genafspillede snap",
+                "snap_replayed_twice": "Genafspillede snap to gange",
+                "snap_screenshot": "Tog screenshot",
+                "snap_screen_record": "Skærmoptog"
+            }
+        },
+        "logs": {
+            "export_dialog": {
+                "title": "Eksporter logs",
+                "description": "Eksporter dine ven-tracker logs til en fil",
+                "progress": "Eksporterer logs...",
+                "export_as": "Eksporter som {type}",
+                "format_json": "JSON",
+                "format_csv": "CSV"
+            },
+            "delete_dialog": {
+                "title": "Slet logs",
+                "message": "Er du sikker på, at du vil slette alle logs? Denne handling kan ikke fortrydes.",
+                "confirm": "Slet alle",
+                "cancel": "Annuller",
+                "progress": "Sletter {count} logs..."
+            },
+            "log_entry": {
+                "in_conversation": "i {conversation}",
+                "unknown_user": "Ukendt",
+                "unknown_conversation": "DMs",
+                "i_can_see_you_entered": "Gik ind",
+                "i_can_see_you_left": "Forlod",
+                "i_can_see_you_duration": "Varighed",
+                "i_can_see_you_not_available": "I/T",
+                "i_can_see_you_unit_hour": "t",
+                "i_can_see_you_unit_minute": "m",
+                "i_can_see_you_unit_second": "s",
+                "event_text": "{friend} {event} i {conversation}",
+                "events": {
+                    "conversation_enter": "gik ind i",
+                    "conversation_exit": "forlod",
+                    "started_typing": "begyndte at skrive",
+                    "stopped_typing": "stoppede med at skrive",
+                    "started_speaking": "begyndte at tale",
+                    "stopped_speaking": "stoppede med at tale",
+                    "started_peeking": "begyndte at kigge",
+                    "stopped_peeking": "stoppede med at kigge",
+                    "message_read": "læste en besked",
+                    "message_deleted": "slettede en besked",
+                    "message_saved": "gemte en besked",
+                    "message_unsaved": "fjernede gemt besked",
+                    "message_edited": "redigerede en besked",
+                    "message_reaction_add": "tilføjede en reaktion",
+                    "message_reaction_remove": "fjernede en reaktion",
+                    "snap_opened": "åbnede en snap",
+                    "snap_replayed": "genafspillede en snap",
+                    "snap_replayed_twice": "genafspillede en snap to gange",
+                    "snap_screenshot": "tog et screenshot",
+                    "snap_screen_record": "skærmoptog",
+                    "i_can_see_you": "var aktiv"
+                }
+            }
+        },
+        "edit_rule": {
+            "custom_rule": "Brugerdefineret regel",
+            "scope": "Omfang",
+            "events": "Begivenheder",
+            "add_event": "Tilføj begivenhed",
+            "type": "Type",
+            "triggers": "Udløsere",
+            "conditions": "Betingelser",
+            "only_inside_conversation": "Kun når jeg er inde i en samtale",
+            "only_outside_conversation": "Kun når jeg er uden for en samtale",
+            "only_when_app_active": "Kun når Snapchat er aktiv",
+            "only_when_app_inactive": "Kun når Snapchat er inaktiv",
+            "no_notification_when_app_active": "Ingen notifikation når Snapchat er aktiv",
+            "scope_options": {
+                "all_friends_groups": "Alle Venner/Grupper",
+                "no_one_except": "Ingen undtagen",
+                "everyone_except": "Alle undtagen"
+            }
+        }
+    },
+    "debug": {
+        "title": "Debug",
+        "clear": "Ryd",
+        "files": {
+            "config_json": "Konfigurationsfil",
+            "mappings_json": "Mappingsfil",
+            "message_logger_db": "Besked-logger database",
+            "pinned_best_friend_txt": "Fastgjort bedste ven-fil",
+            "native_sig_cache_txt": "Native signatur-cachefil"
+        },
+        "settings": {
+            "test_mode": "Testtilstand (KUN TIL DEBUGGING)",
+            "disable_feature_loading": "Deaktiver indlæsning af funktioner",
+            "disable_auto_mapper": "Deaktiver Auto-mapper",
+            "disable_bypass_status_indicator": "Deaktiver indikator for omgåelsesstatus"
+        }
+    },
+    "ui_settings_title": "UI Indstillinger",
+    "haptic_feedback_label": "Haptisk feedback",
+    "updates_title": "Opdateringer",
+    "auto_update_check": "Automatisk opdateringstjek",
+    "update_check_frequency_daily": "Dagligt",
+    "update_check_frequency_weekly": "Ugentligt",
+    "update_check_frequency_monthly": "Månedligt",
+    "update_channel_stable": "Stabil",
+    "update_channel_prerelease": "Pre-release",
+    "friend_notes_title": "Venne-noter",
+    "friend_notes_description": "Administrer og sikkerhedskopier dine venne-noter",
+    "app_theme_title": "App-tema",
+    "theme_mode_system": "System",
+    "theme_mode_light": "Lys",
+    "theme_mode_dark": "Mørk",
+    "test_mode_label": "Aktiver PurrAura",
+    "disable_feature_loading_label": "Deaktiver indlæsning af funktioner",
+    "disable_auto_mapper_label": "Deaktiver Auto-mapper",
+    "disable_bypass_indicator_label": "Deaktiver omgåelses-indikator",
+    "friend_list": {
+        "manage_title": "Administrer venneliste",
+        "export_description": "Eksport af venner giver dig mulighed for at gemme en liste over dine venners ID'er i en tekstfil. Import fra en fil viser vennerne på en liste, hvor du kan tilføje dem.",
+        "export_friends": "Eksporter venner",
+        "import_from_file": "Importer fra fil",
+        "load_suggested_friends": "Indlæs foreslåede venner",
+        "add": "Tilføj"
+    },
+    "memories": {
+        "export_title": "Eksporter minder",
+        "total_memories": "Samlede minder: {count}",
+        "date_range": "Datointerval",
+        "select": "Vælg",
+        "sort_by_folder": "Sorter efter mappe",
+        "include_my_eyes_only": "Inkluder My Eyes Only",
+        "cancel": "Annuller",
+        "export": "Eksporter",
+        "quit": "Afslut",
+        "done": "Færdig",
+        "ok": "OK",
+        "exporting_memories": "Eksporterer minder... ({failed} mislykkedes)"
+    },
+    "scripting_ui": {
+        "no_scripts_folder_selected": "Ingen scripts-mappe valgt",
+        "select_folder": "Vælg mappe",
+        "import_from_url": "Importer fra URL",
+        "open_scripts_folder": "Åbn scripts-mappe",
+        "import_script_from_url": "Importer script fra URL",
+        "warning_imported_scripts": "Advarsel: Importerede scripts kan være skadelige for din enhed. Importer kun scripts fra pålidelige kilder.",
+        "enter_url_here": "Indtast URL her:",
+        "import": "Importer",
+        "cancel": "Annuller",
+        "documentation": "Dokumentation"
+    },
+    "common": {
+        "cancel": "Annuller",
+        "close": "Luk",
+        "add": "Tilføj",
+        "ok": "OK",
+        "quit": "Afslut",
+        "done": "Færdig",
+        "back": "Tilbage",
+        "unknown": "Ukendt",
+        "unknown_error": "Ukendt fejl",
+        "not_available": "I/T",
+        "added": "Tilføjet",
+        "no_friends_found": "Ingen venner fundet",
+        "exporting_memories": "Eksporterer minder... ({failed} mislykkedes)"
+    },
+    "clear_friend_feed": "Ryd Vennefeed",
+    "task_media_conversion_title": "Mediekonvertering",
+    "task_call_recording_title": "Opkaldsoptagelse {author}",
+    "select_date": "Vælg dato",
+    "schedule_scheduled_for": "Planlagt til {name} om {time}",
+    "schedule_sending_in": "Sender om {time}",
+    "schedule_sent_to": "Sendt til {name}",
+    "schedule_sent": "Planlagt snap sendt",
+    "schedule_failed_to": "Kunne ikke sende til {name}",
+    "schedule_failed": "Planlagt snap mislykkedes",
+    "schedule_cancelled_for": "Annulleret for {name}",
+    "by_author": "af {author}",
+    "version": "Version {version}",
+    "delete_button": "Slet",
+    "logger_history": {
+        "download_started": "Download startet!",
+        "downloaded_to": "Downloadet til {path}",
+        "failed_to_download": "Kunne ikke downloade {message}",
+        "select_conversation": "Vælg en samtale",
+        "select_conversation_placeholder": "Vælg en samtale",
+        "edited_at": "redigeret kl. {date}",
+        "download_attachment_failed_toast": "Kunne ikke downloade vedhæftning",
+        "message_parse_failed": "Kunne ikke parse besked",
+        "empty_message": "Tom besked",
+        "no_more_messages": "Ingen flere beskeder",
+        "reverse_order_checkbox": "Omvendt rækkefølge",
+        "view_logger_history_button": "Se Logger-historik",
+        "posted_at": "Slået op den {date}",
+        "created_at": "Oprettet den {date}",
+        "failed_to_open_file": "Kunne ikke åbne fil. Tjek logs for mere info",
+        "failed_to_get_file": "Kunne ikke hente fil",
+        "download_button": "Download",
+        "chat_attachment": "Vedhæftning {index}",
+        "log_header_format": "{username} ? {type} ? {date}",
+        "edited_at_text": "Redigeret til \"{message}\" kl. {date}",
+        "list_group_format": "Gruppe {name}",
+        "list_friend_format": "Ven {name}",
+        "download_started_toast": "Download startet",
+        "download_success_toast": "Downloadet til {path}",
+        "download_failed_toast": "Download mislykkedes: {message}",
+        "close_button_description": "Luk søgning",
+        "search_button_description": "Søg beskeder"
+    },
+    "debug_dialogs": {
+        "info": "Info",
+        "refs": "Refs",
+        "arroyo": "Arroyo",
+        "message": "Besked",
+        "media_references": "Mediereferencer",
+        "arroyo_proto": "Arroyo proto",
+        "message_proto": "Besked proto"
+    },
+    "error_messages": {
+        "failed_to_fetch_message": "Kunne ikke hente besked: {error}",
+        "failed_to_edit_message": "Kunne ikke redigere besked: {error}"
+    },
+    "toast_snapchat_not_installed": "Kan ikke udføre handling: Snapchat er ikke installeret",
+    "invalid_input_toast": "Ugyldigt input! Sørg for at du indtastede en gyldig værdi.",
+    "toast_async_task_failed": "Async-opgave mislykkedes: {message}",
+    "toast_snapchat_crashed": "Snapchat er gået ned! Tjek venligst logs for flere detaljer.",
+    "toast_init_features_failed": "Kunne ikke initialisere funktioner! Nogle funktionaliteter virker muligvis ikke korrekt.",
+    "toast_init_script_runtime_failed": "Kunne ikke initialisere script-runtime!",
+    "toast_database_corrupted": "Database {path} er beskadiget! Genstarter ...",
+    "toast_feature_init_failed": "Kunne ikke initialisere funktion {feature}! Tjek logcat for flere detaljer.",
+    "toast_updating_purrfect": "Opdaterer Purrfect. Vent venligst...",
+    "toast_update_purrfect_failed": "Kunne ikke opdatere Purrfect. Tjek venligst logcat for flere detaljer.",
+    "toast_purrfect_updated": "Purrfect opdateret!",
+    "toast_export_memories_failed": "Kunne ikke eksportere minder",
+    "toast_exported_to_path": "Eksporteret til {path}",
+    "toast_open_memories_db_failed": "Kunne ikke åbne minder-database",
+    "toast_friend_add_unavailable": "Kunne ikke tilføje ven: FriendRelationshipChanger-instans ikke tilgængelig",
+    "toast_friend_add_failed": "Kunne ikke tilføje ven: {message}",
+    "toast_friends_exported": "Eksporterede {count} venner!",
+    "toast_friends_import_failed": "Kunne ikke importere venner: {message}",
+    "toast_translation_service_unavailable": "Oversættelsestjeneste midlertidigt utilgængelig",
+    "toast_send_message_failed": "Kunne ikke sende besked: {error}",
+    "toast_mark_conversation_read_failed": "Kunne ikke markere samtale som læst",
+    "toast_fetch_conversation_failed": "Kunne ikke hente samtale",
+    "toast_open_snap_failed": "Kunne ikke åbne snap",
+    "toast_mark_message_read_failed": "Kunne ikke markere besked som læst. Tjek logs for flere detaljer",
+    "toast_open_conversation_first": "Du skal åbne en samtale først",
+    "conversation_toolbox": {
+        "title": "Samtale-værktøjskasse",
+        "loaded_script": "Indlæst script",
+        "failed_to_load": "Kunne ikke indlæse: {message}"
+    },
+    "toast_open_link_failed": "Kunne ikke åbne link",
+    "ai_response_style": {
+        "casual": "Afslappet",
+        "formal": "Formel",
+        "friendly": "Venlig",
+        "humorous": "Humoristisk",
+        "empathetic": "Empatisk",
+        "busy": "Travl",
+        "toxic": "Kantet"
+    },
+    "ai_response_language": {
+        "auto": "Auto (Samme som modtaget)",
+        "en": "Engelsk",
+        "es": "Spansk",
+        "fr": "Fransk",
+        "de": "Tysk",
+        "it": "Italiensk",
+        "pt": "Portugisisk",
+        "ru": "Russisk",
+        "ja": "Japansk",
+        "ko": "Koreansk",
+        "zh": "Kinesisk",
+        "ar": "Arabisk (UAE) og (KSA)",
+        "hi": "Hindi",
+        "tr": "Tyrkisk",
+        "pl": "Polsk",
+        "nl": "Hollandsk",
+        "sv": "Svensk",
+        "da": "Dansk",
+        "no": "Norsk",
+        "fi": "Finsk"
+    },
+    "ai_provider": {
+        "gemini": "Gemini",
+        "deepseek": "DeepSeek",
+        "openai": "OpenAI",
+        "openrouter": "OpenRouter"
+    }
+}

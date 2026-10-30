@@ -1,0 +1,359 @@
+package me.eternal.purrfect.ui.setup.screens.impl
+
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Shield
+import androidx.compose.material.icons.filled.VerifiedUser
+import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import kotlinx.coroutines.delay
+import me.eternal.purrfect.ui.manager.components.AestheticDialog
+import me.eternal.purrfect.common.ui.theme.LocalPurrfectSkin
+import me.eternal.purrfect.ui.setup.screens.SetupScreen
+import me.eternal.purrfect.ui.util.scaleOnPress
+
+enum class InstallMode { ROOT, NON_ROOT }
+
+class InstallModeScreen(
+    private val onModeChosen: (InstallMode) -> Unit,
+    private val onSkipAutoSetup: () -> Unit,
+    private val allowSkip: Boolean = true
+) : SetupScreen() {
+    private var selectedMode: InstallMode? = null
+    private var skipAutoSetup = false
+
+    override fun init() {
+        selectedMode = null
+        skipAutoSetup = false
+    }
+
+    override fun onLeave() {
+        if (skipAutoSetup) return
+    }
+
+    @Composable
+    override fun Content() {
+        val skin = LocalPurrfectSkin.current
+        var choice by rememberSaveable { mutableStateOf(selectedMode) }
+        var skipSelected by remember { mutableStateOf(skipAutoSetup) }
+        var showGuides by remember { mutableStateOf(true) }
+        var timeout by remember { mutableIntStateOf(15) }
+
+        LaunchedEffect(choice, skipSelected) {
+            selectedMode = choice
+            skipAutoSetup = skipSelected
+            allowNext(choice != null || (allowSkip && skipSelected))
+            if (!skipSelected) {
+                choice?.let(onModeChosen)
+            }
+        }
+
+        LaunchedEffect(showGuides) {
+            if (showGuides) {
+                timeout = 15
+                while (timeout > 0) {
+                    delay(1000)
+                    timeout--
+                }
+            }
+        }
+
+        if (showGuides) {
+            val confirmLabel = if (timeout > 0) {
+                context.translation.format("setup.install_mode.confirm_timeout", "seconds" to timeout.toString())
+            } else {
+                context.translation["setup.install_mode.confirm"]
+            }
+            AestheticDialog(
+                onDismissRequest = { if (timeout == 0) showGuides = false },
+                title = context.translation["setup.install_mode.notice_title"],
+                text = "",
+                icon = Icons.Filled.Warning,
+                confirmButtonText = confirmLabel,
+                onConfirm = { if (timeout == 0) showGuides = false },
+                confirmEnabled = timeout == 0,
+                showCloseButton = false,
+                customContent = {
+                    val bodyStyle = MaterialTheme.typography.bodyMedium.copy(
+                        color = skin.textSecondary,
+                        lineHeight = 18.sp
+                    )
+                    Surface(
+                        shape = RoundedCornerShape(14.dp),
+                        color = skin.cardOverlayColor,
+                        tonalElevation = 0.dp,
+                        shadowElevation = 0.dp,
+                        border = BorderStroke(
+                            1.dp,
+                            Brush.linearGradient(
+                                listOf(
+                                    skin.glowPrimary.copy(alpha = 0.55f),
+                                    skin.glowSecondary.copy(alpha = 0.35f)
+                                )
+                            )
+                        )
+                    ) {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .heightIn(max = 360.dp)
+                                .verticalScroll(rememberScrollState())
+                                .padding(horizontal = 14.dp, vertical = 12.dp),
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.spacedBy(10.dp)
+                        ) {
+                            Text(
+                                text = context.translation["setup.install_mode.notice_intro"],
+                                style = bodyStyle,
+                                textAlign = TextAlign.Start,
+                                modifier = Modifier.fillMaxWidth()
+                            )
+                            Text(
+                                text = context.translation["setup.install_mode.notice_non_root_title"],
+                                fontWeight = FontWeight.SemiBold,
+                                color = skin.textPrimary,
+                                modifier = Modifier.fillMaxWidth(),
+                                textAlign = TextAlign.Start
+                            )
+                            Text(
+                                text = context.translation["setup.install_mode.notice_non_root_body"],
+                                style = bodyStyle,
+                                textAlign = TextAlign.Start,
+                                modifier = Modifier.fillMaxWidth()
+                            )
+                            Text(
+                                text = context.translation["setup.install_mode.notice_root_title"],
+                                fontWeight = FontWeight.SemiBold,
+                                color = skin.textPrimary,
+                                modifier = Modifier.fillMaxWidth(),
+                                textAlign = TextAlign.Start
+                            )
+                            Text(
+                                text = context.translation["setup.install_mode.notice_root_body"],
+                                style = bodyStyle,
+                                textAlign = TextAlign.Start,
+                                modifier = Modifier.fillMaxWidth()
+                            )
+                            Text(
+                                text = context.translation["setup.install_mode.notice_issues_hint"],
+                                style = bodyStyle,
+                                textAlign = TextAlign.Start,
+                                modifier = Modifier.fillMaxWidth()
+                            )
+                            Text(
+                                text = androidx.compose.ui.text.buildAnnotatedString {
+                                    withStyle(androidx.compose.ui.text.SpanStyle(fontWeight = FontWeight.Bold, color = skin.textPrimary)) {
+                                        append(context.translation["setup.install_mode.notice_note_prefix"])
+                                    }
+                                    append(context.translation["setup.install_mode.notice_note_body"])
+                                },
+                                style = bodyStyle,
+                                textAlign = TextAlign.Start,
+                                modifier = Modifier.fillMaxWidth()
+                            )
+                        }
+                    }
+                }
+            )
+        }
+
+        // Allow skip if enabled
+        if (allowSkip) {
+            LaunchedEffect(Unit) {
+                showSkip?.invoke(context.translation["setup.install_mode.skip_auto_setup"]) {
+                    skipSelected = true
+                    choice = null
+                    onSkipAutoSetup()
+                    goNext()
+                }
+            }
+        }
+
+        SetupCard {
+            StepTitle(
+                title = context.translation["setup.install_mode.step_title"],
+                subtitle = context.translation["setup.install_mode.step_subtitle"],
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                ModeOption(
+                    title = context.translation["setup.install_mode.root_option_title"],
+                    subtitle = context.translation["setup.install_mode.root_option_subtitle"],
+                    icon = Icons.Filled.VerifiedUser,
+                    accent = Brush.horizontalGradient(
+                        listOf(
+                            skin.glowPrimary.copy(alpha = 0.45f),
+                            skin.glowSecondary.copy(alpha = 0.55f)
+                        )
+                    ),
+                    selected = choice == InstallMode.ROOT,
+                    onClick = {
+                        choice = InstallMode.ROOT
+                        skipSelected = false
+                    }
+                )
+                ModeOption(
+                    title = context.translation["setup.install_mode.non_root_option_title"],
+                    subtitle = context.translation["setup.install_mode.non_root_option_subtitle"],
+                    icon = Icons.Filled.Shield,
+                    accent = Brush.horizontalGradient(
+                        listOf(
+                            skin.glowPrimary.copy(alpha = 0.45f),
+                            skin.glowSecondary.copy(alpha = 0.55f)
+                        )
+                    ),
+                    selected = choice == InstallMode.NON_ROOT,
+                    onClick = {
+                        choice = InstallMode.NON_ROOT
+                        skipSelected = false
+                    }
+                )
+            }
+        }
+    }
+
+    @Composable
+    private fun ModeOption(
+        title: String,
+        subtitle: String,
+        icon: ImageVector,
+        accent: Brush,
+        selected: Boolean,
+        onClick: () -> Unit
+    ) {
+        val skin = LocalPurrfectSkin.current
+        val interactionSource = remember { MutableInteractionSource() }
+        val background = if (selected) {
+            skin.textPrimary.copy(alpha = 0.08f)
+        } else {
+            skin.textPrimary.copy(alpha = 0.04f)
+        }
+        val borderColor = if (selected) {
+            skin.textPrimary.copy(alpha = 0.4f)
+        } else {
+            skin.textPrimary.copy(alpha = 0.18f)
+        }
+        Surface(
+            modifier = Modifier
+                .fillMaxWidth()
+                .scaleOnPress(interactionSource)
+                .clip(RoundedCornerShape(22.dp))
+                .clickable(
+                    interactionSource = interactionSource,
+                    indication = null
+                ) { onClick() },
+            color = background,
+            shape = RoundedCornerShape(22.dp),
+            border = BorderStroke(1.dp, borderColor)
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp, vertical = 14.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(14.dp)
+            ) {
+                Surface(
+                    modifier = Modifier.size(44.dp),
+                    shape = RoundedCornerShape(16.dp),
+                    color = skin.textPrimary.copy(alpha = 0.06f),
+                    border = BorderStroke(1.dp, skin.textPrimary.copy(alpha = 0.18f))
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .background(accent)
+                            .clip(RoundedCornerShape(16.dp)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = icon,
+                            contentDescription = null,
+                            tint = Color.White
+                        )
+                    }
+                }
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(4.dp),
+                    modifier = Modifier.weight(1f)
+                ) {
+                    Text(
+                        text = title,
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = skin.textPrimary
+                    )
+                    Text(
+                        text = subtitle,
+                        fontSize = 14.sp,
+                        color = skin.textSecondary,
+                        lineHeight = 18.sp
+                    )
+                }
+                if (selected) {
+                    Surface(
+                        modifier = Modifier.size(22.dp),
+                        shape = CircleShape,
+                        color = skin.textPrimary.copy(alpha = 0.14f),
+                        border = BorderStroke(1.dp, skin.textPrimary.copy(alpha = 0.5f))
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .background(accent)
+                                .clip(CircleShape)
+                        )
+                    }
+                } else {
+                    Surface(
+                        modifier = Modifier.size(22.dp),
+                        shape = CircleShape,
+                        color = Color.Transparent,
+                        border = BorderStroke(1.dp, skin.textPrimary.copy(alpha = 0.2f))
+                    ) {}
+                }
+            }
+        }
+    }
+}

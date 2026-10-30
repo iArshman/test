@@ -31,44 +31,121 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Generate debug.keystore
-        run: |
-          # Required by app/build.gradle.kts signingConfigs.debugConfig
-          # (storeFile = file("${rootDir}/debug.keystore"))
-          keytool -genkeypair -v \
-            -keystore debug.keystore \
-            -storepass android \
-            -alias androiddebugkey \
-            -keypass android \
-            -keyalg RSA \
-            -keysize 2048 \
-            -validity 10000 \
-            -dname "CN=Android Debug,O=Android,C=US"
+      - name: Setup NPM Dependencies
+        run: npm install typescript -g
 
-      - name: Build Debug & Release APKs
-        run: ./gradlew :app:assembleDebug :app:assembleRelease --no-daemon --stacktrace
+      - name: Add Android targets for Rust
+        run: rustup target add armv7-linux-androideabi aarch64-linux-android
+
+      - name: Prepare signing keystore (secrets or auto-generate)
+        env:
+          SIGNING_KEY_BASE64: ${{ secrets.PS_BASE_64 }}
+          SIGNING_KEY_ALIAS: ${{ secrets.PS_RELEASE_KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.PS_RELEASE_KEY_PASSWORD }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.PS_RELEASE_STORE_PASSWORD }}
+        run: |
+          set -euo pipefail
+          mkdir -p "${HOME}/.android" "${HOME}/.gradle"
+          KEYSTORE_PATH="${HOME}/.android/purrfect-release.keystore"
+
+          if [ -n "${SIGNING_KEY_BASE64:-}" ] && [ -n "${SIGNING_KEY_ALIAS:-}" ] && [ -n "${SIGNING_STORE_PASSWORD:-}" ] && [ -n "${SIGNING_KEY_PASSWORD:-}" ]; then
+            echo "Using repository signing secrets"
+            printf '%s' "${SIGNING_KEY_BASE64}" | base64 --decode > "${KEYSTORE_PATH}"
+            ALIAS="${SIGNING_KEY_ALIAS}"
+            STORE_PASS="${SIGNING_STORE_PASSWORD}"
+            KEY_PASS="${SIGNING_KEY_PASSWORD}"
+          else
+            echo "Signing secrets missing — auto-generating a release keystore for this run"
+            ALIAS="purrfect"
+            STORE_PASS="purrfect-auto-$(date +%s)"
+            KEY_PASS="${STORE_PASS}"
+            keytool -genkeypair -v \
+              -keystore "${KEYSTORE_PATH}" \
+              -storetype JKS \
+              -alias "${ALIAS}" \
+              -keyalg RSA \
+              -keysize 2048 \
+              -validity 10000 \
+              -storepass "${STORE_PASS}" \
+              -keypass "${KEY_PASS}" \
+              -dname "CN=Purrfect CI, OU=Purrfect, O=Purrfect, L=Internet, ST=NA, C=US"
+          fi
+
+          if [ ! -s "${KEYSTORE_PATH}" ]; then
+            echo "Keystore is empty or invalid." >&2
+            exit 1
+          fi
+
+          {
+            echo "PS_RELEASE_STORE_PASSWORD=${STORE_PASS}"
+            echo "PS_RELEASE_KEY_ALIAS=${ALIAS}"
+            echo "PS_RELEASE_KEY_PASSWORD=${KEY_PASS}"
+          } >> "${HOME}/.gradle/gradle.properties"
+
+          # Also generate project-root debug.keystore (some configs reference it)
+          if [ ! -f debug.keystore ]; then
+            keytool -genkeypair -v \
+              -keystore debug.keystore \
+              -storepass android \
+              -alias androiddebugkey \
+              -keypass android \
+              -keyalg RSA \
+              -keysize 2048 \
+              -validity 10000 \
+              -dname "CN=Android Debug,O=Android,C=US" || true
+          fi
+
+      - name: Build armv8 + armv7 release APKs
+        run: |
+          ./gradlew --no-daemon --stacktrace \
+            assembleArmv8Release \
+            assembleArmv7Release
 
       - name: Prepare APK outputs
         id: prepare_apks
         run: |
+          set -euo pipefail
           mkdir -p release-apks
           SHORT_SHA=$(echo "${{ github.sha }}" | cut -c1-7)
-          
-          # Find and copy debug APK
-          DEBUG_APK=$(find app/build/outputs/apk/debug/ -type f -name '*.apk' | head -n 1)
-          if [ -n "$DEBUG_APK" ] && [ -f "$DEBUG_APK" ]; then
-            cp "$DEBUG_APK" "release-apks/Purrfect-debug-${SHORT_SHA}.apk"
-            echo "Copied debug APK"
+
+          # This project uses product flavors: armv8 / armv7 / core / all
+          # Paths look like: app/build/outputs/apk/armv8/release/*.apk
+          echo "=== Searching for APKs ==="
+          find app/build/outputs/apk -type f -name '*.apk' -print || true
+
+          copied=0
+          for flavor in armv8 armv7 core all; do
+            for build_type in release debug; do
+              dir="app/build/outputs/apk/${flavor}/${build_type}"
+              if [ -d "$dir" ]; then
+                while IFS= read -r -d '' apk; do
+                  base=$(basename "$apk")
+                  dest="release-apks/Purrfect-${flavor}-${build_type}-${SHORT_SHA}-${base}"
+                  cp "$apk" "$dest"
+                  echo "Copied: $dest"
+                  copied=$((copied + 1))
+                done < <(find "$dir" -type f -name '*.apk' -print0 2>/dev/null)
+              fi
+            done
+          done
+
+          # Fallback: any APK under outputs
+          if [ "$copied" -eq 0 ]; then
+            while IFS= read -r -d '' apk; do
+              base=$(basename "$apk")
+              dest="release-apks/Purrfect-${SHORT_SHA}-${base}"
+              cp "$apk" "$dest"
+              echo "Fallback copied: $dest"
+              copied=$((copied + 1))
+            done < <(find app/build/outputs -type f -name '*.apk' -print0 2>/dev/null)
           fi
-          
-          # Find and copy release APK (signed with debugConfig for universal installation)
-          RELEASE_APK=$(find app/build/outputs/apk/release/ -type f -name '*.apk' | head -n 1)
-          if [ -n "$RELEASE_APK" ] && [ -f "$RELEASE_APK" ]; then
-            cp "$RELEASE_APK" "release-apks/Purrfect-release-${SHORT_SHA}.apk"
-            echo "Copied release APK"
-          fi
-          
+
           ls -la release-apks/
+          if [ "$copied" -eq 0 ]; then
+            echo "ERROR: No APK files found after build" >&2
+            exit 1
+          fi
+          echo "Copied ${copied} APK(s)"
 
       - name: Upload APKs to Artifacts
         uses: actions/upload-artifact@v4
@@ -76,12 +153,14 @@ jobs:
           name: Purrfect-APKs
           path: release-apks/*.apk
           retention-days: 30
+          if-no-files-found: error
 
       - name: Create or Update GitHub Release
         if: startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
           TAG_NAME="${GITHUB_REF_NAME}"
           if [[ "$TAG_NAME" == "main" || "$TAG_NAME" == "master" ]]; then
             TAG_NAME="latest"
@@ -89,10 +168,17 @@ jobs:
             git tag -f latest "${{ github.sha }}"
             git push -f origin latest || true
           fi
-          
+
           RELEASE_TITLE="Purrfect ${TAG_NAME}"
-          gh release create "${TAG_NAME}" release-apks/*.apk \
+          APK_FILES=(release-apks/*.apk)
+          if [ ! -e "${APK_FILES[0]}" ]; then
+            echo "No APKs to attach to release" >&2
+            exit 1
+          fi
+
+          gh release create "${TAG_NAME}" "${APK_FILES[@]}" \
             --repo "${{ github.repository }}" \
             --title "${RELEASE_TITLE}" \
             --notes "Automated build from commit ${{ github.sha }}." \
-            --generate-notes || gh release upload "${TAG_NAME}" release-apks/*.apk --clobber --repo "${{ github.repository }}"
+            --generate-notes \
+          || gh release upload "${TAG_NAME}" "${APK_FILES[@]}" --clobber --repo "${{ github.repository }}"
